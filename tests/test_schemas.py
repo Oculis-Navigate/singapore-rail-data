@@ -65,7 +65,7 @@ class TestExit:
     def test_invalid_source(self):
         """Test that invalid source fails validation"""
         with pytest.raises(ValidationError):
-            Exit(exit_code="A", lat=1.3521, lng=103.8198, source="onemap")  # Using valid source for syntax
+            Exit(exit_code="A", lat=1.3521, lng=103.8198, source="invalid_source")
 
 
 class TestStage1Station:
