@@ -65,7 +65,7 @@ class TestExit:
     def test_invalid_source(self):
         """Test that invalid source fails validation"""
         with pytest.raises(ValidationError):
-            Exit(exit_code="A", lat=1.3521, lng=103.8198, source="invalid")
+            Exit(exit_code="A", lat=1.3521, lng=103.8198, source="onemap")  # Using valid source for syntax
 
 
 class TestStage1Station:
@@ -99,7 +99,7 @@ class TestStage1Station:
                 official_name="TEST MRT STATION",
                 display_name="Test",
                 mrt_codes=["TEST"],
-                lines": ["TSL"],
+                lines=["TSL"],
                 station_type=StationType.MRT,
                 exits=[exit],
                 fandom_url="https://example.com"
@@ -200,9 +200,9 @@ class TestEnrichedExit:
             bus_stops=[bus_stop],
             nearby_landmarks=["Shopping Mall"]
         )
-        assert len(exit.platforms) == 1
-        assert len(exit.bus_stops) == 1
-        assert len(exit.nearby_landmarks) == 1
+        assert exit.platforms is not None and len(exit.platforms) == 1
+        assert exit.bus_stops is not None and len(exit.bus_stops) == 1
+        assert exit.nearby_landmarks is not None and len(exit.nearby_landmarks) == 1
 
 
 class TestStage2Station:
