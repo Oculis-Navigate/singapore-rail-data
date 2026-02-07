@@ -1,0 +1,60 @@
+pipeline:
+  name: "MRT Data Pipeline"
+  version: "2.0.0"
+  
+  # Stage configurations
+  stages:
+    stage1_ingestion:
+      enabled: true
+      sources:
+        - datagov
+        - onemap
+      cache_ttl_days: 30
+      
+    stage2_enrichment:
+      enabled: true
+      batch_size: 8
+      delay_seconds: 2
+      max_retries: 3
+      retry_delay_seconds: 5
+      sources:
+        - fandom_wiki
+        - openrouter_llm
+        
+    stage3_merger:
+      enabled: true
+      validation:
+        schema_check: true
+        completeness_check: true
+        sanity_check: true
+        
+  # API configurations
+  apis:
+    onemap:
+      base_url: "https://www.onemap.gov.sg/api"
+      timeout: 30
+      
+    openrouter:
+      base_url: "https://openrouter.ai/api/v1"
+      model: "anthropic/claude-3.5-sonnet"
+      timeout: 120
+      max_tokens: 4000
+      temperature: 0.1
+      
+    fandom:
+      base_url: "https://singapore-mrt-lines.fandom.com/wiki"
+      timeout: 30
+      
+  # Expected station count (for validation)
+  expected_stations: 187
+  
+  # Output configuration
+  output:
+    versioning: true
+    keep_last_n_versions: 10
+    symlink_latest: true
+    
+  # Logging
+  logging:
+    level: INFO
+    format: structured  # structured or simple
