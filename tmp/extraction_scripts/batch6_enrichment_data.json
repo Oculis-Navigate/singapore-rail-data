@@ -1,0 +1,1249 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "MRT Station Enrichment Data - Batch 6 (CCL West - 16 stations)",
+    "extraction_date": "2026-02-02",
+    "source": "Singapore MRT Lines Fandom Wiki",
+    "extraction_method": "Manual webfetch and HTML parsing",
+    "total_stations": 16,
+    "failed_stations": 0,
+    "extraction_confidence": "high",
+    "notes": "Circle Line West section: Nicoll Highway through Holland Village (CC5-CC21, excluding CC18 future station)"
+  },
+  "stations": {
+    "NICOLL HIGHWAY MRT STATION": {
+      "official_name": "NICOLL HIGHWAY MRT STATION",
+      "station_code": "CC5",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "80161",
+              "services": ["10", "14", "16", "16M", "70", "70M", "196"]
+            },
+            {
+              "code": "80169",
+              "services": ["10", "14", "16", "16M", "70", "70M", "196"]
+            }
+          ],
+          "nearby_landmarks": ["City Gate", "Golden Mile Complex", "Golden Mile Food Centre", "Golden Mile Tower", "Golden Sultan Plaza", "Hotel Traveltime", "Kampong Glam Park", "Malay Heritage Centre", "Parkroyal on Beach Road", "St. John's Singapore HQ", "Sultan Plaza", "Textile Centre", "The Concourse", "The Plaza"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marina Promenade", "Kallang River", "Waterways Watch Society"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Exit A barrier-free with lift", "Exit B stairs-only NOT accessible", "Overhead bridge connects to Exit A"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Nicoll_Highway_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "STADIUM MRT STATION": {
+      "official_name": "STADIUM MRT STATION",
+      "station_code": "CC6",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "80191",
+              "services": ["11"]
+            }
+          ],
+          "nearby_landmarks": ["National Stadium (Gates 1-5 & 18-23)", "OCBC Aquatic Centre", "Kallang Wave Mall", "Singapore Sports Museum", "Sports Hub Library", "Visitors Centre", "Water Sports Centre", "Singapore Indoor Stadium", "Kallang Theatre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["National Stadium (Gates 6-17)", "OCBC Arena", "Leisure Park Kallang"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "At-grade open-air concourse for crowd management", "Third middle track (cripple siding) for train turnaround", "Some trains terminate here during off-peak"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Stadium_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "MOUNTBATTEN MRT STATION": {
+      "official_name": "MOUNTBATTEN MRT STATION",
+      "station_code": "CC7",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "80141",
+              "services": ["10", "11", "12", "14", "16", "16M", "31", "32", "33", "158", "196"]
+            },
+            {
+              "code": "80149",
+              "services": ["10", "11", "12", "14", "16", "16M", "31", "32", "33", "158", "196"]
+            }
+          ],
+          "nearby_landmarks": ["Mountbatten Square", "Singapore Association for the Deaf", "Mountbatten Vocational School", "Kallang Estate Market", "Old Airport Road Hawker Centre", "Cassia Crescent", "Guillemard Village", "Jamiyah Children's Home", "Mountbatten Centre", "Kallang Netball Centre", "Kallang Squash & Tennis Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "80279",
+              "services": ["12", "14", "30", "158", "196", "401"]
+            }
+          ],
+          "nearby_landmarks": ["Old Airport Road", "Goodman Arts Centre", "Singapore Sports Council", "Singapore Cricket Association", "Broadrick Secondary School", "Long Beach KING", "McDonald's (Stadium Boulevard)", "KFC (Stadium Boulevard)"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free accessible"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Mountbatten_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "DAKOTA MRT STATION": {
+      "official_name": "DAKOTA MRT STATION",
+      "station_code": "CC8",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "81181",
+              "services": ["10", "16", "16M", "30", "30e", "31", "32", "33"]
+            }
+          ],
+          "nearby_landmarks": ["Chung Cheng High School", "Mountbatten CC", "Eton House International School", "Old Airport Road Market & Food Court"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "81189",
+              "services": ["10", "16", "16M", "30", "30e", "31", "32", "33", "401"]
+            }
+          ],
+          "nearby_landmarks": ["Broadrick Secondary School", "WaterBank at Dakota", "Dakota Residence", "Mountbatten Neighbourhood Police Post", "Geylang Park Connector"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free accessible"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Dakota_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "PAYA LEBAR MRT STATION": {
+      "official_name": "PAYA LEBAR MRT STATION",
+      "station_code": "CC9",
+      "lines": ["CCL", "EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "81111",
+              "services": ["24", "28", "43", "43e", "70", "70M", "76", "134", "135", "137", "154", "155"]
+            }
+          ],
+          "nearby_landmarks": ["Certis Cisco Centre", "Geylang United Temple", "Lifelong Learning Institute", "Paya Lebar Road", "Paya Lebar Square", "SingPost Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "81111",
+              "services": ["24", "28", "43", "43e", "70", "70M", "76", "134", "135", "137", "154", "155"]
+            }
+          ],
+          "nearby_landmarks": ["Paya Lebar Square Basement 1"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "81119",
+              "services": ["24", "28", "43", "43e", "70", "70M", "76", "134", "135", "137", "154", "155"]
+            }
+          ],
+          "nearby_landmarks": ["Aljunied Industrial Estate", "Foo Hai Ch'an Monastery", "Geylang East Industrial Estate", "Madrasah Wak Tanjong Al-Islamiah", "Masjid Wak Tanjong", "Paya Lebar Road", "Sri Sivan Temple", "Thong Teck Home for Senior Citizens"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "81129",
+              "services": ["24", "28", "43", "43e", "70", "70M", "76", "134", "135", "154", "155"]
+            }
+          ],
+          "nearby_landmarks": ["City Plaza", "Geylang Serai Community Club", "Grandlink Square", "Joo Chiat Complex", "Kinex", "Madrasah Wak Tanjong Al-Islamiah", "Paya Lebar Road", "Sims Avenue", "Tanjong Katong Complex", "Wisma Geylang Serai"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "82011",
+              "services": ["2", "7", "13", "21", "24", "26", "28", "30", "51", "67", "76", "154", "155"]
+            }
+          ],
+          "nearby_landmarks": ["City Plaza", "Geylang Serai Community Club", "Joo Chiat Complex", "Kinex", "PLQ 1", "PLQ 2", "Sims Avenue", "SMRT HQ (via PLQ 3)", "Tanjong Katong Complex", "Wisma Geylang Serai"]
+        },
+        {
+          "exit_code": "F",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["PLQ 3", "PLQ Mall", "SMRT HQ (via PLQ 3)"]
+        }
+      ],
+      "accessibility_notes": ["Double island platform arrangement for CCL (first underground)", "EWL elevated, CCL underground", "Middle platforms C/D for train withdrawals", "Paid link via lifts/escalators"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Paya_Lebar_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "MACPHERSON MRT STATION": {
+      "official_name": "MACPHERSON MRT STATION",
+      "station_code": "CC10",
+      "lines": ["CCL", "DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "70371",
+              "services": ["61", "63", "63M", "65", "135", "154", "158"]
+            },
+            {
+              "code": "70379",
+              "services": ["61", "63", "63M", "65", "135", "154", "158"]
+            }
+          ],
+          "nearby_landmarks": ["AZ @ Paya Lebar", "Da Sheng Kong Chinese Temple", "Fang Huo Yuan Temple", "Kampong Ubi Industrial Estate", "Tien Seng Tua Temple", "Traffic Police", "Trinity Christian Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "70259",
+              "services": ["24", "28", "43", "43e", "70", "70M", "76", "80", "135", "137", "154"]
+            }
+          ],
+          "nearby_landmarks": ["Aztech", "Cheng Hong Siang Tng Temple", "Kim Hong Temple", "Paya Ubi Industrial Park", "Public Transport Security Command", "Seng Hong Temple", "Society of Sheng Hong Welfare Services", "Ubi Techpark"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "70251",
+              "services": ["24", "28", "43", "43e", "70", "70M", "76", "80", "135", "154"]
+            }
+          ],
+          "nearby_landmarks": ["N/A"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["MacPherson NPP", "MacPherson Moral & Family Service Centre"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "70191",
+              "services": ["40", "61", "63", "63M", "65", "135", "154", "155", "158"]
+            }
+          ],
+          "nearby_landmarks": ["Circuit Road Market & Food Centre"]
+        }
+      ],
+      "accessibility_notes": ["CCL island platform, DTL side platform", "Interchange station", "Exit C stairs-only NOT accessible", "Paid links at both ends of CCL platform"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/MacPherson_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "TAI SENG MRT STATION": {
+      "official_name": "TAI SENG MRT STATION",
+      "station_code": "CC11",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "70281",
+              "services": ["22", "24", "28", "43", "58", "62", "70", "70M", "76", "80", "93", "158"]
+            }
+          ],
+          "nearby_landmarks": ["Asiawide Industrial Building", "D'Lithium", "Irvine Industrial Building", "Kapo Factory Building", "Leong Huat Building", "LHK 2 Building", "Sulisam Building", "Tai Seng Point", "Tat Wan Building", "The Commerze@Irving", "Trivex"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Paya Lebar Road/MacPherson Road/Airport Road", "Singapore Civil Defence Force HQ", "UB. One", "Trinity @ Paya Lebar", "TATA Communication", "Citimax Industrial Complex", "Sakae Building", "Oxley Bizhub"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "70289",
+              "services": ["22", "24", "28", "43", "58", "62", "70", "70M", "76", "80", "93", "158"]
+            }
+          ],
+          "nearby_landmarks": ["18 Tai Seng (Basement 1)", "Charles & Keith Group HQ", "Jin Long Si Temple", "Kim Chuan Depot (SMRT)", "Tai Seng Industrial Estate"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Exit B stairs-only NOT accessible", "Reception tracks to Kim Chuan Depot north of station"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tai_Seng_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BARTLEY MRT STATION": {
+      "official_name": "BARTLEY MRT STATION",
+      "station_code": "CC12",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "62071",
+              "services": ["28", "93", "129", "146", "158"]
+            }
+          ],
+          "nearby_landmarks": ["Maris Stella High (Pri)", "Maris Stella High Sch", "Bartley Sec Sch"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "62079",
+              "services": ["28", "93", "129", "146", "158"]
+            }
+          ],
+          "nearby_landmarks": ["Ramakrishna Mission & Boys Home", "Bartley Christian Church"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free accessible", "Unpaid walkway through concourse", "Reception tracks to Kim Chuan Depot south of station"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bartley_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "SERANGOON MRT STATION": {
+      "official_name": "SERANGOON MRT STATION",
+      "station_code": "CC13",
+      "lines": ["CCL", "NEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "62139",
+              "services": ["45", "58", "107", "107M", "147", "153", "158", "853", "853M"]
+            }
+          ],
+          "nearby_landmarks": ["Serangoon Central (Blks 401-414)", "Sunshine Terrace", "Saint Gabriel's Secondary School", "Serangoon Avenue 1"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "62131",
+              "services": ["45", "58", "101", "103", "107", "107M", "147", "153", "317", "853", "853M"]
+            }
+          ],
+          "nearby_landmarks": ["Serangoon Avenue 2", "Serangoon Town Centre", "Serangoon Bus Interchange"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "66359",
+              "services": ["22", "43", "53", "53M", "70", "70M", "116", "315"]
+            }
+          ],
+          "nearby_landmarks": ["Serangoon Central (Blks 201-210)", "Paya Lebar Methodist Church"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "62189",
+              "services": ["101", "103", "317"]
+            }
+          ],
+          "nearby_landmarks": ["Serangoon Central (Blks 415-427)", "Lorong Liew Lian (Blks 1-8)", "Upper Serangoon Road (Southbound)", "Apartment Blocks 415-427", "St. Gabriel's Secondary School", "Gabriel Villas", "Ardisia Gardens", "Jade Residences"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "66351",
+              "services": ["22", "43", "43M", "53", "70", "70M", "81", "82", "315"]
+            }
+          ],
+          "nearby_landmarks": ["Braddell Heights Community Hub", "Marine Parade Town Council (Serangoon Office)", "Serangoon Central Post Office", "Serangoon Stadium / Swimming Complex", "Serangoon Community Park", "NEX"]
+        },
+        {
+          "exit_code": "F",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "66381",
+              "services": ["45", "58", "133", "135"]
+            },
+            {
+              "code": "66389",
+              "services": ["45", "58", "109", "133", "135"]
+            }
+          ],
+          "nearby_landmarks": ["Braddell Heights Community Centre", "Serangoon Neighbourhood Police Centre", "Apartment Blocks 231 to 245; 301 to 335", "Yangzheng Primary School", "Zhonghua Secondary School", "Serangoon Bus Interchange"]
+        }
+      ],
+      "accessibility_notes": ["Interchange station (NEL/CCL)", "Exits D and F stairs-only NOT accessible", "Underground exits G and H to nex B2", "NEL and CCL at different depths (both B2 but CCL deeper)", "Serangoon Bus Interchange"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Serangoon_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "LORONG CHUAN MRT STATION": {
+      "official_name": "LORONG CHUAN MRT STATION",
+      "station_code": "CC14",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "66391",
+              "services": ["58", "105"]
+            }
+          ],
+          "nearby_landmarks": ["Nanyang Junior College", "Yangzheng Primary School", "Zhonghua Secondary School", "The Scala", "Chiltern Park", "Amaranda Garden", "Golden Heights", "Bethesda Centre", "The Sunnydale"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "66399",
+              "services": ["58", "105"]
+            }
+          ],
+          "nearby_landmarks": ["Mei Hwan Estate", "The Springbloom", "Goldenhill Park Condo", "The Chuan", "St. Gabriel's Primary School", "Australian International School", "New Tech Park"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free accessible"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Lorong_Chuan_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BISHAN MRT STATION": {
+      "official_name": "BISHAN MRT STATION",
+      "station_code": "CC15",
+      "lines": ["CCL", "NSL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53009",
+              "services": ["50", "52", "53", "54", "55", "56", "57", "58", "59", "410G", "410W"]
+            },
+            {
+              "code": "53231",
+              "services": ["13", "50", "52", "54", "55", "58", "71", "88", "156"]
+            }
+          ],
+          "nearby_landmarks": ["Junction 8 Shopping Centre", "Bishan Bus Interchange", "Bishan Community Centre", "Bishan Neighbourhood Police Post", "Bishan Public Library", "Bishan-Toa Payoh Town Council (Branch Office)", "CPF Bishan Building", "Lion's Home For The Elders (Bishan)", "S'pore Scout Association"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53231",
+              "services": ["13", "50", "52", "54", "55", "58", "71", "88", "156"]
+            }
+          ],
+          "nearby_landmarks": ["Bishan Stadium & Swimming Complex", "Catholic High School", "Kuo Chuan Presbyterian Primary / Secondary School", "Masjid An-Nahdhah Mosque", "MOE Language Centre", "SMRT Sports and Recreation Club", "SMRT Bishan Train Depot"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53239",
+              "services": ["13", "50", "52", "54", "55", "58", "71", "88", "156"]
+            }
+          ],
+          "nearby_landmarks": ["Raffles Institution (Secondary and JC)", "Guangyang Primary / Secondary School", "Kwong Wai Siew Peck San Theng"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NS28",
+              "line_code": "NS"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53009",
+              "services": ["50", "52", "53", "54", "55", "56", "57", "58", "59", "410G", "410W"]
+            }
+          ],
+          "nearby_landmarks": ["Bishan Bus Interchange", "Bishan Swimming Complex", "Bishan Sports Hall/Stadium", "MOE Language Centre (Bishan)", "Kuo Chuan Presby Primary School", "Kuo Chuan Presby Secondary School"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NS28",
+              "line_code": "NS"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Junction 8 Shopping Centre (direct access from NSL Platform B)", "Bishan Bus Interchange"]
+        }
+      ],
+      "accessibility_notes": ["Interchange station (NSL/CCL)", "NSL side platforms (reconfigured 2008)", "Platform B connects directly to Junction 8 basement", "Exit E open 07:30-23:00 only", "Transfer linkway at B2 connects NSL and CCL"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bishan_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "MARYMOUNT MRT STATION": {
+      "official_name": "MARYMOUNT MRT STATION",
+      "station_code": "CC16",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53121",
+              "services": ["54", "74", "162", "410G", "851", "852"]
+            },
+            {
+              "code": "53129",
+              "services": ["54", "410W", "851"]
+            }
+          ],
+          "nearby_landmarks": ["Shunfu Gardens", "Shunfu Market and Hawker Centre", "Shunfu Ville", "Thomson Garden Estate", "Thomson Community Centre", "Thomson Imperial Court", "Thomson Road Post Office", "Sin Ming Plaza"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "53319",
+              "services": ["410W"]
+            },
+            {
+              "code": "53311",
+              "services": ["410G"]
+            }
+          ],
+          "nearby_landmarks": ["Raffles Institution", "Bishan Fire Station", "St. Theresa's Home", "Rafflesia Condominium", "Jalan Pemimpin"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Exit A barrier-free with lift", "Exit B stairs-only NOT accessible", "Disambiguation note: Not to be confused with Bishan MRT Station"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Marymount_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "CALDECOTT MRT STATION": {
+      "official_name": "CALDECOTT MRT STATION",
+      "station_code": "CC17",
+      "lines": ["CCL", "TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "52241",
+              "services": ["141"]
+            },
+            {
+              "code": "52249",
+              "services": ["141"]
+            },
+            {
+              "code": "52559",
+              "services": ["141"]
+            }
+          ],
+          "nearby_landmarks": ["MSF Building", "Philips APAC Centre", "Seventh-day Adventist Community Church", "SLF Building"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "52211",
+              "services": ["141", "235"]
+            }
+          ],
+          "nearby_landmarks": ["Lighthouse School", "Marymount Convent School", "Mount Alvernia Hospital", "S'pore Association of the Visually Handicapped (SAVH)", "Seventh-day Adventist Community Church"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "52219",
+              "services": ["141", "235"]
+            }
+          ],
+          "nearby_landmarks": ["N/A"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "52551",
+              "services": ["235"]
+            }
+          ],
+          "nearby_landmarks": ["MSF Building", "Philips APAC Centre", "SLF Building"]
+        }
+      ],
+      "accessibility_notes": ["Interchange station (CCL/TEL)", "Exits renumbered from letters to numbers with TEL opening", "Former Exit A closed 2020-2021 for TEL construction", "Future Bukit Brown station box south of station", "CCL and TEL concourses at B1 with transfer linkway"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Caldecott_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BOTANIC GARDENS MRT STATION": {
+      "official_name": "BOTANIC GARDENS MRT STATION",
+      "station_code": "CC19",
+      "lines": ["CCL", "DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "41021",
+              "services": ["48", "67", "151", "153", "154", "156", "170", "186"]
+            },
+            {
+              "code": "41029",
+              "services": ["48", "67", "151", "153", "154", "156", "170", "186"]
+            }
+          ],
+          "nearby_landmarks": ["Adam Road Food Centre", "Cluny Court", "Cluny Park Residences", "College Green Hostel", "Embassy of France", "Gospel Light Christian Church", "Masjid Ba'alwie Mosque", "MOE Co-Curricular Activities Branch", "National University of Singapore (Bukit Timah Campus)", "Serene Centre", "Singapore Botanic Gardens"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "41021",
+              "services": ["48", "67", "151", "153", "154", "156", "170", "186"]
+            },
+            {
+              "code": "41029",
+              "services": ["48", "67", "151", "153", "154", "156", "170", "186"]
+            }
+          ],
+          "nearby_landmarks": ["Singapore Botanic Gardens"]
+        }
+      ],
+      "accessibility_notes": ["Interchange station (CCL/DTL)", "Both lines use island platforms", "DTL deeper than CCL", "Transfer linkway at concourse level", "Overhead bridge at street level", "Near UNESCO World Heritage Site"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Botanic_Gardens_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "FARRER ROAD MRT STATION": {
+      "official_name": "FARRER ROAD MRT STATION",
+      "station_code": "CC20",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "11119",
+              "services": ["48", "93", "153", "165", "174", "186", "855", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Farrer Drive", "Woollerton Park"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "11111",
+              "services": ["48", "93", "153", "165", "174", "186", "855", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Farrer Road", "Queen's Road", "Church of Saint Ignatius", "Empress Rd Mkt & FC", "Lutheran Church of Our Redeemer", "Nanyang Primary School", "Singapore International Baptist Church", "Singapore International Campus", "Saint John's Chapel", "Saint Margaret's Secondary School"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Exit A stairs-only NOT accessible", "Exit B barrier-free with lift", "Overhead bridge with lifts connects exits", "Basement 2 is service floor (restricted)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Farrer_Road_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "HOLLAND VILLAGE MRT STATION": {
+      "official_name": "HOLLAND VILLAGE MRT STATION",
+      "station_code": "CC21",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "11419",
+              "services": ["48", "61", "106", "970"]
+            }
+          ],
+          "nearby_landmarks": ["Chip Bee Gardens", "Taman Warna", "Anglo-Chinese School (International)", "Raffles Holland V", "Warner Court", "The Merasaga", "Willyn Ville", "LOFT @ Holland", "Holland Residences", "Vietnam Embassy"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "11261",
+              "services": ["7", "61", "75", "77", "95", "165", "970"]
+            },
+            {
+              "code": "11269",
+              "services": ["7", "61", "75", "77", "165", "970"]
+            }
+          ],
+          "nearby_landmarks": ["Holland Village", "Lorong Liput", "Lorong Mambong", "Holland Village Market and Food Centre", "Leedon Park", "St. James' Church", "Singapore International Campus (Holland Hostel)", "Toho Mansions", "Urban Edge @ Holland V", "The Fort @ Holland", "Oei Tiong Ham Park"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "11401",
+              "services": ["48", "61", "95", "106", "970"]
+            }
+          ],
+          "nearby_landmarks": ["Holland Village", "Lorong Liput", "Lorong Mambong", "Holland Village Market and Food Centre", "Old Masjid Kampong Holland", "Holland Vista", "Holland Drive"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Exit C barrier-free with lifts", "Exits A and B stairs-only NOT accessible", "Named after Hugh Holland (architect/actor)", "Popular expatriate and nightlife area"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Holland_Village_MRT_Station",
+      "extraction_confidence": "high"
+    }
+  }
+}

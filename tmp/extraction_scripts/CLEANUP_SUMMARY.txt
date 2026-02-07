@@ -1,0 +1,103 @@
+=== MRT DATA REPOSITORY CLEANUP COMPLETE ===
+
+Date: 2026-02-03 07:40 SGT
+
+## Changes Made
+
+### 1. Fixed JSON Files
+- ✅ Fixed batch15b_enrichment_data.json (was malformed)
+- ✅ Fixed failed_stations.json (removed broken lines 141-163)
+- ✅ Archival of batch15b to archive/ folder
+
+### 2. Renamed Batches
+- ✅ batch15a_enrichment_data.json → batch15_enrichment_data.json
+- ✅ Removed batch14 (duplicate of batch15)
+- ✅ Total batch files: 14 (batches 1-15)
+
+### 3. Moved Agent Files to tmp/extraction_scripts/
+- ✅ AGENTS.md
+- ✅ BATCH_15_EXTRACTION_PLAN.md
+- ✅ DATA_QUALITY_REPORT.md
+- ✅ MERGE_INSTRUCTIONS.md
+- ✅ SCHEMA_VERSION.md
+- ✅ validate_batches.py
+- ✅ failed_stations.json
+- ✅ STATION_MASTER_INDEX.json
+- ✅ example_stations_batch.txt
+- ✅ EXTRACTION_MANIFEST.json (consolidated from root)
+
+### 4. Removed Duplicate Files
+- ✅ Root EXTRACTION_MANIFEST.json (kept in tmp/)
+- ✅ EXTRACTION_PLAN.md (duplicate of BATCH_15_EXTRACTION_PLAN.md)
+- ✅ Root failed_stations.json (kept in tmp/)
+
+### 5. Updated Documentation
+- ✅ Created updated README.md in root
+- ✅ Updated ENRICHMENT_README.md with new structure
+- ✅ Created new PROGRESS_REPORT.md with accurate stats
+- ✅ Created consolidated EXTRACTION_MANIFEST.json
+- ✅ Fixed validate_batches.py paths and logic
+
+### 6. Fixed validate_batches.py
+- ✅ Updated to run from any directory
+- ✅ Fixed to handle both dict and list station formats
+- ✅ Updated STATION_MASTER_INDEX.json path reference
+
+## Final Structure
+
+### Root Directory (Deterministic Code Only)
+- README.md - Project documentation
+- ENRICHMENT_README.md - User guide
+- main.py - Main entry point
+- enrichment_scraper.py - Extraction scraper
+- pyproject.toml - Python config
+- .env - Environment config
+- .python-version - Python version
+- fetchers/ - Data source fetchers
+- processors/ - Data processors
+- storage/ - Storage utilities
+- utils/ - Utility functions
+- output/ - Output files
+- tmp/ - Temporary/agent workspace
+
+### tmp/extraction_scripts/ (Agent Workspace)
+- batch1_enrichment_data.json through batch15_enrichment_data.json
+- PROGRESS_REPORT.md - Live progress tracker
+- EXTRACTION_MANIFEST.json - Batch registry
+- SCHEMA_VERSION.md - Data format spec
+- MERGE_INSTRUCTIONS.md - Merge guide
+- validate_batches.py - Validation script
+- failed_stations.json - Failed extractions
+- STATION_MASTER_INDEX.json - Station lookup
+- AGENTS.md - Agent guide
+- DATA_QUALITY_REPORT.md - Quality report
+- BATCH_15_EXTRACTION_PLAN.md - Extraction plan
+- archive/ - Archived/broken files
+- enrichment_extractor.py - Extraction utility
+- fandom_parser.py - Parser utility
+- example_stations_batch.txt - Example file
+
+## Statistics
+
+- Total Batch Files: 14
+- Total Stations Extracted: 131
+- Coverage: 70.1%
+- Failed Stations: 19
+- All Batches Validated: ✅ PASSED
+
+## Next Steps
+
+Batch 16 - TEL Remaining (8 stations):
+- TE2 (Woodlands)
+- TE3 (Woodlands South)
+- TE10 (Mount Pleasant)
+- TE15 (Great World)
+- TE16 (Havelock)
+- TE20 (Marina Bay)
+- TE21 (Marina South)
+- TE30 (Bedok South)
+
+## Verification
+
+Run: cd tmp/extraction_scripts && python3 validate_batches.py
+Expected: All 14 batches should pass

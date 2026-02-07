@@ -1,0 +1,68 @@
+{
+  "duplicate_exits_removed": {
+    "BUKIT PANJANG MRT STATION": {
+      "original_count": 4,
+      "final_count": 2,
+      "duplicates_removed": 2
+    },
+    "BEDOK NORTH MRT STATION": {
+      "original_count": 4,
+      "final_count": 3,
+      "duplicates_removed": 1
+    },
+    "UPPER CHANGI MRT STATION": {
+      "original_count": 5,
+      "final_count": 4,
+      "duplicates_removed": 1
+    },
+    "HARBOURFRONT MRT STATION": {
+      "original_count": 6,
+      "final_count": 5,
+      "duplicates_removed": 1
+    },
+    "CHOA CHU KANG MRT STATION": {
+      "original_count": 7,
+      "final_count": 4,
+      "duplicates_removed": 3
+    },
+    "EXPO MRT STATION": {
+      "original_count": 8,
+      "final_count": 7,
+      "duplicates_removed": 1
+    }
+  },
+  "lrt_codes_added": [
+    {
+      "station": "SENGKANG MRT STATION",
+      "code_added": "STC",
+      "all_codes": [
+        "NE16",
+        "STC"
+      ]
+    },
+    {
+      "station": "PUNGGOL MRT STATION",
+      "code_added": "PTC",
+      "all_codes": [
+        "NE17",
+        "PTC"
+      ]
+    }
+  ],
+  "new_lrt_stations": [
+    {
+      "name": "SENGKANG LRT STATION",
+      "code": "STC",
+      "integrated_with": "NE16",
+      "exits": 2
+    },
+    {
+      "name": "PUNGGOL LRT STATION",
+      "code": "PTC",
+      "integrated_with": "NE17",
+      "exits": 2
+    }
+  ],
+  "original_station_count": 187,
+  "final_station_count": 189
+}

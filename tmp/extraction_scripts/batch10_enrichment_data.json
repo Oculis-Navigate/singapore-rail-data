@@ -1,0 +1,439 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "MRT Station Enrichment Data - Batch 10 (DTL West - 7 stations)",
+    "extraction_date": "2026-02-02",
+    "source": "Singapore MRT Lines Fandom Wiki",
+    "extraction_method": "Manual webfetch and HTML parsing",
+    "total_stations": 7,
+    "failed_stations": 0,
+    "extraction_confidence": "high",
+    "notes": "Downtown Line West section: Cashew through Tan Kah Kee (DT2-DT8). Includes Hume (DT4) which opened 28 Feb 2025. Sixth Avenue (DT7) is the only DTL station without Art In Transit. Botanic Gardens (DT9) was already extracted in Batch 6 (CCL West)."
+  },
+  "stations": {
+    "CASHEW MRT STATION": {
+      "official_name": "CASHEW MRT STATION",
+      "station_code": "DT2",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "43091",
+              "services": ["67", "170", "176", "178", "961", "961M", "963", "970"]
+            },
+            {
+              "code": "43109",
+              "services": ["67", "170", "176", "178", "961", "961M", "963", "970"]
+            }
+          ],
+          "nearby_landmarks": ["Assumption English School", "Assumption Pathway School", "Bukit Panjang Primary School", "Cashew Park Condo", "Cashew Road Park", "CHIJ Primary School", "ESPA Residence", "Fajar Secondary School", "Hazel Park Condo", "MINDEF Gombak Base", "St. Joseph Church"]
+        }
+      ],
+      "accessibility_notes": ["Single exit with barrier-free accessibility via lift, escalator and stairs"],
+      "last_updated": "2026-02-02T21:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Cashew_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "HILLVIEW MRT STATION": {
+      "official_name": "HILLVIEW MRT STATION",
+      "station_code": "DT3",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "43069",
+              "services": ["67", "75", "170", "178", "184", "961", "961M", "973"]
+            }
+          ],
+          "nearby_landmarks": ["Dairy Farm Road", "Bukit Panjang Methodist Church", "John Wesley Centre", "MOE Dairy Farm Adventure Centre", "Praisehaven The Salvation Army", "Saint Francis Methodist School", "Trinity Theological College", "The Rail Mall"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "42991",
+              "services": ["973"]
+            },
+            {
+              "code": "43061",
+              "services": ["67", "75", "170", "178", "184", "961", "961M"]
+            },
+            {
+              "code": "43279",
+              "services": ["176", "963", "970", "973"]
+            }
+          ],
+          "nearby_landmarks": ["Hillview Road", "Glendale Park", "Hillington Green", "Hillview Heights", "Hillview Park", "Hillview Community Centre", "Summerhill", "The Hillier / HillV2"]
+        }
+      ],
+      "accessibility_notes": ["Both exits provide barrier-free access via lifts and escalators"],
+      "last_updated": "2026-02-02T21:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Hillview_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "HUME MRT STATION": {
+      "official_name": "HUME MRT STATION",
+      "station_code": "DT4",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "43041",
+              "services": ["67", "75", "170", "178", "184", "961", "961M", "973"]
+            },
+            {
+              "code": "43049",
+              "services": ["67", "75", "170", "178", "184", "961", "961M", "973"]
+            }
+          ],
+          "nearby_landmarks": ["Upper Bukit Timah Road", "Bukit Batok Nature Park", "Bukit Timah Nature Reserve", "Former Ford Factory", "The Rail Mall"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "43821",
+              "services": ["173", "653", "973"]
+            },
+            {
+              "code": "43829",
+              "services": ["173"]
+            }
+          ],
+          "nearby_landmarks": ["Hume Avenue", "Lam Soon Industrial Building"]
+        }
+      ],
+      "accessibility_notes": ["New station opened 28 February 2025. Both exits provide barrier-free accessibility."],
+      "opening_date": "2025-02-28",
+      "last_updated": "2026-02-02T21:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Hume_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BEAUTY WORLD MRT STATION": {
+      "official_name": "BEAUTY WORLD MRT STATION",
+      "station_code": "DT5",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "42099",
+              "services": ["67", "75", "170", "173"]
+            },
+            {
+              "code": "42109",
+              "services": ["184", "852", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Bukit Timah Nature Reserve", "Bukit Timah Shopping Centre", "Beauty World Plaza", "Beauty World Centre", "Church of Singapore (Bukit Timah)", "Goh & Goh Building", "UOB Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "42091",
+              "services": ["67", "75", "170", "173", "184", "852", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Bukit Timah Tua Pek Kong Temple", "Dimensions Int'l College (Bukit Timah Campus)", "JK Building", "Kilat Centre", "Mahabodhi Monastery", "Sweebi House"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "42151",
+              "services": ["41", "61", "66", "77", "157", "173", "174", "174e", "871", "970", "985"]
+            }
+          ],
+          "nearby_landmarks": ["Bee Low See Temple", "Bukit Timah Market & Food Centre", "Bukit Timah Plaza", "Bukit Timah Community Centre", "Glory Presbyterian Church", "Ngee Ann Polytechnic (Staff Apartments)", "Pei Hwa Presbyterian Primary School", "Toh Yi Estate"]
+        }
+      ],
+      "accessibility_notes": ["All three exits provide barrier-free accessibility via lifts and escalators"],
+      "last_updated": "2026-02-02T21:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Beauty_World_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "KING ALBERT PARK MRT STATION": {
+      "official_name": "KING ALBERT PARK MRT STATION",
+      "station_code": "DT6",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "42051",
+              "services": ["67", "74", "77", "151", "154", "157", "170", "174", "852", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Bukit Timah Railway Station", "Bukit Timah Railway Bridge", "Floridian", "Covenant Community Methodist Church", "KAP Residences", "King Albert Park", "King Albert Lodge", "Maple Woods", "Methodist Girls' School", "The Nexus", "The Sterling"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "42049",
+              "services": ["67", "74", "77", "151", "154", "157", "170", "174", "852", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Jardin", "Mayfair Gardens", "The Blossomvale", "Sime Darby Centre", "Yarwood Avenue"]
+        }
+      ],
+      "accessibility_notes": ["Exit B connected via overhead bridge with barrier-free access via lifts at both ends"],
+      "last_updated": "2026-02-02T21:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/King_Albert_Park_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "SIXTH AVENUE MRT STATION": {
+      "official_name": "SIXTH AVENUE MRT STATION",
+      "station_code": "DT7",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "41081",
+              "services": ["67", "74", "151", "154", "156", "157", "170", "174", "852", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Fifth Avenue Condo", "Guthrie House", "Royalville", "Second Avenue Junction", "Sixth Avenue Centre", "Sixth Avenue Ville", "Soo's Nursing Home"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "41089",
+              "services": ["67", "74", "151", "154", "156", "157", "170", "174", "852", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Eton House Pre-School", "Jalan Naga Sari", "Nanyang Girls' High School", "Vanda Estate"]
+        }
+      ],
+      "accessibility_notes": ["Exit B connected via overhead bridge with barrier-free access via lifts at both ends. NOTE: This is the only Downtown Line station WITHOUT Art In Transit programme."],
+      "last_updated": "2026-02-02T21:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Sixth_Avenue_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "TAN KAH KEE MRT STATION": {
+      "official_name": "TAN KAH KEE MRT STATION",
+      "station_code": "DT8",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "41051",
+              "services": ["67", "74", "151", "154", "156", "157", "170", "174", "852", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Coronation Arcade", "Coronation Shopping Plaza", "Crown Centre", "Hwa Chong Institution", "King's Arcade"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "41069",
+              "services": ["67", "74", "151", "154", "156", "157", "170", "174", "852", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Bougainvillea Park", "Nanyang Girls' High School", "National Junior College", "Poh Ming Tse Temple", "Raffles Girls' Primary School", "Watten Estate"]
+        }
+      ],
+      "accessibility_notes": ["Exit B connected via overhead bridge with barrier-free access via lifts at both ends"],
+      "last_updated": "2026-02-02T21:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tan_Kah_Kee_MRT_Station",
+      "extraction_confidence": "high"
+    }
+  }
+}

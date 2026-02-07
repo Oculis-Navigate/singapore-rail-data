@@ -1,0 +1,750 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "MRT Station Enrichment Data - Batch 16 (TEL Remaining - 8 stations)",
+    "total_stations": 8,
+    "actual_stations": 8,
+    "batch_id": "batch_16",
+    "extraction_date": "2026-02-03",
+    "source": "singapore-mrt-lines.fandom.com",
+    "schema_version": "1.0",
+    "extraction_confidence": "high",
+    "notes": "TE2 Woodlands (NSL/TEL interchange), TE3 Woodlands South, TE9 Caldecott (CCL/TEL interchange), TE15 Great World, TE16 Havelock, TE20 Marina Bay (NSL/CCL/TEL interchange). TE10 Mount Pleasant, TE21 Marina South, TE30 Bedok South are future stations with no Fandom pages."
+  },
+  "stations": [
+    {
+      "official_name": "WOODLANDS MRT STATION",
+      "station_code": "TE2",
+      "lines": ["NSL", "TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["ACE The Place CC", "Christ Church Secondary School", "Innova Primary School", "Light of Christ Church", "MSF Building", "Philips APAC Centre"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Woodlands Square", "Woodlands Integrated Transport Hub"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS28",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Causeway Point", "Woodlands Civic Centre"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS28",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Republic Polytechnic"]
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Singapore Sports School", "Christ Church Secondary School"]
+        }
+      ],
+      "accessibility_notes": ["Interchange station between NSL and TEL"],
+      "last_updated": "2026-02-03T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Woodlands_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "WOODLANDS SOUTH MRT STATION",
+      "station_code": "TE3",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "46989",
+              "services": ["665", "901", "901M"]
+            }
+          ],
+          "nearby_landmarks": ["ACE The Place CC", "Christ Church Secondary School", "Innova Primary School", "Light of Christ Church", "Singapore Sports School"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "46981",
+              "services": ["665", "901", "901M"]
+            }
+          ],
+          "nearby_landmarks": ["BW Monastery", "Covenant EFC", "Vista Point"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "46991",
+              "services": ["665", "900"]
+            }
+          ],
+          "nearby_landmarks": ["Vista Park", "Woodgrove Secondary School"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "46999",
+              "services": ["665", "901"]
+            }
+          ],
+          "nearby_landmarks": ["Masjid Yusof Ishak"]
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Woodlands Health Campus"]
+        }
+      ],
+      "accessibility_notes": [],
+      "last_updated": "2026-02-03T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Woodlands_South_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "CALDECOTT MRT STATION",
+      "station_code": "TE9",
+      "lines": ["CCL", "TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "CC1",
+              "line_code": "CCL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["MSF Building", "Philips APAC Centre", "Seventh-day Adventist Community Church", "SLF Building", "SAVH"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "CC29",
+              "line_code": "CCL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Lighthouse School", "Marymount Convent School", "Mount Alvernia Hospital", "SAVH"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "CC29",
+              "line_code": "CCL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Lighthouse School", "Marymount Convent School", "Mount Alvernia Hospital", "SAVH"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "CC29",
+              "line_code": "CCL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Lighthouse School", "Marymount Convent School", "Mount Alvernia Hospital", "SAVH"]
+        }
+      ],
+      "accessibility_notes": ["Interchange station between CCL and TEL. Note: CCL station code will change from CC17 to CC33 in 2026"],
+      "last_updated": "2026-02-03T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Caldecott_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "GREAT WORLD MRT STATION",
+      "station_code": "TE15",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "13139",
+              "services": ["5", "16", "16M", "75", "175", "195", "970"]
+            }
+          ],
+          "nearby_landmarks": ["Jiak Kim Bridge", "Kim Seng Park", "River Valley Primary School", "Zion Riverside Food Centre"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "13121",
+              "services": ["5", "16", "16M", "75", "175", "195", "970"]
+            }
+          ],
+          "nearby_landmarks": ["Great World Serviced Apartments", "Great World Shopping Mall", "Kim Seng Rd", "Zion Riverside Food Centre"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "13079",
+              "services": ["32", "54", "139", "195"]
+            }
+          ],
+          "nearby_landmarks": ["Church of St. Bernadette", "High Commission of India", "Kay Poh Road Baptist Church", "Leonie Hill Road", "Tong Xian Tng Temple", "Zion Full Gospel Church"]
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "13071",
+              "services": ["32", "54", "139", "195"]
+            }
+          ],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "6",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["Exits 3, 5, 6 opened in Jan 2025 or scheduled to open in 2026"],
+      "last_updated": "2026-02-03T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Great_World_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "HAVELOCK MRT STATION",
+      "station_code": "TE16",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Furama RiverFront Singapore", "Ho Lim Keng Temple", "Jubilee Church", "Link Hotel", "Outram Secondary School", "Qi Tian Gong Temple", "St. Matthew's Church", "Tan Boon Liat Building", "YWCA of Singapore"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "06071",
+              "services": ["5", "16", "16M", "75", "121", "123", "175", "195", "970"]
+            }
+          ],
+          "nearby_landmarks": ["Havelock Road Cooked Food Centre", "Nostalgia Hotel", "Singapore Examinations and Assessment Board", "Tiong Bahru Community Centre", "Tiong Bahru Market", "Zion Road"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "06081",
+              "services": ["5", "16", "16M", "75", "121", "123", "175", "195", "970"]
+            }
+          ],
+          "nearby_landmarks": ["Giok Hong Tian Temple", "Havelock Road", "Isetan Office Building", "Kim Seng Community Centre"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "06129",
+              "services": ["5", "16", "16M", "75", "175", "195", "970"]
+            },
+            {
+              "code": "06141",
+              "services": ["51", "64", "123", "186"]
+            }
+          ],
+          "nearby_landmarks": ["Four Points by Sheraton Singapore Riverview", "Grand Copthorne Waterfront Hotel Singapore", "InterContinental Singapore Robertson Quay", "Jiak Kim Bridge", "Kim Seng Park", "King's Centre", "M Social Singapore", "The Warehouse Hotel", "Zion Riverside Food Centre"]
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "06149",
+              "services": ["51", "64", "186"]
+            }
+          ],
+          "nearby_landmarks": ["Concorde Shopping Centre", "Copthorne King's Hotel Singapore", "Holiday Inn Singapore Atrium", "Hotel Miramar Singapore"]
+        }
+      ],
+      "accessibility_notes": [],
+      "last_updated": "2026-02-03T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Havelock_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "MOUNT PLEASANT MRT STATION",
+      "station_code": "TE10",
+      "lines": ["TEL"],
+      "exits": [],
+      "accessibility_notes": ["Future station - not yet opened. No Fandom wiki page available (404 error). Station under construction."],
+      "last_updated": "2026-02-03T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Mount_Pleasant_MRT_Station",
+      "extraction_confidence": "low"
+    },
+    {
+      "official_name": "MARINA BAY MRT STATION",
+      "station_code": "TE20",
+      "lines": ["NSL", "CCL", "TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NS28",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "E",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "F",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "03539",
+              "services": ["97", "97e", "106", "133", "400", "502", "502A", "513", "651", "653", "654", "655", "657", "661", "666", "667", "668", "670", "671", "672", "673", "674", "982E"]
+            },
+            {
+              "code": "03391",
+              "services": ["97", "97e", "106", "133", "400", "513", "651", "653", "654", "655", "657", "661", "666", "667", "668", "670", "671", "672", "673", "674", "982E"]
+            }
+          ],
+          "nearby_landmarks": ["Asia Square", "The Westin Singapore", "Central Linear Park", "Marina Bay Financial Centre", "Marina Bay Link Mall", "Marina Bay Residences", "Marina Bay Suites", "Marina One", "Marina One Residences", "Marina Way", "One Raffles Quay", "Red Dot Design Museum", "The Sail at Marina Bay"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NS28",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "CC1",
+              "line_code": "CCL"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "CC29",
+              "line_code": "CCL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "03539",
+              "services": ["97", "97e", "106", "133", "400", "502", "502A", "513", "651", "653", "654", "655", "657", "661", "666", "667", "668", "670", "671", "672", "673", "674", "982E"]
+            }
+          ],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "C",
+              "towards_code": "CC1",
+              "line_code": "CCL"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "CC29",
+              "line_code": "CCL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "E",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "F",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "E",
+              "towards_code": "TE29",
+              "line_code": "TEL"
+            },
+            {
+              "platform_code": "F",
+              "towards_code": "TE1",
+              "line_code": "TEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Singapore Chinese Cultural Centre", "Singapore Conference Hall"]
+        }
+      ],
+      "accessibility_notes": ["Interchange station between NSL, CCL, and TEL. Exit 1 does not offer barrier-free accessibility (stairs only). Complex multi-level station with platforms at B4F (TEL) and B5F (TEL)."],
+      "last_updated": "2026-02-03T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Marina_Bay_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "MARINA SOUTH MRT STATION",
+      "station_code": "TE21",
+      "lines": ["TEL"],
+      "exits": [],
+      "accessibility_notes": ["Future station - not yet opened. No Fandom wiki page available (404 error). Station under construction."],
+      "last_updated": "2026-02-03T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Marina_South_MRT_Station",
+      "extraction_confidence": "low"
+    },
+    {
+      "official_name": "BEDOK SOUTH MRT STATION",
+      "station_code": "TE30",
+      "lines": ["TEL"],
+      "exits": [],
+      "accessibility_notes": ["Future station - not yet opened. No Fandom wiki page available (404 error). Station under construction."],
+      "last_updated": "2026-02-03T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bedok_South_MRT_Station",
+      "extraction_confidence": "low"
+    }
+  ]
+}

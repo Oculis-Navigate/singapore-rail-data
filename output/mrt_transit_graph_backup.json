@@ -8,99 +8,24 @@
             {
                 "exit_code": "Exit 1",
                 "lat": 1.3640371821656152,
-                "lng": 103.83363541399386,
-                "platforms": [
-                    {
-                        "line": "TEL",
-                        "direction": "Bayshore",
-                        "platform_code": "1"
-                    }
-                ],
-                "accessibility": [
-                    "wheelchair_accessible",
-                    "lift",
-                    "escalator"
-                ],
-                "bus_stops": [
-                    {
-                        "code": "55201",
-                        "description": "Bright Hill Stn Exit 1",
-                        "services": [
-                            "52",
-                            "162",
-                            "410W"
-                        ]
-                    }
-                ],
-                "nearby_landmarks": [
-                    "Bright Hill Temple"
-                ]
+                "lng": 103.83363541399386
             },
             {
                 "exit_code": "Exit 2",
                 "lat": 1.3632827623551678,
-                "lng": 103.83351063156859,
-                "platforms": [
-                    {
-                        "line": "TEL",
-                        "direction": "Woodlands North",
-                        "platform_code": "2"
-                    }
-                ],
-                "accessibility": [
-                    "wheelchair_accessible",
-                    "lift"
-                ],
-                "bus_stops": [
-                    {
-                        "code": "55209",
-                        "description": "Bright Hill Stn Exit 2",
-                        "services": [
-                            "52",
-                            "162"
-                        ]
-                    }
-                ]
+                "lng": 103.83351063156859
             },
             {
                 "exit_code": "Exit 3",
                 "lat": 1.3621838048498118,
-                "lng": 103.83237571105509,
-                "accessibility": [
-                    "stairs_only"
-                ],
-                "nearby_landmarks": [
-                    "Peck Hay Road"
-                ]
+                "lng": 103.83237571105509
             },
             {
                 "exit_code": "Exit 4",
                 "lat": 1.3631639565255047,
-                "lng": 103.83195382945166,
-                "accessibility": [
-                    "wheelchair_accessible",
-                    "lift",
-                    "escalator"
-                ],
-                "bus_stops": [
-                    {
-                        "code": "55211",
-                        "description": "Bright Hill Stn Exit 4",
-                        "services": [
-                            "410W"
-                        ]
-                    }
-                ]
+                "lng": 103.83195382945166
             }
-        ],
-        "lines_served": [
-            "TEL"
-        ],
-        "enrichment_last_updated": "2026-02-01T10:30:00",
-        "data_quality": {
-            "extraction_confidence": "high",
-            "source": "enrichment_data"
-        }
+        ]
     },
     {
         "official_name": "UPPER THOMSON MRT STATION",
@@ -1149,6 +1074,16 @@
                 "lng": 103.75959784357276
             },
             {
+                "exit_code": "Exit A",
+                "lat": 1.3787662376388572,
+                "lng": 103.76203436087093
+            },
+            {
+                "exit_code": "Exit A",
+                "lat": 1.379007969740763,
+                "lng": 103.76192293420945
+            },
+            {
                 "exit_code": "Exit B",
                 "lat": 1.3786188940125126,
                 "lng": 103.76137050495701
@@ -1425,6 +1360,11 @@
                 "lng": 103.91906282344867
             },
             {
+                "exit_code": "Exit B",
+                "lat": 1.3343724902032656,
+                "lng": 103.91913430266187
+            },
+            {
                 "exit_code": "Exit C",
                 "lat": 1.3344225765515134,
                 "lng": 103.9178105260292
@@ -1441,6 +1381,11 @@
                 "exit_code": "Exit A",
                 "lat": 1.3418611973421342,
                 "lng": 103.9613284805394
+            },
+            {
+                "exit_code": "Exit A",
+                "lat": 1.3420065422681042,
+                "lng": 103.96096063018997
             },
             {
                 "exit_code": "Exit B",
@@ -2295,32 +2240,15 @@
         ]
     },
     {
-        "official_name": "CHOA CHU KANG MRT STATION",
+        "official_name": "CHOA CHU KANG LRT STATION",
         "mrt_codes": [
-            "BP1",
-            "JS1",
-            "NS4"
+            "BP1"
         ],
         "exits": [
-            {
-                "exit_code": "Exit A",
-                "lat": 1.385431280875975,
-                "lng": 103.7445571353678
-            },
             {
                 "exit_code": "Exit B",
                 "lat": 1.3849796641871803,
                 "lng": 103.7445951430258
-            },
-            {
-                "exit_code": "Exit C",
-                "lat": 1.3857361854031247,
-                "lng": 103.74451779877056
-            },
-            {
-                "exit_code": "Exit D",
-                "lat": 1.3853699997077467,
-                "lng": 103.74411000039194
             },
             {
                 "exit_code": "Exit E",
@@ -2376,6 +2304,11 @@
                 "exit_code": "Exit A",
                 "lat": 1.2650850346118385,
                 "lng": 103.82250980721876
+            },
+            {
+                "exit_code": "Exit A",
+                "lat": 1.2660131831978316,
+                "lng": 103.82046835046091
             },
             {
                 "exit_code": "Exit B",
@@ -2656,6 +2589,50 @@
                 "exit_code": "Exit B",
                 "lat": 1.372886236352008,
                 "lng": 103.94913694034909
+            }
+        ]
+    },
+    {
+        "official_name": "CHOA CHU KANG MRT STATION",
+        "mrt_codes": [
+            "JS1",
+            "NS4"
+        ],
+        "exits": [
+            {
+                "exit_code": "Exit A",
+                "lat": 1.385431280875975,
+                "lng": 103.7445571353678
+            },
+            {
+                "exit_code": "Exit A",
+                "lat": 1.3853999999695223,
+                "lng": 103.744560000291
+            },
+            {
+                "exit_code": "Exit B",
+                "lat": 1.3845999997090193,
+                "lng": 103.74447000005159
+            },
+            {
+                "exit_code": "Exit C",
+                "lat": 1.3857361854031247,
+                "lng": 103.74451779877056
+            },
+            {
+                "exit_code": "Exit C",
+                "lat": 1.385729999564578,
+                "lng": 103.74447000018996
+            },
+            {
+                "exit_code": "Exit D",
+                "lat": 1.3853699997077467,
+                "lng": 103.74411000039194
+            },
+            {
+                "exit_code": "Exit D",
+                "lat": 1.3857053906700119,
+                "lng": 103.7442235839257
             }
         ]
     },
@@ -3475,8 +3452,7 @@
     {
         "official_name": "SENGKANG MRT STATION",
         "mrt_codes": [
-            "NE16",
-            "STC"
+            "NE16"
         ],
         "exits": [
             {
@@ -3504,8 +3480,7 @@
     {
         "official_name": "PUNGGOL MRT STATION",
         "mrt_codes": [
-            "NE17",
-            "PTC"
+            "NE17"
         ],
         "exits": [
             {
@@ -3517,16 +3492,6 @@
                 "exit_code": "Exit B",
                 "lat": 1.4051862417636451,
                 "lng": 103.90259819698754
-            },
-            {
-                "exit_code": "Exit C",
-                "lat": 1.4043006257297816,
-                "lng": 103.90211563918285
-            },
-            {
-                "exit_code": "Exit D",
-                "lat": 1.404438336178063,
-                "lng": 103.90179852436347
             }
         ]
     },
@@ -3872,6 +3837,11 @@
                 "exit_code": "Exit A",
                 "lat": 1.3354828221659554,
                 "lng": 103.96183679508403
+            },
+            {
+                "exit_code": "Exit A",
+                "lat": 1.3353217243389148,
+                "lng": 103.96194295822608
             },
             {
                 "exit_code": "Exit B",
@@ -4525,19 +4495,6 @@
                 "exit_code": "Exit A",
                 "lat": 1.36634689098717,
                 "lng": 103.730063135994
-            }
-        ]
-    },
-    {
-        "official_name": "TENGAH PARK MRT STATION",
-        "mrt_codes": [
-            "JE2"
-        ],
-        "exits": [
-            {
-                "exit_code": "Exit A",
-                "lat": 1.35244451963606,
-                "lng": 103.736747833111
             }
         ]
     },

@@ -1,0 +1,815 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "MRT Station Enrichment Data - Batch 8 (DTL Central - 8 stations)",
+    "extraction_date": "2026-02-02",
+    "source": "Singapore MRT Lines Fandom Wiki",
+    "extraction_method": "Manual webfetch and HTML parsing",
+    "total_stations": 8,
+    "failed_stations": 0,
+    "extraction_confidence": "high",
+    "notes": "Downtown Line Central section: Bayfront through Rochor (DT13, DT16-DT22). Excludes DT14 (Bugis) and DT15 (Promenade) which were extracted in earlier batches."
+  },
+  "stations": {
+    "BAYFRONT MRT STATION": {
+      "official_name": "BAYFRONT MRT STATION",
+      "station_code": "DT16",
+      "lines": ["DTL", "CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CE2",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "03519",
+              "services": ["97", "97e", "106", "133", "502", "502A", "518", "518A"]
+            }
+          ],
+          "nearby_landmarks": ["Bayfront Avenue", "Bayfront Link"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CE2",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "03509",
+              "services": ["97", "97e", "106", "133", "502", "502A", "518", "518A"]
+            }
+          ],
+          "nearby_landmarks": ["Marina Bay Sands Hotel", "Sands SkyPark", "Bayfront Avenue", "Sheares Link", "Gardens by the Bay (via underpass)"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marina Bay Sands - The Shoppes", "Theaters", "ArtScience Museum", "Hotel", "Sands SkyPark", "Coach Terminal"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "03511",
+              "services": ["97", "97e", "106", "133"]
+            }
+          ],
+          "nearby_landmarks": ["Marina Bay Sands - The Shoppes", "Theaters", "ArtScience Museum", "Sands Expo and Convention Centre", "The Helix Bridge"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "03511",
+              "services": ["97", "97e", "106", "133"]
+            }
+          ],
+          "nearby_landmarks": ["Marina Bay Sands - Sands Expo and Convention Centre", "Bayfront Link", "Marina Bay City Gallery", "The Promontory @ Marina Bay"]
+        }
+      ],
+      "accessibility_notes": ["CCL/DTL interchange", "Stacked island platform arrangement - B2 for DTL to Expo/CCL to Marina Bay, B3 for DTL to Bukit Panjang/CCL to HarbourFront", "Exit A stairs-only NOT accessible", "Underground exits C, D, E connect to Marina Bay Sands Basement 2M", "Cross-platform transfer layout allows quick transfers between lines"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bayfront_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "DOWNTOWN MRT STATION": {
+      "official_name": "DOWNTOWN MRT STATION",
+      "station_code": "DT17",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Hong Leong Building", "Marina Boulevard", "NTUC Centre", "One Raffles Quay", "The Lawn @ Marina Bay", "The Sail @ Marina Bay", "UOE Bayfront", "Shell House", "Singapore Repertory Theatre", "UE Shopping Mall/Square", "ITS Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marina Bay Link Mall", "The Promontory", "One Raffles Quay", "The Sail @ Marina Bay", "Marina Bay Financial Centre: Towers 1, 2 and 3", "Marina Bay Residences", "Raffles Place MRT (Exit J)"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marina Bay Financial Centre: Towers 1, 2 and 3", "Marina Bay Residences"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marina Bay Link Mall", "Future extension to Marina One development"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "03529",
+              "services": ["97", "97e", "106", "133", "502", "502A", "513", "651", "653", "654", "655", "657", "661", "666", "667", "668", "670", "671", "672", "982E"]
+            }
+          ],
+          "nearby_landmarks": ["Central Boulevard", "Asia Square Towers 1 and 2", "CPF Building", "Lau Pa Sat Festival Market", "Marina Bay Police Station", "SGX Centre", "Shenton House", "Sofitel SO Singapore", "UOE Downtown", "Westin Hotel"]
+        },
+        {
+          "exit_code": "F",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marina Bay Suites", "The Sail @ Marina Bay"]
+        }
+      ],
+      "accessibility_notes": ["Side platform station", "Large enclosed concourse with tall ceiling at B1", "Exit A stairs-only NOT accessible", "Exits C and E barrier-free with lifts", "Exit G to IOI Central Boulevard Towers under construction", "Underground exits B, D, F, G extend to adjacent developments", "Lift at Platform B also connects to Level B3 (Staff Only)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Downtown_MRT_Station",
+      "extraction_confidence": "high"
+     },
+    "TELOK AYER MRT STATION": {
+      "official_name": "TELOK AYER MRT STATION",
+      "station_code": "DT18",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "03041",
+              "services": ["186", "970"]
+            }
+          ],
+          "nearby_landmarks": ["Amoy Street Food Court", "BEA Building", "City House", "Cecil Court", "Eagles Centre", "Far Eastern Bank Building", "Finexis Building", "Keck Seng Tower", "LKN Building", "MND Building", "Lau Pa Sat Festival Market", "Masjid Al-Abrar", "Nagore Dargah Indian Muslim Heritage Centre", "Parakou Building", "PIL Building", "RHB Building", "Robinson", "SICCI Building", "SGX Centre", "SIF Building", "The Globe", "The Octagon", "The URA Centre", "Thian Hock Keng Temple", "Tong Eng Building", "Tokio Marine Centre", "Tung Ann Association Building", "Xian Zu Gong Temple", "Wing On Building", "Sofitel So Singapore"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["escalator"],
+          "bus_stops": [
+            {
+              "code": "05319",
+              "services": ["186", "970"]
+            }
+          ],
+          "nearby_landmarks": ["AIA Tower", "Amoy Hotel", "Ascott Raffles Place Singapore", "ASO Building", "Bank of Singapore Centre", "Bharat Building", "CapitaGreen", "Capital Square", "China Court", "China Square Central", "China Square Food Centre", "Far East Finance Building", "Fook Hai Building", "Fuk Tak Chi Museum", "Grace Global Raffles", "Grand Building", "Great Eastern Centre", "Hong Leong Building", "Hong Lim Complex", "IOB Building", "ISCA House", "Malacca Centre", "Market Street Food Centre", "Nankin Row", "OCBC Centre", "Ocean Financial Centre", "PLUS", "One Finlayson Green", "One George Street", "One Raffles Place", "One Raffles Quay", "Pickering Operations Complex", "Prudential Tower", "Manulife Tower", "RB Capital Building", "Republic Plaza", "18 Robinson", "Royal One People", "Royal Group Building", "Samsung Hub", "Sinsov Building", "Tan Ean Kiam Building", "The House of Eden", "The Quadrant at Cecil", "TPI Building", "Yueh Hai Ching Temple", "Ying Fo Fui Kun"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "03021",
+              "services": ["57", "131", "167"]
+            }
+          ],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["The Clan Hotel (currently closed until further notice)"]
+        }
+      ],
+      "accessibility_notes": ["Side platform station", "Exit A main exit with lift (barrier-free)", "Exit B escalators only", "Exit C stairs-only NOT accessible", "Exit D constructed for The Clan Hotel (currently closed)", "Concourse at B1 level", "Additional connection to Mercure Icon Link under construction"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Telok_Ayer_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "CHINATOWN MRT STATION": {
+      "official_name": "CHINATOWN MRT STATION",
+      "station_code": "DT19",
+      "lines": ["DTL", "NEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Buddha Tooth Relic Temple & Museum", "Chinatown Complex (Market & Food Centre)", "Chinatown Heritage Centre", "Chinatown Visitor Centre", "Kreta Ayer Community Club", "Kreta Ayer People's Theatre", "Lucky Chinatown", "Masjid Jamae (Chulia)", "Sri Mariamman Temple", "The URA Centre", "New Bridge Road", "Smith Street"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "05013",
+              "services": ["2", "12", "12e", "33", "61", "63", "80", "143", "197", "961", "961M", "970"]
+            }
+          ],
+          "nearby_landmarks": ["OG Building", "Pearl's Hill City Park", "People's Park Complex", "The Majestic", "Yue Hwa Building"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "05022",
+              "services": ["54", "124", "145", "147", "166", "190", "851", "851e"]
+            }
+          ],
+          "nearby_landmarks": ["Family Justice Courts", "Furama City Centre & Shopping Centre", "Ministry of Manpower Building", "People's Park Centre", "State Courts"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "05049",
+              "services": ["2", "12", "12e", "33", "54", "143", "147", "190"]
+            }
+          ],
+          "nearby_landmarks": ["Chinatown Point", "Fook Hai Building", "Hong Lim Complex", "Counselling & Care Centre"]
+        },
+        {
+          "exit_code": "F",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "05131",
+              "services": ["51", "63", "124", "174", "174e", "186", "851", "851e", "961", "961M", "970"]
+            },
+            {
+              "code": "05199",
+              "services": ["61", "80", "145", "166", "197"]
+            }
+          ],
+          "nearby_landmarks": ["Buddha Tooth Relic Temple & Museum", "Chinatown Point", "China Square Central", "Chinatown Complex (Market & Food Centre)", "Chinatown Heritage Centre", "Fook Hai Building", "Great Eastern Centre", "Hong Lim Park (Speaker's Corner)", "Hong Lim Complex", "Marsh & McLennan Centre", "Masjid Jamae (Chulia)", "One Upper Pickering", "One George Street", "Parkroyal on Pickering", "Sri Mariamman Temple", "Telok Ayer Hong Lim Green Community Centre"]
+        },
+        {
+          "exit_code": "G",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Chinatown Point (Basement 1 direct link)"]
+        }
+      ],
+      "accessibility_notes": ["NEL/DTL interchange station", "NEL uses island platform at B3", "DTL uses side platform at B2 (same level as NEL concourse)", "Exits A, D, E are stairs-only NOT accessible", "Exits C and F are barrier-free with lifts", "Exit G underground with wheelchair lift to Chinatown Point B1", "Both concourses at B1 level - DTL concourse technically one floor above NEL concourse", "Transfer linkway between DTL and NEL platforms at B3"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Chinatown_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "FORT CANNING MRT STATION": {
+      "official_name": "FORT CANNING MRT STATION",
+      "station_code": "DT20",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "04321",
+              "services": ["64", "123", "143"]
+            },
+            {
+              "code": "04329",
+              "services": ["64", "123", "143"]
+            },
+            {
+              "code": "04331",
+              "services": ["32", "54", "195"]
+            }
+          ],
+          "nearby_landmarks": ["Clemenceau Ave", "Merchant Court", "Novotel Singapore Clarke Quay", "Robertson Quay", "Robertson Walk", "Shell House", "Singapore Repertory Theatre", "UE Shopping Mall/Square", "ITS Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "04339",
+              "services": ["32", "54", "195"]
+            }
+          ],
+          "nearby_landmarks": ["Clemenceau Ave", "Church of the Sacred Heart", "Fort Canning Arts Centre", "Hotel Fort Canning", "SHRM College", "The Foothills", "The Legends", "Sri Thendayuthapani Temple", "Teochew Building", "Battlebox"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Hidden cripple sidings parallel to running tracks (for future extension)", "Both exits barrier-free", "Near Fort Canning Park heritage site", "Lift at platform serves B4, B2, and B1", "Station opened 21 October 2017 (DTL Phase 3)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Fort_Canning_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BENCOOLEN MRT STATION": {
+      "official_name": "BENCOOLEN MRT STATION",
+      "station_code": "DT21",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "04029",
+              "services": ["64", "65", "139"]
+            }
+          ],
+          "nearby_landmarks": ["V Hotel Bencoolen", "Middle Road", "Cathedral of the Good Shepherd Church", "China Cultural Centre", "Church of Saint Joseph", "Church of Saints Peter & Paul", "Fortune Centre", "Maghain Aboth Synagogue", "Nanyang Academy of Fine Arts (NAFA Campus)", "Singapore Council of Women's Organizations", "Singapore Art Museum", "Waterloo Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "04019",
+              "services": ["131", "147", "166", "857"]
+            },
+            {
+              "code": "08069",
+              "services": ["7", "14", "14e", "16", "16M", "36", "77", "106", "111", "124", "167", "174", "174e", "175", "190", "502", "502A", "518", "518A", "652", "656", "660", "663", "665", "850E", "951E"]
+            }
+          ],
+          "nearby_landmarks": ["Hotel Mi", "Masjid Bencoolen", "National Museum of Singapore", "Orchard Presbyterian Church", "Parklane Shopping Centre", "Peace Centre", "Pomo", "Prinsep House", "Rendezvous Hotel", "School of the Arts (SOTA)", "Selegie Arts Centre", "Sunshine Plaza", "The Cathay", "Wesley Methodist Church", "YMCA International House"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Singapore Management University (SMU)", "Bras Basah MRT (CC2) via underpass"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Deepest station in this section - platforms at B6", "All 3 exits barrier-free", "Exit C at Basement 1 connects to SMU underpass", "Direct link to Bras Basah CCL station via underpass (50m)", "Station opened 21 October 2017 (DTL Phase 3)", "Escalator landings at B3 and B5 for multi-level access"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bencoolen_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "JALAN BESAR MRT STATION": {
+      "official_name": "JALAN BESAR MRT STATION",
+      "station_code": "DT22",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "07529",
+              "services": ["23", "64", "65", "67", "130", "139", "147", "170", "857"]
+            }
+          ],
+          "nearby_landmarks": ["Albert Complex", "Auston Institute of Management", "Madrasah Aljunied Al-Islamiah", "Queen Street Bus Terminal", "Sim Lim Square", "Sim Lim Tower", "Stamford Primary School"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Veerasamy Road", "Church of the True Light", "Kg Kapor Methodist Church", "Masjid Abdul Gafoor", "Singapore Aftercare Association", "The Verge"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free with lifts", "Underpass at B1 connects both exits to concourse at B2", "Lift at underpass (B1) brings commuters directly to platform level (B4)", "Near Sim Lim electronics district", "Station opened 21 October 2017 (DTL Phase 3)", "Connects to Rochor MRT (DT13) within 350m"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Jalan_Besar_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "ROCHOR MRT STATION": {
+      "official_name": "ROCHOR MRT STATION",
+      "station_code": "DT13",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "07531",
+              "services": ["23", "48", "57", "67", "170", "851", "851e", "960", "960e", "980"]
+            }
+          ],
+          "nearby_landmarks": ["Albert Centre", "Albert Complex", "Burlington Square", "Fu Lu Shou Complex", "Hotel G", "Ibis Singapore on Bencoolen", "LASALLE College of The Arts", "Sim Lim Square", "The Bencoolen"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift"],
+          "bus_stops": [
+            {
+              "code": "07539",
+              "services": ["48", "56", "57", "131", "166", "170", "851", "851e", "960", "960e", "980"]
+            }
+          ],
+          "nearby_landmarks": ["Masjid Abdul Gafoor", "Rochor Centre", "Sim Lim Tower", "Singapore After-Care Association", "The Verge"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Exit A main exit with lift and escalator network", "Exit B has pair of lifts only (stairs not advised)", "Both exits barrier-free", "Concourse at Basement 2", "Platform level at Basement 3", "Near Sim Lim electronics district and Sungei Road area", "Station opened 27 December 2015 (DTL Phase 2)", "Connects to Jalan Besar MRT (DT22) within 350m"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Rochor_MRT_Station",
+      "extraction_confidence": "high"
+    }
+  }
+}
+

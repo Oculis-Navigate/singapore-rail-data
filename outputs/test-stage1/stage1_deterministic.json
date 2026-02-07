@@ -1,0 +1,6628 @@
+{
+  "metadata": {
+    "run_id": "aa8d3a33-cfcf-4032-8df9-96180743d502",
+    "timestamp": "2026-02-07T14:47:14.019356",
+    "version": "2.0.0",
+    "source": "stage1_ingestion",
+    "total_stations": 187
+  },
+  "stations": [
+    {
+      "station_id": "TE7",
+      "official_name": "BRIGHT HILL MRT STATION",
+      "display_name": "BRIGHT HILL",
+      "mrt_codes": [
+        "TE7"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3640371821656152,
+          "lng": 103.83363541399386,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3632827623551678,
+          "lng": 103.83351063156859,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.3621838048498118,
+          "lng": 103.83237571105509,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.3631639565255047,
+          "lng": 103.83195382945166,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bright_Hill_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE8",
+      "official_name": "UPPER THOMSON MRT STATION",
+      "display_name": "UPPER THOMSON",
+      "mrt_codes": [
+        "TE8"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.354833644682351,
+          "lng": 103.8319161968925,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3557365747065533,
+          "lng": 103.8318330090042,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.3541445663788472,
+          "lng": 103.83392459060627,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.3535030102965167,
+          "lng": 103.83379386731406,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.3544178218637264,
+          "lng": 103.83263517825011,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Upper_Thomson_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC17",
+      "official_name": "CALDECOTT MRT STATION",
+      "display_name": "CALDECOTT",
+      "mrt_codes": [
+        "CC17",
+        "TE9"
+      ],
+      "lines": [
+        "CCL",
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.337105316695643,
+          "lng": 103.83940673122467,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3382597299418082,
+          "lng": 103.84038749923758,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.3378320231792558,
+          "lng": 103.84046474529944,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.3367508751106454,
+          "lng": 103.83988242975174,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Caldecott_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS12",
+      "official_name": "CANBERRA MRT STATION",
+      "display_name": "CANBERRA",
+      "mrt_codes": [
+        "NS12"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.443630141060561,
+          "lng": 103.82952797586145,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4429351481829502,
+          "lng": 103.82996174120925,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.4428044654120509,
+          "lng": 103.82970029333653,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.443511338844814,
+          "lng": 103.82925464394748,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.4432559135570144,
+          "lng": 103.83011623317348,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Canberra_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS9",
+      "official_name": "WOODLANDS MRT STATION",
+      "display_name": "WOODLANDS",
+      "mrt_codes": [
+        "NS9",
+        "TE2"
+      ],
+      "lines": [
+        "NSL",
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.4366968752462377,
+          "lng": 103.78573562446458,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.436673114687528,
+          "lng": 103.7865080837622,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.4372433670398619,
+          "lng": 103.78710822541109,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.4375403735797483,
+          "lng": 103.78800546566868,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.4358439359358868,
+          "lng": 103.78896432811273,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 6",
+          "lat": 1.4348151751388867,
+          "lng": 103.78908910975163,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 7",
+          "lat": 1.4344955258377818,
+          "lng": 103.78797676882189,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Woodlands_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SW2",
+      "official_name": "FARMWAY LRT STATION",
+      "display_name": "FARMWAY",
+      "mrt_codes": [
+        "SW2"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3972003445750807,
+          "lng": 103.88940744788181,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3971334775058415,
+          "lng": 103.88911501684758,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Farmway_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SW6",
+      "official_name": "LAYAR LRT STATION",
+      "display_name": "LAYAR",
+      "mrt_codes": [
+        "SW6"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3920261721317324,
+          "lng": 103.88015973051905,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3921445374146684,
+          "lng": 103.88014279914344,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Layar_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS7",
+      "official_name": "KRANJI MRT STATION",
+      "display_name": "KRANJI",
+      "mrt_codes": [
+        "NS7"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4247391712175417,
+          "lng": 103.76201851559114,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4248526446610568,
+          "lng": 103.76194060609642,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.4251259491570445,
+          "lng": 103.76175468556137,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.4251249593550084,
+          "lng": 103.76249677052948,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Kranji_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS8",
+      "official_name": "MARSILING MRT STATION",
+      "display_name": "MARSILING",
+      "mrt_codes": [
+        "NS8"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4328016943533108,
+          "lng": 103.77421049331159,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.432751371720061,
+          "lng": 103.77441052069655,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.4324695224000648,
+          "lng": 103.7738204510363,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.4327513609845839,
+          "lng": 103.77399713337503,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Marsiling_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC9",
+      "official_name": "PAYA LEBAR MRT STATION",
+      "display_name": "PAYA LEBAR",
+      "mrt_codes": [
+        "CC9",
+        "EW8"
+      ],
+      "lines": [
+        "CCL",
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3182159921500778,
+          "lng": 103.89278832410525,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3183474668988477,
+          "lng": 103.89221716863163,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3181492854313128,
+          "lng": 103.8917211215916,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3165877194692752,
+          "lng": 103.89207769924559,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.318287499415408,
+          "lng": 103.89323439978084,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.3167375002646893,
+          "lng": 103.89260940023549,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Paya_Lebar_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS15",
+      "official_name": "YIO CHU KANG MRT STATION",
+      "display_name": "YIO CHU KANG",
+      "mrt_codes": [
+        "NS15"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3816444074306995,
+          "lng": 103.84483419549113,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.381547520536042,
+          "lng": 103.84494684754169,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3819536213060495,
+          "lng": 103.84464576043435,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Yio_Chu_Kang_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS10",
+      "official_name": "ADMIRALTY MRT STATION",
+      "display_name": "ADMIRALTY",
+      "mrt_codes": [
+        "NS10"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4403456612830383,
+          "lng": 103.80098952191813,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.440152396746762,
+          "lng": 103.80053346325835,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.4405962856579384,
+          "lng": 103.80054245816031,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.4405333880722966,
+          "lng": 103.80136453445112,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Admiralty_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW16",
+      "official_name": "OUTRAM PARK MRT STATION",
+      "display_name": "OUTRAM PARK",
+      "mrt_codes": [
+        "EW16",
+        "NE3",
+        "TE17"
+      ],
+      "lines": [
+        "EWL",
+        "NEL",
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.2816024282435041,
+          "lng": 103.83865770171187,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2816753456885712,
+          "lng": 103.8389348372173,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.280993276156108,
+          "lng": 103.83978923248007,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.280213353869118,
+          "lng": 103.84038678709574,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.2789469557328974,
+          "lng": 103.83954924144093,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 6",
+          "lat": 1.27905123851202,
+          "lng": 103.83853725196758,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 7",
+          "lat": 1.2810220177189033,
+          "lng": 103.83864019518941,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 8",
+          "lat": 1.2823216309524463,
+          "lng": 103.83811712967395,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Outram_Park_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE6",
+      "official_name": "MAYFLOWER MRT STATION",
+      "display_name": "MAYFLOWER",
+      "mrt_codes": [
+        "TE6"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3727039723470345,
+          "lng": 103.83671675130967,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3737197610491918,
+          "lng": 103.837031676998,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.3735320920974323,
+          "lng": 103.83746104124462,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.3712763229015377,
+          "lng": 103.83679597809743,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.3707773381548525,
+          "lng": 103.83676032658745,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 6",
+          "lat": 1.370896144193217,
+          "lng": 103.83630873474603,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 7",
+          "lat": 1.3713773076184756,
+          "lng": 103.83628496724023,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Mayflower_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE13",
+      "official_name": "ORCHARD BOULEVARD MRT STATION",
+      "display_name": "ORCHARD BOULEVARD",
+      "mrt_codes": [
+        "TE13"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3036239533903895,
+          "lng": 103.82363789843602,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3024633242845058,
+          "lng": 103.82389561211956,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Orchard_Boulevard_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE15",
+      "official_name": "GREAT WORLD MRT STATION",
+      "display_name": "GREAT WORLD",
+      "mrt_codes": [
+        "TE15"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.2933209760726394,
+          "lng": 103.83390463124832,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2928694999212986,
+          "lng": 103.83262710318911,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.2938199765544345,
+          "lng": 103.83273405917555,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.296029832789246,
+          "lng": 103.83303710057669,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.2965525945647354,
+          "lng": 103.83340550437103,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 6",
+          "lat": 1.293184344647582,
+          "lng": 103.83284101464868,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Great_World_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE16",
+      "official_name": "HAVELOCK MRT STATION",
+      "display_name": "HAVELOCK",
+      "mrt_codes": [
+        "TE16"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.2866767448179222,
+          "lng": 103.83383975335771,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2869440669876508,
+          "lng": 103.8334951182318,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.2888435633535371,
+          "lng": 103.83336952027848,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.2901668941642899,
+          "lng": 103.83400349617219,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.289560964282313,
+          "lng": 103.8339619016366,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Havelock_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE12",
+      "official_name": "NAPIER MRT STATION",
+      "display_name": "NAPIER",
+      "mrt_codes": [
+        "TE12"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3069359879223381,
+          "lng": 103.81948377777624,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3063449793684014,
+          "lng": 103.8195066211851,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Napier_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS22",
+      "official_name": "ORCHARD MRT STATION",
+      "display_name": "ORCHARD",
+      "mrt_codes": [
+        "NS22",
+        "TE14"
+      ],
+      "lines": [
+        "NSL",
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.304892178137147,
+          "lng": 103.83252425937934,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3043543985604196,
+          "lng": 103.8326196115145,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.304161137655932,
+          "lng": 103.83277079650809,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.3045604741192454,
+          "lng": 103.83203980088224,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.303944717459933,
+          "lng": 103.83202381515746,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 6",
+          "lat": 1.3036476952659275,
+          "lng": 103.83232091515383,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 7",
+          "lat": 1.3031675344788836,
+          "lng": 103.83217160123877,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 8",
+          "lat": 1.303445719589311,
+          "lng": 103.83178613555991,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 9",
+          "lat": 1.3036655162164055,
+          "lng": 103.83150686184108,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 10",
+          "lat": 1.3040457054348609,
+          "lng": 103.83112657424772,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 11",
+          "lat": 1.3042179790540407,
+          "lng": 103.83049672354741,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 12",
+          "lat": 1.302857614748984,
+          "lng": 103.8306630989529,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 13",
+          "lat": 1.3022992113235183,
+          "lng": 103.83212482963054,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Orchard_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT33",
+      "official_name": "TAMPINES EAST MRT STATION",
+      "display_name": "TAMPINES EAST",
+      "mrt_codes": [
+        "DT33"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.356460761667418,
+          "lng": 103.95454044078075,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3555882263947188,
+          "lng": 103.95517001422066,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3555531715017815,
+          "lng": 103.95570471137918,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3569701935566743,
+          "lng": 103.95571743792196,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tampines_East_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW15",
+      "official_name": "TANJONG PAGAR MRT STATION",
+      "display_name": "TANJONG PAGAR",
+      "mrt_codes": [
+        "EW15"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2764085007399384,
+          "lng": 103.84483401420995,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2766717422526974,
+          "lng": 103.8465445904738,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2760892299950208,
+          "lng": 103.84653355796422,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.276064828263426,
+          "lng": 103.84690880020437,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.2762591011325783,
+          "lng": 103.84709579119706,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.2773794881071403,
+          "lng": 103.84692758023486,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit G",
+          "lat": 1.277784540365026,
+          "lng": 103.8469531475443,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit H",
+          "lat": 1.2754509043453175,
+          "lng": 103.8464450884119,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit I",
+          "lat": 1.2764479679167846,
+          "lng": 103.84565600388527,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tanjong_Pagar_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC3",
+      "official_name": "ESPLANADE MRT STATION",
+      "display_name": "ESPLANADE",
+      "mrt_codes": [
+        "CC3"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2933705482768734,
+          "lng": 103.8563055547391,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2929271873364572,
+          "lng": 103.85617567093513,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2929043369195197,
+          "lng": 103.85585520377214,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.2926237434666497,
+          "lng": 103.85583375578965,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.2931288136602324,
+          "lng": 103.85556784106937,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.2938195073126744,
+          "lng": 103.85510463211058,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit G",
+          "lat": 1.2935864007363411,
+          "lng": 103.85492020244,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Esplanade_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC4",
+      "official_name": "PROMENADE MRT STATION",
+      "display_name": "PROMENADE",
+      "mrt_codes": [
+        "CC4",
+        "DT15"
+      ],
+      "lines": [
+        "CCL",
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2917116609988615,
+          "lng": 103.86067361130195,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2938620878762646,
+          "lng": 103.86013688440227,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2941027563615055,
+          "lng": 103.86023648411177,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Promenade_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC5",
+      "official_name": "NICOLL HIGHWAY MRT STATION",
+      "display_name": "NICOLL HIGHWAY",
+      "mrt_codes": [
+        "CC5"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3001696897088442,
+          "lng": 103.8635059552432,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2996607596837686,
+          "lng": 103.86415174770211,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Nicoll_Highway_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC6",
+      "official_name": "STADIUM MRT STATION",
+      "display_name": "STADIUM",
+      "mrt_codes": [
+        "CC6"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3025110877234043,
+          "lng": 103.87439998828935,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3033702260202458,
+          "lng": 103.87622623397485,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Stadium_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC7",
+      "official_name": "MOUNTBATTEN MRT STATION",
+      "display_name": "MOUNTBATTEN",
+      "mrt_codes": [
+        "CC7"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3067527102284724,
+          "lng": 103.8825975357342,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3060459256607546,
+          "lng": 103.88324829270354,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Mountbatten_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC8",
+      "official_name": "DAKOTA MRT STATION",
+      "display_name": "DAKOTA",
+      "mrt_codes": [
+        "CC8"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.308814187524259,
+          "lng": 103.88930721534395,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3080967504054488,
+          "lng": 103.88797933768159,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Dakota_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS14",
+      "official_name": "KHATIB MRT STATION",
+      "display_name": "KHATIB",
+      "mrt_codes": [
+        "NS14"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4170582124269768,
+          "lng": 103.83292241700968,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4171434179297155,
+          "lng": 103.83270666774294,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.4175447068525804,
+          "lng": 103.83288691369441,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.4178690371168612,
+          "lng": 103.83323102003853,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Khatib_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW3",
+      "official_name": "SIMEI MRT STATION",
+      "display_name": "SIMEI",
+      "mrt_codes": [
+        "EW3"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3426617945337078,
+          "lng": 103.953818676297,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Simei_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW5",
+      "official_name": "BEDOK MRT STATION",
+      "display_name": "BEDOK",
+      "mrt_codes": [
+        "EW5"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3235686361563497,
+          "lng": 103.92915714309531,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3242683427611412,
+          "lng": 103.92967308999474,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3240746458654598,
+          "lng": 103.92940427968887,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bedok_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT14",
+      "official_name": "BUGIS MRT STATION",
+      "display_name": "BUGIS",
+      "mrt_codes": [
+        "DT14",
+        "EW12"
+      ],
+      "lines": [
+        "DTL",
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3012040895646393,
+          "lng": 103.85592408146064,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3007821987656956,
+          "lng": 103.85633662767292,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3000069406998658,
+          "lng": 103.85568570391386,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.2990788488867298,
+          "lng": 103.85689065486714,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bugis_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW24",
+      "official_name": "JURONG EAST MRT STATION",
+      "display_name": "JURONG EAST",
+      "mrt_codes": [
+        "EW24",
+        "JE5",
+        "NS1"
+      ],
+      "lines": [
+        "EWL",
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3339896039381867,
+          "lng": 103.74175989830943,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3325262356481666,
+          "lng": 103.74264016298261,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3327486846258436,
+          "lng": 103.74276208165342,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3335813310891886,
+          "lng": 103.74229819330705,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Jurong_East_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS5",
+      "official_name": "YEW TEE MRT STATION",
+      "display_name": "YEW TEE",
+      "mrt_codes": [
+        "NS5"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3976554793526916,
+          "lng": 103.74719516647077,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3980677680600264,
+          "lng": 103.74732988003458,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3970007717306616,
+          "lng": 103.74743189325034,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3972725119722809,
+          "lng": 103.74711143100039,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Yew_Tee_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS3",
+      "official_name": "BUKIT GOMBAK MRT STATION",
+      "display_name": "BUKIT GOMBAK",
+      "mrt_codes": [
+        "NS3"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.359069846241564,
+          "lng": 103.75207638937478,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3586952612690937,
+          "lng": 103.75209299569798,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3590649797518373,
+          "lng": 103.75172661484677,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3592978528191881,
+          "lng": 103.75195099052644,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bukit_Gombak_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP3",
+      "official_name": "KEAT HONG LRT STATION",
+      "display_name": "KEAT HONG",
+      "mrt_codes": [
+        "BP3"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3784649670168292,
+          "lng": 103.74922684160637,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Keat_Hong_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP4",
+      "official_name": "TECK WHYE LRT STATION",
+      "display_name": "TECK WHYE",
+      "mrt_codes": [
+        "BP4"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3765641949369936,
+          "lng": 103.75382610234246,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Teck_Whye_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP5",
+      "official_name": "PHOENIX LRT STATION",
+      "display_name": "PHOENIX",
+      "mrt_codes": [
+        "BP5"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.378614068213967,
+          "lng": 103.75825247510643,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Phoenix_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "A1",
+      "official_name": "BUKIT PANJANG MRT STATION",
+      "display_name": "BUKIT PANJANG",
+      "mrt_codes": [
+        "A1",
+        "A2",
+        "DT1"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3807451173057772,
+          "lng": 103.75959784357276,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3786188940125126,
+          "lng": 103.76137050495701,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bukit_Panjang_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP7",
+      "official_name": "PETIR LRT STATION",
+      "display_name": "PETIR",
+      "mrt_codes": [
+        "BP7"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.37760322809516,
+          "lng": 103.76679301496294,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Petir_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP8",
+      "official_name": "PENDING LRT STATION",
+      "display_name": "PENDING",
+      "mrt_codes": [
+        "BP8"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.376297117193637,
+          "lng": 103.77132784229688,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Pending_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP9",
+      "official_name": "BANGKIT LRT STATION",
+      "display_name": "BANGKIT",
+      "mrt_codes": [
+        "BP9"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3798533467645455,
+          "lng": 103.77259057420869,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bangkit_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP10",
+      "official_name": "FAJAR LRT STATION",
+      "display_name": "FAJAR",
+      "mrt_codes": [
+        "BP10"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3844650711796456,
+          "lng": 103.77067551844488,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Fajar_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP11",
+      "official_name": "SEGAR LRT STATION",
+      "display_name": "SEGAR",
+      "mrt_codes": [
+        "BP11"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3878115559952267,
+          "lng": 103.76940991480218,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Segar_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP12",
+      "official_name": "JELAPANG LRT STATION",
+      "display_name": "JELAPANG",
+      "mrt_codes": [
+        "BP12"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3868326995309255,
+          "lng": 103.76467679284494,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Jelapang_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT32",
+      "official_name": "TAMPINES MRT STATION",
+      "display_name": "TAMPINES",
+      "mrt_codes": [
+        "DT32",
+        "EW2"
+      ],
+      "lines": [
+        "DTL",
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3537640125402173,
+          "lng": 103.94476631210706,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3535390816670922,
+          "lng": 103.94508956333436,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.353398312649212,
+          "lng": 103.9449039578947,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.354870574817919,
+          "lng": 103.94367818203155,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.355853444764249,
+          "lng": 103.94265881069441,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.3541939276064219,
+          "lng": 103.94265368187834,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit G",
+          "lat": 1.3545963387281112,
+          "lng": 103.94272349669535,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tampines_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT24",
+      "official_name": "GEYLANG BAHRU MRT STATION",
+      "display_name": "GEYLANG BAHRU",
+      "mrt_codes": [
+        "DT24"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3215616987402512,
+          "lng": 103.87155560756929,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3211091157953243,
+          "lng": 103.87179427142719,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Geylang_Bahru_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT28",
+      "official_name": "KAKI BUKIT MRT STATION",
+      "display_name": "KAKI BUKIT",
+      "mrt_codes": [
+        "DT28"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3353112063695616,
+          "lng": 103.90940509862578,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3349218903427178,
+          "lng": 103.90914627626276,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Kaki_Bukit_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT30",
+      "official_name": "BEDOK RESERVOIR MRT STATION",
+      "display_name": "BEDOK RESERVOIR",
+      "mrt_codes": [
+        "DT30"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.336347760899778,
+          "lng": 103.93288682250619,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3365549033286315,
+          "lng": 103.93348718985506,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bedok_Reservoir_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT21",
+      "official_name": "BENCOOLEN MRT STATION",
+      "display_name": "BENCOOLEN",
+      "mrt_codes": [
+        "DT21"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2991951960301853,
+          "lng": 103.85084338471715,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2981994004556694,
+          "lng": 103.84956047759098,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2976991176544332,
+          "lng": 103.8492717038725,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bencoolen_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT31",
+      "official_name": "TAMPINES WEST MRT STATION",
+      "display_name": "TAMPINES WEST",
+      "mrt_codes": [
+        "DT31"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3456305876139147,
+          "lng": 103.93819674000568,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3449991975144835,
+          "lng": 103.93894850378165,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tampines_West_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT22",
+      "official_name": "JALAN BESAR MRT STATION",
+      "display_name": "JALAN BESAR",
+      "mrt_codes": [
+        "DT22"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.304889894129293,
+          "lng": 103.8552961254143,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3054672798932725,
+          "lng": 103.85524456461457,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Jalan_Besar_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT23",
+      "official_name": "BENDEMEER MRT STATION",
+      "display_name": "BENDEMEER",
+      "mrt_codes": [
+        "DT23"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3138525056222503,
+          "lng": 103.86307400593707,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3134807250255989,
+          "lng": 103.86321923143063,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bendemeer_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT29",
+      "official_name": "BEDOK NORTH MRT STATION",
+      "display_name": "BEDOK NORTH",
+      "mrt_codes": [
+        "DT29"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3351262662136352,
+          "lng": 103.91804982398726,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3341660744472075,
+          "lng": 103.91906282344867,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3344225765515134,
+          "lng": 103.9178105260292,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bedok_North_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT34",
+      "official_name": "UPPER CHANGI MRT STATION",
+      "display_name": "UPPER CHANGI",
+      "mrt_codes": [
+        "DT34"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3418611973421342,
+          "lng": 103.9613284805394,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3410376791225642,
+          "lng": 103.96147626842628,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3419926673422482,
+          "lng": 103.96161727307985,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3408404740643267,
+          "lng": 103.96104308070888,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Upper_Changi_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT10",
+      "official_name": "STEVENS MRT STATION",
+      "display_name": "STEVENS",
+      "mrt_codes": [
+        "DT10",
+        "TE11"
+      ],
+      "lines": [
+        "DTL",
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.319951635106423,
+          "lng": 103.82572837817727,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3188288961882542,
+          "lng": 103.82601359358057,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.3194704609951542,
+          "lng": 103.82499157064271,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.321519904255611,
+          "lng": 103.82588286965881,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.320937743414412,
+          "lng": 103.8263225771446,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Stevens_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW13",
+      "official_name": "CITY HALL MRT STATION",
+      "display_name": "CITY HALL",
+      "mrt_codes": [
+        "EW13",
+        "NS25"
+      ],
+      "lines": [
+        "EWL",
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2932271103418318,
+          "lng": 103.85302041355058,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2930999185799508,
+          "lng": 103.8519602177464,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2930418479082573,
+          "lng": 103.85298028770758,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.2934548259513226,
+          "lng": 103.85180233380913,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/City_Hall_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE24",
+      "official_name": "KATONG PARK MRT STATION",
+      "display_name": "KATONG PARK",
+      "mrt_codes": [
+        "TE24"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.2975385117765033,
+          "lng": 103.88709207500811,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2983796827911394,
+          "lng": 103.88506921760501,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Katong_Park_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE26",
+      "official_name": "MARINE PARADE MRT STATION",
+      "display_name": "MARINE PARADE",
+      "mrt_codes": [
+        "TE26"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3020932936434937,
+          "lng": 103.9059103666293,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.302531699392386,
+          "lng": 103.90459124473303,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.303593996641583,
+          "lng": 103.90605286229047,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.3045658550115677,
+          "lng": 103.90762749031286,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.3055802189000016,
+          "lng": 103.90909370848797,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 6",
+          "lat": 1.3042985347100633,
+          "lng": 103.90778792411058,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Marine_Parade_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE27",
+      "official_name": "MARINE TERRACE MRT STATION",
+      "display_name": "MARINE TERRACE",
+      "mrt_codes": [
+        "TE27"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3063987001480175,
+          "lng": 103.91505222707929,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3057892098989736,
+          "lng": 103.91325299089799,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.3065792892039465,
+          "lng": 103.91308661583462,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.3068953217431258,
+          "lng": 103.91502013985657,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.307438278403651,
+          "lng": 103.91708914206795,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 6",
+          "lat": 1.3070628420288448,
+          "lng": 103.91694534600546,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Marine_Terrace_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE23",
+      "official_name": "TANJONG RHU MRT STATION",
+      "display_name": "TANJONG RHU",
+      "mrt_codes": [
+        "TE23"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.296459488281608,
+          "lng": 103.87347790491667,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2982000462876002,
+          "lng": 103.8736026871191,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tanjong_Rhu_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE25",
+      "official_name": "TANJONG KATONG MRT STATION",
+      "display_name": "TANJONG KATONG",
+      "mrt_codes": [
+        "TE25"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.2990386927771713,
+          "lng": 103.89704545419403,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2990161196075827,
+          "lng": 103.89769313140535,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.300229200662339,
+          "lng": 103.89771528877114,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tanjong_Katong_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE28",
+      "official_name": "SIGLAP MRT STATION",
+      "display_name": "SIGLAP",
+      "mrt_codes": [
+        "TE28"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3088503155584577,
+          "lng": 103.9287926248893,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.309776570718989,
+          "lng": 103.92858629687198,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.310589222582442,
+          "lng": 103.93124593288341,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.3102017218908424,
+          "lng": 103.9312910608542,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Siglap_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE29",
+      "official_name": "BAYSHORE MRT STATION",
+      "display_name": "BAYSHORE",
+      "mrt_codes": [
+        "TE29"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3118987186917346,
+          "lng": 103.94126172566517,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3121838590996928,
+          "lng": 103.94067346766076,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.31356798026815,
+          "lng": 103.94072100418352,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.3135263973574927,
+          "lng": 103.94267591982259,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.3128967114776557,
+          "lng": 103.94258441308978,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bayshore_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT18",
+      "official_name": "TELOK AYER MRT STATION",
+      "display_name": "TELOK AYER",
+      "mrt_codes": [
+        "DT18"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2818873892355847,
+          "lng": 103.84850654389615,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2824972750387271,
+          "lng": 103.84877332815995,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.282250664264074,
+          "lng": 103.84884165606141,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.2826000004195686,
+          "lng": 103.84809999968618,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.282700000363803,
+          "lng": 103.84750000000379,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Telok_Ayer_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT4",
+      "official_name": "HUME MRT STATION",
+      "display_name": "HUME",
+      "mrt_codes": [
+        "DT4"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3550632998007643,
+          "lng": 103.76869550039065,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3548287003188688,
+          "lng": 103.7686516998054,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Hume_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW19",
+      "official_name": "QUEENSTOWN MRT STATION",
+      "display_name": "QUEENSTOWN",
+      "mrt_codes": [
+        "EW19"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2942472621509544,
+          "lng": 103.80618277713309,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2943299089060527,
+          "lng": 103.80631147275847,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2954462560700986,
+          "lng": 103.80558472989604,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.2953829305261282,
+          "lng": 103.80549220488795,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Queenstown_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW20",
+      "official_name": "COMMONWEALTH MRT STATION",
+      "display_name": "COMMONWEALTH",
+      "mrt_codes": [
+        "EW20"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3026481614077343,
+          "lng": 103.79795829226589,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3027527769977458,
+          "lng": 103.79805788203096,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3020770458031892,
+          "lng": 103.7987785726048,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3020127193513336,
+          "lng": 103.7987202587723,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Commonwealth_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW23",
+      "official_name": "CLEMENTI MRT STATION",
+      "display_name": "CLEMENTI",
+      "mrt_codes": [
+        "EW23"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3153735578744434,
+          "lng": 103.76498210259511,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3154691294316818,
+          "lng": 103.76518556672941,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3141622981069079,
+          "lng": 103.76574981571945,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3140784143450015,
+          "lng": 103.76557011618358,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Clementi_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CR11",
+      "official_name": "ANG MO KIO MRT STATION",
+      "display_name": "ANG MO KIO",
+      "mrt_codes": [
+        "CR11",
+        "NS16"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.369464706505095,
+          "lng": 103.84993900074095,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3696853221997212,
+          "lng": 103.84959610065526,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3694405305965007,
+          "lng": 103.84934327370465,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3698823752681695,
+          "lng": 103.84982457247968,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Ang_Mo_Kio_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS23",
+      "official_name": "SOMERSET MRT STATION",
+      "display_name": "SOMERSET",
+      "mrt_codes": [
+        "NS23"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3000284884873998,
+          "lng": 103.83839932657575,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.300766518771738,
+          "lng": 103.838458985164,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3004362205899318,
+          "lng": 103.83876558428138,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3002411386798598,
+          "lng": 103.83973414808479,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Somerset_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS28",
+      "official_name": "MARINA SOUTH PIER MRT STATION",
+      "display_name": "MARINA SOUTH PIER",
+      "mrt_codes": [
+        "NS28"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2705299895186322,
+          "lng": 103.86233005096989,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2714378371622164,
+          "lng": 103.86357966976392,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Marina_South_Pier_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT19",
+      "official_name": "CHINATOWN MRT STATION",
+      "display_name": "CHINATOWN",
+      "mrt_codes": [
+        "DT19",
+        "NE4"
+      ],
+      "lines": [
+        "DTL",
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2837127704301896,
+          "lng": 103.84379788809954,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.284674897368101,
+          "lng": 103.8428128535836,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.285406459986675,
+          "lng": 103.84347621052814,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.2850440806089183,
+          "lng": 103.84442811940502,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.2842747760727764,
+          "lng": 103.84546253179646,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit G",
+          "lat": 1.284736083637029,
+          "lng": 103.8444585417297,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Chinatown_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT3",
+      "official_name": "HILLVIEW MRT STATION",
+      "display_name": "HILLVIEW",
+      "mrt_codes": [
+        "DT3"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3624742379450678,
+          "lng": 103.76768829010308,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3620843399177323,
+          "lng": 103.76710845993587,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Hillview_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT5",
+      "official_name": "BEAUTY WORLD MRT STATION",
+      "display_name": "BEAUTY WORLD",
+      "mrt_codes": [
+        "DT5"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3416961499328006,
+          "lng": 103.7759842962261,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.341582214549837,
+          "lng": 103.77545067944088,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3399818737845794,
+          "lng": 103.7757615456262,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Beauty_World_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT6",
+      "official_name": "KING ALBERT PARK MRT STATION",
+      "display_name": "KING ALBERT PARK",
+      "mrt_codes": [
+        "DT6"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.335537077669763,
+          "lng": 103.78303026021548,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.33597604551556,
+          "lng": 103.78456158478065,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/King_Albert_Park_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT7",
+      "official_name": "SIXTH AVENUE MRT STATION",
+      "display_name": "SIXTH AVENUE",
+      "mrt_codes": [
+        "DT7"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.330780469946184,
+          "lng": 103.79656608212053,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3315213014357175,
+          "lng": 103.7968481782287,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Sixth_Avenue_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT8",
+      "official_name": "TAN KAH KEE MRT STATION",
+      "display_name": "TAN KAH KEE",
+      "mrt_codes": [
+        "DT8"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3253330690801757,
+          "lng": 103.80779911907287,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3261461588254935,
+          "lng": 103.80780087370651,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tan_Kah_Kee_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC19",
+      "official_name": "BOTANIC GARDENS MRT STATION",
+      "display_name": "BOTANIC GARDENS",
+      "mrt_codes": [
+        "CC19",
+        "DT9"
+      ],
+      "lines": [
+        "CCL",
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3225346329493606,
+          "lng": 103.81497690573431,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3226846123363898,
+          "lng": 103.81591414579154,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Botanic_Gardens_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT11",
+      "official_name": "NEWTON MRT STATION",
+      "display_name": "NEWTON",
+      "mrt_codes": [
+        "DT11",
+        "NS21"
+      ],
+      "lines": [
+        "DTL",
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.312597796688079,
+          "lng": 103.83788132539095,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3120754621212656,
+          "lng": 103.83821906936093,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.313617269149807,
+          "lng": 103.83824238163545,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Newton_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT12",
+      "official_name": "LITTLE INDIA MRT STATION",
+      "display_name": "LITTLE INDIA",
+      "mrt_codes": [
+        "DT12",
+        "NE7"
+      ],
+      "lines": [
+        "DTL",
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3056052510392235,
+          "lng": 103.84936002946029,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.306563555357783,
+          "lng": 103.84898508971142,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3063515540862423,
+          "lng": 103.84970482293288,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3068547371908685,
+          "lng": 103.84899998224137,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.3074264443989476,
+          "lng": 103.85032215995454,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.307683536558851,
+          "lng": 103.84830439913581,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Little_India_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT13",
+      "official_name": "ROCHOR MRT STATION",
+      "display_name": "ROCHOR",
+      "mrt_codes": [
+        "DT13"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3034041065355197,
+          "lng": 103.85237502163348,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.304214777033743,
+          "lng": 103.85310433564943,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Rochor_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT17",
+      "official_name": "DOWNTOWN MRT STATION",
+      "display_name": "DOWNTOWN",
+      "mrt_codes": [
+        "DT17"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2797734552829652,
+          "lng": 103.85264656001088,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2796013182822525,
+          "lng": 103.85290812847026,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2794443683916052,
+          "lng": 103.85315209196104,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.2791760407808874,
+          "lng": 103.85301375913124,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.2795279106323079,
+          "lng": 103.85247804639863,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.2797962396920595,
+          "lng": 103.85242774644063,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Downtown_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC23",
+      "official_name": "ONE-NORTH MRT STATION",
+      "display_name": "ONE-NORTH",
+      "mrt_codes": [
+        "CC23"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2990274987228132,
+          "lng": 103.78690746632078,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3003594934794571,
+          "lng": 103.78792780616781,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2997146976063356,
+          "lng": 103.78756545620355,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3000747028842092,
+          "lng": 103.78778481055383,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/One-North_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC24",
+      "official_name": "KENT RIDGE MRT STATION",
+      "display_name": "KENT RIDGE",
+      "mrt_codes": [
+        "CC24"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2943158870094893,
+          "lng": 103.78446589536516,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.292428115908549,
+          "lng": 103.78480963188217,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2939847851670137,
+          "lng": 103.784490451682,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.2932188028411657,
+          "lng": 103.78453465663856,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Kent_Ridge_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE5",
+      "official_name": "CLARKE QUAY MRT STATION",
+      "display_name": "CLARKE QUAY",
+      "mrt_codes": [
+        "NE5"
+      ],
+      "lines": [
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2868987878357088,
+          "lng": 103.84606454377302,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2878057526558389,
+          "lng": 103.84590343273553,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.289383851872467,
+          "lng": 103.84666583385501,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.2890001830713862,
+          "lng": 103.84703264329924,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.2894055668026585,
+          "lng": 103.84712974273279,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit G",
+          "lat": 1.2891992578180935,
+          "lng": 103.84659390916543,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Clarke_Quay_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP1",
+      "official_name": "CHOA CHU KANG MRT STATION",
+      "display_name": "CHOA CHU KANG",
+      "mrt_codes": [
+        "BP1",
+        "JS1",
+        "NS4"
+      ],
+      "lines": [
+        "BPL",
+        "JRL",
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.385431280875975,
+          "lng": 103.7445571353678,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3849796641871803,
+          "lng": 103.7445951430258,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3857361854031247,
+          "lng": 103.74451779877056,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3853699997077467,
+          "lng": 103.74411000039194,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.3849999997274485,
+          "lng": 103.74462000044716,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Choa_Chu_Kang_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW18",
+      "official_name": "REDHILL MRT STATION",
+      "display_name": "REDHILL",
+      "mrt_codes": [
+        "EW18"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2893707046735148,
+          "lng": 103.81699445855267,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2894858753609895,
+          "lng": 103.81724937307973,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Redhill_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW17",
+      "official_name": "TIONG BAHRU MRT STATION",
+      "display_name": "TIONG BAHRU",
+      "mrt_codes": [
+        "EW17"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.285759455898818,
+          "lng": 103.82699059514609,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.286361941390426,
+          "lng": 103.8274964133934,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tiong_Bahru_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC29",
+      "official_name": "HARBOURFRONT MRT STATION",
+      "display_name": "HARBOURFRONT",
+      "mrt_codes": [
+        "CC29",
+        "NE1"
+      ],
+      "lines": [
+        "CCL",
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2650850346118385,
+          "lng": 103.82250980721876,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2651546823431958,
+          "lng": 103.82050881113204,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.265259883734691,
+          "lng": 103.82253165162558,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.2659792549959068,
+          "lng": 103.82139885715415,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.2649719595912232,
+          "lng": 103.82158029169962,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Harbourfront_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW11",
+      "official_name": "LAVENDER MRT STATION",
+      "display_name": "LAVENDER",
+      "mrt_codes": [
+        "EW11"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.307169460472736,
+          "lng": 103.86304306290333,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3076185391316715,
+          "lng": 103.86265031662273,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Lavender_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW10",
+      "official_name": "KALLANG MRT STATION",
+      "display_name": "KALLANG",
+      "mrt_codes": [
+        "EW10"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3115404829755273,
+          "lng": 103.87173056416847,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.311781770543804,
+          "lng": 103.87158707586144,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Kallang_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW9",
+      "official_name": "ALJUNIED MRT STATION",
+      "display_name": "ALJUNIED",
+      "mrt_codes": [
+        "EW9"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.316238485344709,
+          "lng": 103.88249665045747,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3164879303040784,
+          "lng": 103.88247288778244,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Aljunied_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE8",
+      "official_name": "FARRER PARK MRT STATION",
+      "display_name": "FARRER PARK",
+      "mrt_codes": [
+        "NE8"
+      ],
+      "lines": [
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.312326909037027,
+          "lng": 103.85477274737836,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.313543965975699,
+          "lng": 103.85476376775568,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.311910678691349,
+          "lng": 103.85326682482192,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3124536063930647,
+          "lng": 103.85297463523698,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.3118835372381634,
+          "lng": 103.85265097067983,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.3114220464813349,
+          "lng": 103.85319939114183,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit G",
+          "lat": 1.3122590364129927,
+          "lng": 103.85550098237228,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit H",
+          "lat": 1.3118835080609075,
+          "lng": 103.8560988521155,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit I",
+          "lat": 1.311765877296202,
+          "lng": 103.85580665725489,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Farrer_Park_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS19",
+      "official_name": "TOA PAYOH MRT STATION",
+      "display_name": "TOA PAYOH",
+      "mrt_codes": [
+        "NS19"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3323764420302064,
+          "lng": 103.84772380431387,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3323155366467678,
+          "lng": 103.847577567476,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3329941018374794,
+          "lng": 103.84731977363178,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3332787459863253,
+          "lng": 103.84651740615568,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Toa_Payoh_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW26",
+      "official_name": "LAKESIDE MRT STATION",
+      "display_name": "LAKESIDE",
+      "mrt_codes": [
+        "EW26"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3439833412621969,
+          "lng": 103.720448529393,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.344081457519484,
+          "lng": 103.72107541274288,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3443041699686624,
+          "lng": 103.72171282700319,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Lakeside_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW25",
+      "official_name": "CHINESE GARDEN MRT STATION",
+      "display_name": "CHINESE GARDEN",
+      "mrt_codes": [
+        "EW25"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3424387432399767,
+          "lng": 103.73222015482936,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3419820895649266,
+          "lng": 103.73274182554528,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3415658263325776,
+          "lng": 103.73339313576297,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Chinese_Garden_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS11",
+      "official_name": "SEMBAWANG MRT STATION",
+      "display_name": "SEMBAWANG",
+      "mrt_codes": [
+        "NS11"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4488373194331288,
+          "lng": 103.82010973575841,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4487682603258423,
+          "lng": 103.81979020457172,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.44915683716069,
+          "lng": 103.81975896600352,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.448927331537594,
+          "lng": 103.82040156029227,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Sembawang_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS13",
+      "official_name": "YISHUN MRT STATION",
+      "display_name": "YISHUN",
+      "mrt_codes": [
+        "NS13"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.429397167315948,
+          "lng": 103.83478360318439,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4296362919100813,
+          "lng": 103.83486553346143,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.4291168143137056,
+          "lng": 103.8350908427129,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.4291065074428853,
+          "lng": 103.83486348521703,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.4296655971646168,
+          "lng": 103.83564365493329,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Yishun_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW1",
+      "official_name": "PASIR RIS MRT STATION",
+      "display_name": "PASIR RIS",
+      "mrt_codes": [
+        "EW1"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3728419690805276,
+          "lng": 103.94933342664457,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.372886236352008,
+          "lng": 103.94913694034909,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Pasir_Ris_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC1",
+      "official_name": "DHOBY GHAUT MRT STATION",
+      "display_name": "DHOBY GHAUT",
+      "mrt_codes": [
+        "CC1",
+        "NE6",
+        "NS24"
+      ],
+      "lines": [
+        "CCL",
+        "NEL",
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2984450920481716,
+          "lng": 103.84678797178553,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2990558907089098,
+          "lng": 103.84522955892908,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.299649242161315,
+          "lng": 103.8447478571907,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.29993066561743,
+          "lng": 103.8450301318641,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.2997484706698177,
+          "lng": 103.84537229423007,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.299634891911056,
+          "lng": 103.84584231801777,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Dhoby_Ghaut_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW14",
+      "official_name": "RAFFLES PLACE MRT STATION",
+      "display_name": "RAFFLES PLACE",
+      "mrt_codes": [
+        "EW14",
+        "NS26"
+      ],
+      "lines": [
+        "EWL",
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2841251477036855,
+          "lng": 103.85143835365814,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2846068745370232,
+          "lng": 103.85147997829907,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2836305207274084,
+          "lng": 103.8515625354869,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.283641390877421,
+          "lng": 103.85135321456237,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.2832115821243628,
+          "lng": 103.8515225951546,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.2825385749191898,
+          "lng": 103.85096090209325,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit G",
+          "lat": 1.2850168973017784,
+          "lng": 103.85147813199741,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit H",
+          "lat": 1.285258281201247,
+          "lng": 103.85162171586596,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit I",
+          "lat": 1.282382307297459,
+          "lng": 103.85143330239858,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit J",
+          "lat": 1.28262623356678,
+          "lng": 103.85129603343073,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Raffles_Place_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT27",
+      "official_name": "UBI MRT STATION",
+      "display_name": "UBI",
+      "mrt_codes": [
+        "DT27"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3299508282897736,
+          "lng": 103.89987669085686,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.329830770674731,
+          "lng": 103.89858557091625,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Ubi_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT20",
+      "official_name": "FORT CANNING MRT STATION",
+      "display_name": "FORT CANNING",
+      "mrt_codes": [
+        "DT20"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2924060955782486,
+          "lng": 103.84417003419682,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2928302759457175,
+          "lng": 103.84442503156531,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Fort_Canning_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT25",
+      "official_name": "MATTAR MRT STATION",
+      "display_name": "MATTAR",
+      "mrt_codes": [
+        "DT25"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.327251414091795,
+          "lng": 103.88273206724486,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3264635221670715,
+          "lng": 103.88374838731283,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Mattar_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE3",
+      "official_name": "WOODLANDS SOUTH MRT STATION",
+      "display_name": "WOODLANDS SOUTH",
+      "mrt_codes": [
+        "TE3"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.4273020172478001,
+          "lng": 103.79302746334568,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.4276049641345527,
+          "lng": 103.79341369273166,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.4274267600356203,
+          "lng": 103.7945604978579,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.4266842408027618,
+          "lng": 103.7944238317872,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.4258433869092755,
+          "lng": 103.79436521102042,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Woodlands_South_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE18",
+      "official_name": "MAXWELL MRT STATION",
+      "display_name": "MAXWELL",
+      "mrt_codes": [
+        "TE18"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.2810342552625935,
+          "lng": 103.84416441347508,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2809194365909107,
+          "lng": 103.84489545926178,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.2801915223809375,
+          "lng": 103.84291630554293,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Maxwell_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE19",
+      "official_name": "SHENTON WAY MRT STATION",
+      "display_name": "SHENTON WAY",
+      "mrt_codes": [
+        "TE19"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.2774620583356546,
+          "lng": 103.85183570738151,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2770030544242335,
+          "lng": 103.85091509462848,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.277629581126691,
+          "lng": 103.85012877107079,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.2776559417698303,
+          "lng": 103.85103408604942,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.2771436461188985,
+          "lng": 103.85180797805077,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 6",
+          "lat": 1.2779292050949722,
+          "lng": 103.84989322327651,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Shenton_Way_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CE2",
+      "official_name": "MARINA BAY MRT STATION",
+      "display_name": "MARINA BAY",
+      "mrt_codes": [
+        "CE2",
+        "NS27",
+        "TE20"
+      ],
+      "lines": [
+        "NSL",
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.2773530329779264,
+          "lng": 103.85447003295413,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2761589313162336,
+          "lng": 103.85500333791994,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.2754163658971882,
+          "lng": 103.85537174149034,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.2736342091095512,
+          "lng": 103.85648883626318,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.2746932644544062,
+          "lng": 103.85431950195625,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Marina_Bay_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE22",
+      "official_name": "GARDENS BY THE BAY MRT STATION",
+      "display_name": "GARDENS BY THE BAY",
+      "mrt_codes": [
+        "TE22"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.280370755955639,
+          "lng": 103.86858673411133,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2788262233339731,
+          "lng": 103.86796876727624,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.2783034399681215,
+          "lng": 103.86715412214197,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Gardens_By_The_Bay_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE21",
+      "official_name": "MARINA SOUTH MRT STATION",
+      "display_name": "MARINA SOUTH",
+      "mrt_codes": [
+        "TE21"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.2735748044859307,
+          "lng": 103.8615038787278,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.2738599495197072,
+          "lng": 103.86177721011121,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.273135205086787,
+          "lng": 103.86289430462864,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.2755114146116426,
+          "lng": 103.86266850887442,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Marina_South_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PW6",
+      "official_name": "SUMANG LRT STATION",
+      "display_name": "SUMANG",
+      "mrt_codes": [
+        "PW6"
+      ],
+      "lines": [
+        "PGL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4083684310204716,
+          "lng": 103.89833568007762,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4084879018383736,
+          "lng": 103.8987571239555,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Sumang_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW27",
+      "official_name": "BOON LAY MRT STATION",
+      "display_name": "BOON LAY",
+      "mrt_codes": [
+        "EW27",
+        "JS8"
+      ],
+      "lines": [
+        "EWL",
+        "JRL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3382799880819698,
+          "lng": 103.7054089949691,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.338420695657893,
+          "lng": 103.70614554796673,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3387381087333912,
+          "lng": 103.70595515261101,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3386295077959716,
+          "lng": 103.70565003803485,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.338514120931197,
+          "lng": 103.70535335319977,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.3382732219770168,
+          "lng": 103.70579503136489,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Boon_Lay_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP6",
+      "official_name": "BUKIT PANJANG LRT STATION",
+      "display_name": "BUKIT PANJANG",
+      "mrt_codes": [
+        "BP6"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.378020383749656,
+          "lng": 103.76306355524726,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3778632485675977,
+          "lng": 103.76317852054554,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3779279277525465,
+          "lng": 103.76272252355642,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.378024102648342,
+          "lng": 103.76325185195583,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bukit_Panjang_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PW4",
+      "official_name": "SAMUDERA LRT STATION",
+      "display_name": "SAMUDERA",
+      "mrt_codes": [
+        "PW4"
+      ],
+      "lines": [
+        "PGL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4158653604828477,
+          "lng": 103.90191150962721,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.41590585709171,
+          "lng": 103.90236156011096,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Samudera_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PW2",
+      "official_name": "TECK LEE LRT STATION",
+      "display_name": "TECK LEE",
+      "mrt_codes": [
+        "PW2"
+      ],
+      "lines": [
+        "PGL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4128757347357002,
+          "lng": 103.90678152950578,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.41292900309077,
+          "lng": 103.90651078993365,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Teck_Lee_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PW1",
+      "official_name": "SAM KEE LRT STATION",
+      "display_name": "SAM KEE",
+      "mrt_codes": [
+        "PW1"
+      ],
+      "lines": [
+        "PGL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4097025000417631,
+          "lng": 103.90503857100495,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4098276724417222,
+          "lng": 103.9047922799363,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Sam_Kee_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PE7",
+      "official_name": "DAMAI LRT STATION",
+      "display_name": "DAMAI",
+      "mrt_codes": [
+        "PE7"
+      ],
+      "lines": [
+        "UNKNOWN"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4052846134337436,
+          "lng": 103.90879222699208,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4050460283087411,
+          "lng": 103.90861385602817,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Damai_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PE6",
+      "official_name": "OASIS LRT STATION",
+      "display_name": "OASIS",
+      "mrt_codes": [
+        "PE6"
+      ],
+      "lines": [
+        "UNKNOWN"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4025071314475719,
+          "lng": 103.91264613306079,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4021037193748016,
+          "lng": 103.91275457379543,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Oasis_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PE5",
+      "official_name": "KADALOOR LRT STATION",
+      "display_name": "KADALOOR",
+      "mrt_codes": [
+        "PE5"
+      ],
+      "lines": [
+        "UNKNOWN"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3998092631501848,
+          "lng": 103.91638745848152,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.399411467180394,
+          "lng": 103.91651713032786,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Kadaloor_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PE4",
+      "official_name": "RIVIERA LRT STATION",
+      "display_name": "RIVIERA",
+      "mrt_codes": [
+        "PE4"
+      ],
+      "lines": [
+        "UNKNOWN"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3943256111183955,
+          "lng": 103.91626309852711,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3945590659696856,
+          "lng": 103.91593547052074,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Riviera_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PE3",
+      "official_name": "CORAL EDGE LRT STATION",
+      "display_name": "CORAL EDGE",
+      "mrt_codes": [
+        "PE3"
+      ],
+      "lines": [
+        "UNKNOWN"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3936846522216244,
+          "lng": 103.91265223396981,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3939708071108299,
+          "lng": 103.91270874436744,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Coral_Edge_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PE1",
+      "official_name": "COVE LRT STATION",
+      "display_name": "COVE",
+      "mrt_codes": [
+        "PE1"
+      ],
+      "lines": [
+        "UNKNOWN"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3991243935090023,
+          "lng": 103.90592873577582,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3993026566088154,
+          "lng": 103.90617601360019,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Cove_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SW5",
+      "official_name": "FERNVALE LRT STATION",
+      "display_name": "FERNVALE",
+      "mrt_codes": [
+        "SW5"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3921582676260966,
+          "lng": 103.87626165389224,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Fernvale_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW4",
+      "official_name": "TANAH MERAH MRT STATION",
+      "display_name": "TANAH MERAH",
+      "mrt_codes": [
+        "EW4"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3268577483881843,
+          "lng": 103.94579472792945,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3270612758143558,
+          "lng": 103.9457230415822,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tanah_Merah_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC22",
+      "official_name": "BUONA VISTA MRT STATION",
+      "display_name": "BUONA VISTA",
+      "mrt_codes": [
+        "CC22",
+        "EW21"
+      ],
+      "lines": [
+        "CCL",
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3073094507702407,
+          "lng": 103.79044917530257,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3071972570585428,
+          "lng": 103.79065661943288,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3069128886104584,
+          "lng": 103.79059939037006,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3062981416247745,
+          "lng": 103.79093006515394,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Buona_Vista_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SW1",
+      "official_name": "CHENG LIM LRT STATION",
+      "display_name": "CHENG LIM",
+      "mrt_codes": [
+        "SW1"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3963732182354105,
+          "lng": 103.89368487427694,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3961869711232995,
+          "lng": 103.89392033157345,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Cheng_Lim_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE9",
+      "official_name": "BOON KENG MRT STATION",
+      "display_name": "BOON KENG",
+      "mrt_codes": [
+        "NE9"
+      ],
+      "lines": [
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3201068759913108,
+          "lng": 103.86150235706886,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3192351959974773,
+          "lng": 103.86190367551879,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.317914816472307,
+          "lng": 103.86070683328751,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Boon_Keng_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE10",
+      "official_name": "POTONG PASIR MRT STATION",
+      "display_name": "POTONG PASIR",
+      "mrt_codes": [
+        "NE10"
+      ],
+      "lines": [
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3328013522428703,
+          "lng": 103.86896644470293,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3311481407339933,
+          "lng": 103.86933323936297,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3310667109798315,
+          "lng": 103.86870389318757,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Potong_Pasir_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC20",
+      "official_name": "FARRER ROAD MRT STATION",
+      "display_name": "FARRER ROAD",
+      "mrt_codes": [
+        "CC20"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.31749372589551,
+          "lng": 103.80796523070785,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3175520161722278,
+          "lng": 103.80738923455762,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Farrer_Road_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC21",
+      "official_name": "HOLLAND VILLAGE MRT STATION",
+      "display_name": "HOLLAND VILLAGE",
+      "mrt_codes": [
+        "CC21"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3112202657771888,
+          "lng": 103.79613910248287,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3110694836596164,
+          "lng": 103.79576910839042,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3107112013327236,
+          "lng": 103.79575377011341,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Holland_Village_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CE1",
+      "official_name": "BAYFRONT EXIT MRT STATION",
+      "display_name": "BAYFRONT EXIT",
+      "mrt_codes": [
+        "CE1",
+        "DT16"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2809674239716435,
+          "lng": 103.8587319247403,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2827052247082797,
+          "lng": 103.85975918022659,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2828349086889401,
+          "lng": 103.85959687218748,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.2828343544709762,
+          "lng": 103.85949384661112,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.2811046370918653,
+          "lng": 103.85844100365208,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bayfront_Exit_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC15",
+      "official_name": "BISHAN MRT STATION",
+      "display_name": "BISHAN",
+      "mrt_codes": [
+        "CC15",
+        "NS17"
+      ],
+      "lines": [
+        "CCL",
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.350579598712016,
+          "lng": 103.8483049917219,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3510644392737419,
+          "lng": 103.84831225598012,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3505849115398918,
+          "lng": 103.84820928129376,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3510532199332945,
+          "lng": 103.85020108196488,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.3510348377710364,
+          "lng": 103.84843292387485,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bishan_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE16",
+      "official_name": "SENGKANG MRT STATION",
+      "display_name": "SENGKANG",
+      "mrt_codes": [
+        "NE16",
+        "STC"
+      ],
+      "lines": [
+        "NEL",
+        "SKL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3918291197182173,
+          "lng": 103.89540572075428,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3917956376620702,
+          "lng": 103.89563689436537,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3908815860944936,
+          "lng": 103.89520939988465,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3923708436315307,
+          "lng": 103.89570545661016,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Sengkang_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE17",
+      "official_name": "PUNGGOL MRT STATION",
+      "display_name": "PUNGGOL",
+      "mrt_codes": [
+        "NE17",
+        "PTC"
+      ],
+      "lines": [
+        "NEL",
+        "PGL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.405339576226845,
+          "lng": 103.90230599665618,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4051862417636451,
+          "lng": 103.90259819698754,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.4043006257297816,
+          "lng": 103.90211563918285,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.404438336178063,
+          "lng": 103.90179852436347,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Punggol_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE15",
+      "official_name": "BUANGKOK MRT STATION",
+      "display_name": "BUANGKOK",
+      "mrt_codes": [
+        "NE15"
+      ],
+      "lines": [
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3834097909898952,
+          "lng": 103.89288383673062,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.382649722820209,
+          "lng": 103.89346315223678,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Buangkok_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC11",
+      "official_name": "TAI SENG MRT STATION",
+      "display_name": "TAI SENG",
+      "mrt_codes": [
+        "CC11"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3359140849264504,
+          "lng": 103.88762743726211,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3346208772307528,
+          "lng": 103.88821406777215,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tai_Seng_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC12",
+      "official_name": "BARTLEY MRT STATION",
+      "display_name": "BARTLEY",
+      "mrt_codes": [
+        "CC12"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.342248749216091,
+          "lng": 103.88025589326459,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3435010615293341,
+          "lng": 103.8789086939245,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bartley_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC13",
+      "official_name": "SERANGOON MRT STATION",
+      "display_name": "SERANGOON",
+      "mrt_codes": [
+        "CC13",
+        "NE12"
+      ],
+      "lines": [
+        "CCL",
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3494816802550018,
+          "lng": 103.87395739539099,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3498337382561254,
+          "lng": 103.87364132190379,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.350595104421425,
+          "lng": 103.87369401449845,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3499015921064987,
+          "lng": 103.87432194657637,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.3508202454303972,
+          "lng": 103.87290211634077,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.3509482779369533,
+          "lng": 103.87144934034903,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit G",
+          "lat": 1.3507901994138853,
+          "lng": 103.87286669539574,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit H",
+          "lat": 1.3497276995143592,
+          "lng": 103.873546495734,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Serangoon_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC14",
+      "official_name": "LORONG CHUAN MRT STATION",
+      "display_name": "LORONG CHUAN",
+      "mrt_codes": [
+        "CC14"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3514391035751394,
+          "lng": 103.86493367346459,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3517385379127682,
+          "lng": 103.86291829995642,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Lorong_Chuan_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC2",
+      "official_name": "BRAS BASAH MRT STATION",
+      "display_name": "BRAS BASAH",
+      "mrt_codes": [
+        "CC2"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.296858921771042,
+          "lng": 103.85132725338609,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.2960462130772386,
+          "lng": 103.85047427550748,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.2970144329639453,
+          "lng": 103.85024985270456,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.2975514851835557,
+          "lng": 103.8501575209801,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.297535451717088,
+          "lng": 103.85042319251075,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bras_Basah_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS2",
+      "official_name": "BUKIT BATOK MRT STATION",
+      "display_name": "BUKIT BATOK",
+      "mrt_codes": [
+        "NS2"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3495610753524367,
+          "lng": 103.7499739902577,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.349389587768077,
+          "lng": 103.7499369555793,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3495200607327413,
+          "lng": 103.74976656493072,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3484053759049566,
+          "lng": 103.74911839418894,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bukit_Batok_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP13",
+      "official_name": "SENJA LRT STATION",
+      "display_name": "SENJA",
+      "mrt_codes": [
+        "BP13"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3828754471752023,
+          "lng": 103.76232576657173,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Senja_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW7",
+      "official_name": "EUNOS MRT STATION",
+      "display_name": "EUNOS",
+      "mrt_codes": [
+        "EW7"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3195172748993538,
+          "lng": 103.9028941378417,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3195625452697972,
+          "lng": 103.90258207761774,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3195299188012677,
+          "lng": 103.90321518697834,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Eunos_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE14",
+      "official_name": "HOUGANG MRT STATION",
+      "display_name": "HOUGANG",
+      "mrt_codes": [
+        "NE14"
+      ],
+      "lines": [
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.370208578260921,
+          "lng": 103.89244572315859,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3719461165527262,
+          "lng": 103.89297240097162,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.372141834832888,
+          "lng": 103.89197502913501,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Hougang_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CG2",
+      "official_name": "CHANGI AIRPORT MRT STATION",
+      "display_name": "CHANGI AIRPORT",
+      "mrt_codes": [
+        "CG2"
+      ],
+      "lines": [
+        "UNKNOWN"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3563414210048035,
+          "lng": 103.98927664241383,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3572202560601727,
+          "lng": 103.98730457979791,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Changi_Airport_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW30",
+      "official_name": "GUL CIRCLE MRT STATION",
+      "display_name": "GUL CIRCLE",
+      "mrt_codes": [
+        "EW30"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.31903226656851,
+          "lng": 103.6604441438593,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3188371831334533,
+          "lng": 103.65943494551723,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Gul_Circle_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW31",
+      "official_name": "TUAS CRESCENT MRT STATION",
+      "display_name": "TUAS CRESCENT",
+      "mrt_codes": [
+        "EW31"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3207638171122238,
+          "lng": 103.64895874126714,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3212435963986766,
+          "lng": 103.64928678910867,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tuas_Crescent_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW32",
+      "official_name": "TUAS WEST ROAD MRT STATION",
+      "display_name": "TUAS WEST ROAD",
+      "mrt_codes": [
+        "EW32"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3298724241392643,
+          "lng": 103.63928434470874,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3301823302320677,
+          "lng": 103.6397907112947,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tuas_West_Road_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW33",
+      "official_name": "TUAS LINK MRT STATION",
+      "display_name": "TUAS LINK",
+      "mrt_codes": [
+        "EW33"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3404268992051425,
+          "lng": 103.63724572002151,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3409400722685778,
+          "lng": 103.63684066747358,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tuas_Link_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CG1",
+      "official_name": "EXPO MRT STATION",
+      "display_name": "EXPO",
+      "mrt_codes": [
+        "CG1",
+        "DT35"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3354828221659554,
+          "lng": 103.96183679508403,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3352529442369512,
+          "lng": 103.96207528759587,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3359509717156908,
+          "lng": 103.96216102186416,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3348348883432715,
+          "lng": 103.96310068176199,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.3348633135054835,
+          "lng": 103.96212337687385,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit F",
+          "lat": 1.3347119482410732,
+          "lng": 103.96286574628039,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit G",
+          "lat": 1.3350193203868175,
+          "lng": 103.96304900743186,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Expo_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC10",
+      "official_name": "MACPHERSON MRT STATION",
+      "display_name": "MACPHERSON",
+      "mrt_codes": [
+        "CC10",
+        "DT26"
+      ],
+      "lines": [
+        "CCL",
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3266787588073006,
+          "lng": 103.88979333652624,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.325855030181965,
+          "lng": 103.89066567522076,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.32548152990651,
+          "lng": 103.89026256557356,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit D",
+          "lat": 1.3251454586796771,
+          "lng": 103.88845483437636,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit E",
+          "lat": 1.3261927775504818,
+          "lng": 103.88861521167733,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Macpherson_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE4",
+      "official_name": "SPRINGLEAF MRT STATION",
+      "display_name": "SPRINGLEAF",
+      "mrt_codes": [
+        "TE4"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3987872483653485,
+          "lng": 103.81800341495403,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3978208040575055,
+          "lng": 103.81839060713808,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.3976841788785623,
+          "lng": 103.81808162380058,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Springleaf_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE1",
+      "official_name": "WOODLANDS NORTH MRT STATION",
+      "display_name": "WOODLANDS NORTH",
+      "mrt_codes": [
+        "TE1"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.4479365024965063,
+          "lng": 103.7854290806745,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.4490472997072523,
+          "lng": 103.78510227142458,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Woodlands_North_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "TE5",
+      "official_name": "LENTOR MRT STATION",
+      "display_name": "LENTOR",
+      "mrt_codes": [
+        "TE5"
+      ],
+      "lines": [
+        "TEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.3854098299074886,
+          "lng": 103.8353599767011,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.3858909900868417,
+          "lng": 103.83582345202382,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 3",
+          "lat": 1.38460195423691,
+          "lng": 103.83739808002932,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 4",
+          "lat": 1.3836277515432962,
+          "lng": 103.83733866006392,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 5",
+          "lat": 1.384162375361772,
+          "lng": 103.83683953269572,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Lentor_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SW4",
+      "official_name": "THANGGAM LRT STATION",
+      "display_name": "THANGGAM",
+      "mrt_codes": [
+        "SW4"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3971980359239675,
+          "lng": 103.87556636438234,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3971924583386544,
+          "lng": 103.87568683695845,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Thanggam_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SW3",
+      "official_name": "KUPANG LRT STATION",
+      "display_name": "KUPANG",
+      "mrt_codes": [
+        "SW3"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3982841977600906,
+          "lng": 103.88113916979948,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3981587914724123,
+          "lng": 103.88113793620703,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Kupang_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PW7",
+      "official_name": "SOO TECK LRT STATION",
+      "display_name": "SOO TECK",
+      "mrt_codes": [
+        "PW7"
+      ],
+      "lines": [
+        "PGL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4050149248670734,
+          "lng": 103.897029921817,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4052448994991427,
+          "lng": 103.89740857212135,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Soo_Teck_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PE2",
+      "official_name": "MERIDIAN LRT STATION",
+      "display_name": "MERIDIAN",
+      "mrt_codes": [
+        "PE2"
+      ],
+      "lines": [
+        "UNKNOWN"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3966810501386635,
+          "lng": 103.90896583318727,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.397121689799433,
+          "lng": 103.90886949615401,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Meridian_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "BP2",
+      "official_name": "SOUTH VIEW LRT STATION",
+      "display_name": "SOUTH VIEW",
+      "mrt_codes": [
+        "BP2"
+      ],
+      "lines": [
+        "BPL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3803176569910298,
+          "lng": 103.74510113107972,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/South_View_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW22",
+      "official_name": "DOVER MRT STATION",
+      "display_name": "DOVER",
+      "mrt_codes": [
+        "EW22"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3114154334487695,
+          "lng": 103.7783047152878,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3116931916796435,
+          "lng": 103.7784647713041,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Dover_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW29",
+      "official_name": "JOO KOON MRT STATION",
+      "display_name": "JOO KOON",
+      "mrt_codes": [
+        "EW29"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3275020844586545,
+          "lng": 103.67852070901132,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3279561114378626,
+          "lng": 103.67864407707678,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Joo_Koon_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC16",
+      "official_name": "MARYMOUNT MRT STATION",
+      "display_name": "MARYMOUNT",
+      "mrt_codes": [
+        "CC16"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3489803864213659,
+          "lng": 103.83908795680053,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3478660721730777,
+          "lng": 103.84005891807723,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Marymount_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE13",
+      "official_name": "KOVAN MRT STATION",
+      "display_name": "KOVAN",
+      "mrt_codes": [
+        "NE13"
+      ],
+      "lines": [
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3597075887012466,
+          "lng": 103.8843074286358,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3602056230632658,
+          "lng": 103.88472173212224,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3600280101444633,
+          "lng": 103.88545057800044,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Kovan_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW6",
+      "official_name": "KEMBANGAN MRT STATION",
+      "display_name": "KEMBANGAN",
+      "mrt_codes": [
+        "EW6"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3209237602820207,
+          "lng": 103.91294107940732,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3211521080554456,
+          "lng": 103.91289928874629,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Kembangan_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS18",
+      "official_name": "BRADDELL MRT STATION",
+      "display_name": "BRADDELL",
+      "mrt_codes": [
+        "NS18"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.341068992069514,
+          "lng": 103.84642954072108,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3407443190144652,
+          "lng": 103.84640649723127,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.3406721639431691,
+          "lng": 103.84744083059097,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Braddell_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NS20",
+      "official_name": "NOVENA MRT STATION",
+      "display_name": "NOVENA",
+      "mrt_codes": [
+        "NS20"
+      ],
+      "lines": [
+        "NSL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.321094868302358,
+          "lng": 103.84438933387052,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3198958860347805,
+          "lng": 103.84333973347628,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Novena_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE11",
+      "official_name": "WOODLEIGH MRT STATION",
+      "display_name": "WOODLEIGH",
+      "mrt_codes": [
+        "NE11"
+      ],
+      "lines": [
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3385106544114485,
+          "lng": 103.87094060456803,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3385831494601297,
+          "lng": 103.87050846814451,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit C",
+          "lat": 1.339867219941902,
+          "lng": 103.87105380415785,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Woodleigh_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SW7",
+      "official_name": "TONGKANG LRT STATION",
+      "display_name": "TONGKANG",
+      "mrt_codes": [
+        "SW7"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3891801609980827,
+          "lng": 103.88596211411945,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3893790079485524,
+          "lng": 103.88608435738307,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tongkang_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SW8",
+      "official_name": "RENJONG LRT STATION",
+      "display_name": "RENJONG",
+      "mrt_codes": [
+        "SW8"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3866979558885189,
+          "lng": 103.89040916173235,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.386814144215554,
+          "lng": 103.89043819212365,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Renjong_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SE5",
+      "official_name": "RANGGUNG LRT STATION",
+      "display_name": "RANGGUNG",
+      "mrt_codes": [
+        "SE5"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3841763860698961,
+          "lng": 103.89732172381714,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3841048834051197,
+          "lng": 103.8972239380547,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Ranggung_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SE4",
+      "official_name": "KANGKAR LRT STATION",
+      "display_name": "KANGKAR",
+      "mrt_codes": [
+        "SE4"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3840745028734758,
+          "lng": 103.90214755814063,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3837652031672463,
+          "lng": 103.90227636802918,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Kangkar_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SE3",
+      "official_name": "BAKAU LRT STATION",
+      "display_name": "BAKAU",
+      "mrt_codes": [
+        "SE3"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3881853854521522,
+          "lng": 103.9054456307135,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3878407992569977,
+          "lng": 103.90548212404298,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Bakau_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SE2",
+      "official_name": "RUMBIA LRT STATION",
+      "display_name": "RUMBIA",
+      "mrt_codes": [
+        "SE2"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3913404864174224,
+          "lng": 103.9060187916516,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3914142417871276,
+          "lng": 103.90610581936582,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Rumbia_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC25",
+      "official_name": "HAW PAR VILLA MRT STATION",
+      "display_name": "HAW PAR VILLA",
+      "mrt_codes": [
+        "CC25"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2830552735417646,
+          "lng": 103.7820063970724,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Haw_Par_Villa_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC26",
+      "official_name": "PASIR PANJANG MRT STATION",
+      "display_name": "PASIR PANJANG",
+      "mrt_codes": [
+        "CC26"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.276003232785054,
+          "lng": 103.79203018692041,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Pasir_Panjang_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC27",
+      "official_name": "LABRADOR PARK MRT STATION",
+      "display_name": "LABRADOR PARK",
+      "mrt_codes": [
+        "CC27"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2721069580543352,
+          "lng": 103.80235555366292,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Labrador_Park_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "CC28",
+      "official_name": "TELOK BLANGAH MRT STATION",
+      "display_name": "TELOK BLANGAH",
+      "mrt_codes": [
+        "CC28"
+      ],
+      "lines": [
+        "CCL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.2707212262114045,
+          "lng": 103.80988373092025,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Telok_Blangah_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT2",
+      "official_name": "CASHEW MRT STATION",
+      "display_name": "CASHEW",
+      "mrt_codes": [
+        "DT2"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3698333185962925,
+          "lng": 103.76423448071098,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Cashew_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "EW28",
+      "official_name": "PIONEER MRT STATION",
+      "display_name": "PIONEER",
+      "mrt_codes": [
+        "EW28"
+      ],
+      "lines": [
+        "EWL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3373446269204403,
+          "lng": 103.69715537341133,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.3378316280054785,
+          "lng": 103.69712945287633,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Pioneer_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "SE1",
+      "official_name": "COMPASSVALE LRT STATION",
+      "display_name": "COMPASSVALE",
+      "mrt_codes": [
+        "SE1"
+      ],
+      "lines": [
+        "SKL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.3943275215100395,
+          "lng": 103.90061646960031,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.394534172299889,
+          "lng": 103.90070659755264,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Compassvale_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PW3",
+      "official_name": "PUNGGOL POINT LRT STATION",
+      "display_name": "PUNGGOL POINT",
+      "mrt_codes": [
+        "PW3"
+      ],
+      "lines": [
+        "PGL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4169147679142875,
+          "lng": 103.90681779233337,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4166640679409692,
+          "lng": 103.9066933049236,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Punggol_Point_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "PW5",
+      "official_name": "NIBONG LRT STATION",
+      "display_name": "NIBONG",
+      "mrt_codes": [
+        "PW5"
+      ],
+      "lines": [
+        "PGL"
+      ],
+      "station_type": "lrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.4117727733571026,
+          "lng": 103.90007380805265,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit B",
+          "lat": 1.4119103237022979,
+          "lng": 103.90053155420699,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Nibong_LRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "DT36",
+      "official_name": "XILIN MRT STATION",
+      "display_name": "XILIN",
+      "mrt_codes": [
+        "DT36"
+      ],
+      "lines": [
+        "DTL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.32890694938858,
+          "lng": 103.964902569595,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Xilin_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "JS3",
+      "official_name": "TENGAH MRT STATION",
+      "display_name": "TENGAH",
+      "mrt_codes": [
+        "JS3"
+      ],
+      "lines": [
+        "JRL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.36634689098717,
+          "lng": 103.730063135994,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tengah_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "JE2",
+      "official_name": "TENGAH PARK MRT STATION",
+      "display_name": "TENGAH PARK",
+      "mrt_codes": [
+        "JE2"
+      ],
+      "lines": [
+        "UNKNOWN"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.35244451963606,
+          "lng": 103.736747833111,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tengah_Park_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "JE1",
+      "official_name": "TENGAH PLANTATION MRT STATION",
+      "display_name": "TENGAH PLANTATION",
+      "mrt_codes": [
+        "JE1"
+      ],
+      "lines": [
+        "UNKNOWN"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit A",
+          "lat": 1.35732891143881,
+          "lng": 103.733467748962,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Tengah_Plantation_MRT_Station",
+      "extraction_status": "pending"
+    },
+    {
+      "station_id": "NE18",
+      "official_name": "PUNGGOL COAST MRT STATION",
+      "display_name": "PUNGGOL COAST",
+      "mrt_codes": [
+        "NE18"
+      ],
+      "lines": [
+        "NEL"
+      ],
+      "station_type": "mrt",
+      "exits": [
+        {
+          "exit_code": "Exit 1",
+          "lat": 1.41477576307064,
+          "lng": 103.909172344627,
+          "source": "datagov"
+        },
+        {
+          "exit_code": "Exit 2",
+          "lat": 1.4150887569786,
+          "lng": 103.91107971545,
+          "source": "datagov"
+        }
+      ],
+      "fandom_url": "https://singapore-mrt-lines.fandom.com/wiki/Punggol_Coast_MRT_Station",
+      "extraction_status": "pending"
+    }
+  ]
+}

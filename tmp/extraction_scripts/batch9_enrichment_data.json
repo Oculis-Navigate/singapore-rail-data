@@ -1,0 +1,1312 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "MRT Station Enrichment Data - Batch 9 (DTL East - 13 stations)",
+    "extraction_date": "2026-02-02",
+    "source": "Singapore MRT Lines Fandom Wiki",
+    "extraction_method": "Manual webfetch and HTML parsing",
+    "total_stations": 13,
+    "failed_stations": 0,
+    "extraction_confidence": "high",
+    "notes": "Downtown Line East section: Little India through Expo (DT12, DT23-DT35). Includes major interchange at Tampines (EWL) and Expo (EWL/CGL)."
+  },
+  "stations": {
+    "LITTLE INDIA MRT STATION": {
+      "official_name": "LITTLE INDIA MRT STATION",
+      "station_code": "DT12",
+      "lines": ["DTL", "NEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "40011",
+              "services": ["48", "56", "57", "67", "166", "170", "851", "851e", "960", "960e", "980"]
+            }
+          ],
+          "nearby_landmarks": ["Mackenzie Car Mall", "Mackenzie Regency", "Mackenzie Road", "Rex Cinema", "Selegie Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "40019",
+              "services": ["48", "56", "57", "67", "131", "166", "170", "851", "851e", "960", "960e", "980"]
+            }
+          ],
+          "nearby_landmarks": ["Tekka Market"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Tekka Centre", "Tekka Market", "The Verge"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Foochow Methodist Church", "Grand Imperial Hotel", "Kerbau Hotel", "Land Transport Authority Headquarters", "Shree Lakshminarayan Temple", "Tekka Centre", "Tekka Market"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Gholia's Village", "Grand Imperial Hotel", "Shree Lakshmi Narayan Temple", "Sri Veerama Kaliamman Temple"]
+        },
+        {
+          "exit_code": "F",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NE1",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE18",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Farrer Park Swimming Complex", "Farrer Park Tennis Centre", "Kampong Java Park", "KK Woman's & Children's Hospital", "Land Transport Authority Headquarters", "Tanglin Police Division Headquarters"]
+        }
+      ],
+      "accessibility_notes": ["NEL/DTL interchange station", "DTL cuts underneath NEL", "Transfer linkways within paid areas", "Exit E stairs-only NOT accessible (exit-only from 9 May 2022)", "Both concourses at B1/B2 with faregates", "NEL opened 20 June 2003, DTL opened 27 December 2015"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Little_India_MRT_Station",
+      "extraction_confidence": "high"
+     },
+    "BENDEMEER MRT STATION": {
+      "official_name": "BENDEMEER MRT STATION",
+      "station_code": "DT23",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "60011",
+              "services": ["61", "107", "107M", "175", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["BS Bendemeer Centre", "Holy Trinity Church", "Jalan Besar Sports Centre", "Jalan Besar Stadium / Swimming Complex", "Singapore Casket", "Singapore Post Kallang Delivery Base"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "60019",
+              "services": ["61", "107", "107M", "175", "961", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Banchong Building", "CT Hub", "Pek Chuan Building", "Vanguard Campus"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free", "Underpass at B1 connects exits to concourse at B2", "Station opened 21 October 2017 (DTL Phase 3)", "Tribute to textile culture in Art In Transit"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bendemeer_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "GEYLANG BAHRU MRT STATION": {
+      "official_name": "GEYLANG BAHRU MRT STATION",
+      "station_code": "DT24",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "60221",
+              "services": ["26", "61", "107", "107M", "140", "853", "853M"]
+            },
+            {
+              "code": "60229",
+              "services": ["26", "61", "107", "107M", "140", "853", "853M"]
+            }
+          ],
+          "nearby_landmarks": ["Automobile Association of Singapore (AAS)", "Baptist Golden Age Home", "GB Point", "Geylang Bahru Market & Hawker Centre", "Jalan Besar Town Council", "Kallang Bahru Swimming Complex", "Kolam Ayer CC", "Kolam Ayer NPP", "MOM Services Centre", "Singapore College of Traditional Chinese Medicine", "Singapore Life Saving Society"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "80291",
+              "services": ["140", "175"]
+            },
+            {
+              "code": "80299",
+              "services": ["140", "175"]
+            }
+          ],
+          "nearby_landmarks": ["Ace SHRM College", "Geylang Bahru Industrial Estate", "Geylang West CC", "Kallang Distripark"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free", "Tribute to 1970s-80s terraced workshops in Art In Transit", "Station opened 21 October 2017 (DTL Phase 3)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Geylang_Bahru_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "MATTAR MRT STATION": {
+      "official_name": "MATTAR MRT STATION",
+      "station_code": "DT25",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "70161",
+              "services": ["40", "61", "63", "65", "135", "154", "155", "158"]
+            }
+          ],
+          "nearby_landmarks": ["Canossa Convent", "Canossa Catholic Primary School", "Canossaville Children's Home", "Canossian School"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "70231",
+              "services": ["40", "61", "63", "65", "135", "154", "155", "158"]
+            }
+          ],
+          "nearby_landmarks": ["Andrew & Grace Home", "Church of Saint Stephen", "Circuit Road Food Centre", "Darul Ihsan Orphanage", "Grace Baptist Church", "Home United Youth Football Academy", "MacPherson Primary School", "Masjid Sallim Mattar"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Hidden cripple sidings parallel to running tracks", "Both exits barrier-free", "Agarwood-inspired Art In Transit", "Station opened 21 October 2017 (DTL Phase 3)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Mattar_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "UBI MRT STATION": {
+      "official_name": "UBI MRT STATION",
+      "station_code": "DT27",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "71129",
+              "services": ["8", "22", "61", "65", "137"]
+            }
+          ],
+          "nearby_landmarks": ["CES Building", "Excalibur Centre", "Hola Centre", "Maha Bodhi School", "Manjusri Secondary School", "Techniques Centre", "Ubi Techpark"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "71121",
+              "services": ["8", "22", "61", "65", "137"]
+            }
+          ],
+          "nearby_landmarks": ["Automobile Megamart", "Boon Teck Home", "E-Park @ Ubi", "Frontier", "Focus One", "Fulco Building", "Kah Motors", "Kai Lim @ Ubi", "Kampong Ubi Industrial Estate", "Olympia Industrial Building", "Pioneers & Leaders Centre", "Regent Centre", "Serial System Building", "The Besco Building", "Think One Building", "Ubi Car Mall", "Ubiplex 1", "Wangi Industrial Building", "Wui Hong Building"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Named after tapioca (ubi) from Japanese occupation era", "Both exits barrier-free", "Tapioca-inspired Art In Transit 'Staple'", "Station opened 21 October 2017 (DTL Phase 3)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Ubi_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "KAKI BUKIT MRT STATION": {
+      "official_name": "KAKI BUKIT MRT STATION",
+      "station_code": "DT28",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "72039",
+              "services": ["5", "15", "58", "59", "87"]
+            }
+          ],
+          "nearby_landmarks": ["Eunos Techpark", "Kaki Bukit Industrial Estate", "Kaki Bukit Techpark I", "Kaki Bukit Techpark II", "Masjid Alkaff Kampong Melayu", "Shun Li Industrial Park"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "72041",
+              "services": ["5", "15", "58", "59", "87"]
+            }
+          ],
+          "nearby_landmarks": ["Bedok North Secondary School", "Chong Teck Siang Tng Temple", "Teck Hai Keng Temple", "Telok Kurau Primary School"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free", "Splits industrial and domestic landscapes", "Video installation Art In Transit 'Welcome to Kaki Bukit'", "Station opened 21 October 2017 (DTL Phase 3)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Kaki_Bukit_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BEDOK NORTH MRT STATION": {
+      "official_name": "BEDOK NORTH MRT STATION",
+      "station_code": "DT29",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "84451",
+              "services": ["23", "60", "87", "137", "518"]
+            }
+          ],
+          "nearby_landmarks": ["Advanex", "Bedok Industrial Park C", "Dou Yee Building"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "84539",
+              "services": ["23", "60", "87", "137", "518"]
+            }
+          ],
+          "nearby_landmarks": ["Bedok Town Park", "Damai Primary School", "Siglap Park Connector"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free", "Exit C not accessible for entry (exit-only from 9 May 2022)", "Umbrella tree-inspired Art In Transit 'Dedaun Masa'", "Station opened 21 October 2017 (DTL Phase 3)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bedok_North_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BEDOK RESERVOIR MRT STATION": {
+      "official_name": "BEDOK RESERVOIR MRT STATION",
+      "station_code": "DT30",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "84201",
+              "services": ["18", "28", "46", "67", "69", "168", "228"]
+            }
+          ],
+          "nearby_landmarks": ["Bedok Park Connector", "Bedok Town Park", "Muhammadiyah Welfare Home", "Yu Neng Primary School"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "84209",
+              "services": ["18", "28", "46", "67", "69", "168", "228"]
+            }
+          ],
+          "nearby_landmarks": ["Bedok Green Secondary School", "Bedok Park Connector", "Bedok Reservoir Park", "Red Swastika"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free", "Near Bedok Reservoir Park", "Typography-inspired Art In Transit 'Somewhere Else' with special bench", "Station opened 21 October 2017 (DTL Phase 3)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bedok_Reservoir_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "TAMPINES WEST MRT STATION": {
+      "official_name": "TAMPINES WEST MRT STATION",
+      "station_code": "DT31",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "76289",
+              "services": ["46", "65", "129"]
+            },
+            {
+              "code": "76281",
+              "services": ["46", "65", "129"]
+            }
+          ],
+          "nearby_landmarks": ["Saint Hilda's Primary School", "Saint Hilda's Secondary School", "Singapore SOKA Association HQ", "Tampines Park Connector", "Tampines West Community Club", "Temasek Polytechnic"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "75051",
+              "services": ["5", "8", "15", "18", "21", "23", "28", "59", "67", "118", "168", "513", "518"]
+            },
+            {
+              "code": "75059",
+              "services": ["5", "8", "15", "18", "21", "23", "28", "59", "67", "118", "168", "513", "518"]
+            }
+          ],
+          "nearby_landmarks": ["Chapel of Christ the Redeemer", "Jamiyah Home for the Aged (Darul Takrim)", "Junyuan Primary School", "SAFRA Tampines", "Tampines NPC", "Tampines Park Connector", "Tampines SOKA Centre"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Both exits barrier-free", "Collage-style Art In Transit 'Welcome to Jingapore!'", "Station opened 21 October 2017 (DTL Phase 3)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tampines_West_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "TAMPINES MRT STATION": {
+      "official_name": "TAMPINES MRT STATION",
+      "station_code": "DT32",
+      "lines": ["DTL", "EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Tampines Bus Interchange", "Tampines Concourse Bus Interchange", "AIA Tampines", "Asia Green", "Hitachi Square", "OCBC Tampines Centre One", "Sun Plaza Park", "Tampines Central Post Office (Telepark)", "Our Tampines Hub", "Hawker Centre", "HDB Tampines Branch Office", "HomeTeamNS Tampines", "Tampines Central Community Club", "Tampines Regional Library", "Tampines Swimming Complex", "Town Square"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Kheng Chiu Happy Lodge", "Tampines One", "Tampines Polyclinic"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Century Square", "CPF Tampines Building", "NTUC Income@Tampines Junction", "NTUC Income@Tampines Point", "OCBC Tampines Centre Two", "Tampines Mall", "Tampines Plaza 1", "Tampines Plaza 2", "UOB Tampines Centre"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Tampines Bus Interchange", "Century Square", "Cycling Path & Park Connector", "Eastlink Mall", "Sun Plaza Park", "Tampines Mall", "Tampines North Community Centre", "Tampines One", "Tampines Polyclinic"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Tampines Concourse Bus Interchange", "British Council (Tampines)", "Hitachi"]
+        },
+        {
+          "exit_code": "F",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Abacus Plaza", "AIA Tampines", "CPF Tampines Building", "Income at Tampines Junction", "Income at Tampines Point", "Masjid Darul Ghufran", "OCBC Tampines Centre One", "OCBC Tampines Centre Two", "Our Tampines Hub", "Tampines Bus Interchange", "Tampines Plaza", "Tampines Primary School", "Tampines Secondary School", "Telepark", "UOB Tampines Centre"]
+        },
+        {
+          "exit_code": "G",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift"],
+          "bus_stops": [],
+          "nearby_landmarks": ["ESR BizPark @ Changi"]
+        }
+      ],
+      "accessibility_notes": ["EWL/DTL interchange station", "EWL platforms elevated with half-height PSDs", "DTL platforms underground with full-height PSDs", "Unpaid link between EWL and DTL concourses", "Major bus interchange at Exit A", "Exit C and F stairs-only NOT accessible", "EWL opened 16 December 1989, DTL opened 21 October 2017", "Sculptural Art In Transit 'The Big Round & The Tall Long' at DTL"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tampines_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "TAMPINES EAST MRT STATION": {
+      "official_name": "TAMPINES EAST MRT STATION",
+      "station_code": "DT33",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "76221",
+              "services": ["4", "8", "18", "19", "21", "37", "38", "81", "293"]
+            },
+            {
+              "code": "76229",
+              "services": ["4", "8", "18", "19", "21", "37", "38", "81"]
+            },
+            {
+              "code": "76211",
+              "services": ["18", "29"]
+            }
+          ],
+          "nearby_landmarks": ["Tampines North Park", "Gongshang Primary School", "East View Secondary School", "HDB Blks 44x-46x"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "76031",
+              "services": ["3", "8", "9", "12", "12e", "17", "34", "38", "39", "59", "518"]
+            }
+          ],
+          "nearby_landmarks": ["Tampines East CC", "Tampines N2 Market", "Tampines Street 23/24", "HDB Blks 20x-22x"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "76039",
+              "services": ["3", "8", "9", "12", "12e", "17", "34", "38", "39", "59", "518"]
+            }
+          ],
+          "nearby_landmarks": ["Cycling Path and Park Connector", "Ngee Ann Secondary School", "HDB Blks 30x-31x", "HDB Blks 37x-39x"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "76319",
+              "services": ["18", "29"]
+            }
+          ],
+          "nearby_landmarks": ["Dunman Secondary School", "HDB Blks 48x-49x"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "All 4 exits barrier-free", "Collage-style Art In Transit 'Welcome to Jingapore!'", "Station opened 21 October 2017 (DTL Phase 3)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tampines_East_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "UPPER CHANGI MRT STATION": {
+      "official_name": "UPPER CHANGI MRT STATION",
+      "station_code": "DT34",
+      "lines": ["DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "96041",
+              "services": ["2", "5", "24"]
+            }
+          ],
+          "nearby_landmarks": ["Tropicana Condo", "East View Garden"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "96049",
+              "services": ["2", "5", "24"]
+            }
+          ],
+          "nearby_landmarks": ["Singapore University of Technology and Design (SUTD)", "Somapah Road"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Changi Bethany Church", "Changi Court", "SIA Training Centre"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Tropicana Condo", "Golden Shower Park", "Meragi Road", "Meragi Terrace"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "DT35",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Singapore University of Technology and Design (SUTD)"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "5 exits (A-E) all barrier-free", "Deep station with concourse at B3 and platform at B4", "Near SUTD campus", "Student response Art In Transit 'I Am Anonymous'", "Station opened 21 October 2017 (DTL Phase 3)"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Upper_Changi_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "EXPO MRT STATION": {
+      "official_name": "EXPO MRT STATION",
+      "station_code": "DT35",
+      "lines": ["DTL", "EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CG2",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW4",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "96021",
+              "services": ["12", "24", "38"]
+            },
+            {
+              "code": "96029",
+              "services": ["12", "24", "38"]
+            },
+            {
+              "code": "96031",
+              "services": ["12", "24", "38"]
+            },
+            {
+              "code": "96039",
+              "services": ["12", "24", "38"]
+            }
+          ],
+          "nearby_landmarks": ["Expo Drive", "Upper Changi Road", "Singapore Expo (Halls 1-6 and 7-9)", "The Max Pavilion", "Max Atria"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CG2",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW4",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "96221",
+              "services": ["35", "35M", "47", "118"]
+            },
+            {
+              "code": "96229",
+              "services": ["35", "35M", "47", "118"]
+            },
+            {
+              "code": "96301",
+              "services": ["20", "118"]
+            }
+          ],
+          "nearby_landmarks": ["Changi Business Park", "Changi South Avenue 1", "Changi City", "Changi City Point", "Capri by Fraser Changi City", "Park Avenue Changi", "ESR BizPark @ Changi", "The Signature", "Standard Chartered @ Changi", "The IBM Place", "Plaza 8 @ CBP", "DBS Asia Hub", "Yas Global Logistics", "Thyssen Haniel Logistics Centre", "U-Freight Logistics Centre", "Xinlin Districentre"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CG2",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW4",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Expo Halls 7-9", "Singapore University of Technology and Design (SUTD)", "The Max Pavilion"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CG2",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW4",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Capri by Fraser: Changi City", "Changi City Point", "DBS Asia Hub", "Eightrium@CBP", "One@Changi City", "IBP Place", "Plaza8 @ CBP", "Park Avenue Changi", "The Signature", "ESR BizPark @ Changi"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CG2",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW4",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "96309",
+              "services": ["20", "118"]
+            }
+          ],
+          "nearby_landmarks": ["Capri by Fraser: Changi City", "Changi City Point", "Citi", "DBS Asia Hub", "DBS Schenker Logistics Centre", "One@Changi City", "Thyssen Haniel Logistics Centre", "U-Freight Logistics Centre", "Yusen Logistics"]
+        },
+        {
+          "exit_code": "F",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CG2",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW4",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Changi City Point"]
+        },
+        {
+          "exit_code": "G",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CG2",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "EW4",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["ESR BizPark @ Changi"]
+        }
+      ],
+      "accessibility_notes": ["EWL/DTL interchange station (also on CGL)", "DTL terminus station - Platform D alighting-only", "EWL elevated with unique blade-like roof by Foster + Partners", "Transfer linkway between EWL and DTL concourses", "Platform screen doors on both lines", "Faregates at platform level for lift access", "Station opened 10 January 2001 (EWL), 21 October 2017 (DTL)", "Sculptural Art In Transit 'A Banquet' at DTL"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Expo_MRT_Station",
+      "extraction_confidence": "high"
+    }
+  }
+}

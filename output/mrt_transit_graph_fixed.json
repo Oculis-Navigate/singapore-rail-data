@@ -2295,32 +2295,15 @@
         ]
     },
     {
-        "official_name": "CHOA CHU KANG MRT STATION",
+        "official_name": "CHOA CHU KANG LRT STATION",
         "mrt_codes": [
-            "BP1",
-            "JS1",
-            "NS4"
+            "BP1"
         ],
         "exits": [
-            {
-                "exit_code": "Exit A",
-                "lat": 1.385431280875975,
-                "lng": 103.7445571353678
-            },
             {
                 "exit_code": "Exit B",
                 "lat": 1.3849796641871803,
                 "lng": 103.7445951430258
-            },
-            {
-                "exit_code": "Exit C",
-                "lat": 1.3857361854031247,
-                "lng": 103.74451779877056
-            },
-            {
-                "exit_code": "Exit D",
-                "lat": 1.3853699997077467,
-                "lng": 103.74411000039194
             },
             {
                 "exit_code": "Exit E",
@@ -2656,6 +2639,35 @@
                 "exit_code": "Exit B",
                 "lat": 1.372886236352008,
                 "lng": 103.94913694034909
+            }
+        ]
+    },
+    {
+        "official_name": "CHOA CHU KANG MRT STATION",
+        "mrt_codes": [
+            "JS1",
+            "NS4"
+        ],
+        "exits": [
+            {
+                "exit_code": "Exit A",
+                "lat": 1.385431280875975,
+                "lng": 103.7445571353678
+            },
+            {
+                "exit_code": "Exit B",
+                "lat": 1.3845999997090193,
+                "lng": 103.74447000005159
+            },
+            {
+                "exit_code": "Exit C",
+                "lat": 1.3857361854031247,
+                "lng": 103.74451779877056
+            },
+            {
+                "exit_code": "Exit D",
+                "lat": 1.3853699997077467,
+                "lng": 103.74411000039194
             }
         ]
     },
@@ -3517,16 +3529,6 @@
                 "exit_code": "Exit B",
                 "lat": 1.4051862417636451,
                 "lng": 103.90259819698754
-            },
-            {
-                "exit_code": "Exit C",
-                "lat": 1.4043006257297816,
-                "lng": 103.90211563918285
-            },
-            {
-                "exit_code": "Exit D",
-                "lat": 1.404438336178063,
-                "lng": 103.90179852436347
             }
         ]
     },
@@ -4529,19 +4531,6 @@
         ]
     },
     {
-        "official_name": "TENGAH PARK MRT STATION",
-        "mrt_codes": [
-            "JE2"
-        ],
-        "exits": [
-            {
-                "exit_code": "Exit A",
-                "lat": 1.35244451963606,
-                "lng": 103.736747833111
-            }
-        ]
-    },
-    {
         "official_name": "TENGAH PLANTATION MRT STATION",
         "mrt_codes": [
             "JE1"
@@ -4571,5 +4560,129 @@
                 "lng": 103.91107971545
             }
         ]
+    },
+    {
+        "official_name": "SENGKANG LRT STATION",
+        "mrt_codes": [
+            "STC",
+            "NE16"
+        ],
+        "exits": [
+            {
+                "exit_code": "Exit A",
+                "platforms": [
+                    {
+                        "line": "SKLRT",
+                        "direction": "East Loop",
+                        "platform_code": "1"
+                    },
+                    {
+                        "line": "SKLRT",
+                        "direction": "West Loop",
+                        "platform_code": "2"
+                    }
+                ],
+                "accessibility": [
+                    "wheelchair_accessible",
+                    "lift",
+                    "escalator"
+                ]
+            },
+            {
+                "exit_code": "Exit B",
+                "platforms": [
+                    {
+                        "line": "SKLRT",
+                        "direction": "East Loop",
+                        "platform_code": "1"
+                    },
+                    {
+                        "line": "SKLRT",
+                        "direction": "West Loop",
+                        "platform_code": "2"
+                    }
+                ],
+                "accessibility": [
+                    "wheelchair_accessible",
+                    "lift",
+                    "escalator"
+                ]
+            }
+        ],
+        "lines_served": [
+            "SKLRT"
+        ],
+        "enrichment_last_updated": "2026-02-03T23:24:38.317595",
+        "data_quality": {
+            "exit_count": 2,
+            "has_platforms": true,
+            "has_bus_stops": false,
+            "has_landmarks": false,
+            "platform_completeness": 100.0,
+            "has_errors": false
+        },
+        "enrichment_notes": "LRT Hub station integrated with NE16"
+    },
+    {
+        "official_name": "PUNGGOL LRT STATION",
+        "mrt_codes": [
+            "PTC",
+            "NE17"
+        ],
+        "exits": [
+            {
+                "exit_code": "Exit A",
+                "platforms": [
+                    {
+                        "line": "PGLRT",
+                        "direction": "East Loop",
+                        "platform_code": "1"
+                    },
+                    {
+                        "line": "PGLRT",
+                        "direction": "West Loop",
+                        "platform_code": "2"
+                    }
+                ],
+                "accessibility": [
+                    "wheelchair_accessible",
+                    "lift",
+                    "escalator"
+                ]
+            },
+            {
+                "exit_code": "Exit B",
+                "platforms": [
+                    {
+                        "line": "PGLRT",
+                        "direction": "East Loop",
+                        "platform_code": "1"
+                    },
+                    {
+                        "line": "PGLRT",
+                        "direction": "West Loop",
+                        "platform_code": "2"
+                    }
+                ],
+                "accessibility": [
+                    "wheelchair_accessible",
+                    "lift",
+                    "escalator"
+                ]
+            }
+        ],
+        "lines_served": [
+            "PGLRT"
+        ],
+        "enrichment_last_updated": "2026-02-03T23:24:38.317611",
+        "data_quality": {
+            "exit_count": 2,
+            "has_platforms": true,
+            "has_bus_stops": false,
+            "has_landmarks": false,
+            "platform_completeness": 100.0,
+            "has_errors": false
+        },
+        "enrichment_notes": "LRT Hub station integrated with NE17"
     }
 ]

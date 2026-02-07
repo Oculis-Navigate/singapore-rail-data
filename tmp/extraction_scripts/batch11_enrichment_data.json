@@ -1,0 +1,651 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "MRT Station Enrichment Data - Batch 11 (TEL North - 6 stations)",
+    "extraction_date": "2026-02-02",
+    "source": "Singapore MRT Lines Fandom Wiki",
+    "extraction_method": "Manual webfetch and HTML parsing",
+    "total_stations": 6,
+    "failed_stations": 0,
+    "extraction_confidence": "high",
+    "notes": "Thomson-East Coast Line Northern section: Woodlands North through Upper Thomson (TE1, TE4-TE8). Woodlands (TE2/NS9) and Caldecott (TE9/CC17) were already extracted in previous batches (Batch 1 and Batch 6 respectively)."
+  },
+  "stations": {
+    "WOODLANDS NORTH MRT STATION": {
+      "official_name": "WOODLANDS NORTH MRT STATION",
+      "station_code": "TE1",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "47201",
+              "services": ["856"]
+            }
+          ],
+          "nearby_landmarks": ["Republic Polytechnic", "Singapore Institute of Technology"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["Both exits provide barrier-free accessibility via lifts and escalators. Future RTS Link to Johor Bahru (opening 2026)."],
+      "last_updated": "2026-02-02T22:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Woodlands_North_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "SPRINGLEAF MRT STATION": {
+      "official_name": "SPRINGLEAF MRT STATION",
+      "station_code": "TE4",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Mount Pleasant Veterinary Centre (Mandai)", "Springleaf Nature Park"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "56099",
+              "services": ["138", "167", "169", "860", "980"]
+            }
+          ],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "56091",
+              "services": ["138", "167", "169", "860", "980"]
+            }
+          ],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["All exits provide barrier-free accessibility via lifts and escalators"],
+      "last_updated": "2026-02-02T22:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Springleaf_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "LENTOR MRT STATION": {
+      "official_name": "LENTOR MRT STATION",
+      "station_code": "TE5",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "55021",
+              "services": ["71", "163", "668", "825", "855"]
+            },
+            {
+              "code": "55341",
+              "services": ["825"]
+            }
+          ],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "55019",
+              "services": ["163", "265", "269", "855"]
+            },
+            {
+              "code": "55029",
+              "services": ["71", "163", "668", "825", "855"]
+            }
+          ],
+          "nearby_landmarks": ["Anderson Primary School", "Ang Mo Kio - Thye Hua Kwan Hospital"]
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "55011",
+              "services": ["163", "265", "855"]
+            },
+            {
+              "code": "55349",
+              "services": ["825"]
+            }
+          ],
+          "nearby_landmarks": ["First Evangelical Reformed Church", "Saint Thomas Orthodox Syrian Cathedral"]
+        }
+      ],
+      "accessibility_notes": ["All five exits provide barrier-free accessibility via lifts and escalators"],
+      "last_updated": "2026-02-02T22:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Lentor_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "MAYFLOWER MRT STATION": {
+      "official_name": "MAYFLOWER MRT STATION",
+      "station_code": "TE6",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["CHIJ St. Nicholas Girls' School"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "54191",
+              "services": ["71", "76", "268", "269", "652"]
+            }
+          ],
+          "nearby_landmarks": ["Bethesda Hall (AMK)"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "54199",
+              "services": ["71", "76", "268", "269", "652"]
+            }
+          ],
+          "nearby_landmarks": ["Ang Mo Kio Town Garden West", "Kebun Baru Community Club", "Mayflower Market & Food Centre"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "54189",
+              "services": ["71", "76", "265", "268", "269", "652"]
+            }
+          ],
+          "nearby_landmarks": ["Ang Mo Kio Primary School"]
+        },
+        {
+          "exit_code": "6",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "54181",
+              "services": ["71", "76", "262", "265", "268", "269", "652"]
+            }
+          ],
+          "nearby_landmarks": ["Ang Mo Kio Methodist Church"]
+        },
+        {
+          "exit_code": "7",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Mayflower Secondary School"]
+        }
+      ],
+      "accessibility_notes": ["All seven exits provide barrier-free accessibility via lifts and escalators. Bicycle park on 2nd floor above Exit 2."],
+      "last_updated": "2026-02-02T22:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Mayflower_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BRIGHT HILL MRT STATION": {
+      "official_name": "BRIGHT HILL MRT STATION",
+      "station_code": "TE7",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53349",
+              "services": ["52", "162", "410G"]
+            }
+          ],
+          "nearby_landmarks": ["Bishan-Ang Mo Kio Park", "Eunoia Junior College", "Marymount Community Club", "Peirce Secondary School"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53341",
+              "services": ["52", "162", "410W"]
+            }
+          ],
+          "nearby_landmarks": ["Bright Hill Columbarium & Crematorium", "Buddhist College of Singapore", "Kong Meng San Temple", "Kong Meng San Phor Kark See Monastery", "NEA Eastern Regional Office", "Tse Tho Aum Temple"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53351",
+              "services": ["52", "162", "410G"]
+            }
+          ],
+          "nearby_landmarks": ["Ai Tong School"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53359",
+              "services": ["52", "162", "410W"]
+            }
+          ],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["All four exits provide barrier-free accessibility via lifts and escalators. Future Cross Island Line interchange (CR13, opening 2030)."],
+      "last_updated": "2026-02-02T22:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bright_Hill_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "UPPER THOMSON MRT STATION": {
+      "official_name": "UPPER THOMSON MRT STATION",
+      "station_code": "TE8",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Thomson Plaza", "Soo Chow Garden Road"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53059",
+              "services": ["52", "132", "162", "163", "165", "166", "167", "410W", "855", "980"]
+            }
+          ],
+          "nearby_landmarks": ["Modern Montessori Pre-School Centre"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53049",
+              "services": ["52", "132", "162", "163", "165", "166", "167", "410W", "855", "980"]
+            }
+          ],
+          "nearby_landmarks": ["Church of the Holy Spirit", "Mar Thoma Syrian Church", "Pao Kwan Foh Tang Temple", "Thomson Community Club", "LTA Sin Ming Office", "Zeh Shing Keong Temple"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53041",
+              "services": ["52", "132", "162", "163", "165", "166", "167", "410G", "855", "980"]
+            }
+          ],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "53051",
+              "services": ["52", "132", "162", "163", "165", "166", "167", "410W", "855", "980"]
+            }
+          ],
+          "nearby_landmarks": ["Soo Chow Garden Road"]
+        }
+      ],
+      "accessibility_notes": ["All five exits provide barrier-free accessibility via lifts and escalators. Direct link to Thomson Plaza from Level 2."],
+      "last_updated": "2026-02-02T22:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Upper_Thomson_MRT_Station",
+      "extraction_confidence": "high"
+    }
+  }
+}

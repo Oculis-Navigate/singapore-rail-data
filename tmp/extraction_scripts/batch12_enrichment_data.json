@@ -1,0 +1,791 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "MRT Station Enrichment Data - Batch 12 (TEL South & East - 10 stations)",
+    "extraction_date": "2026-02-02",
+    "source": "Singapore MRT Lines Fandom Wiki",
+    "extraction_method": "Manual webfetch and HTML parsing",
+    "total_stations": 10,
+    "failed_stations": 0,
+    "extraction_confidence": "high",
+    "notes": "Thomson-East Coast Line Southern sections: TE11-TE29. Stevens (TE11), Orchard (TE14), Outram Park (TE17), and Marina Bay (TE20) are multi-line stations where we add TEL data to existing NSL/EWL/DTL data. Tanjong Rhu (TE23), Katong Park (TE24), Siglap (TE28) opened 23 June 2024."
+  },
+  "stations": {
+    "STEVENS MRT STATION": {
+      "official_name": "STEVENS MRT STATION",
+      "station_code": "TE11",
+      "lines": ["NSL", "DTL", "TEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Anglo-Chinese School (Junior)", "Raffles Girls' School (Junior)", "Saint Joseph's Institution (Junior)", "Singapore Chinese Girls' School (Primary)", "Singapore Chinese Girls' School (Secondary)"]
+        }
+      ],
+      "accessibility_notes": ["All exits provide barrier-free accessibility via lifts and escalators"],
+      "last_updated": "2026-02-02T22:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Stevens_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "NAPIER MRT STATION": {
+      "official_name": "NAPIER MRT STATION",
+      "station_code": "TE12",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["Both exits provide barrier-free accessibility via lifts and escalators"],
+      "last_updated": "2026-02-02T22:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Napier_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "ORCHARD BOULEVARD MRT STATION": {
+      "official_name": "ORCHARD BOULEVARD MRT STATION",
+      "station_code": "TE13",
+      "lines": ["DTL", "TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["Both exits provide barrier-free accessibility via lifts and escalators"],
+      "last_updated": "2026-02-02T22:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Orchard_Boulevard_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "ORCHARD MRT STATION": {
+      "official_name": "ORCHARD MRT STATION",
+      "station_code": "TE14",
+      "lines": ["NSL", "TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Ngee Ann City", "Orchard Central", "Orchard Gateway", "Orchard Road", "Paragon", "Shaw House", "Tang Plaza", "Tanglin Mall", "Tangs", "The Heeren", "Wheelock Place", "Wisma Atria"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "3A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "3B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["All five exits provide barrier-free accessibility via lifts and escalators"],
+      "last_updated": "2026-02-02T22:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Orchard_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "MAXWELL MRT STATION": {
+      "official_name": "MAXWELL MRT STATION",
+      "station_code": "TE18",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Chinatown Complex Market", "Chinatown Street Market", "Chinatown Visitor Centre", "Masjid Jamae (Chulia)", "New Bridge Centre", "Sago Lane", "South Bridge Road", "Sri Mariamman Temple"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "05269",
+              "services": ["80", "145"]
+            }
+          ],
+          "nearby_landmarks": ["Amoy Street Food Centre", "CPF Maxwell Service Centre", "Erskine Road", "Fairfield Methodist Church", "Maxwell Chambers Suites", "Maxwell Food Centre", "Maxwell House", "Maxwell Road", "MND Complex", "South Bridge Road", "Tanjong Pagar Road", "The URA Centre"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "05259",
+              "services": ["61", "166", "197"]
+            },
+            {
+              "code": "05241",
+              "services": ["80", "145"]
+            }
+          ],
+          "nearby_landmarks": ["Kreta Ayer Community Club", "Kreta Ayer People's Theatre", "Kreta Ayer Road", "Oriental Plaza", "Singapore Institute of Architects", "Sri Layan Sithi Vinayagar Temple"]
+        }
+      ],
+      "accessibility_notes": ["All three exits provide barrier-free accessibility via lifts and escalators"],
+      "last_updated": "2026-02-02T22:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Maxwell_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "SHENTON WAY MRT STATION": {
+      "official_name": "SHENTON WAY MRT STATION",
+      "station_code": "TE19",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Central Linear Park", "Marina Bay Financial Centre", "Marina Bay Link Mall", "Marina Bay Residences", "Marina Bay Suites", "Straits View", "The Lawn at Marina Bay"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Park Street"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "03549",
+              "services": ["400"]
+            }
+          ],
+          "nearby_landmarks": ["Downtown MRT Station", "Raffles Place MRT Station", "Tanjong Pagar MRT Station"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Asia Square & The Westin Singapore"]
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "6",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "03129",
+              "services": ["10", "10e", "57", "70", "97", "97e", "100", "106", "107", "130", "131", "133", "167", "186", "196", "196e", "400", "502", "513", "651", "652", "653", "654", "655", "656", "657", "660", "661", "663", "665", "666", "667", "668", "670", "671", "672", "673", "850E", "868E", "951E", "970", "982E"]
+            }
+          ],
+          "nearby_landmarks": ["Afro Asia Building", "Bangkok Bank Building", "Capitasky", "Capital Tower", "Cecil Court", "City House", "ERH Building", "Far Eastern Bank Building", "Finexis Building", "Frasers Towers", "GB Building", "Hong Leong Building", "Hotel Telegraph", "IOI Central Boulevard Towers", "Keck Seng Tower", "Lau Pa Sat Market", "One Raffles Quay", "One Shenton", "Oxley Tower", "OUE Downtown", "Philippine Airlines Building", "Robinson Centre", "Robinson Point", "Robinson Square", "SIF Building", "SBF Centre", "SGX Centre", "Shenton House", "Singapore Chinese Cultural Centre", "Singapore Conference Hall", "Tokio Marine Centre", "The Clift", "Tahir Building", "Tung Ann Association Building", "The Octagon", "The Sail at Marina Bay", "UOI Building", "V on Shenton", "Wing On Life Building", "YSY Building"]
+        }
+      ],
+      "accessibility_notes": ["All six exits provide barrier-free accessibility via lifts and escalators. Note: Longest escalator on TEL from concourse to Platform B. Cannot directly transfer between platforms at platform level - must go up to concourse first."],
+      "last_updated": "2026-02-02T22:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Shenton_Way_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "GARDENS BY THE BAY MRT STATION": {
+      "official_name": "GARDENS BY THE BAY MRT STATION",
+      "station_code": "TE22",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "03369",
+              "services": ["400"]
+            }
+          ],
+          "nearby_landmarks": ["Satay by the Bay", "Marina Gardens Drive"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "03361",
+              "services": ["400"]
+            }
+          ],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marina Mall"]
+        }
+      ],
+      "accessibility_notes": ["All three exits provide barrier-free accessibility via lifts and escalators"],
+      "last_updated": "2026-02-02T22:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Gardens_by_the_Bay_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "TANJONG RHU MRT STATION": {
+      "official_name": "TANJONG RHU MRT STATION",
+      "station_code": "TE23",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "90049",
+              "services": ["11", "158"]
+            }
+          ],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "90041",
+              "services": ["11", "158"]
+            }
+          ],
+          "nearby_landmarks": ["Tanjong Rhu Footbridge & Lookout Tower", "Tanjong Rhu Promenade"]
+        }
+      ],
+      "accessibility_notes": ["Station opened 23 June 2024. Both exits provide barrier-free accessibility via lifts and escalators."],
+      "opening_date": "2024-06-23",
+      "last_updated": "2026-02-02T22:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tanjong_Rhu_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "KATONG PARK MRT STATION": {
+      "official_name": "KATONG PARK MRT STATION",
+      "station_code": "TE24",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Fort Road", "Katong Park", "Mountbatten Road"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "91081",
+              "services": ["30", "30e", "158"]
+            },
+            {
+              "code": "91089",
+              "services": ["30", "30e", "158", "401"]
+            }
+          ],
+          "nearby_landmarks": ["Dunman High School", "Katong Community Centre", "Singapore Swimming Club"]
+        }
+      ],
+      "accessibility_notes": ["Station opened 23 June 2024. Both exits provide barrier-free accessibility via lifts and escalators. Note: Concourse is on same level as upper platform (Platform A)."],
+      "opening_date": "2024-06-23",
+      "last_updated": "2026-02-02T22:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Katong_Park_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "SIGLAP MRT STATION": {
+      "official_name": "SIGLAP MRT STATION",
+      "station_code": "TE28",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "93021",
+              "services": ["31", "36", "43", "47", "48", "55", "155", "196", "196e", "197", "401", "853M"]
+            },
+            {
+              "code": "93031",
+              "services": ["31", "43", "47", "48", "55", "155", "196", "196e", "197", "853M"]
+            },
+            {
+              "code": "93039",
+              "services": ["31", "36", "43", "47", "48", "55", "155", "196", "196e", "197", "401", "853M"]
+            }
+          ],
+          "nearby_landmarks": ["Marine Parade Rd"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "93021",
+              "services": ["31", "36", "43", "47", "48", "55", "155", "196", "196e", "197", "401", "853M"]
+            },
+            {
+              "code": "93031",
+              "services": ["31", "43", "47", "48", "55", "155", "196", "196e", "197", "853M"]
+            },
+            {
+              "code": "93039",
+              "services": ["31", "36", "43", "47", "48", "55", "155", "196", "196e", "197", "401", "853M"]
+            }
+          ],
+          "nearby_landmarks": ["Masjid Kampung Siglap", "Saint Andrew's Autism Centre & School", "Sekolah Indonesia", "Wisma Mendaki"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "93021",
+              "services": ["31", "36", "43", "47", "48", "55", "155", "196", "196e", "197", "401", "853M"]
+            },
+            {
+              "code": "93031",
+              "services": ["31", "43", "47", "48", "55", "155", "196", "196e", "197", "853M"]
+            },
+            {
+              "code": "93039",
+              "services": ["31", "36", "43", "47", "48", "55", "155", "196", "196e", "197", "401", "853M"]
+            }
+          ],
+          "nearby_landmarks": ["Nallur Road"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "93021",
+              "services": ["31", "36", "43", "47", "48", "55", "155", "196", "196e", "197", "401", "853M"]
+            },
+            {
+              "code": "93031",
+              "services": ["31", "43", "47", "48", "55", "155", "196", "196e", "197", "853M"]
+            },
+            {
+              "code": "93039",
+              "services": ["31", "36", "43", "47", "48", "55", "155", "196", "196e", "197", "401", "853M"]
+            }
+          ],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["Station opened 23 June 2024. All four exits provide barrier-free accessibility via lifts and escalators."],
+      "opening_date": "2024-06-23",
+      "last_updated": "2026-02-02T22:30:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Siglap_MRT_Station",
+      "extraction_confidence": "high"
+    }
+  }
+}

@@ -1,0 +1,1212 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "MRT Station Enrichment Data - Batch 5 (EWL West Extension + CCL Central - 16 stations)",
+    "extraction_date": "2026-02-02",
+    "source": "Singapore MRT Lines Fandom Wiki",
+    "extraction_method": "Manual webfetch and HTML parsing",
+    "total_stations": 16,
+    "failed_stations": 0,
+    "extraction_confidence": "high",
+    "notes": "East-West Line West Extension (Dover-Tuas Link) + Circle Line Central (Dhoby Ghaut-Promenade)"
+  },
+  "stations": {
+    "DOVER MRT STATION": {
+      "official_name": "DOVER MRT STATION",
+      "station_code": "EW22",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Singapore Polytechnic", "National University of Singapore (Kent Ridge Campus)", "Singapore Institute of Management", "Dover Court International School"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["HDB Blocks", "Dover Road Market"]
+        }
+      ],
+      "accessibility_notes": ["Side platform station - both platforms at same level"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Dover_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "CLEMENTI MRT STATION": {
+      "official_name": "CLEMENTI MRT STATION",
+      "station_code": "EW23",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "17009",
+              "services": ["7", "14", "96", "99", "147", "156", "165", "166", "175", "197", "285", "296", "506", "605", "850E", "502", "651"]
+            }
+          ],
+          "nearby_landmarks": ["Clementi Bus Interchange", "Clementi Town Centre", "The Clementi Mall", "Clementi Market & Food Centre", "NTUC FairPrice", "Clementi Public Library"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "17009",
+              "services": ["7", "14", "96", "99", "147", "156", "165", "166", "175", "197", "285", "296", "506", "605", "850E", "502", "651"]
+            }
+          ],
+          "nearby_landmarks": ["HDB Clementi Towers", "Clementi 321", "Clementi Polyclinic"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "17111",
+              "services": ["7", "14", "96", "147", "156", "165", "166"]
+            }
+          ],
+          "nearby_landmarks": ["National University of Singapore (Clementi Campus)", "Clementi Woods", "West Coast Park"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "17111",
+              "services": ["7", "14", "96", "147", "156", "165", "166"]
+            }
+          ],
+          "nearby_landmarks": ["Clementi Stadium", "Clementi Swimming Complex", "Clementi Primary School", "Pei Tong Primary School"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Future interchange with Cross Island Line (CRL) - not yet operational"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Clementi_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "JURONG EAST MRT STATION": {
+      "official_name": "JURONG EAST MRT STATION",
+      "station_code": "EW24",
+      "lines": ["EWL", "NSL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "20101",
+              "services": ["41", "49", "51", "78", "79", "105", "143", "176", "183", "333", "334", "335"]
+            }
+          ],
+          "nearby_landmarks": ["Jem Shopping Mall", "Westgate", "Jurong East Bus Interchange", "IMM Building"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "C",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "NS28",
+              "line_code": "NS"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "20111",
+              "services": ["41", "49", "51", "78", "79", "105", "143", "176", "183", "502", "870"]
+            }
+          ],
+          "nearby_landmarks": ["Jurong East MRT Depots", "Science Centre Singapore", "Singapore Discovery Centre"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "C",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "D",
+              "towards_code": "NS28",
+              "line_code": "NS"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "20291",
+              "services": ["41", "49", "51", "78", "79", "105", "143", "176", "183"]
+            }
+          ],
+          "nearby_landmarks": ["Citizens' Consultative Committee Jurong East", "Jurong Regional Library", "Jurong East Swimming Complex"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "20101",
+              "services": ["41", "49", "51", "78", "79", "105", "143", "176", "183", "333", "334", "335"]
+            }
+          ],
+          "nearby_landmarks": ["NTUC FairPrice Hub", "Jurong East Central", "Jurong East HDB Estate"]
+        }
+      ],
+      "accessibility_notes": ["Unique triple island platform - NSL and EWL platforms on same level", "Interchange between NSL and EWL requires crossing platform", "One of the busiest interchange stations"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Jurong_East_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "CHINESE GARDEN MRT STATION": {
+      "official_name": "CHINESE GARDEN MRT STATION",
+      "station_code": "EW25",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Chinese Garden", "Japanese Garden", "Jurong Lake Gardens", "Taman Jurong Community Club"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "21491",
+              "services": ["49", "66", "178", "180", "187"]
+            }
+          ],
+          "nearby_landmarks": ["Taman Jurong Market & Food Centre", "Taman Jurong Shopping Centre", "HDB Blocks"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "21491",
+              "services": ["49", "66", "178", "180", "187"]
+            }
+          ],
+          "nearby_landmarks": ["ITE College West", "Jurong Junior College", "Jurong Sports Centre"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Near major garden attractions"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Chinese_Garden_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "LAKESIDE MRT STATION": {
+      "official_name": "LAKESIDE MRT STATION",
+      "station_code": "EW26",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "21361",
+              "services": ["30", "49", "154", "180", "187", "240", "246"]
+            }
+          ],
+          "nearby_landmarks": ["Taman Jurong Park", "Lakeside Grove", "HDB Blocks", "Lakeside Community Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "21411",
+              "services": ["30", "49", "154", "180", "187", "240", "246"]
+            }
+          ],
+          "nearby_landmarks": ["Lakeside Tower", "Lakeside Apartments", "Lakeside Park", "Yuan Ching Secondary School", "Shuqun Primary School"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "21411",
+              "services": ["30", "49", "154", "180", "187", "240", "246"]
+            }
+          ],
+          "nearby_landmarks": ["Lakeside Primary School", "Lakeside Village", "Jurong Lake District"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Named after Jurong Lake"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Lakeside_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BOON LAY MRT STATION": {
+      "official_name": "BOON LAY MRT STATION",
+      "station_code": "EW27",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22009",
+              "services": ["30", "79", "154", "157", "172", "178", "179", "180", "187", "192", "193", "194", "199", "240", "241", "242", "243W", "243G", "246", "249", "251", "252", "258", "502", "974"]
+            }
+          ],
+          "nearby_landmarks": ["Boon Lay Bus Interchange", "Jurong Point", "Jurong West Central", "Boon Lay Shopping Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22009",
+              "services": ["30", "79", "154", "157", "172", "178", "179", "180", "187", "192", "193", "194", "199", "240", "241", "242", "243W", "243G", "246", "249", "251", "252", "258", "502", "974"]
+            }
+          ],
+          "nearby_landmarks": ["Jurong Point", "Boon Lay MRT Station Dormitory", "HDB Blocks"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22009",
+              "services": ["30", "79", "154", "157", "172", "178", "179", "180", "187", "192", "193", "194", "199", "240", "241", "242", "243W", "243G", "246", "249", "251", "252", "258", "502", "974"]
+            }
+          ],
+          "nearby_landmarks": ["Jurong Point", "FairPrice Hub", "HDB Jurong West"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22181",
+              "services": ["30", "154", "157", "172", "178", "179", "180", "187", "192", "193", "194", "199"]
+            }
+          ],
+          "nearby_landmarks": ["Jurong West Sports Centre", "Jurong West Stadium", "Jurong West Central", "Boon Lay Community Centre"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22181",
+              "services": ["30", "154", "157", "172", "178", "179", "180", "187", "192", "193", "194", "199"]
+            }
+          ],
+          "nearby_landmarks": ["Boon Lay Community Centre", "Jurong West Library", "Jurong West ActiveSG Gym", "Jurong West Swimming Complex"]
+        },
+        {
+          "exit_code": "F",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["HDB Blocks", "Jurong West Market", "Neighbourhood Centre"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Major bus interchange with extensive connectivity", "Future interchange with Jurong Region Line (JRL) - not yet operational", "One of the busiest stations outside city center"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Boon_Lay_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "PIONEER MRT STATION": {
+      "official_name": "PIONEER MRT STATION",
+      "station_code": "EW28",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22211",
+              "services": ["199", "502"]
+            }
+          ],
+          "nearby_landmarks": ["Nanyang Technological University (NTU) Shuttle Bus", "Jurong West St 91", "HDB Blocks"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22221",
+              "services": ["199", "502"]
+            }
+          ],
+          "nearby_landmarks": ["Jurong West Pioneer", "Pioneer Junction", "HDB Blocks", "Pioneer Primary School"]
+        }
+      ],
+      "accessibility_notes": ["Side platform station", "NTU Shuttle Bus connection available", "Bus 199 connects to NTU"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Pioneer_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "JOO KOON MRT STATION": {
+      "official_name": "JOO KOON MRT STATION",
+      "station_code": "EW29",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22361",
+              "services": ["99", "174", "182", "192", "193", "251"]
+            }
+          ],
+          "nearby_landmarks": ["Joo Koon Bus Interchange", "Joo Koon Industrial Area", "Joo Koon Circle", "HDB Blocks"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22371",
+              "services": ["99", "174", "182", "192", "193", "251"]
+            }
+          ],
+          "nearby_landmarks": ["FairPrice Hub", "Joo Koon Market", "HDB Blocks"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["FairPrice Hub", "Joo Koon Warehouse", "Industrial Buildings"]
+        }
+      ],
+      "accessibility_notes": ["Side platform station", "Bus interchange available", "Exit C opened to serve FairPrice Hub"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Joo_Koon_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "GUL CIRCLE MRT STATION": {
+      "official_name": "GUL CIRCLE MRT STATION",
+      "station_code": "EW30",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22601",
+              "services": ["247"]
+            }
+          ],
+          "nearby_landmarks": ["Gul Circle Industrial Area", "Jurong Industrial Estate", "Tuas Depot"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22601",
+              "services": ["247"]
+            }
+          ],
+          "nearby_landmarks": ["Tuas Depot", "Gul Basin", "Industrial Area"]
+        }
+      ],
+      "accessibility_notes": ["Stacked island platform - first of its kind in Singapore", "Platform A (upper) for trains to Tuas Link", "Platform B (lower) for trains to Pasir Ris", "Future Tuas South Extension will split from here"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Gul_Circle_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "TUAS CRESCENT MRT STATION": {
+      "official_name": "TUAS CRESCENT MRT STATION",
+      "station_code": "EW31",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22701",
+              "services": ["247"]
+            }
+          ],
+          "nearby_landmarks": ["Tuas Checkpoint", "Tuas Avenue", "Industrial Area"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22701",
+              "services": ["247"]
+            }
+          ],
+          "nearby_landmarks": ["Tuas Nexus", "Tuas Bay", "Industrial Area"]
+        }
+      ],
+      "accessibility_notes": ["Side platform station", "Overground station along Tuas Basin", "Industrial area station"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tuas_Crescent_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "TUAS WEST ROAD MRT STATION": {
+      "official_name": "TUAS WEST ROAD MRT STATION",
+      "station_code": "EW32",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22801",
+              "services": ["247"]
+            }
+          ],
+          "nearby_landmarks": ["Tuas West Road", "Tuas Checkpoint", "Industrial Area"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW33",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22801",
+              "services": ["247"]
+            }
+          ],
+          "nearby_landmarks": ["Tuas Port (Future)", "Tuas Avenue", "Industrial Area"]
+        }
+      ],
+      "accessibility_notes": ["Side platform station", "Overground station along Tuas Basin", "Near future Tuas Port development"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tuas_West_Road_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "TUAS LINK MRT STATION": {
+      "official_name": "TUAS LINK MRT STATION",
+      "station_code": "EW33",
+      "lines": ["EWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22901",
+              "services": ["247", "248"]
+            }
+          ],
+          "nearby_landmarks": ["Tuas Checkpoint", "Tuas Bus Terminal", "Tuas Link Industrial Area"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "EW1",
+              "line_code": "EW"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "22901",
+              "services": ["247", "248"]
+            }
+          ],
+          "nearby_landmarks": ["Tuas Nexus", "Tuas Baywalk", "Tuas Port (Future)", "Raffles Marina"]
+        }
+      ],
+      "accessibility_notes": ["Terminal station of East-West Line", "Platform B is unused (reserve for future extension)", "Overground station", "Connected to Tuas Bus Terminal"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tuas_Link_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "DHOBY GHAUT MRT STATION": {
+      "official_name": "DHOBY GHAUT MRT STATION",
+      "station_code": "CC1",
+      "lines": ["NSL", "NEL", "CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE17",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "08057",
+              "services": ["7", "14", "16", "36", "77", "106", "111", "124", "162", "167", "171", "174", "175", "190", "502", "518", "587", "590", "851", "980"]
+            }
+          ],
+          "nearby_landmarks": ["Plaza Singapura", "The Cathay", "Park Mall", "Dhoby Ghaut Green", "MacDonald House"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE17",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "08058",
+              "services": ["7", "14", "16", "36", "77", "106", "111", "124", "162", "167", "171", "174", "175", "190", "502", "518", "587", "590", "851", "980"]
+            }
+          ],
+          "nearby_landmarks": ["Singapore Management University (SMU)", "National Museum of Singapore", "Fort Canning Park", "The Istana"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE17",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "08041",
+              "services": ["14", "16", "124"]
+            }
+          ],
+          "nearby_landmarks": ["Singapore Art Museum", "Parklane Shopping Mall", "Peace Centre", "Bras Basah Complex"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE17",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Rendezvous Hotel", "Hotel Grand Pacific", "Albert Complex"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE17",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Sim Lim Square", "Peace Centre", "Parco Bugis Junction (via underpass)", "Raffles Hospital"]
+        },
+        {
+          "exit_code": "F",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "NS1",
+              "line_code": "NS"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "NE17",
+              "line_code": "NE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Peninsula Shopping Centre", "Excelsior Shopping Centre", "Prinsep Street"]
+        }
+      ],
+      "accessibility_notes": ["TRIPLE interchange station (NSL, NEL, CCL)", "One of the deepest MRT stations in Singapore (CCL platforms at 28m)", "Long escalators", "All exits barrier-free accessible"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Dhoby_Ghaut_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BRAS BASAH MRT STATION": {
+      "official_name": "BRAS BASAH MRT STATION",
+      "station_code": "CC2",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Singapore Art Museum", "Catholic Centre", "NTUC Income Centre", "Waterloo Centre"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Chijmes", "Singapore Council of Women's Organisations", "Sculpture Square"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Raffles Girls' School", "Hotel Rendezvous", "Parklane Shopping Mall"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Manulife Centre", "SMU School of Accountancy & Law", "National Design Centre"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "08041",
+              "services": ["14", "16", "124"]
+            }
+          ],
+          "nearby_landmarks": ["Bencoolen MRT Station (DT21) via underpass", "NAFA Campus 1", "Lasalle College of the Arts", "Singapore Art Museum"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "One of the deepest MRT stations (41.3m below ground)", "Underpass connects to Bencoolen MRT Station (DT21)", "Longest escalators in Singapore MRT network"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bras_Basah_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "ESPLANADE MRT STATION": {
+      "official_name": "ESPLANADE MRT STATION",
+      "station_code": "CC3",
+      "lines": ["CCL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Esplanade - Theatres on the Bay", "Esplanade Mall", "Esplanade Park", "War Memorial Park"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Esplanade Theatres", "Waterfront Promenade", "Esplanade Bridge", "Merlion Park"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marina Promenade", "The Float @ Marina Bay", "Youth Olympic Park", "Helix Bridge"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "CC1",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marina Square", "Millenia Walk", "Pan Pacific Hotel", "Mandarin Oriental"]
+        },
+        {
+          "exit_code": "E",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "02089",
+              "services": ["36", "56", "77", "97", "97e", "107M", "195", "960", "960e", "961M"]
+            }
+          ],
+          "nearby_landmarks": ["Suntec City", "Singapore Flyer", "Marina Bay Street Circuit"]
+        },
+        {
+          "exit_code": "F",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "02161",
+              "services": ["36", "70M", "97", "97e", "106", "111", "133", "502", "502A", "518", "518A", "857", "868E"]
+            }
+          ],
+          "nearby_landmarks": ["Raffles City Shopping Centre", "Fairmont Hotel", "Swissotel The Stamford", "City Hall MRT Station via underpass"]
+        },
+        {
+          "exit_code": "G",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Esplanade Waterfront", "Jubilee Bridge", "Kim Seng Bridge", "Singapore River"]
+        }
+      ],
+      "accessibility_notes": ["Island platform station", "Underground walkway connects to City Hall MRT Station (EW13/NS25)", "Near major arts and entertainment venues", "All exits barrier-free accessible"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Esplanade_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "PROMENADE MRT STATION": {
+      "official_name": "PROMENADE MRT STATION",
+      "station_code": "CC4",
+      "lines": ["CCL", "DTL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [
+            {
+              "code": "02089",
+              "services": ["36", "56", "77", "97", "97e", "107M", "195", "960", "960e", "961M"]
+            },
+            {
+              "code": "02161",
+              "services": ["36", "70M", "97", "97e", "106", "111", "133", "502", "502A", "518", "518A", "857", "868E"]
+            },
+            {
+              "code": "02171",
+              "services": ["36", "70M", "97", "97e", "106", "111", "133", "502", "502A", "518", "518A", "857"]
+            }
+          ],
+          "nearby_landmarks": ["Parkroyal Collection Marina Bay Hotel", "Mandarin Oriental Singapore", "Marina Promenade", "Marina Square", "Singapore Flyer", "The Float @ Marina Bay", "The Helix", "The Pan Pacific Hotel Singapore", "The Ritz-Carlton Millenia Singapore"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["stairs_only"],
+          "bus_stops": [
+            {
+              "code": "02169",
+              "services": ["97", "97e", "107M"]
+            }
+          ],
+          "nearby_landmarks": ["Centennial Tower", "Conrad Centennial Singapore", "Millenia Tower", "Millenia Walk"]
+        },
+        {
+          "exit_code": "C",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "CC29",
+              "line_code": "CC"
+            },
+            {
+              "platform_code": "C",
+              "towards_code": "DT1",
+              "line_code": "DT"
+            }
+          ],
+          "accessibility": ["wheelchair_accessible", "lift", "escalator"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Suntec City", "Suntec Convention Centre", "Suntec Tower", "Millenia Walk"]
+        }
+      ],
+      "accessibility_notes": ["Interchange station between Circle Line and Downtown Line", "Exit B is NOT accessible to the disabled - stairs only", "Lifts at Exits A and C provide barrier-free accessibility", "DTL platforms much deeper than CCL (B6-B7)", "Transfer between CCL and DTL via B4 concourse"],
+      "last_updated": "2026-02-02T10:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Promenade_MRT_Station",
+      "extraction_confidence": "high"
+    }
+  }
+}

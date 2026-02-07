@@ -1,0 +1,817 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "MRT Station Enrichment Data - Batch 17 (Punggol LRT System - 15 stations)",
+    "total_stations": 15,
+    "actual_stations": 15,
+    "batch_id": "batch_17",
+    "extraction_date": "2026-02-03",
+    "source": "singapore-mrt-lines.fandom.com",
+    "schema_version": "1.0",
+    "extraction_confidence": "high",
+    "notes": "Punggol LRT System including hub (PTC), East Loop (PE1-7), and West Loop (PW1-7). PTC is the LRT hub integrated with Punggol MRT NE17."
+  },
+  "stations": [
+    {
+      "official_name": "PUNGGOL LRT STATION",
+      "station_code": "PTC",
+      "lines": ["PGL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PW1",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PE1",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Punggol MRT Station", "Waterway Point", "Punggol Bus Interchange"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PW1",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PE1",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Punggol MRT Station", "Punggol Waterway"]
+        }
+      ],
+      "accessibility_notes": ["LRT hub station integrated with Punggol MRT NE17. Interchange between East Loop (PE) and West Loop (PW)."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Punggol_MRT/LRT_Station",
+      "extraction_confidence": "medium"
+    },
+    {
+      "official_name": "COVE LRT STATION",
+      "station_code": "PE1",
+      "lines": ["PEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65159",
+              "services": ["3", "62", "83", "136", "666"]
+            }
+          ],
+          "nearby_landmarks": ["Edgefield Secondary School", "HDB Blks 101-105D", "HDB Blks 201-205A"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65151",
+              "services": ["3", "62", "83", "136", "666"]
+            }
+          ],
+          "nearby_landmarks": ["Edgefield Primary School", "Waterbay Condominium", "Prive Condo", "HDB The Periwinkle"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform. Built between two carriageways of Punggol Field."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Cove_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "MERIDIAN LRT STATION",
+      "station_code": "PE2",
+      "lines": ["PEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Meridian Junior College", "HDB Blks 110-118"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["HDB Blks 119-127"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Punggol Field."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Meridian_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "CORAL EDGE LRT STATION",
+      "station_code": "PE3",
+      "lines": ["PEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Coral Edge Primary School", "HDB Blks 130-140"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["HDB Blks 141-150"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Coral_Edge_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "RIVIERA LRT STATION",
+      "station_code": "PE4",
+      "lines": ["PEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Riviera Residences", "Punggol Park"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Waterway Point (via walkway)", "Punggol Waterway"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform near Punggol Waterway."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Riviera_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "KADALOOR LRT STATION",
+      "station_code": "PE5",
+      "lines": ["PEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Kadaloor LRT Station vicinity"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["HDB estates in vicinity"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Kadaloor_LRT_Station",
+      "extraction_confidence": "medium"
+    },
+    {
+      "official_name": "OASIS LRT STATION",
+      "station_code": "PE6",
+      "lines": ["PEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Oasis Primary School", "HDB estates"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Oasis Terraces", "Community facilities"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Oasis_LRT_Station",
+      "extraction_confidence": "medium"
+    },
+    {
+      "official_name": "DAMAI LRT STATION",
+      "station_code": "PE7",
+      "lines": ["PEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Damai Primary School", "HDB estates"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Recreational facilities"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform. Terminal station for East Loop."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Damai_LRT_Station",
+      "extraction_confidence": "medium"
+    },
+    {
+      "official_name": "SAM KEE LRT STATION",
+      "station_code": "PW1",
+      "lines": ["PWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65481",
+              "services": ["84W", "382G"]
+            }
+          ],
+          "nearby_landmarks": ["Edgefield Secondary School", "HDB Blks 101-105D", "HDB Blks 201-205A"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65489",
+              "services": ["84G", "382W"]
+            }
+          ],
+          "nearby_landmarks": ["One Punggol"]
+        },
+        {
+          "exit_code": "D",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["SAFRA Clubhouse (Punggol)", "One Punggol Level 2"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform. Unique interior design - not built on road median like other stations."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Sam_Kee_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "TECK LEE LRT STATION",
+      "station_code": "PW2",
+      "lines": ["PWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Singapore Institute of Technology (SIT)", "Punggol Digital District (PDD)"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform and concourse at Level 2. Opened 15 August 2024."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Teck_Lee_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "PUNGGOL POINT LRT STATION",
+      "station_code": "PW3",
+      "lines": ["PWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65639",
+              "services": ["84G", "673"]
+            }
+          ],
+          "nearby_landmarks": ["Northshore Crescent", "HDB Northshore Trio"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65631",
+              "services": ["84W", "384", "673"]
+            }
+          ],
+          "nearby_landmarks": ["Ponggol Seventeenth Avenue", "Ponggol Park", "Northshore Bungalows", "St. Francis Xavier Major Seminary"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform and concourse at Level 2. Opened 29 December 2016."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Punggol_Point_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "SAMUDERA LRT STATION",
+      "station_code": "PW4",
+      "lines": ["PWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65629",
+              "services": ["84G", "673"]
+            }
+          ],
+          "nearby_landmarks": ["Marina Country Club", "Northshore Plaza I", "Northshore Residences I & II", "Waterfront I & II @ Northshore", "Punggol Park Connector"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65621",
+              "services": ["84W", "384", "673"]
+            }
+          ],
+          "nearby_landmarks": ["Ponggol Seventeenth Avenue", "Whiteshores", "White Cove", "Christian Care Services Singapore"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform and concourse at Level 2. Opened 31 March 2017."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Samudera_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "NIBONG LRT STATION",
+      "station_code": "PW5",
+      "lines": ["PWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65619",
+              "services": ["84G", "384", "673"]
+            }
+          ],
+          "nearby_landmarks": ["Sumang Link", "Sumang Walk", "Punggol Cove Primary School", "HDB Punggol Vue", "HDB Punggol Bayview", "Piermont Grand Condo"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65461",
+              "services": ["84W", "382G"]
+            },
+            {
+              "code": "65469",
+              "services": ["84G", "382W"]
+            },
+            {
+              "code": "65611",
+              "services": ["84G", "384"]
+            }
+          ],
+          "nearby_landmarks": ["Sumang Link", "My Waterway @ Punggol", "HDB Punggol Parcvista", "HDB Waterway Terrances II"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform and concourse at Level 2. Opened 29 June 2014."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Nibong_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "SUMANG LRT STATION",
+      "station_code": "PW6",
+      "lines": ["PWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65609",
+              "services": ["384"]
+            }
+          ],
+          "nearby_landmarks": ["HDB Waterway Cascadia", "Sumang Walk"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65601",
+              "services": ["384"]
+            }
+          ],
+          "nearby_landmarks": ["HDB Waterway Terraces I", "Punggol Walk"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform and concourse at Level 2. Opened 29 June 2014."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Sumang_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "SOO TECK LRT STATION",
+      "station_code": "PW7",
+      "lines": ["PWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65149",
+              "services": ["39", "43", "43e", "43M", "118", "381"]
+            }
+          ],
+          "nearby_landmarks": ["Punggol Central", "Punggol Field", "HDB Punggol Opal", "HDB Punggol Topaz", "HDB Matilda Portico", "HDB The Verandah @ Matilda"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "PTC",
+              "line_code": "PWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "65141",
+              "services": ["39", "43", "43e", "43M", "118", "381"]
+            }
+          ],
+          "nearby_landmarks": ["Punggol Central", "Punggol Field", "Punggol Green Primary School", "A Treasure Trove condominium", "Twin Waterfalls condominium", "HDB Punggol Emerald", "HDB Punggol Sapphire"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform and concourse at Level 2. Opened 29 June 2014. Terminal station for West Loop."],
+      "last_updated": "2026-02-03T14:45:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Soo_Teck_LRT_Station",
+      "extraction_confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,731 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "MRT Station Enrichment Data - Batch 18 (Sengkang LRT System - 14 stations)",
+    "total_stations": 14,
+    "actual_stations": 14,
+    "batch_id": "batch_18",
+    "extraction_date": "2026-02-03",
+    "source": "singapore-mrt-lines.fandom.com",
+    "schema_version": "1.0",
+    "extraction_confidence": "high",
+    "notes": "Sengkang LRT System including hub (STC), East Loop (SE1-5), and West Loop (SW1-8). STC is the LRT hub integrated with Sengkang MRT NE16."
+  },
+  "stations": [
+    {
+      "official_name": "SENGKANG LRT STATION",
+      "station_code": "STC",
+      "lines": ["SKL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "SW1",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "SE1",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Sengkang MRT Station NE16", "Sengkang Bus Interchange", "Compass One", "HDB Compassvale Ancilla", "HDB Compassvale Vista"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "SW1",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "SE1",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Sengkang MRT Station NE16", "Sengkang Community Hub", "Sengkang General Hospital"]
+        }
+      ],
+      "accessibility_notes": ["LRT hub station integrated with Sengkang MRT NE16. Interchange between East Loop (SE) and West Loop (SW)."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Sengkang_MRT/LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "COMPASSVALE LRT STATION",
+      "station_code": "SE1",
+      "lines": ["SEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67169",
+              "services": ["27", "89", "89e", "119", "156", "161", "163", "163A", "325", "372", "550", "652"]
+            }
+          ],
+          "nearby_landmarks": ["Compassvale Plaza", "Compassvale Crescent", "Compassvale Secondary School", "HDB Compassvale Vista", "HDB Compassvale Ancilla"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67161",
+              "services": ["27", "89", "89e", "119", "156", "161", "163", "163A", "325", "372", "550", "652"]
+            }
+          ],
+          "nearby_landmarks": ["Compassvale Lane", "Compassvale Crescent", "Compassvale Gardens", "HDB Compassvale Lodge", "HDB Compassvale View"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Compassvale Road."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Compassvale_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "RUMBIA LRT STATION",
+      "station_code": "SE2",
+      "lines": ["SEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Rivervale Drive", "Rivervale Plains", "HDB Rivervale Gardens", "HDB Rivervale Edge"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Rivervale Crescent", "Rivervale Drive", "HDB Rivervale Court", "HDB Rivervale Crest"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Rivervale Drive."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Rumbia_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "BAKAU LRT STATION",
+      "station_code": "SE3",
+      "lines": ["SEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Rivervale Drive", "Rivervale Gardens", "HDB Rivervale Vista", "HDB Rivervale Arc"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Rivervale Drive", "Rivervale Edge", "HDB Rivervale Vale", "HDB Rivervale View"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Rivervale Drive."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bakau_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "KANGKAR LRT STATION",
+      "station_code": "SE4",
+      "lines": ["SEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67159",
+              "services": ["80", "82", "87", "163", "325"]
+            }
+          ],
+          "nearby_landmarks": ["Rivervale Drive", "Rivervale Gardens", "HDB Rivervale Vista", "Punggol Park"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67151",
+              "services": ["80", "82", "87", "163", "325"]
+            }
+          ],
+          "nearby_landmarks": ["Rivervale Crescent", "Rivervale Primary School", "HDB Rivervale Edge"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Rivervale Drive."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Kangkar_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "RANGGUNG LRT STATION",
+      "station_code": "SE5",
+      "lines": ["SEL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67149",
+              "services": ["80", "82", "87", "163", "325", "652"]
+            }
+          ],
+          "nearby_landmarks": ["Rivervale Crescent", "Rivervale Gardens", "HDB Rivervale Vista", "Punggol Park"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SEL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67141",
+              "services": ["80", "82", "87", "163", "325", "652"]
+            }
+          ],
+          "nearby_landmarks": ["Rivervale Crescent", "Rivervale Primary School", "HDB Rivervale Edge", "HDB Rivervale Grove"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Rivervale Crescent. Terminal station for East Loop."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Ranggung_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "CHENG LIM LRT STATION",
+      "station_code": "SW1",
+      "lines": ["SWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Compassvale Road", "Compassvale Street", "HDB Compassvale Vista", "Sengkang General Hospital"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Compassvale Road", "Compassvale Drive", "Compassvale Secondary School", "HDB Compassvale Ancilla"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Compassvale Road. Opened 1 January 2013."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Cheng_Lim_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "FARMWAY LRT STATION",
+      "station_code": "SW2",
+      "lines": ["SWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Compassvale Road", "Compassvale South Gate", "HDB Compassvale Vista"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Compassvale Road", "Compassvale Lane", "HDB Compassvale Lodge"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Compassvale Road. Opened 15 November 2007."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Farmway_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "KUPANG LRT STATION",
+      "station_code": "SW3",
+      "lines": ["SWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Sengkang East Avenue", "Sengkang East Way", "HDB Anchorvale Vista", "HDB Anchorvale Parkview"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Sengkang East Avenue", "Sengkang East Way", "HDB Anchorvale Grove", "HDB Anchorvale View"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Sengkang East Avenue. Opened 27 June 2015."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Kupang_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "THANGGAM LRT STATION",
+      "station_code": "SW4",
+      "lines": ["SWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67391",
+              "services": ["80", "87"]
+            }
+          ],
+          "nearby_landmarks": ["Sengkang West Avenue", "Sengkang West Way", "HDB Anchorvale Fields", "HDB Anchorvale Vista"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67393",
+              "services": ["80", "87"]
+            }
+          ],
+          "nearby_landmarks": ["Sengkang West Avenue", "Sengkang West Way", "HDB Anchorvale Vista", "HDB Anchorvale Parkview"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Sengkang West Avenue."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Thanggam_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "FERNVALE LRT STATION",
+      "station_code": "SW5",
+      "lines": ["SWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67381",
+              "services": ["50", "163", "371", "650", "660"]
+            }
+          ],
+          "nearby_landmarks": ["Sengkang West Avenue", "Fernvale Lane", "HDB Fernvale Lea", "HDB Fernvale Vista", "Fernvale Community Club"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with SIDE platforms (unique design). Only ONE exit (A). Opened 15 November 2007."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Fernvale_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "LAYAR LRT STATION",
+      "station_code": "SW6",
+      "lines": ["SWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67371",
+              "services": ["50", "163", "371", "660"]
+            }
+          ],
+          "nearby_landmarks": ["Sengkang West Avenue", "Fernvale Street", "HDB Fernvale Lea", "HDB Fernvale Vista"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67373",
+              "services": ["50", "163", "371", "660"]
+            }
+          ],
+          "nearby_landmarks": ["Sengkang West Avenue", "Fernvale Street", "HDB Fernvale Park", "HDB Fernvale Rivergrove"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Sengkang West Avenue."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Layar_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "TONGKANG LRT STATION",
+      "station_code": "SW7",
+      "lines": ["SWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67361",
+              "services": ["50", "163", "371"]
+            }
+          ],
+          "nearby_landmarks": ["Sengkang West Avenue", "Fernvale Road", "HDB Fernvale Rivergrove", "HDB Fernvale Park"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67363",
+              "services": ["50", "163", "371"]
+            }
+          ],
+          "nearby_landmarks": ["Sengkang West Avenue", "Fernvale Road", "HDB Fernvale Rivergrove", "Nan Chiau Primary School"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Sengkang West Avenue."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tongkang_LRT_Station",
+      "extraction_confidence": "high"
+    },
+    {
+      "official_name": "RENJONG LRT STATION",
+      "station_code": "SW8",
+      "lines": ["SWL"],
+      "exits": [
+        {
+          "exit_code": "A",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67351",
+              "services": ["50", "163", "371"]
+            }
+          ],
+          "nearby_landmarks": ["Sengkang West Avenue", "Fernvale Road", "HDB Fernvale Rivergrove", "HDB Fernvale Park"]
+        },
+        {
+          "exit_code": "B",
+          "platforms": [
+            {
+              "platform_code": "1",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            },
+            {
+              "platform_code": "2",
+              "towards_code": "STC",
+              "line_code": "SWL"
+            }
+          ],
+          "accessibility": ["lift", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "67353",
+              "services": ["50", "163", "371"]
+            }
+          ],
+          "nearby_landmarks": ["Sengkang West Avenue", "Fernvale Road", "Nan Chiau High School", "Nan Chiau Primary School"]
+        }
+      ],
+      "accessibility_notes": ["Overground station with island platform on Sengkang West Avenue. Terminal station for West Loop."],
+      "last_updated": "2026-02-03T15:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Renjong_LRT_Station",
+      "extraction_confidence": "high"
+    }
+  ]
+}

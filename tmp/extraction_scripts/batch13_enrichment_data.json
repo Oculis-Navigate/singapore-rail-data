@@ -1,0 +1,480 @@
+{
+  "metadata": {
+    "batch_id": "batch_13",
+    "name": "TEL Remaining Stations",
+    "description": "Remaining Thomson-East Coast Line stations (TE25-TE27, TE29)",
+    "created_date": "2026-02-02",
+    "extraction_date": "2026-02-02",
+    "schema_version": "1.0",
+    "data_source": "singapore-mrt-lines.fandom.com",
+    "extraction_confidence": "high",
+    "total_stations": 4
+  },
+  "stations": {
+    "TANJONG KATONG MRT STATION": {
+      "official_name": "TANJONG KATONG MRT STATION",
+      "station_code": "TE25",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "82051",
+              "services": ["36", "48"]
+            }
+          ],
+          "nearby_landmarks": ["Tanjong Katong Road South"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "82051",
+              "services": ["36", "48"]
+            },
+            {
+              "code": "82059",
+              "services": ["36", "48"]
+            }
+          ],
+          "nearby_landmarks": ["Meyer Road", "Tanjong Katong Road South"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "82059",
+              "services": ["36", "48"]
+            }
+          ],
+          "nearby_landmarks": ["Amber Gardens", "Chinese Swimming Club"]
+        }
+      ],
+      "accessibility_notes": ["All exits barrier-free accessible", "Stacked side platform arrangement"],
+      "last_updated": "2026-02-02T23:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Tanjong_Katong_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "MARINE PARADE MRT STATION": {
+      "official_name": "MARINE PARADE MRT STATION",
+      "station_code": "TE26",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "92049",
+              "services": ["15", "31", "36", "43", "43e", "47", "48", "134", "135", "196", "196e", "197", "401", "853M", "966"]
+            }
+          ],
+          "nearby_landmarks": ["Marine Parade Road", "iMall", "Marine Parade Central Market & Food Centre", "Marine Parade Polyclinic", "Parkway Centre", "Parkway Parade", "Touch Centre"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "92041",
+              "services": ["15", "31", "36", "43", "43e", "48", "134", "135", "196", "196e", "197", "853M", "966"]
+            }
+          ],
+          "nearby_landmarks": ["East Gate @ Katong", "Hotel Indigo Katong", "Katong Plaza", "Katong Square", "Katong V", "Roxy Square", "The Flow @ East Coast"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Church of Singapore", "i12 Katong"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "92051",
+              "services": ["15", "16", "16M", "31", "36", "43", "43e", "48", "134", "135", "196", "196e", "197", "853M", "966"]
+            }
+          ],
+          "nearby_landmarks": ["Church of Holy Family"]
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marine Parade Community Building"]
+        },
+        {
+          "exit_code": "6",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "92059",
+              "services": ["15", "16", "16M", "31", "36", "43", "43e", "47", "48", "134", "135", "196", "196e", "197", "401", "853M", "966"]
+            }
+          ],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["All 6 exits barrier-free", "Underground bicycle parking facility (364 lots)", "Island platform arrangement"],
+      "last_updated": "2026-02-02T23:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Marine_Parade_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "MARINE TERRACE MRT STATION": {
+      "official_name": "MARINE TERRACE MRT STATION",
+      "station_code": "TE27",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "92079",
+              "services": ["31", "36", "43", "47", "48", "55", "134", "150", "197", "853M"]
+            }
+          ],
+          "nearby_landmarks": ["Marine Parade Neighbourhood Police Centre", "Marine Terrace Market & Food Centre"]
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["Marine Parade Road", "Tao Nan School"]
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": ["CHIJ Katong (Primary)"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "92071",
+              "services": ["13", "16", "16M", "31", "36", "43", "47", "48", "55", "196", "196e", "197", "853M"]
+            }
+          ],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "92081",
+              "services": ["13", "16", "16M", "31", "36", "43", "47", "48", "55", "196", "196e", "197", "853M"]
+            }
+          ],
+          "nearby_landmarks": ["Saint Patrick's School"]
+        },
+        {
+          "exit_code": "6",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": "TE29",
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "92089",
+              "services": ["13", "16", "16M", "31", "36", "43", "47", "48", "55", "196", "196e", "197", "853M"]
+            },
+            {
+              "code": "92211",
+              "services": ["13", "16", "16M", "196", "196e"]
+            },
+            {
+              "code": "92219",
+              "services": ["134", "150"]
+            }
+          ],
+          "nearby_landmarks": ["CHIJ Katong Convent", "Marine Parade Road", "Ngee Ann Primary School", "Victoria Junior College"]
+        }
+      ],
+      "accessibility_notes": ["All 6 exits barrier-free", "Underground bicycle parking facility (202 lots)", "Island platform arrangement"],
+      "last_updated": "2026-02-02T23:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Marine_Terrace_MRT_Station",
+      "extraction_confidence": "high"
+    },
+    "BAYSHORE MRT STATION": {
+      "official_name": "BAYSHORE MRT STATION",
+      "station_code": "TE29",
+      "lines": ["TEL"],
+      "exits": [
+        {
+          "exit_code": "1",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": null,
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "2",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": null,
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "3",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": null,
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [
+            {
+              "code": "94031",
+              "services": ["10", "10e", "13", "14", "14e", "43", "55", "137", "853M"]
+            },
+            {
+              "code": "94039",
+              "services": ["10", "10e", "13", "14", "14e", "43", "55", "137", "853M"]
+            }
+          ],
+          "nearby_landmarks": ["Alphabet Playhouse", "Calvary Assembly of God Church", "Econ Medicare Centre & Nursing Home", "Holy Grace Presbyterian Church", "Singapore Hokkien Huay Kuan Cultural Academy", "Upper East Coast Road"]
+        },
+        {
+          "exit_code": "4",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": null,
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        },
+        {
+          "exit_code": "5",
+          "platforms": [
+            {
+              "platform_code": "A",
+              "towards_code": null,
+              "line_code": "TE"
+            },
+            {
+              "platform_code": "B",
+              "towards_code": "TE1",
+              "line_code": "TE"
+            }
+          ],
+          "accessibility": ["lift", "escalator", "wheelchair_accessible"],
+          "bus_stops": [],
+          "nearby_landmarks": []
+        }
+      ],
+      "accessibility_notes": ["All 5 exits barrier-free", "Platform A currently alighting-only (terminus station)", "Underground bicycle parking facility (204 lots)", "Island platform arrangement", "Will become through station when TEL Stage 5 opens in 2026"],
+      "last_updated": "2026-02-02T23:00:00",
+      "source_url": "https://singapore-mrt-lines.fandom.com/wiki/Bayshore_MRT_Station",
+      "extraction_confidence": "high"
+    }
+  }
+}
