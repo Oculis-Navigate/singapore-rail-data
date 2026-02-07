@@ -275,32 +275,54 @@ class Stage1Ingestion(PipelineStage):
         """
         Detect line codes from station codes.
         
-        Mapping:
-        - NS* → NSL
-        - EW* → EWL
-        - NE* → NEL
-        - CC* → CCL
-        - DT* → DTL
-        - TE* → TEL
-        - BP* → BPL
-        - SW*, SE* → SKL (Sengkang LRT)
-        - PW* → PGL (Punggol LRT)
+        Complete Mapping (verified against official LTA/SMRT sources):
+        - NS* → NSL (North South Line)
+        - EW* → EWL (East West Line)
+        - NE* → NEL (North East Line)
+        - CC* → CCL (Circle Line)
+        - CE* → CCL (Circle Line Extension)
+        - DT* → DTL (Downtown Line)
+        - TE* → TEL (Thomson-East Coast Line)
+        - CG* → CGL (Changi Airport Line)
+        - CR* → CRL (Cross Island Line)
+        - BP* → BPL (Bukit Panjang LRT)
+        - A*  → BPL (Bukit Panjang interchange codes)
+        - SW* → SKL (Sengkang LRT West Loop)
+        - SE* → SKL (Sengkang LRT East Loop)
+        - PW* → PGL (Punggol LRT West Loop)
+        - PE* → PGL (Punggol LRT East Loop)
         - JS* → JRL (Jurong Region Line)
-        - STC → SKL (Sengkang LRT)
-        - PTC → PGL (Punggol LRT)
+        - JW* → JRL (Jurong Region Line West)
+        - JE* → JRL (Jurong Region Line East)
         """
         line_map = {
+            # Major MRT Lines
             "NS": "NSL",
             "EW": "EWL",
             "NE": "NEL",
             "CC": "CCL",
+            "CE": "CCL",  # Circle Line Extension
             "DT": "DTL",
             "TE": "TEL",
+            "CG": "CGL",  # Changi Airport Line
+            "CR": "CRL",  # Cross Island Line
+            
+            # LRT Lines
             "BP": "BPL",
+            "A": "BPL",   # Bukit Panjang interchange codes
+            
+            # Sengkang LRT (both loops same line)
             "SW": "SKL",
             "SE": "SKL",
+            
+            # Punggol LRT (both loops same line)
             "PW": "PGL",
-            "JS": "JRL"
+            "PE": "PGL",
+            
+            # Jurong Region Line (all branches)
+            "JS": "JRL",
+            "JW": "JRL",
+            "JE": "JRL",
         }
         
         # Handle special LRT hub codes directly
@@ -310,6 +332,8 @@ class Stage1Ingestion(PipelineStage):
         }
         
         lines = set()
+        unmapped_codes = []
+        
         for code in codes:
             # Check special codes first
             if code in special_codes:
@@ -320,10 +344,19 @@ class Stage1Ingestion(PipelineStage):
             prefix = ''.join(c for c in code if c.isalpha())
             if prefix in line_map:
                 lines.add(line_map[prefix])
+            else:
+                unmapped_codes.append(code)
         
-        # If still no lines found, default to "UNKNOWN" to avoid empty list
+        # FAIL if unmapped codes found (no UNKNOWN fallback)
+        if unmapped_codes:
+            raise ValueError(
+                f"Unmapped station code prefixes: {unmapped_codes}. "
+                f"Please update line_map in _detect_lines() method."
+            )
+        
+        # Additional safety check - should never happen if mapping is complete
         if not lines:
-            lines.add("UNKNOWN")
+            raise ValueError(f"No lines detected for codes: {codes}")
         
         return sorted(list(lines))
     
@@ -365,6 +398,14 @@ class Stage1Ingestion(PipelineStage):
                 assert station.station_id, f"Missing station_id for {station.official_name}"
                 assert len(station.exits) > 0, f"No exits for {station.official_name}"
                 assert station.fandom_url, f"Missing Fandom URL for {station.official_name}"
+                
+                # Validate no UNKNOWN lines (must have valid line detection)
+                assert "UNKNOWN" not in station.lines, \
+                    f"Station {station.official_name} has UNKNOWN line: {station.lines}"
+                
+                # Validate at least one line detected
+                assert len(station.lines) > 0, \
+                    f"Station {station.official_name} has no lines detected"
             
             return True
         except Exception as e:
