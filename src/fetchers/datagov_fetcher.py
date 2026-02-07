@@ -1,5 +1,5 @@
 from .base_fetcher import BaseFetcher
-from utils.logger import logger
+from ..utils.logger import logger
 
 
 class DataGovFetcher(BaseFetcher):

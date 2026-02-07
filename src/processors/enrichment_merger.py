@@ -12,7 +12,7 @@ import json
 import os
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass
-from utils.logger import logger
+from ..utils.logger import logger
 
 
 @dataclass

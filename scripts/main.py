@@ -7,18 +7,20 @@ warnings.filterwarnings('ignore', category=UserWarning, module='urllib3')
 warnings.filterwarnings('ignore', message='.*OpenSSL.*')
 warnings.filterwarnings('ignore', message='.*NotOpenSSLWarning.*')
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Add project root to path for imports
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, project_root)
 
 from dotenv import load_dotenv
-from utils.logger import logger
-from utils.helpers import suppress_library_warnings
-from fetchers.datagov_fetcher import DataGovFetcher
-from fetchers.onemap_fetcher import OneMapFetcher
-from fetchers.missing_station_fetcher import MissingStationFetcher
-from processors.matching_engine import MatchingEngine
-from processors.consolidator import Consolidator
-from processors.enrichment_merger import merge_enrichment_data
-from storage.json_storage import JSONStorage
+from src.utils.logger import logger
+from src.utils.helpers import suppress_library_warnings
+from src.fetchers.datagov_fetcher import DataGovFetcher
+from src.fetchers.onemap_fetcher import OneMapFetcher
+from src.fetchers.missing_station_fetcher import MissingStationFetcher
+from src.processors.matching_engine import MatchingEngine
+from src.processors.consolidator import Consolidator
+from src.processors.enrichment_merger import merge_enrichment_data
+from src.storage.json_storage import JSONStorage
 
 
 def main():

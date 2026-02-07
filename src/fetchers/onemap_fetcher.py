@@ -1,7 +1,7 @@
 import os
 import re
 from .base_fetcher import BaseFetcher
-from utils.logger import logger
+from ..utils.logger import logger
 
 
 class OneMapFetcher(BaseFetcher):
