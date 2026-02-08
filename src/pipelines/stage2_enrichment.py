@@ -211,7 +211,7 @@ class Stage2Enrichment(PipelineStage):
         for station in to_retry:
             for attempt in range(self.max_retries):
                 try:
-                    time.sleep(self.retry_delay * (attempt + 1))  # Exponential backoff
+                    time.sleep(self.retry_delay * (2 ** attempt))  # Exponential backoff
                     enriched = self._extract_station(station)
                     results["stations"][station.station_id] = enriched
                     results["retry_queue"].remove(station.station_id)

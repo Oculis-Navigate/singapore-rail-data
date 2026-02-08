@@ -6,7 +6,7 @@ Singapore MRT Fandom wiki pages.
 """
 
 import requests
-from typing import Optional
+from typing import Optional, Dict, Any
 from urllib.parse import quote
 from ..utils.logger import logger
 
@@ -14,7 +14,7 @@ from ..utils.logger import logger
 class FandomScraper:
     """Scraper for Singapore MRT Fandom pages"""
     
-    def __init__(self, config: dict = None):
+    def __init__(self, config: Optional[Dict[str, Any]] = None):
         """Initialize Fandom scraper with configuration"""
         if config:
             fandom_config = config.get('apis', {}).get('fandom', {})
@@ -28,7 +28,6 @@ class FandomScraper:
         self.session.headers.update({
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
         })
-    
     def fetch_page(self, url: str) -> Optional[str]:
         """Fetch HTML content from Fandom page"""
         try:
@@ -37,5 +36,17 @@ class FandomScraper:
             response.raise_for_status()
             return response.text
         except requests.exceptions.RequestException as e:
-            logger.error(f"Failed to fetch {url}: {e}")
+            # Log specific HTTP status codes for better debugging
+            if hasattr(e, 'response') and e.response is not None:
+                status_code = e.response.status_code
+                if status_code == 404:
+                    logger.error(f"Page not found (404): {url}")
+                elif status_code == 500:
+                    logger.error(f"Server error (500): {url}")
+                elif status_code == 429:
+                    logger.error(f"Rate limited (429): {url}")
+                else:
+                    logger.error(f"HTTP {status_code}: {url}")
+            else:
+                logger.error(f"Failed to fetch {url}: {e}")
             return None

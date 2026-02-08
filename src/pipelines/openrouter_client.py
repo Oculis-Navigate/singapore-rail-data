@@ -20,7 +20,7 @@ class OpenRouterClient:
         """Initialize OpenRouter client with configuration"""
         api_config = config.get('apis', {}).get('openrouter', {})
         self.api_url = api_config.get('base_url', 'https://openrouter.ai/api/v1') + "/chat/completions"
-        self.model = api_config.get('model', 'google/gemma-2-9b-it:free')
+        self.model = api_config.get('model', 'openai/gpt-oss-120b:free')
         self.timeout = api_config.get('timeout', 120)
         self.max_tokens = api_config.get('max_tokens', 4000)
         self.temperature = api_config.get('temperature', 0.1)
@@ -89,7 +89,19 @@ class OpenRouterClient:
             }
             
         except requests.exceptions.RequestException as e:
-            logger.error(f"API request failed: {e}")
+            # Log specific HTTP status codes for better debugging
+            if hasattr(e, 'response') and e.response is not None:
+                status_code = e.response.status_code
+                if status_code == 401:
+                    logger.error(f"API authentication failed (401): Invalid API key")
+                elif status_code == 429:
+                    logger.error(f"API rate limited (429): Too many requests")
+                elif status_code == 500:
+                    logger.error(f"API server error (500): Internal server error")
+                else:
+                    logger.error(f"API request failed ({status_code}): {e}")
+            else:
+                logger.error(f"API request failed: {e}")
             return None
         except json.JSONDecodeError as e:
             logger.error(f"Failed to parse JSON response: {e}")

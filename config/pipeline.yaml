@@ -36,7 +36,7 @@ pipeline:
       
     openrouter:
       base_url: "https://openrouter.ai/api/v1"
-      model: "google/gemma-2-9b-it:free"
+      model: "openai/gpt-oss-120b:free"
       timeout: 120
       max_tokens: 4000
       temperature: 0.1
