@@ -377,8 +377,8 @@ class Stage1Ingestion(PipelineStage):
         return filepath
     
     def validate_input(self, input_data: Any) -> bool:
-        """Stage 1 doesn't require input - accepts any falsy value"""
-        return not bool(input_data)  # None, {}, [], "", 0, False all valid
+        """Stage 1 doesn't require input - only accepts None"""
+        return input_data is None
     
     def validate_output(self, output_data: Stage1Output) -> bool:
         """Validate output matches schema and has required data"""

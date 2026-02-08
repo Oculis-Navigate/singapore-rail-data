@@ -34,12 +34,8 @@ class Stage2Enrichment(PipelineStage):
         self.max_retries = self.stage_config.get('max_retries', 3)
         self.retry_delay = self.stage_config.get('retry_delay_seconds', 5)
         
-        # Test mode detection - supports config, env var, and pytest detection
-        self.test_mode = (
-            self.stage_config.get('test_mode', False) or
-            os.getenv('TESTING') == '1' or
-            os.getenv('PYTEST_CURRENT_TEST') is not None
-        )
+        # Test mode detection - clean configuration-based approach
+        self.test_mode = self.stage_config.get('test_mode', False)
         
         # Lazy initialization - clients created only when needed
         self._llm_client = None

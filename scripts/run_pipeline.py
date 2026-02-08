@@ -32,69 +32,128 @@ def load_config(config_path: str) -> Dict[str, Any]:
 
 def validate_config(config: Dict[str, Any]) -> bool:
     """Validate configuration structure"""
-    required_keys = ['pipeline', 'stages', 'apis', 'output']
+    required_keys = ['pipeline']
     for key in required_keys:
         if key not in config:
             print(f"Missing required config key: {key}")
             return False
+    
+    # Check nested structure
+    pipeline = config['pipeline']
+    required_pipeline_keys = ['stages', 'apis', 'output']
+    for key in required_pipeline_keys:
+        if key not in pipeline:
+            print(f"Missing required pipeline config key: {key}")
+            return False
+    
     return True
 
 
-def run_stage(stage_name: str, config: Dict[str, Any], dry_run: bool = False) -> Optional[Any]:
-    """Run a specific pipeline stage"""
-    if dry_run:
-        print(f"DRY RUN: Would execute stage {stage_name}")
+def run_stage(stage_name: str, config: Dict[str, Any], input_data: Any = None, dry_run: bool = False) -> Optional[Any]:
+    """Run a specific pipeline stage with proper input data"""
+    try:
+        if dry_run:
+            print(f"DRY RUN: Would execute stage {stage_name}")
+            return None
+        
+        print(f"Executing stage: {stage_name}")
+        
+        # Import and instantiate the appropriate stage
+        if stage_name == "stage1_ingestion":
+            from src.pipelines.stage1_ingestion import Stage1Ingestion
+            stage = Stage1Ingestion(config)
+            # Stage 1 expects None as input (per specification)
+            stage_input_data = None
+        elif stage_name == "stage2_enrichment":
+            from src.pipelines.stage2_enrichment import Stage2Enrichment
+            stage = Stage2Enrichment(config)
+            # Stage 2 expects Stage1Output as input
+            stage_input_data = input_data
+        elif stage_name == "stage3_merger":
+            from src.pipelines.stage3_merger import Stage3Merger
+            stage = Stage3Merger(config)
+            # Stage 3 expects (Stage1Output, Stage2Output) as input
+            stage_input_data = input_data
+        else:
+            raise ValueError(f"Unknown stage: {stage_name}")
+        
+        # Validate input with correct data
+        if not stage.validate_input(stage_input_data):  # type: ignore
+            print(f"Input validation failed for {stage_name}")
+            return None
+        
+        # Execute stage with proper input
+        output = stage.execute(stage_input_data)  # type: ignore
+        
+        if not stage.validate_output(output):  # type: ignore
+            print(f"Output validation failed for {stage_name}")
+            return None
+        
+        print(f"Stage {stage_name} completed successfully")
+        return output
+        
+    except ImportError as e:
+        print(f"ERROR: Failed to import stage {stage_name}: {e}")
         return None
-    
-    # TODO: Implement actual stage execution
-    print(f"Executing stage: {stage_name}")
-    
-    # Import and instantiate the appropriate stage
-    if stage_name == "stage1_ingestion":
-        from src.pipelines.stage1_ingestion import Stage1Ingestion
-        stage = Stage1Ingestion(config)
-    elif stage_name == "stage2_enrichment":
-        from src.pipelines.stage2_enrichment import Stage2Enrichment
-        stage = Stage2Enrichment(config)
-    elif stage_name == "stage3_merger":
-        from src.pipelines.stage3_merger import Stage3Merger
-        stage = Stage3Merger(config)
-    else:
-        raise ValueError(f"Unknown stage: {stage_name}")
-    
-    # TODO: Pass appropriate input data to stage
-    input_data = {"config": config[config["pipeline"]["stages"].get(stage_name, {})]}
-    
-    if not stage.validate_input(input_data):
-        print(f"Input validation failed for {stage_name}")
+    except Exception as e:
+        print(f"ERROR: Stage {stage_name} failed with exception: {e}")
+        import traceback
+        traceback.print_exc()
         return None
-    
-    output = stage.execute(input_data)
-    
-    if not stage.validate_output(output):
-        print(f"Output validation failed for {stage_name}")
-        return None
-    
-    print(f"Stage {stage_name} completed successfully")
-    return output
 
 
 def run_full_pipeline(config: Dict[str, Any], dry_run: bool = False) -> bool:
-    """Run the complete pipeline"""
-    stages = ["stage1_ingestion", "stage2_enrichment", "stage3_merger"]
+    """Run the complete pipeline with proper data flow"""
+    print("Starting MRT Data Pipeline...")
+    print("=" * 50)
     
-    for stage_name in stages:
-        if not config["pipeline"]["stages"].get(stage_name, {}).get("enabled", True):
-            print(f"Skipping disabled stage: {stage_name}")
-            continue
-            
-        result = run_stage(stage_name, config, dry_run)
-        if result is None and not dry_run:
-            print(f"Pipeline failed at stage: {stage_name}")
+    # Stage 1: Ingestion (input: None)
+    if not config["pipeline"]["stages"].get("stage1_ingestion", {}).get("enabled", True):
+        print("Skipping disabled stage: stage1_ingestion")
+        stage1_output = None
+    else:
+        print("Stage 1/3: Deterministic Data Ingestion")
+        stage1_output = run_stage("stage1_ingestion", config, None, dry_run)
+        if stage1_output is None and not dry_run:
+            print("❌ Pipeline failed at stage: stage1_ingestion")
             return False
+        if not dry_run and stage1_output:
+            print(f"✅ Stage 1 complete: {len(stage1_output.stations)} stations")
     
+    # Stage 2: Enrichment (input: Stage1Output)
+    if not config["pipeline"]["stages"].get("stage2_enrichment", {}).get("enabled", True):
+        print("Skipping disabled stage: stage2_enrichment")
+        stage2_output = None
+    else:
+        print("\nStage 2/3: Enrichment Data Extraction")
+        stage2_output = run_stage("stage2_enrichment", config, stage1_output, dry_run)
+        if stage2_output is None and not dry_run:
+            print("❌ Pipeline failed at stage: stage2_enrichment")
+            return False
+        if not dry_run and stage2_output:
+            print(f"✅ Stage 2 complete: {len(stage2_output.stations)} stations enriched")
+    
+    # Stage 3: Merger (input: (Stage1Output, Stage2Output))
+    if not config["pipeline"]["stages"].get("stage3_merger", {}).get("enabled", True):
+        print("Skipping disabled stage: stage3_merger")
+        final_output = None
+    else:
+        print("\nStage 3/3: Data Merging & Validation")
+        stage3_input = (stage1_output, stage2_output)
+        final_output = run_stage("stage3_merger", config, stage3_input, dry_run)
+        if final_output is None and not dry_run:
+            print("❌ Pipeline failed at stage: stage3_merger")
+            return False
+        if not dry_run and final_output:
+            print(f"✅ Stage 3 complete: {len(final_output.stations)} stations in final output")
+    
+    print("\n" + "=" * 50)
     if not dry_run:
-        print("Full pipeline completed successfully")
+        print("🎉 Full pipeline completed successfully!")
+        if final_output:
+            print(f"📊 Final result: {len(final_output.stations)} stations processed")
+        else:
+            print("📊 Final result: Pipeline completed with no output")
     else:
         print("DRY RUN: Full pipeline would execute successfully")
     
@@ -136,7 +195,18 @@ def main():
     
     # Run pipeline
     if args.stage:
-        result = run_stage(args.stage, config, args.dry_run)
+        if args.stage == "stage1_ingestion":
+            result = run_stage(args.stage, config, None, args.dry_run)
+        elif args.stage == "stage2_enrichment":
+            # For single stage 2 execution, we need to load Stage 1 output
+            # This is a limitation - full pipeline is recommended
+            print("WARNING: Stage 2 requires Stage 1 output. Run full pipeline or provide --stage1-input")
+            return 1
+        elif args.stage == "stage3_merger":
+            print("WARNING: Stage 3 requires Stage 1 and Stage 2 outputs. Run full pipeline")
+            return 1
+        else:
+            result = run_stage(args.stage, config, None, args.dry_run)
         success = result is not None or args.dry_run
     else:
         success = run_full_pipeline(config, args.dry_run)
