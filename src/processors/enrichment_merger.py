@@ -8,6 +8,13 @@ The enrichment data is kept separate from the deterministic data sources
 (data.gov.sg, OneMap) to maintain clear provenance and allow independent updates.
 """
 
+import warnings
+warnings.warn(
+    "enrichment_merger is deprecated. Use pipelines.stage3_merger instead.",
+    DeprecationWarning,
+    stacklevel=2
+)
+
 import json
 import os
 from typing import Dict, List, Optional, Any
