@@ -21,7 +21,8 @@ from src.contracts.interfaces import (
 )
 from src.contracts.schemas import (
     Stage1Output, Stage2Output, FinalOutput,
-    Stage1Station, Stage2Station, FinalStation, Exit, FinalExit, StationType
+    Stage1Station, Stage2Station, FinalStation, Exit, FinalExit, StationType,
+    EnrichedExit
 )
 from src.pipelines.stage1_ingestion import Stage1Ingestion
 from src.pipelines.stage2_enrichment import Stage2Enrichment
@@ -267,10 +268,48 @@ class TestStage3Merger:
         assert stage.stage_name == "stage3_merger"
     
     def test_validate_input_default(self):
-        """Test default input validation"""
+        """Test default input validation with proper types"""
         stage = Stage3Merger({})
-        # Default implementation should return True
-        assert stage.validate_input({}) is True
+        # Create valid Stage1Output and Stage2Output
+        exit1 = Exit(exit_code="A", lat=1.3521, lng=103.8198, source="onemap")
+        station1 = Stage1Station(
+            station_id="NS13",
+            official_name="YISHUN MRT STATION",
+            display_name="Yishun",
+            mrt_codes=["NS13"],
+            lines=["NSL"],
+            station_type=StationType.MRT,
+            exits=[exit1],
+            fandom_url="https://example.com"
+        )
+        stage1_output = Stage1Output(metadata={}, stations=[station1])
+
+        exit2 = EnrichedExit(exit_code="A")
+        station2 = Stage2Station(
+            station_id="NS13",
+            official_name="YISHUN MRT STATION",
+            extraction_result="success",
+            exits=[exit2],
+            extraction_timestamp=datetime.now(),
+            source_url="https://example.com"
+        )
+        stage2_output = Stage2Output(
+            metadata={},
+            stations={"NS13": station2},
+            failed_stations=[],
+            retry_queue=[]
+        )
+
+        # Should return True with valid inputs
+        assert stage.validate_input((stage1_output, stage2_output)) is True
+
+    def test_validate_input_invalid(self):
+        """Test input validation with invalid inputs"""
+        stage = Stage3Merger({})
+        # Should return False with invalid inputs
+        assert stage.validate_input({}) is False
+        assert stage.validate_input(("invalid", "input")) is False
+        assert stage.validate_input((None, None)) is False
     
     def test_validate_output_default(self):
         """Test default output validation"""

@@ -6,7 +6,7 @@ ensuring consistent behavior and validation across the pipeline.
 """
 
 from abc import ABC, abstractmethod
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 from .schemas import Stage1Output, Stage2Output, FinalOutput
 
 
@@ -37,21 +37,6 @@ class PipelineStage(ABC):
     @abstractmethod
     def save_checkpoint(self, output: Any, output_dir: str) -> str:
         """Save checkpoint to output directory"""
-        pass
-    
-    @abstractmethod
-    def execute(self, input_data: Any) -> Any:
-        """Execute the stage and return output"""
-        pass
-    
-    @abstractmethod
-    def validate_input(self, input_data: Any) -> bool:
-        """Validate input data before processing"""
-        pass
-    
-    @abstractmethod
-    def validate_output(self, output_data: Any) -> bool:
-        """Validate output data after processing"""
         pass
 
 
@@ -103,21 +88,21 @@ class Stage2Interface(PipelineStage):
 
 class Stage3Interface(PipelineStage):
     """Interface for Stage 3: Data Merging & Validation"""
-    
+
     @property
     def stage_name(self) -> str:
         return "stage3_merger"
-    
+
     @abstractmethod
-    def execute(self, input_data: Dict[str, Any]) -> FinalOutput:
+    def execute(self, input_data: Tuple[Stage1Output, Stage2Output]) -> FinalOutput:
         """Execute Stage 3 and return FinalOutput"""
         pass
-    
+
     @abstractmethod
-    def validate_input(self, input_data: Dict[str, Any]) -> bool:
+    def validate_input(self, input_data: Tuple[Stage1Output, Stage2Output]) -> bool:
         """Validate Stage 3 input contains required data"""
         pass
-    
+
     @abstractmethod
     def validate_output(self, output_data: FinalOutput) -> bool:
         """Validate Stage 3 output conforms to schema"""

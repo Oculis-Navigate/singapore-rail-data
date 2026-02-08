@@ -250,3 +250,13 @@ def merge_enrichment_data(stations: List[Dict[str, Any]]) -> List[Dict[str, Any]
         logger.info(f"  - {stats['exits_with_bus_stops']} exits with bus stop data")
     
     return merger.merge_all(stations)
+
+
+# Re-export from new location for backward compatibility
+# New code should use: from src.pipelines.stage3_merger import Stage3Merger
+try:
+    from ..pipelines.stage3_merger import Stage3Merger
+except ImportError as e:
+    # Log warning if import fails - don't silently ignore
+    logger.warning(f"Failed to import Stage3Merger from pipelines.stage3_merger: {e}")
+    logger.warning("enrichment_merger backward compatibility may be limited")

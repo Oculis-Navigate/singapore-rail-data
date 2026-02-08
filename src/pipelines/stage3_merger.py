@@ -22,16 +22,18 @@ from ..utils.logger import logger
 class Stage3Merger(PipelineStage):
     """
     Stage 3: Merge deterministic and enrichment data, validate final output.
-    
-    Input: Dict containing Stage1Output and Stage2Output
+
+    Input: Tuple[Stage1Output, Stage2Output]
     Output: FinalOutput (mrt_transit_graph.json format)
     """
     
     def __init__(self, config: dict):
         self.config = config
-        self.stage_config = config.get('stages', {}).get('stage3_merger', {})
+        # Handle both nested 'pipeline' structure and flat structure
+        pipeline_config = config.get('pipeline', config)
+        self.stage_config = pipeline_config.get('stages', {}).get('stage3_merger', {})
         self.validation_config = self.stage_config.get('validation', {})
-        self.expected_stations = config.get('expected_stations', 187)
+        self.expected_stations = pipeline_config.get('expected_stations', 187)
     
     @property
     def stage_name(self) -> str:
@@ -74,10 +76,11 @@ class Stage3Merger(PipelineStage):
             stations=merged_stations
         )
         
-        # Validation
-        logger.subsection("Validating Output")
-        if not self.validate_output(output):
-            raise ValueError("Stage 3 output validation failed")
+        # Validation (if enabled in config)
+        if self.validation_config.get('schema_check', True):
+            logger.subsection("Validating Output")
+            if not self.validate_output(output):
+                raise ValueError("Stage 3 output validation failed")
         
         # Additional checks
         if self.validation_config.get('completeness_check', True):
@@ -155,66 +158,93 @@ class Stage3Merger(PipelineStage):
         return FinalStation(**merged_data)
     
     def _merge_exits(
-        self, 
-        deterministic_exits: List[Any], 
+        self,
+        deterministic_exits: List[Any],
         enrichment_exits: List[EnrichedExit],
         station_id: str
     ) -> List[FinalExit]:
         """
         Merge exit data from both sources.
-        
+
         Matches exits by normalized exit code.
         """
-        # Create lookup by normalized exit code
+        # Create lookup by normalized exit code (skip entries with empty codes)
         enrichment_by_code = {}
         for exit_data in enrichment_exits:
             code = self._normalize_exit_code(exit_data.exit_code)
-            enrichment_by_code[code] = exit_data
-        
+            if code:  # Skip empty/invalid exit codes
+                enrichment_by_code[code] = exit_data
+
         merged_exits = []
+        matched_enrichment_codes = set()
+
         for det_exit in deterministic_exits:
             norm_code = self._normalize_exit_code(det_exit.exit_code)
-            
+            if not norm_code:
+                logger.warning(f"Station {station_id}: Skipping exit with empty/invalid exit_code")
+                continue
+
             # Start with deterministic data
             merged_exit = FinalExit(
                 exit_code=det_exit.exit_code,
                 lat=det_exit.lat,
                 lng=det_exit.lng
             )
-            
+
             # Add enrichment if available
             if norm_code in enrichment_by_code:
                 enrichment = enrichment_by_code[norm_code]
-                
+                matched_enrichment_codes.add(norm_code)
+
                 if enrichment.platforms:
                     merged_exit.platforms = enrichment.platforms
-                
+
                 if enrichment.accessibility:
                     merged_exit.accessibility = enrichment.accessibility
-                
+
                 if enrichment.bus_stops:
                     merged_exit.bus_stops = enrichment.bus_stops
-                
+
                 if enrichment.nearby_landmarks:
                     merged_exit.nearby_landmarks = enrichment.nearby_landmarks
-            
+
             merged_exits.append(merged_exit)
-        
+
+        # Check for enrichment exits not in deterministic data
+        for norm_code, enrichment in enrichment_by_code.items():
+            if norm_code not in matched_enrichment_codes:
+                logger.warning(
+                    f"Station {station_id}: Exit '{enrichment.exit_code}' found in "
+                    f"enrichment but not in deterministic data. Skipping - cannot add exit without valid coordinates."
+                )
+                # Skip exits that don't have deterministic coordinate data
+                # This prevents schema validation failures from placeholder coordinates
+
         return merged_exits
     
     def _normalize_exit_code(self, code: str) -> str:
         """
         Normalize exit code for matching.
-        
+
         Examples:
         - "Exit A" → "A"
         - "Exit 1" → "1"
         - "A" → "A"
         - "  a  " → "A"
+        - "EXIT" → "" (no identifier)
         """
-        code = code.upper().strip()
+        if not code:
+            return ""
+        
+        code = str(code).upper().strip()
+        if not code:
+            return ""
+        
+        # Remove "EXIT" prefix/suffix
         code = code.replace("EXIT ", "").replace("EXIT", "")
-        return code.strip()
+        normalized = code.strip()
+        
+        return normalized
     
     def _extract_lines_served(self, station2: Stage2Station) -> List[str]:
         """Extract unique line codes from enrichment data"""
@@ -225,12 +255,18 @@ class Stage3Merger(PipelineStage):
                     if hasattr(platform, 'line_code'):
                         lines.add(platform.line_code)
                     elif isinstance(platform, dict):
-                        lines.add(platform.get('line_code'))
+                        line_code = platform.get('line_code')
+                        if line_code:  # Filter out None/empty values
+                            lines.add(line_code)
         return sorted(list(lines))
     
     def validate_input(self, input_data: Tuple[Stage1Output, Stage2Output]) -> bool:
         """Validate Stage 1 and Stage 2 outputs"""
         try:
+            # Check tuple length first
+            if not isinstance(input_data, tuple) or len(input_data) != 2:
+                raise AssertionError("Input must be tuple of (Stage1Output, Stage2Output)")
+            
             stage1, stage2 = input_data
             
             assert isinstance(stage1, Stage1Output), "First input must be Stage1Output"
@@ -244,22 +280,16 @@ class Stage3Merger(PipelineStage):
     def validate_output(self, output_data: FinalOutput) -> bool:
         """Validate final output against schema"""
         try:
-            # Convert to dict for Pydantic validation
-            output_dict = {
-                "metadata": output_data.metadata,
-                "stations": [s.model_dump() for s in output_data.stations]
-            }
-            
-            validated = FinalOutput.model_validate(output_dict)
-            
-            # Additional validation
-            assert len(validated.stations) > 0, "No stations in output"
-            
-            for station in validated.stations:
+            # Validate directly using Pydantic model
+            # This will catch schema violations and type errors
+            assert isinstance(output_data, FinalOutput), "Output must be FinalOutput instance"
+            assert len(output_data.stations) > 0, "No stations in output"
+
+            for station in output_data.stations:
                 assert station.official_name, "Missing official_name"
                 assert len(station.mrt_codes) > 0, "Missing mrt_codes"
                 assert len(station.exits) > 0, f"No exits for {station.official_name}"
-            
+
             return True
         except Exception as e:
             logger.error(f"Output validation failed: {e}")
@@ -311,9 +341,10 @@ class Stage3Merger(PipelineStage):
                     if not (103.0 <= lng <= 105.0):
                         issues.append(f"Invalid longitude {lng} in {station.official_name}")
         
-        # Check for duplicate station names
-        names = [s.official_name for s in output.stations]
-        duplicates = set([n for n in names if names.count(n) > 1])
+        # Check for duplicate station names (optimized using Counter)
+        from collections import Counter
+        name_counts = Counter(s.official_name for s in output.stations)
+        duplicates = {name for name, count in name_counts.items() if count > 1}
         if duplicates:
             issues.append(f"Duplicate station names: {duplicates}")
         
@@ -327,12 +358,20 @@ class Stage3Merger(PipelineStage):
         """Save final output to file"""
         os.makedirs(output_dir, exist_ok=True)
         
-        # Convert to JSON-serializable dict
-        output_dict = output.model_dump()
+        # Convert to JSON-serializable dict with custom datetime serializer
+        def serialize_datetime(obj):
+            if isinstance(obj, datetime):
+                # Handle timezone-aware datetimes by converting to ISO format
+                if obj.tzinfo is not None:
+                    return obj.isoformat()
+                return obj.isoformat()
+            raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
+        
+        output_dict = output.model_dump(mode='json')
         
         filepath = os.path.join(output_dir, "stage3_final.json")
         with open(filepath, 'w', encoding='utf-8') as f:
-            json.dump(output_dict, f, indent=2, ensure_ascii=False, default=str)
+            json.dump(output_dict, f, indent=2, ensure_ascii=False, default=serialize_datetime)
         
         logger.success(f"Final output saved: {filepath}")
         
@@ -344,3 +383,46 @@ class Stage3Merger(PipelineStage):
         logger.success(f"Backward compatibility output saved: {compat_filepath}")
         
         return filepath
+
+
+def merge_enrichment_data(
+    stage1_output: Stage1Output,
+    stage2_output: Stage2Output,
+    config: Optional[dict] = None
+) -> FinalOutput:
+    """
+    Convenience function to merge enrichment data with deterministic data.
+
+    This is a high-level wrapper around Stage3Merger for simple use cases.
+
+    Args:
+        stage1_output: Stage 1 deterministic data output
+        stage2_output: Stage 2 enrichment data output
+        config: Optional configuration dict (uses defaults if not provided)
+
+    Returns:
+        FinalOutput: The merged and validated final output
+
+    Example:
+        from src.pipelines.stage3_merger import merge_enrichment_data
+        from src.contracts.schemas import Stage1Output, Stage2Output
+
+        final_output = merge_enrichment_data(stage1_data, stage2_data)
+    """
+    if config is None:
+        config = {
+            'stages': {
+                'stage3_merger': {
+                    'enabled': True,
+                    'validation': {
+                        'schema_check': True,
+                        'completeness_check': True,
+                        'sanity_check': True
+                    }
+                }
+            },
+            'expected_stations': 187
+        }
+
+    merger = Stage3Merger(config)
+    return merger.execute((stage1_output, stage2_output))

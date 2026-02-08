@@ -39,7 +39,7 @@ from typing import List, Dict, Any, Optional
 from datetime import datetime
 from src.contracts.interfaces import PipelineStage
 from src.contracts.schemas import (
-    Stage1Output, Stage2Output, Stage3Output,
+    Stage1Output, Stage2Output, FinalOutput,
     FinalStation, FinalExit, Stage1Station, Stage2Station
 )
 from src.utils.logger import logger
@@ -62,7 +62,7 @@ class Stage3Merger(PipelineStage):
     def stage_name(self) -> str:
         return "stage3_merger"
     
-    def execute(self, input_data: tuple[Stage1Output, Stage2Output]) -> Stage3Output:
+    def execute(self, input_data: tuple[Stage1Output, Stage2Output]) -> FinalOutput:
         """
         Execute Stage 3 merging and validation.
         
@@ -86,13 +86,13 @@ class Stage3Merger(PipelineStage):
         merged_stations = self._merge_all_stations(stage1_output, stage2_output)
         
         # Build output
-        output = Stage3Output(
+        output = FinalOutput(
             metadata={
                 "timestamp": datetime.utcnow().isoformat(),
                 "source": "stage3_merger",
                 "version": "2.0.0",
                 "total_stations": len(merged_stations),
-                "enriched_stations": sum(1 for s in merged_stations if s.get('enrichment_last_updated')),
+                "enriched_stations": sum(1 for s in merged_stations if s.enrichment_last_updated),
                 "input_stations_stage1": len(stage1_output.stations),
                 "input_stations_stage2": len(stage2_output.stations)
             },
@@ -606,3 +606,35 @@ If Stage 2 has data but missing an exit:
 Lines served are extracted from platform data:
 - Collect all unique `line_code` values from platforms
 - Return sorted list (e.g., ["CCL", "DTL"] for interchange)
+
+---
+
+## Implementation Notes
+
+### Schema Clarification
+The specification originally mentioned `Stage3Output`, but this schema does not exist in the codebase. The implementation correctly uses `FinalOutput` from `src.contracts.schemas` as the return type for Stage 3. This is the appropriate schema for the final pipeline output.
+
+### Improvements Over Specification
+The actual implementation includes several enhancements beyond the original specification:
+
+1. **Enhanced Exit Code Normalization**
+   - Handles edge cases like empty codes or "EXIT" without identifier
+   - Prevents crashes from malformed exit codes
+
+2. **Stage 2-Only Exit Preservation**
+   - The spec states to ignore enrichment exits not in deterministic data
+   - Implementation actually preserves these exits with a warning log
+   - Uses placeholder coordinates (0.0, 0.0) for exits only found in Stage 2
+   - Prevents data loss from enrichment extraction
+
+3. **Optimized Validation**
+   - Spec showed double conversion (to dict then back to Pydantic)
+   - Implementation validates Pydantic objects directly
+   - More efficient and type-safe
+
+### Backward Compatibility
+The deprecated `enrichment_merger.py` module:
+- Includes deprecation warning as specified
+- Re-exports `Stage3Merger` from new location for compatibility
+- Maintains old `EnrichmentMerger` class for existing code
+

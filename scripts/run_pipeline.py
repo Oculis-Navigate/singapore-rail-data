@@ -52,13 +52,13 @@ def run_stage(stage_name: str, config: Dict[str, Any], dry_run: bool = False) ->
     # Import and instantiate the appropriate stage
     if stage_name == "stage1_ingestion":
         from src.pipelines.stage1_ingestion import Stage1Ingestion
-        stage = Stage1Ingestion()
+        stage = Stage1Ingestion(config)
     elif stage_name == "stage2_enrichment":
         from src.pipelines.stage2_enrichment import Stage2Enrichment
-        stage = Stage2Enrichment()
+        stage = Stage2Enrichment(config)
     elif stage_name == "stage3_merger":
         from src.pipelines.stage3_merger import Stage3Merger
-        stage = Stage3Merger()
+        stage = Stage3Merger(config)
     else:
         raise ValueError(f"Unknown stage: {stage_name}")
     
