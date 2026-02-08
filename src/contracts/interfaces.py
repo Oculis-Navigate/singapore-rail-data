@@ -16,7 +16,27 @@ class PipelineStage(ABC):
     @property
     @abstractmethod
     def stage_name(self) -> str:
-        """Return the stage name"""
+        """Return stage name"""
+        pass
+    
+    @abstractmethod
+    def execute(self, input_data: Any) -> Any:
+        """Execute stage and return output"""
+        pass
+    
+    @abstractmethod
+    def validate_input(self, input_data: Any) -> bool:
+        """Validate input data before processing"""
+        pass
+    
+    @abstractmethod
+    def validate_output(self, output_data: Any) -> bool:
+        """Validate output data after processing"""
+        pass
+    
+    @abstractmethod
+    def save_checkpoint(self, output: Any, output_dir: str) -> str:
+        """Save checkpoint to output directory"""
         pass
     
     @abstractmethod

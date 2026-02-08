@@ -77,9 +77,10 @@ class OpenRouterClient:
             # Parse JSON
             data = json.loads(content)
             
-            # Validate required fields
-            if "exits" not in data:
-                raise ValueError("Response missing 'exits' field")
+            # Validate LLM response structure before processing
+            if not self._validate_llm_response(data):
+                logger.warning(f"Invalid LLM response structure for {station_name}")
+                return None
             
             return {
                 "confidence": data.get("extraction_confidence", "medium"),
@@ -96,6 +97,58 @@ class OpenRouterClient:
         except Exception as e:
             logger.error(f"Unexpected error in extraction: {e}")
             return None
+    
+    def _validate_llm_response(self, data: Dict) -> bool:
+        """Validate LLM response structure before creating objects"""
+        try:
+            # Check basic structure
+            if not isinstance(data, dict):
+                return False
+            
+            # Must have exits field
+            if "exits" not in data:
+                return False
+            
+            # Check exits is a list
+            exits = data.get("exits", [])
+            if not isinstance(exits, list):
+                return False
+            
+            # If no exits, still valid but empty
+            if len(exits) == 0:
+                return True
+            
+            # Validate each exit structure
+            for exit_data in exits:
+                if not isinstance(exit_data, dict):
+                    return False
+                
+                # Check required fields
+                if "exit_code" not in exit_data:
+                    return False
+                
+                # Validate optional fields if present
+                if "platforms" in exit_data and not isinstance(exit_data["platforms"], list):
+                    return False
+                
+                if "bus_stops" in exit_data:
+                    bus_stops = exit_data["bus_stops"]
+                    if not isinstance(bus_stops, list):
+                        return False
+                    for bus_stop in bus_stops:
+                        if not isinstance(bus_stop, dict) or "code" not in bus_stop:
+                            return False
+                
+                if "accessibility" in exit_data and not isinstance(exit_data["accessibility"], list):
+                    return False
+                
+                if "nearby_landmarks" in exit_data and not isinstance(exit_data["nearby_landmarks"], list):
+                    return False
+            
+            return True
+        except Exception as e:
+            logger.error(f"LLM response validation error: {e}")
+            return False
     
     def _get_system_prompt(self) -> str:
         """Get system prompt for LLM"""

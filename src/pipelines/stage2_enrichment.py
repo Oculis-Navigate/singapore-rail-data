@@ -30,7 +30,7 @@ class Stage2Enrichment(PipelineStage):
     
     def __init__(self, config: dict):
         self.config = config
-        self.stage_config = config.get('pipeline', {}).get('stages', {}).get('stage2_enrichment', {})
+        self.stage_config = config.get('stages', {}).get('stage2_enrichment', {})
         self.batch_size = self.stage_config.get('batch_size', 8)
         self.delay_seconds = self.stage_config.get('delay_seconds', 2)
         self.max_retries = self.stage_config.get('max_retries', 3)
@@ -54,6 +54,7 @@ class Stage2Enrichment(PipelineStage):
         3. For each station: fetch HTML, extract with LLM
         4. Retry failed stations
         5. Compile results into Stage2Output
+        6. Save partial checkpoint on failures
         """
         logger.section("Stage 2: Enrichment Data Extraction")
         
@@ -76,30 +77,54 @@ class Stage2Enrichment(PipelineStage):
         # Process in batches
         total_batches = (len(stations) + self.batch_size - 1) // self.batch_size
         
-        for batch_idx, batch in enumerate(self._batch_stations(stations), 1):
-            logger.subsection(f"Processing Batch {batch_idx}/{total_batches}")
+        try:
+            for batch_idx, batch in enumerate(self._batch_stations(stations), 1):
+                logger.subsection(f"Processing Batch {batch_idx}/{total_batches}")
+                
+                for station in batch:
+                    try:
+                        enriched = self._extract_station(station)
+                        results["stations"][station.station_id] = enriched
+                        logger.item(f"✓ {station.official_name}")
+                    except Exception as e:
+                        logger.warning(f"✗ {station.official_name}: {e}")
+                        results["failed_stations"].append({
+                            "station_id": station.station_id,
+                            "error": str(e),
+                            "retryable": True
+                        })
+                        results["retry_queue"].append(station.station_id)
+                
+                # Retry failed stations in this batch
+                if results["retry_queue"]:
+                    self._retry_failed_stations(results, batch)
+                
+                # Delay between batches
+                if batch_idx < total_batches:
+                    time.sleep(self.delay_seconds)
+                    
+        except Exception as pipeline_error:
+            # Save partial checkpoint on pipeline failure
+            logger.error(f"Pipeline failed: {pipeline_error}")
+            logger.info("Saving partial checkpoint...")
             
-            for station in batch:
-                try:
-                    enriched = self._extract_station(station)
-                    results["stations"][station.station_id] = enriched
-                    logger.item(f"✓ {station.official_name}")
-                except Exception as e:
-                    logger.warning(f"✗ {station.official_name}: {e}")
-                    results["failed_stations"].append({
-                        "station_id": station.station_id,
-                        "error": str(e),
-                        "retryable": True
-                    })
-                    results["retry_queue"].append(station.station_id)
+            try:
+                partial_output = Stage2Output(
+                    metadata=results["metadata"],
+                    stations=results["stations"],
+                    failed_stations=results["failed_stations"],
+                    retry_queue=results["retry_queue"]
+                )
+                partial_output.metadata["error"] = str(pipeline_error)
+                partial_output.metadata["successful"] = len(results["stations"])
+                partial_output.metadata["failed"] = len(results["failed_stations"])
+                
+                checkpoint_path = self.save_checkpoint(partial_output, "outputs/partial")
+                logger.success(f"Partial checkpoint saved: {checkpoint_path}")
+            except Exception as checkpoint_error:
+                logger.error(f"Failed to save partial checkpoint: {checkpoint_error}")
             
-            # Retry failed stations in this batch
-            if results["retry_queue"]:
-                self._retry_failed_stations(results, batch)
-            
-            # Delay between batches
-            if batch_idx < total_batches:
-                time.sleep(self.delay_seconds)
+            raise pipeline_error
         
         # Build final output
         output = Stage2Output(
@@ -221,7 +246,7 @@ class Stage2Enrichment(PipelineStage):
             logger.error(f"Output validation failed: {e}")
             return False
     
-    def save_checkpoint(self, output: Stage2Output, output_dir: str):
+    def save_checkpoint(self, output: Stage2Output, output_dir: str) -> str:
         """Save Stage 2 output to checkpoint file"""
         os.makedirs(output_dir, exist_ok=True)
         
