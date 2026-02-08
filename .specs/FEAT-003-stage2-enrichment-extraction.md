@@ -269,7 +269,7 @@ class OpenRouterClient:
     def __init__(self, config: dict):
         api_config = config.get('apis', {}).get('openrouter', {})
         self.api_url = api_config.get('base_url', 'https://openrouter.ai/api/v1') + "/chat/completions"
-        self.model = api_config.get('model', 'anthropic/claude-3.5-sonnet')
+        self.model = api_config.get('model', 'gpt-oss-120b')
         self.timeout = api_config.get('timeout', 120)
         self.max_tokens = api_config.get('max_tokens', 4000)
         self.temperature = api_config.get('temperature', 0.1)
@@ -529,7 +529,7 @@ stages:
 apis:
   openrouter:
     base_url: "https://openrouter.ai/api/v1"
-    model: "anthropic/claude-3.5-sonnet"
+    model: "gpt-oss-120b"
     timeout: 120
     max_tokens: 4000
     temperature: 0.1

@@ -27,3 +27,21 @@ class Stage3Merger(Stage3Interface):
         """Validate Stage 3 output conforms to schema"""
         # TODO: Implement output validation
         return True
+    
+    def save_checkpoint(self, output: FinalOutput, output_dir: str) -> str:
+        """Save Stage 3 output to checkpoint file"""
+        # TODO: Implement checkpoint saving
+        import os
+        import json
+        from datetime import datetime
+        
+        os.makedirs(output_dir, exist_ok=True)
+        
+        output_dict = output.model_dump()
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filepath = os.path.join(output_dir, f"stage3_final_{timestamp}.json")
+        
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(output_dict, f, indent=2, ensure_ascii=False, default=str)
+        
+        return filepath

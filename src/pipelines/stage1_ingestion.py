@@ -360,21 +360,18 @@ class Stage1Ingestion(PipelineStage):
         
         return sorted(list(lines))
     
-    def save_checkpoint(self, output: Stage1Output, output_dir: str):
+    def save_checkpoint(self, output: Stage1Output, output_dir: str) -> str:
         """Save Stage 1 output to checkpoint file"""
         import os
         import json
-        from ..storage.json_storage import JSONStorage
         
-        # Use existing JSONStorage pattern
-        storage = JSONStorage(output_dir)
+        os.makedirs(output_dir, exist_ok=True)
         
-        # Convert to dict for JSON serialization
         output_dict = output.model_dump()
-        
         filepath = os.path.join(output_dir, "stage1_deterministic.json")
+        
         with open(filepath, 'w', encoding='utf-8') as f:
-            json.dump(output_dict, f, indent=2, ensure_ascii=False, default=str)
+            json.dump(output_dict, f, indent=2, ensure_ascii=False)
         
         logger.success(f"Stage 1 checkpoint saved: {filepath}")
         return filepath
