@@ -16,8 +16,6 @@ from ..contracts.schemas import (
     Platform, BusStop, Stage1Station
 )
 from ..utils.logger import logger
-from .openrouter_client import OpenRouterClient
-from .fandom_scraper import FandomScraper
 
 
 class Stage2Enrichment(PipelineStage):
@@ -36,13 +34,46 @@ class Stage2Enrichment(PipelineStage):
         self.max_retries = self.stage_config.get('max_retries', 3)
         self.retry_delay = self.stage_config.get('retry_delay_seconds', 5)
         
-        # Initialize OpenRouter client and scraper
-        self.llm_client = OpenRouterClient(config)
-        self.scraper = FandomScraper(config)
+        # Test mode detection - supports config, env var, and pytest detection
+        self.test_mode = (
+            self.stage_config.get('test_mode', False) or
+            os.getenv('TESTING') == '1' or
+            os.getenv('PYTEST_CURRENT_TEST') is not None
+        )
+        
+        # Lazy initialization - clients created only when needed
+        self._llm_client = None
+        self._scraper = None
     
     @property
     def stage_name(self) -> str:
         return "stage2_enrichment"
+    
+    @property
+    def llm_client(self):
+        """Lazy initialization of LLM client with test mode support"""
+        if self._llm_client is None:
+            if self.test_mode:
+                raise RuntimeError(
+                    "LLM client not available in test mode. Set test_mode=false "
+                    "or provide OPENROUTER_API_KEY environment variable"
+                )
+            from .openrouter_client import OpenRouterClient
+            self._llm_client = OpenRouterClient(self.config)
+        return self._llm_client
+    
+    @property
+    def scraper(self):
+        """Lazy initialization of Fandom scraper with test mode support"""
+        if self._scraper is None:
+            if self.test_mode:
+                raise RuntimeError(
+                    "Fandom scraper not available in test mode. Set test_mode=false "
+                    "or configure proper network access"
+                )
+            from .fandom_scraper import FandomScraper
+            self._scraper = FandomScraper(self.config)
+        return self._scraper
     
     def execute(self, input_data: Stage1Output) -> Stage2Output:
         """
