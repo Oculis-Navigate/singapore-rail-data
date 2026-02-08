@@ -1,6 +1,7 @@
 pipeline:
   name: "MRT Data Pipeline"
   version: "2.0.0"
+  description: "Singapore MRT/LRT station data extraction and enrichment"
   
   # Stage configurations
   stages:
@@ -45,16 +46,26 @@ pipeline:
       base_url: "https://singapore-mrt-lines.fandom.com/wiki"
       timeout: 30
       
-  # Expected station count (for validation)
+  # Expected counts for validation
   expected_stations: 187
+  expected_lines: 9  # NSL, EWL, CCL, DTL, NEL, TEL, BPL, SKL, PGL
   
   # Output configuration
   output:
     versioning: true
     keep_last_n_versions: 10
     symlink_latest: true
+    formats:
+      - json
     
   # Logging
   logging:
     level: INFO
     format: structured  # structured or simple
+    
+alerting:
+  enabled: false  # Set to true when alerting is configured
+  on_failure:
+    - log
+    # - email  # Add when email is configured
+    # - webhook  # Add when webhook is configured
