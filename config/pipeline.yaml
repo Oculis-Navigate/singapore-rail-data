@@ -64,8 +64,18 @@ pipeline:
     format: structured  # structured or simple
     
 alerting:
-  enabled: false  # Set to true when alerting is configured
+  enabled: true
   on_failure:
     - log
+    - file
     # - email  # Add when email is configured
     # - webhook  # Add when webhook is configured
+
+testing:
+  expected_stations: 187
+  min_enrichment_coverage: 0.7  # 70% of stations should have enrichment
+  coordinate_bounds:
+    lat_min: 1.0
+    lat_max: 2.0
+    lng_min: 103.0
+    lng_max: 105.0

@@ -1,85 +1,82 @@
-# MRT Data Project
+# MRT Data Pipeline
 
-Singapore MRT/LRT station enrichment data extraction and management.
+Singapore MRT/LRT station data extraction and enrichment pipeline.
 
 ## Quick Start
 
 ```bash
-# Fetch latest data
-python main.py
+# Run full pipeline
+uv run python scripts/run_pipeline.py
 
-# Validate batch files
-cd tmp/extraction_scripts
-python3 validate_batches.py
+# Run single stage
+uv run python scripts/run_pipeline.py --stage 1
+uv run python scripts/run_pipeline.py --stage 2
+uv run python/scripts/run_pipeline.py --stage 3
+
+# Validate output
+uv run python scripts/validate_output.py
 ```
 
-## Project Status
-
-- **Total Stations**: 187 (MRT + LRT)
-- **Stations Extracted**: 131 (70.1%)
-- **Completed Batches**: 15
-
-See `tmp/extraction_scripts/PROGRESS_REPORT.md` for detailed progress.
-
-## Directory Structure
+## Project Structure
 
 ```
 mrt-data/
-├── main.py                      # Main entry point - fetches deterministic data
-├── enrichment_scraper.py         # Extraction scraper
-├── ENRICHMENT_README.md         # User-facing documentation
-├── README.md                    # This file
-│
-├── output/                      # Output files
-│   ├── mrt_enrichment_data.json # Merged enrichment data
-│   └── mrt_transit_graph.json   # Main output (187 stations)
-│
-├── tmp/                        # Temporary/agent workspace
-│   └── extraction_scripts/
-│       ├── batch*_enrichment_data.json    # 15 batch files (131 stations)
-│       ├── PROGRESS_REPORT.md             # Live progress tracker
-│       ├── EXTRACTION_MANIFEST.json       # Batch registry
-│       ├── SCHEMA_VERSION.md             # Data format specification
-│       ├── MERGE_INSTRUCTIONS.md        # Merge instructions
-│       ├── validate_batches.py           # Validation script
-│       ├── failed_stations.json         # Failed extraction log (19 stations)
-│       ├── STATION_MASTER_INDEX.json    # Station lookup
-│       ├── AGENTS.md                  # Agent guide
-│       ├── DATA_QUALITY_REPORT.md      # Quality report
-│       └── BATCH_15_EXTRACTION_PLAN.md # Extraction plan
-│
-├── fetchers/                    # Data source fetchers
-├── processors/                  # Data processors
-├── storage/                     # Data storage utilities
-└── utils/                      # Utility functions
+├── .specs/                    # Feature specifications
+├── src/                        # Source code
+│   ├── contracts/              # Data contracts & schemas
+│   ├── pipelines/             # Pipeline stages
+│   ├── alerts/                 # Alerting system
+│   └── utils/                 # Utilities
+├── scripts/                    # Execution scripts
+│   ├── run_pipeline.py         # Main entry point
+│   ├── run_stage1.py           # Stage 1 only
+│   ├── run_stage2.py           # Stage 2 only
+│   ├── run_stage3.py           # Stage 3 only
+│   ├── validate_output.py       # Output validation
+│   ├── run_tests.sh            # Test runner
+│   └── quarterly_run.sh         # Cron automation
+├── config/                     # Configuration
+├── tests/                      # Test suite
+└── outputs/                     # Pipeline output
 ```
 
-## Documentation
+## Pipeline Stages
 
-- **ENRICHMENT_README.md** - User-facing documentation
-- **tmp/extraction_scripts/AGENTS.md** - Agent context guide
-- **tmp/extraction_scripts/SCHEMA_VERSION.md** - Data format specification
-- **tmp/extraction_scripts/MERGE_INSTRUCTIONS.md** - Merge instructions
+### Stage 1: Deterministic Data Ingestion
+- Fetches station data from Data.gov.sg and OneMap API
+- Outputs: `stage1_deterministic.json`
 
-## Data Sources
+### Stage 2: Enrichment Extraction
+- Extracts platform, accessibility, bus stop data from Fandom wiki
+- Uses LLM for structured extraction
+- Outputs: `stage2_enrichment.json`
 
-### Deterministic Data (main.py)
-- data.gov.sg - Station metadata
-- OneMap - Exit coordinates and locations
+### Stage 3: Merging & Validation
+- Merges deterministic + enrichment data
+- Validates schema, completeness, sanity checks
+- Outputs: `stage3_final.json`, `mrt_transit_graph.json`
 
-### Enrichment Data (batch extraction)
-- singapore-mrt-lines.fandom.com - Platform directions, accessibility, bus stops
+## Configuration
 
-## Next Steps
+Edit `config/pipeline.yaml` to configure:
+- API endpoints and timeouts
+- Batch sizes and retry settings
+- Alerting channels
+- Expected station counts
 
-Batch 16 - TEL Remaining (8 stations):
-- TE2 (Woodlands)
-- TE3 (Woodlands South)
-- TE10 (Mount Pleasant)
-- TE15 (Great World)
-- TE16 (Havelock)
-- TE20 (Marina Bay)
-- TE21 (Marina South)
-- TE30 (Bedok South)
+## Testing
 
-See `tmp/extraction_scripts/PROGRESS_REPORT.md` for details.
+```bash
+# Run all tests
+uv run bash scripts/run_tests.sh
+
+# Run specific test file
+uv run python -m pytest tests/test_schemas.py -v
+```
+
+## Automation
+
+Quarterly runs via cron:
+```bash
+0 2 1 1,4,7,10 * /path/to/mrt-data/scripts/quarterly_run.sh
+```

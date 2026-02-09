@@ -22,7 +22,6 @@ Implement operational features:
 2. Testing framework for data validation
 3. Quarterly automation with cron
 4. Post-run validation scripts
-5. Notification system (email/webhook ready)
 
 ---
 
@@ -73,8 +72,6 @@ class AlertManager:
     Supports multiple alert channels:
     - Logging (always enabled)
     - File (alerts.json)
-    - Email (optional)
-    - Webhook (optional)
     """
     
     def __init__(self, config: dict):
@@ -92,14 +89,6 @@ class AlertManager:
         if 'output_dir' in config:
             self.channels.append(FileChannel(config['output_dir']))
         
-        # Add email channel if configured
-        if 'email' in self.config:
-            self.channels.append(EmailChannel(self.config['email']))
-        
-        # Add webhook channel if configured
-        if 'webhook' in self.config:
-            self.channels.append(WebhookChannel(self.config['webhook']))
-    
     def alert(self, level: AlertLevel, message: str, context: dict = None):
         """Send an alert through all channels"""
         if not self.enabled:
@@ -178,31 +167,6 @@ class FileChannel:
         with open(self.output_file, 'w') as f:
             json.dump(alerts, f, indent=2)
 
-class EmailChannel:
-    """Sends critical alerts via email (placeholder implementation)"""
-    
-    def __init__(self, config: dict):
-        self.config = config
-        # Implementation would use smtplib
-    
-    def send(self, alert: Alert):
-        # Only send for ERROR and CRITICAL
-        if alert.level not in (AlertLevel.ERROR, AlertLevel.CRITICAL):
-            return
-        
-        # Placeholder - implement with smtplib when ready
-        logging.info(f"[EMAIL ALERT] {alert.message}")
-
-class WebhookChannel:
-    """Sends alerts to webhook (placeholder implementation)"""
-    
-    def __init__(self, config: dict):
-        self.config = config
-        # Implementation would use requests
-    
-    def send(self, alert: Alert):
-        # Placeholder - implement with requests when ready
-        logging.info(f"[WEBHOOK ALERT] {alert.message}")
 ```
 
 ### 2. Pipeline Integration with Alerting
@@ -696,22 +660,6 @@ alerting:
   on_failure:
     - log
     - file
-    # - email  # Uncomment when configured
-    # - webhook  # Uncomment when configured
-  
-  # Email configuration (when ready)
-  # email:
-  #   smtp_server: smtp.gmail.com
-  #   smtp_port: 587
-  #   username: ${EMAIL_USERNAME}
-  #   password: ${EMAIL_PASSWORD}
-  #   from: pipeline@example.com
-  #   to: admin@example.com
-  
-  # Webhook configuration (when ready)
-  # webhook:
-  #   url: https://hooks.slack.com/services/...
-  #   method: POST
 
 testing:
   expected_stations: 187

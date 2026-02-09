@@ -153,11 +153,17 @@ class TestStage1Ingestion:
         stage = Stage1Ingestion({})
         assert stage.stage_name == "stage1_ingestion"
     
-    def test_validate_input_default(self):
-        """Test default input validation"""
+    def test_validate_input_none(self):
+        """Test input validation with None (correct per BUGFIX-002)"""
         stage = Stage1Ingestion({})
-        # Default implementation should return True
-        assert stage.validate_input({}) is True
+        # Stage 1 only accepts None as input (strict validation per spec)
+        assert stage.validate_input(None) is True
+    
+    def test_validate_input_rejects_dict(self):
+        """Test that Stage 1 rejects dict input (BUGFIX-002)"""
+        stage = Stage1Ingestion({})
+        # Stage 1 should only accept None, not a dict
+        assert stage.validate_input({}) is False
     
     def test_validate_output_default(self):
         """Test default output validation"""

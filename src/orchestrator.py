@@ -19,6 +19,7 @@ from src.contracts.schemas import Stage1Output, Stage2Output, FinalOutput
 from src.pipelines.stage1_ingestion import Stage1Ingestion
 from src.pipelines.stage2_enrichment import Stage2Enrichment
 from src.pipelines.stage3_merger import Stage3Merger
+from src.alerts.alert_manager import AlertManager, AlertLevel
 from src.utils.logger import logger
 
 class PipelineOrchestrator:
@@ -38,6 +39,9 @@ class PipelineOrchestrator:
         self.run_timestamp = datetime.utcnow()
         self.output_base_dir = None
         self.checkpoints = {}
+        
+        # Initialize alerting
+        self.alert_manager = AlertManager(self.config)
         
         # Initialize stages
         self.stage1 = Stage1Ingestion(self.config)
@@ -140,69 +144,115 @@ class PipelineOrchestrator:
     def run_stage1(self, skip_if_exists: bool = False) -> Stage1Output:
         """Execute Stage 1: Deterministic Data Ingestion"""
         logger.section("Executing Stage 1: Deterministic Data Ingestion")
+        self.alert_manager.info("Starting Stage 1: Deterministic Data Ingestion")
         
         # Check if we should skip
         if skip_if_exists:
             existing = self._load_checkpoint(1)
             if existing:
                 logger.info("Stage 1 checkpoint exists, skipping")
+                self.alert_manager.info("Stage 1 checkpoint exists, skipping execution")
                 return existing
         
-        # Execute
-        output = self.stage1.execute(input_data=None)
-        
-        # Save checkpoint
-        if not self.output_base_dir:
-            raise ValueError("Output directory not set")
-        checkpoint_path = self.stage1.save_checkpoint(output, self.output_base_dir)
-        self.checkpoints["stage1"] = checkpoint_path
-        
-        return output
+        try:
+            # Execute
+            output = self.stage1.execute(input_data=None)
+            
+            # Save checkpoint
+            if not self.output_base_dir:
+                raise ValueError("Output directory not set")
+            checkpoint_path = self.stage1.save_checkpoint(output, self.output_base_dir)
+            self.checkpoints["stage1"] = checkpoint_path
+            
+            self.alert_manager.info(f"Stage 1 complete: {len(output.stations)} stations ingested")
+            return output
+        except Exception as e:
+            self.alert_manager.critical(f"Stage 1 failed: {str(e)}", {"error_type": type(e).__name__})
+            raise
     
     def run_stage2(self, stage1_output: Stage1Output, skip_if_exists: bool = False) -> Stage2Output:
         """Execute Stage 2: Enrichment Extraction"""
         logger.section("Executing Stage 2: Enrichment Extraction")
+        self.alert_manager.info("Starting Stage 2: Enrichment Extraction")
         
         # Check if we should skip
         if skip_if_exists:
             existing = self._load_checkpoint(2)
             if existing:
                 logger.info("Stage 2 checkpoint exists, skipping")
+                self.alert_manager.info("Stage 2 checkpoint exists, skipping execution")
                 return existing
         
-        # Execute
-        output = self.stage2.execute(stage1_output)
-        
-        # Save checkpoint
-        if not self.output_base_dir:
-            raise ValueError("Output directory not set")
-        checkpoint_path = self.stage2.save_checkpoint(output, self.output_base_dir)
-        self.checkpoints["stage2"] = checkpoint_path
-        
-        return output
+        try:
+            # Execute
+            output = self.stage2.execute(stage1_output)
+            
+            # Save checkpoint
+            if not self.output_base_dir:
+                raise ValueError("Output directory not set")
+            checkpoint_path = self.stage2.save_checkpoint(output, self.output_base_dir)
+            self.checkpoints["stage2"] = checkpoint_path
+            
+            # Calculate enrichment coverage
+            total_stations = len(output.stations)
+            enriched_count = sum(1 for s in output.stations.values() if s.extraction_result == "success")
+            coverage = enriched_count / total_stations if total_stations > 0 else 0
+            
+            self.alert_manager.info(
+                f"Stage 2 complete: {enriched_count}/{total_stations} stations enriched ({coverage:.1%} coverage)"
+            )
+            
+            # Warn if coverage is low
+            if coverage < 0.7:
+                self.alert_manager.warning(
+                    f"Low enrichment coverage: {coverage:.1%} (threshold: 70%)",
+                    {"coverage": coverage, "threshold": 0.7}
+                )
+            
+            return output
+        except Exception as e:
+            self.alert_manager.critical(f"Stage 2 failed: {str(e)}", {"error_type": type(e).__name__})
+            raise
     
     def run_stage3(self, stage1_output: Stage1Output, stage2_output: Stage2Output, 
                    skip_if_exists: bool = False) -> FinalOutput:
         """Execute Stage 3: Data Merging & Validation"""
         logger.section("Executing Stage 3: Data Merging & Validation")
+        self.alert_manager.info("Starting Stage 3: Data Merging & Validation")
         
         # Check if we should skip
         if skip_if_exists:
             existing = self._load_checkpoint(3)
             if existing:
                 logger.info("Stage 3 checkpoint exists, skipping")
+                self.alert_manager.info("Stage 3 checkpoint exists, skipping execution")
                 return existing
         
-        # Execute
-        output = self.stage3.execute((stage1_output, stage2_output))
-        
-        # Save checkpoint
-        if not self.output_base_dir:
-            raise ValueError("Output directory not set")
-        checkpoint_path = self.stage3.save_checkpoint(output, self.output_base_dir)
-        self.checkpoints["stage3"] = checkpoint_path
-        
-        return output
+        try:
+            # Execute
+            output = self.stage3.execute((stage1_output, stage2_output))
+            
+            # Save checkpoint
+            if not self.output_base_dir:
+                raise ValueError("Output directory not set")
+            checkpoint_path = self.stage3.save_checkpoint(output, self.output_base_dir)
+            self.checkpoints["stage3"] = checkpoint_path
+            
+            # Check station count
+            expected_stations = self.config.get('pipeline', {}).get('expected_stations', 187)
+            actual_stations = len(output.stations)
+            
+            if actual_stations < expected_stations:
+                self.alert_manager.error(
+                    f"Station count below expected: {actual_stations} < {expected_stations}",
+                    {"expected": expected_stations, "actual": actual_stations}
+                )
+            
+            self.alert_manager.info(f"Stage 3 complete: {actual_stations} stations merged and validated")
+            return output
+        except Exception as e:
+            self.alert_manager.critical(f"Stage 3 failed: {str(e)}", {"error_type": type(e).__name__})
+            raise
     
     def run_full_pipeline(self, output_dir: Optional[str] = None, 
                          resume_from: Optional[int] = None) -> FinalOutput:
@@ -221,35 +271,84 @@ class PipelineOrchestrator:
         logger.section(f"Starting Pipeline Run: {self.run_id}")
         logger.info(f"Output directory: {self.output_base_dir}")
         
-        # Stage 1: Ingestion
-        if resume_from is None or resume_from <= 1:
-            stage1_output = self.run_stage1()
-        else:
-            stage1_output = self._load_checkpoint(1)
-            if not stage1_output:
-                raise ValueError("Cannot resume: Stage 1 checkpoint not found")
+        # Add file channel for alerts to output directory
+        from src.alerts.alert_manager import FileChannel
+        file_channel = FileChannel(self.output_base_dir)
+        self.alert_manager.channels.append(file_channel)
         
-        # Stage 2: Enrichment
-        if resume_from is None or resume_from <= 2:
-            stage2_output = self.run_stage2(stage1_output)
-        else:
-            stage2_output = self._load_checkpoint(2)
-            if not stage2_output:
-                raise ValueError("Cannot resume: Stage 2 checkpoint not found")
+        self.alert_manager.info(
+            "Pipeline started",
+            {"run_id": self.run_id, "output_dir": self.output_base_dir, "resume_from": resume_from}
+        )
         
-        # Stage 3: Merging
-        final_output = self.run_stage3(stage1_output, stage2_output)
-        
-        # Save manifest
-        self._save_run_manifest()
-        
-        # Summary
-        logger.section("Pipeline Complete")
-        logger.result(f"Run ID: {self.run_id}")
-        logger.stats("Total Stations", str(len(final_output.stations)))
-        logger.stats("Output Directory", self.output_base_dir)
-        
-        return final_output
+        try:
+            # Stage 1: Ingestion
+            if resume_from is None or resume_from <= 1:
+                stage1_output = self.run_stage1()
+            else:
+                stage1_output = self._load_checkpoint(1)
+                if not stage1_output:
+                    raise ValueError("Cannot resume: Stage 1 checkpoint not found")
+                self.alert_manager.info("Resumed from Stage 1 checkpoint")
+            
+            # Stage 2: Enrichment
+            if resume_from is None or resume_from <= 2:
+                stage2_output = self.run_stage2(stage1_output)
+            else:
+                stage2_output = self._load_checkpoint(2)
+                if not stage2_output:
+                    raise ValueError("Cannot resume: Stage 2 checkpoint not found")
+                self.alert_manager.info("Resumed from Stage 2 checkpoint")
+            
+            # Stage 3: Merging
+            final_output = self.run_stage3(stage1_output, stage2_output)
+            
+            # Save manifest
+            self._save_run_manifest()
+            
+            # Save alerts
+            alerts_path = os.path.join(self.output_base_dir, "alerts.json")
+            self.alert_manager.save_alert_log(alerts_path)
+            logger.info(f"Alert log saved: {alerts_path}")
+            
+            # Summary
+            logger.section("Pipeline Complete")
+            logger.result(f"Run ID: {self.run_id}")
+            logger.stats("Total Stations", str(len(final_output.stations)))
+            logger.stats("Output Directory", self.output_base_dir)
+            
+            # Final alert
+            alert_summary = {
+                "total_alerts": self.alert_manager.get_alert_count(),
+                "critical": self.alert_manager.get_alert_count(AlertLevel.CRITICAL),
+                "error": self.alert_manager.get_alert_count(AlertLevel.ERROR),
+                "warning": self.alert_manager.get_alert_count(AlertLevel.WARNING),
+                "info": self.alert_manager.get_alert_count(AlertLevel.INFO),
+            }
+            
+            if self.alert_manager.has_critical_alerts():
+                self.alert_manager.critical(
+                    "Pipeline completed with critical alerts",
+                    alert_summary
+                )
+            else:
+                self.alert_manager.info(
+                    "Pipeline completed successfully",
+                    alert_summary
+                )
+            
+            return final_output
+            
+        except Exception as e:
+            self.alert_manager.critical(
+                f"Pipeline failed: {str(e)}",
+                {"error_type": type(e).__name__, "run_id": self.run_id}
+            )
+            # Save alerts even on failure
+            if self.output_base_dir:
+                alerts_path = os.path.join(self.output_base_dir, "alerts.json")
+                self.alert_manager.save_alert_log(alerts_path)
+            raise
     
     def run_single_stage(self, stage: int, output_dir: Optional[str] = None) -> Any:
         """
@@ -280,7 +379,7 @@ class PipelineOrchestrator:
 def main():
     """CLI entry point"""
     parser = argparse.ArgumentParser(
-        description='MRT Data Pipeline Orchestrator',
+        description="MRT Data Pipeline Orchestrator",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
