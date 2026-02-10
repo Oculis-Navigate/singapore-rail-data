@@ -46,6 +46,14 @@ pipeline:
       base_url: "https://singapore-mrt-lines.fandom.com/wiki"
       timeout: 30
       
+  # Manual URL mappings for stations with unusual Fandom URLs
+  # These override auto-resolution and are checked first
+  url_mappings:
+    # Known casing variations
+    "Gardens By The Bay": "https://singapore-mrt-lines.fandom.com/wiki/Gardens_by_the_Bay_MRT_Station"
+    "One-North": "https://singapore-mrt-lines.fandom.com/wiki/One-north_MRT_Station"
+    "MacPherson": "https://singapore-mrt-lines.fandom.com/wiki/Macpherson_MRT_Station"
+  
   # Expected counts for validation
   expected_stations: 187
   expected_lines: 9  # NSL, EWL, CCL, DTL, NEL, TEL, BPL, SKL, PGL

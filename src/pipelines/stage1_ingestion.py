@@ -17,6 +17,7 @@ from ..fetchers.missing_station_fetcher import MissingStationFetcher
 from ..processors.matching_engine import MatchingEngine
 from ..processors.consolidator import Consolidator
 from ..utils.logger import logger
+from .fandom_scraper import FandomScraper
 
 
 class Stage1Ingestion(PipelineStage):
@@ -40,6 +41,9 @@ class Stage1Ingestion(PipelineStage):
         # Initialize processors
         self.matcher = MatchingEngine(self.onemap_fetcher)
         self.consolidator = Consolidator()
+        
+        # Initialize Fandom scraper for URL resolution
+        self.fandom_scraper = FandomScraper(config)
     
     @property
     def stage_name(self) -> str:
@@ -201,7 +205,7 @@ class Stage1Ingestion(PipelineStage):
                 lines=lines,
                 station_type=station_type,
                 exits=exits,
-                fandom_url=self._build_fandom_url(official_name),
+                fandom_url=self._build_fandom_url(official_name, display_name),
                 extraction_status="pending"
             )
             stage1_stations.append(stage1_station)
@@ -231,13 +235,46 @@ class Stage1Ingestion(PipelineStage):
         logger.info("Applied LRT hub codes and naming corrections")
         return stations
     
-    def _build_fandom_url(self, station_name: str) -> str:
+    def _build_fandom_url(self, station_name: str, display_name: str = "") -> str:
         """
-        Generate Fandom wiki URL from station name.
+        Generate or resolve Fandom wiki URL for a station.
+        
+        Uses the FandomScraper to handle casing variations. Falls back to
+        naive generation if resolution fails.
+        
+        Args:
+            station_name: Official station name (e.g., "YISHUN MRT STATION")
+            display_name: Display name for resolution (e.g., "Yishun"). 
+                         If not provided, extracts from station_name.
         
         Examples:
         - "YISHUN MRT STATION" → "https://singapore-mrt-lines.fandom.com/wiki/Yishun_MRT_Station"
-        - "WOODLANDS MRT STATION" → "https://singapore-mrt-lines.fandom.com/wiki/Woodlands_MRT_Station"
+        - "Gardens By The Bay" → "https://singapore-mrt-lines.fandom.com/wiki/Gardens_by_the_Bay_MRT_Station"
+        """
+        # Use display_name if provided, otherwise extract from station_name
+        name_for_resolution = display_name or station_name.replace(" MRT STATION", "").replace(" LRT STATION", "")
+        
+        # Try to resolve URL using the scraper
+        resolved_url = self.fandom_scraper.resolve_fandom_url(name_for_resolution)
+        
+        if resolved_url:
+            logger.debug(f"Resolved URL for {name_for_resolution}: {resolved_url}")
+            return resolved_url
+        else:
+            # Fallback to naive URL generation
+            fallback_url = self._naive_url_generation(station_name)
+            logger.warning(f"Could not resolve URL for {name_for_resolution}, using fallback: {fallback_url}")
+            return fallback_url
+    
+    def _naive_url_generation(self, station_name: str) -> str:
+        """
+        Original naive URL generation as fallback.
+        
+        Args:
+            station_name: Official station name
+            
+        Returns:
+            Generated Fandom URL
         """
         # Remove "MRT STATION" or "LRT STATION" suffix for display name
         display_name = station_name.replace(" MRT STATION", "").replace(" LRT STATION", "")
