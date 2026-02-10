@@ -87,6 +87,14 @@ class Stage2Output(BaseModel):
     retry_queue: List[str]
 
 
+class Stage2IncrementalOutput(BaseModel):
+    """Incremental checkpoint for Stage 2 (allows resume)"""
+    metadata: Dict[str, Any] = Field(..., description="Checkpoint metadata")
+    stations: Dict[str, Stage2Station] = Field(default_factory=dict, description="Successfully processed stations")
+    failed_stations: List[Dict[str, Any]] = Field(default_factory=list, description="Failed station records")
+    processed_station_ids: List[str] = Field(default_factory=list, description="All processed station IDs (success + failed)")
+
+
 class FinalExit(BaseModel):
     """Final merged exit information"""
     exit_code: str

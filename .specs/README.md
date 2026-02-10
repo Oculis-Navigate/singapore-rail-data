@@ -14,6 +14,7 @@ This directory contains comprehensive feature specifications for refactoring the
 | [FEAT-004](./FEAT-004-stage3-merger-validation.md) | Stage 3 - Data Merging & Validation | P1 | 2-3h | FEAT-001, FEAT-002, FEAT-003 |
 | [FEAT-005](./FEAT-005-pipeline-orchestrator.md) | Pipeline Orchestrator & Configuration | P1 | 2-3h | FEAT-001, FEAT-002, FEAT-003, FEAT-004 |
 | [FEAT-006](./FEAT-006-alerting-testing-automation.md) | Alerting, Testing & Automation | P2 | 3-4h | FEAT-001, FEAT-005 |
+| [FEAT-007](./FEAT-007-stage2-incremental-checkpointing.md) | Stage 2 Incremental Checkpointing & Resume | P1 | 2-3h | FEAT-003 |
 
 ## Implementation Order
 
@@ -24,6 +25,8 @@ FEAT-002 (Stage 1)
     ↓
 FEAT-003 (Stage 2)
     ↓
+FEAT-007 (Incremental Checkpointing)  # Can be done anytime after FEAT-003
+    ↓
 FEAT-004 (Stage 3)
     ↓
 FEAT-005 (Orchestrator)
@@ -31,7 +34,9 @@ FEAT-005 (Orchestrator)
 FEAT-006 (Operations)
 ```
 
-**Note:** FEAT-006 can be started after FEAT-005 is complete and FEAT-001 is in place.
+**Notes:**
+- FEAT-006 can be started after FEAT-005 is complete and FEAT-001 is in place
+- FEAT-007 can be started anytime after FEAT-003 is complete (enhances Stage 2)
 
 ## Quick Start for Implementers
 
@@ -99,13 +104,14 @@ python scripts/validate_output.py outputs/latest/stage3_final.json
 
 ## Success Criteria for Full Implementation
 
-- [ ] All 6 features implemented
+- [ ] All 7 features implemented
 - [ ] Full pipeline runs successfully: `python src/orchestrator.py`
 - [ ] Output validates: `python scripts/validate_output.py`
 - [ ] Tests pass: `python -m pytest tests/`
 - [ ] Quarterly cron job configured and tested
 - [ ] All 187 stations processed
 - [ ] Human can vet final output
+- [ ] Stage 2 can resume after 45-minute timeout (FEAT-007)
 
 ## Questions?
 

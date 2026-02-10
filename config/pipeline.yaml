@@ -18,6 +18,8 @@ pipeline:
       delay_seconds: 2
       max_retries: 3
       retry_delay_seconds: 5
+      daily_timeout_minutes: 45  # Stop after 45 minutes for free tier
+      checkpoint_interval: 1     # Save after every N stations (1 = every station)
       sources:
         - fandom_wiki
         - openrouter_llm

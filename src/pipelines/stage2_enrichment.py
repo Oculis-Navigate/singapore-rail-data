@@ -10,10 +10,11 @@ import json
 import os
 from typing import List, Dict, Any, Optional
 from datetime import datetime
+from tqdm import tqdm
 from ..contracts.interfaces import PipelineStage
 from ..contracts.schemas import (
     Stage1Output, Stage2Output, Stage2Station, EnrichedExit,
-    Platform, BusStop, Stage1Station
+    Platform, BusStop, Stage1Station, Stage2IncrementalOutput
 )
 from ..utils.logger import logger
 
@@ -26,13 +27,19 @@ class Stage2Enrichment(PipelineStage):
     Output: Stage2Output (enrichment data for each station)
     """
     
-    def __init__(self, config: dict):
+    def __init__(self, config: dict, output_dir: str = "outputs/latest", resume_mode: bool = False):
         self.config = config
         self.stage_config = config.get('stages', {}).get('stage2_enrichment', {})
         self.batch_size = self.stage_config.get('batch_size', 8)
         self.delay_seconds = self.stage_config.get('delay_seconds', 2)
         self.max_retries = self.stage_config.get('max_retries', 3)
         self.retry_delay = self.stage_config.get('retry_delay_seconds', 5)
+        self.daily_timeout_minutes = self.stage_config.get('daily_timeout_minutes', 45)
+        self.checkpoint_interval = self.stage_config.get('checkpoint_interval', 1)
+        self.output_dir = output_dir
+        self.resume_mode = resume_mode
+        self.all_stations = []
+        self.stage1_output_path = None
         
         # Test mode detection - clean configuration-based approach
         self.test_mode = self.stage_config.get('test_mode', False)
@@ -74,100 +81,157 @@ class Stage2Enrichment(PipelineStage):
     def execute(self, input_data: Stage1Output) -> Stage2Output:
         """
         Execute Stage 2 enrichment pipeline.
-        
+
         Steps:
         1. Validate input
-        2. Process stations in batches
-        3. For each station: fetch HTML, extract with LLM
-        4. Retry failed stations
-        5. Compile results into Stage2Output
-        6. Save partial checkpoint on failures
+        2. Check for existing checkpoint (resume mode)
+        3. Process stations with progress bar
+        4. Save incremental checkpoint after each station
+        5. Handle 45-minute timeout gracefully
+        6. Retry failed stations with permanent failure tracking
+        7. Compile results into Stage2Output
         """
         logger.section("Stage 2: Enrichment Data Extraction")
-        
+
         if not self.validate_input(input_data):
             raise ValueError("Invalid input for Stage 2")
-        
+
+        # Store all stations for checkpoint metadata
+        self.all_stations = input_data.stations
         stations = input_data.stations
-        results = {
-            "metadata": {
-                "timestamp": datetime.utcnow().isoformat(),
-                "source": "stage2_enrichment",
-                "total_stations": len(stations),
-                "batch_size": self.batch_size
-            },
-            "stations": {},
-            "failed_stations": [],
-            "retry_queue": []
-        }
-        
-        # Process in batches
-        total_batches = (len(stations) + self.batch_size - 1) // self.batch_size
-        
+
+        # Check for existing checkpoint
+        checkpoint = self._load_incremental_checkpoint()
+        if checkpoint and self.resume_mode:
+            processed_ids = set(checkpoint.processed_station_ids)
+            # Filter out permanently failed stations
+            permanently_failed_ids = set(
+                f["station_id"] for f in checkpoint.failed_stations
+                if f.get("permanent", False)
+            )
+            logger.info(f"Resuming from checkpoint: {len(processed_ids)}/{len(stations)} stations already processed")
+            logger.info(f"Skipping {len(permanently_failed_ids)} permanently failed stations")
+        else:
+            processed_ids = set()
+            permanently_failed_ids = set()
+
+        # Initialize results (use checkpoint data if resuming)
+        if checkpoint and self.resume_mode:
+            results = {
+                "stations": checkpoint.stations.copy(),
+                "failed_stations": checkpoint.failed_stations.copy(),
+                "processed_station_ids": checkpoint.processed_station_ids.copy(),
+                "retry_queue": []
+            }
+        else:
+            results = {
+                "stations": {},
+                "failed_stations": [],
+                "processed_station_ids": [],
+                "retry_queue": []
+            }
+
+        # Filter stations to process (exclude processed and permanently failed)
+        stations_to_process = [
+            s for s in stations
+            if s.station_id not in processed_ids and s.station_id not in permanently_failed_ids
+        ]
+
+        # Setup progress bar
+        initial_count = len(processed_ids)
+        pbar = tqdm(
+            total=len(stations),
+            initial=initial_count,
+            desc="Processing stations",
+            unit="station",
+            bar_format="{desc}: {n_fmt}/{total_fmt} [{percentage:3.0f}%] {elapsed}<{remaining}, {rate_fmt}"
+        )
+
+        start_time = time.time()
+        timeout_seconds = self.daily_timeout_minutes * 60
+
         try:
-            for batch_idx, batch in enumerate(self._batch_stations(stations), 1):
-                logger.subsection(f"Processing Batch {batch_idx}/{total_batches}")
-                
-                for station in batch:
-                    try:
-                        enriched = self._extract_station(station)
-                        results["stations"][station.station_id] = enriched
-                        logger.item(f"✓ {station.official_name}")
-                    except Exception as e:
-                        logger.warning(f"✗ {station.official_name}: {e}")
-                        results["failed_stations"].append({
-                            "station_id": station.station_id,
-                            "error": str(e),
-                            "retryable": True
-                        })
-                        results["retry_queue"].append(station.station_id)
-                
-                # Retry failed stations in this batch
-                if results["retry_queue"]:
-                    self._retry_failed_stations(results, batch)
-                
-                # Delay between batches
-                if batch_idx < total_batches:
-                    time.sleep(self.delay_seconds)
-                    
+            for station in stations_to_process:
+                # Check timeout before processing
+                elapsed = time.time() - start_time
+                if elapsed >= timeout_seconds:
+                    logger.info(f"⏰ Daily limit timer reached ({self.daily_timeout_minutes} min)")
+                    self._save_incremental_checkpoint(results, timeout_reached=True)
+                    pbar.close()
+                    self._print_resume_message(len(results["processed_station_ids"]), len(stations))
+
+                    # Return partial results
+                    return Stage2Output(
+                        metadata={
+                            "timestamp": datetime.utcnow().isoformat(),
+                            "source": "stage2_enrichment",
+                            "total_stations": len(stations),
+                            "successful": len(results["stations"]),
+                            "failed": len(results["failed_stations"]),
+                            "timeout_reached": True
+                        },
+                        stations=results["stations"],
+                        failed_stations=results["failed_stations"],
+                        retry_queue=[]
+                    )
+
+                try:
+                    enriched = self._extract_station(station)
+                    results["stations"][station.station_id] = enriched
+                    results["processed_station_ids"].append(station.station_id)
+                    logger.item(f"✓ {station.official_name}")
+                except Exception as e:
+                    logger.warning(f"✗ {station.official_name}: {e}")
+                    results["failed_stations"].append({
+                        "station_id": station.station_id,
+                        "error": str(e),
+                        "permanent": False,  # Will be marked True after retries fail
+                        "timestamp": datetime.utcnow().isoformat()
+                    })
+                    results["retry_queue"].append(station.station_id)
+                    results["processed_station_ids"].append(station.station_id)
+
+                # Retry failed stations immediately
+                if station.station_id in results["retry_queue"]:
+                    self._retry_failed_stations(results, [station])
+
+                # Save checkpoint after every station
+                self._save_incremental_checkpoint(results)
+                pbar.update(1)
+
+                # Small delay to avoid rate limiting
+                time.sleep(self.delay_seconds)
+
+            pbar.close()
+
         except Exception as pipeline_error:
+            pbar.close()
             # Save partial checkpoint on pipeline failure
             logger.error(f"Pipeline failed: {pipeline_error}")
             logger.info("Saving partial checkpoint...")
-            
-            try:
-                partial_output = Stage2Output(
-                    metadata=results["metadata"],
-                    stations=results["stations"],
-                    failed_stations=results["failed_stations"],
-                    retry_queue=results["retry_queue"]
-                )
-                partial_output.metadata["error"] = str(pipeline_error)
-                partial_output.metadata["successful"] = len(results["stations"])
-                partial_output.metadata["failed"] = len(results["failed_stations"])
-                
-                checkpoint_path = self.save_checkpoint(partial_output, "outputs/partial")
-                logger.success(f"Partial checkpoint saved: {checkpoint_path}")
-            except Exception as checkpoint_error:
-                logger.error(f"Failed to save partial checkpoint: {checkpoint_error}")
-            
+            self._save_incremental_checkpoint(results, timeout_reached=False)
             raise pipeline_error
-        
+
+        # All stations processed - create final checkpoint
+        final_path = self._finalize_checkpoint(results)
+
         # Build final output
         output = Stage2Output(
-            metadata=results["metadata"],
+            metadata={
+                "timestamp": datetime.utcnow().isoformat(),
+                "source": "stage2_enrichment",
+                "total_stations": len(stations),
+                "successful": len(results["stations"]),
+                "failed": len([f for f in results["failed_stations"] if f.get("permanent")])
+            },
             stations=results["stations"],
             failed_stations=results["failed_stations"],
-            retry_queue=results["retry_queue"]
+            retry_queue=[]
         )
-        
-        # Update metadata with final counts
-        output.metadata["successful"] = len(output.stations)
-        output.metadata["failed"] = len(output.failed_stations)
-        
+
         if not self.validate_output(output):
             raise ValueError("Stage 2 output validation failed")
-        
+
         logger.success(f"Stage 2 complete: {len(output.stations)} successful, {len(output.failed_stations)} failed")
         return output
     
@@ -225,17 +289,21 @@ class Stage2Enrichment(PipelineStage):
         )
     
     def _retry_failed_stations(self, results: dict, batch: List[Stage1Station]):
-        """Retry failed stations from current batch"""
+        """Retry failed stations from current batch with permanent failure tracking"""
         if not results["retry_queue"]:
             return
-        
-        logger.subsection(f"Retrying {len(results['retry_queue'])} failed stations")
-        
-        # Find failed stations in current batch
+
+        # Find failed stations in current batch that need retry
         station_map = {s.station_id: s for s in batch}
         to_retry = [station_map[sid] for sid in results["retry_queue"] if sid in station_map]
-        
+
+        if not to_retry:
+            return
+
+        logger.subsection(f"Retrying {len(to_retry)} failed stations")
+
         for station in to_retry:
+            success = False
             for attempt in range(self.max_retries):
                 try:
                     time.sleep(self.retry_delay * (2 ** attempt))  # Exponential backoff
@@ -244,14 +312,26 @@ class Stage2Enrichment(PipelineStage):
                     results["retry_queue"].remove(station.station_id)
                     # Remove from failed list
                     results["failed_stations"] = [
-                        f for f in results["failed_stations"] 
+                        f for f in results["failed_stations"]
                         if f["station_id"] != station.station_id
                     ]
                     logger.item(f"✓ {station.official_name} (retry successful)")
+                    success = True
                     break
                 except Exception as e:
                     if attempt == self.max_retries - 1:
                         logger.warning(f"✗ {station.official_name}: Retry failed after {self.max_retries} attempts")
+
+            # Mark as permanent failure if all retries exhausted
+            if not success:
+                for failure in results["failed_stations"]:
+                    if failure["station_id"] == station.station_id:
+                        failure["permanent"] = True
+                        failure["timestamp"] = datetime.utcnow().isoformat()
+                        failure["error"] = f"Failed after {self.max_retries} retry attempts"
+                # Remove from retry queue
+                if station.station_id in results["retry_queue"]:
+                    results["retry_queue"].remove(station.station_id)
     
     def validate_input(self, input_data: Stage1Output) -> bool:
         """Validate Stage 1 output"""
@@ -272,16 +352,112 @@ class Stage2Enrichment(PipelineStage):
         except Exception as e:
             logger.error(f"Output validation failed: {e}")
             return False
-    
+
+    def _load_incremental_checkpoint(self) -> Optional[Stage2IncrementalOutput]:
+        """Load incremental checkpoint if it exists"""
+        checkpoint_path = os.path.join(self.output_dir, "stage2_incremental.json")
+
+        if not os.path.exists(checkpoint_path):
+            return None
+
+        try:
+            with open(checkpoint_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            return Stage2IncrementalOutput.model_validate(data)
+        except Exception as e:
+            logger.warning(f"Failed to load checkpoint: {e}. Starting fresh.")
+            return None
+
+    def _save_incremental_checkpoint(self, results: dict, timeout_reached: bool = False):
+        """Save incremental checkpoint after each station"""
+        checkpoint = Stage2IncrementalOutput(
+            metadata={
+                "timestamp": datetime.utcnow().isoformat(),
+                "source": "stage2_incremental",
+                "total_stations": len(self.all_stations),
+                "completed_stations": len(results["stations"]),
+                "failed_stations": len(results["failed_stations"]),
+                "timeout_reached": timeout_reached
+            },
+            stations=results["stations"],
+            failed_stations=results["failed_stations"],
+            processed_station_ids=results["processed_station_ids"]
+        )
+
+        # Atomic write: write to temp, then rename
+        temp_path = os.path.join(self.output_dir, "stage2_incremental.json.tmp")
+        final_path = os.path.join(self.output_dir, "stage2_incremental.json")
+
+        with open(temp_path, 'w', encoding='utf-8') as f:
+            json.dump(checkpoint.model_dump(), f, indent=2, ensure_ascii=False, default=str)
+
+        os.replace(temp_path, final_path)
+
+    def _prompt_for_resume(self, checkpoint: Stage2IncrementalOutput) -> bool:
+        """Prompt user whether to resume or restart"""
+        completed = len(checkpoint.processed_station_ids)
+        total = checkpoint.metadata.get("total_stations", 187)
+
+        print(f"\n📂 Found existing checkpoint with {completed}/{total} stations processed.")
+        print(f"   Last updated: {checkpoint.metadata.get('timestamp', 'unknown')}")
+
+        if checkpoint.metadata.get("timeout_reached"):
+            print("   ⏰ Previous run stopped due to time limit")
+
+        response = input("\nResume from checkpoint? [Y/n]: ").strip().lower()
+        return response in ('', 'y', 'yes')
+
+    def _print_resume_message(self, completed: int, total: int):
+        """Print friendly resume message"""
+        logger.section("Daily Limit Reached")
+        logger.info(f"✅ Progress saved: {completed}/{total} stations processed")
+        logger.info(f"⏱️  Time limit: {self.daily_timeout_minutes} minutes")
+        logger.info("")
+        if self.stage1_output_path:
+            logger.info("📋 To resume tomorrow, run:")
+            logger.info(f"   uv run python scripts/run_stage2.py --stage1-output {self.stage1_output_path} --resume")
+        logger.info("")
+        logger.info(f"📁 Checkpoint saved: {os.path.join(self.output_dir, 'stage2_incremental.json')}")
+
+    def _finalize_checkpoint(self, results: dict) -> str:
+        """Convert incremental checkpoint to final format"""
+        # Build Stage2Output from incremental results
+        final_output = Stage2Output(
+            metadata={
+                "timestamp": datetime.utcnow().isoformat(),
+                "source": "stage2_enrichment",
+                "total_stations": len(self.all_stations),
+                "successful": len(results["stations"]),
+                "failed": len([f for f in results["failed_stations"] if f.get("permanent")])
+            },
+            stations=results["stations"],
+            failed_stations=results["failed_stations"],
+            retry_queue=[]  # Empty since we're done
+        )
+
+        # Save as final checkpoint
+        final_path = os.path.join(self.output_dir, "stage2_enrichment.json")
+        with open(final_path, 'w', encoding='utf-8') as f:
+            json.dump(final_output.model_dump(), f, indent=2, ensure_ascii=False, default=str)
+
+        # Optionally archive incremental checkpoint
+        incremental_path = os.path.join(self.output_dir, "stage2_incremental.json")
+        archive_path = os.path.join(self.output_dir, "stage2_incremental.json.bak")
+        if os.path.exists(incremental_path):
+            os.replace(incremental_path, archive_path)
+
+        logger.success(f"✅ Stage 2 complete! Final checkpoint: {final_path}")
+        return final_path
+
     def save_checkpoint(self, output: Stage2Output, output_dir: str) -> str:
         """Save Stage 2 output to checkpoint file"""
         os.makedirs(output_dir, exist_ok=True)
-        
+
         output_dict = output.model_dump()
-        
+
         filepath = os.path.join(output_dir, "stage2_enrichment.json")
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(output_dict, f, indent=2, ensure_ascii=False, default=str)
-        
+
         logger.success(f"Stage 2 checkpoint saved: {filepath}")
         return filepath

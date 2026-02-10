@@ -5,6 +5,8 @@ Standalone script to run Stage 2: Enrichment Extraction
 Usage:
     python scripts/run_stage2.py --stage1-output outputs/2026-02-07/stage1_deterministic.json
     python scripts/run_stage2.py --output-dir outputs/2026-02-07
+    python scripts/run_stage2.py --stage1-output outputs/latest/stage1_deterministic.json --resume
+    python scripts/run_stage2.py --stage1-output outputs/latest/stage1_deterministic.json --restart
 """
 
 import os
@@ -45,44 +47,68 @@ def main():
     parser.add_argument('--stage1-output', required=True, help='Path to Stage 1 output JSON')
     parser.add_argument('--output-dir', default='outputs/latest', help='Output directory')
     parser.add_argument('--config', default='config/pipeline.yaml', help='Config file path')
+    parser.add_argument('--resume', action='store_true', help='Resume from existing checkpoint')
+    parser.add_argument('--restart', action='store_true', help='Restart and ignore existing checkpoint')
     args = parser.parse_args()
-    
+
     # Load and validate configuration
     if not os.path.exists(args.config):
         print(f"Configuration file not found: {args.config}")
         return 1
-    
+
     config = load_config(args.config)
     if not validate_config(config):
         print("Configuration validation failed")
         return 1
-    
+
     # Load Stage 1 output
     if not os.path.exists(args.stage1_output):
         print(f"Stage 1 output file not found: {args.stage1_output}")
         return 1
-    
+
     with open(args.stage1_output, 'r') as f:
         stage1_data = json.load(f)
-    
+
     stage1_output = Stage1Output.model_validate(stage1_data)
-    
+
     # Load environment variables
     load_dotenv()
-    
-    # Run stage
-    stage = Stage2Enrichment(config)
+
+    # Check for existing checkpoint
+    checkpoint_path = os.path.join(args.output_dir, "stage2_incremental.json")
+    resume_mode = False
+
+    if os.path.exists(checkpoint_path) and not args.restart:
+        if args.resume:
+            resume_mode = True
+            logger.info("Resuming from checkpoint (--resume flag provided)")
+        else:
+            # Prompt user
+            temp_stage = Stage2Enrichment(config, args.output_dir, resume_mode=False)
+            checkpoint = temp_stage._load_incremental_checkpoint()
+            if checkpoint and temp_stage._prompt_for_resume(checkpoint):
+                resume_mode = True
+
+    # Initialize and run
+    stage = Stage2Enrichment(config, args.output_dir, resume_mode)
+    stage.stage1_output_path = args.stage1_output  # Store for resume message
     output = stage.execute(stage1_output)
-    
-    # Save checkpoint
-    checkpoint_path = stage.save_checkpoint(output, args.output_dir)
-    
-    # Print summary
-    logger.result("Stage 2 Complete")
-    logger.stats("Successful", str(len(output.stations)))
-    logger.stats("Failed", str(len(output.failed_stations)))
-    logger.stats("Checkpoint", checkpoint_path)
-    
+
+    # Save final checkpoint (only if completed, not timed out)
+    if not output.metadata.get("timeout_reached", False):
+        checkpoint_path = stage.save_checkpoint(output, args.output_dir)
+
+        # Print summary
+        logger.result("Stage 2 Complete")
+        logger.stats("Successful", str(len(output.stations)))
+        logger.stats("Failed", str(len(output.failed_stations)))
+        logger.stats("Checkpoint", checkpoint_path)
+    else:
+        # Timed out - checkpoint already saved as incremental
+        logger.result("Stage 2 Paused (Time Limit Reached)")
+        logger.stats("Processed", str(len(output.stations)))
+        logger.stats("Failed", str(len(output.failed_stations)))
+
     return 0
 
 
