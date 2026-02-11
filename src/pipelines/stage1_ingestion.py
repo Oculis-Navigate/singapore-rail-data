@@ -5,7 +5,7 @@ This stage handles fetching and processing data from deterministic sources
 like Data.gov.sg and OneMap APIs.
 """
 
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from datetime import datetime
 import uuid
 from urllib.parse import quote
@@ -205,7 +205,7 @@ class Stage1Ingestion(PipelineStage):
                 lines=lines,
                 station_type=station_type,
                 exits=exits,
-                fandom_url=self._build_fandom_url(official_name, display_name),
+                fandom_url=self._build_fandom_url(official_name, mrt_codes, display_name),
                 extraction_status="pending"
             )
             stage1_stations.append(stage1_station)
@@ -226,35 +226,67 @@ class Stage1Ingestion(PipelineStage):
                 # Also update lines
                 station.lines = self._detect_lines(station.mrt_codes)
         
-        # Standardize naming: Rename LRT stations to MRT for consistency
+        # Standardize naming for interchange stations (MRT + LRT)
+        # These stations should be named "MRT/LRT STATION" per BUGFIX-003 spec
+        INTERCHANGE_STATIONS = {
+            "CHOA CHU KANG": "CHOA CHU KANG MRT/LRT STATION",
+            "BUKIT PANJANG": "BUKIT PANJANG MRT/LRT STATION",
+            "SENGKANG": "SENGKANG MRT/LRT STATION",
+            "PUNGGOL": "PUNGGOL MRT/LRT STATION",
+        }
+        
         for station in stations:
-            if station.official_name == "CHOA CHU KANG LRT STATION":
-                station.official_name = "CHOA CHU KANG MRT STATION"
+            # Extract base name (remove station type suffix)
+            base_name = station.display_name.upper()
+            
+            if base_name in INTERCHANGE_STATIONS:
+                # Update official name to use MRT/LRT format
+                old_name = station.official_name
+                station.official_name = INTERCHANGE_STATIONS[base_name]
+                # Re-detect station type - interchange stations default to MRT
                 station.station_type = StationType.MRT
+                logger.debug(f"Renamed interchange station: {old_name} -> {station.official_name}")
+        
+        # Regenerate Fandom URLs after naming corrections
+        for station in stations:
+            station.fandom_url = self._build_fandom_url(station.official_name, station.mrt_codes, station.display_name)
         
         logger.info("Applied LRT hub codes and naming corrections")
         return stations
     
-    def _build_fandom_url(self, station_name: str, display_name: str = "") -> str:
+    def _build_fandom_url(self, station_name: str, mrt_codes: Optional[List[str]] = None, display_name: str = "") -> str:
         """
-        Generate or resolve Fandom wiki URL for a station.
+        Generate Fandom wiki URL for a station with casing normalization.
         
-        Uses the FandomScraper to handle casing variations. Falls back to
-        naive generation if resolution fails.
+        Handles MRT stations, LRT stations, and interchange stations (MRT + LRT).
+        Interchange stations use "_MRT/LRT_Station" suffix per Fandom convention.
+        Uses FandomScraper for URL resolution with casing variation handling.
         
         Args:
             station_name: Official station name (e.g., "YISHUN MRT STATION")
-            display_name: Display name for resolution (e.g., "Yishun"). 
-                         If not provided, extracts from station_name.
+            mrt_codes: List of station codes to detect interchange stations (optional)
+            display_name: Display name for URL resolution (e.g., "Yishun")
         
         Examples:
         - "YISHUN MRT STATION" → "https://singapore-mrt-lines.fandom.com/wiki/Yishun_MRT_Station"
+        - "BUKIT PANJANG LRT STATION" → "https://singapore-mrt-lines.fandom.com/wiki/Bukit_Panjang_LRT_Station"
+        - "BUKIT PANJANG MRT/LRT STATION" (interchange) → "https://singapore-mrt-lines.fandom.com/wiki/Bukit_Panjang_MRT/LRT_Station"
         - "Gardens By The Bay" → "https://singapore-mrt-lines.fandom.com/wiki/Gardens_by_the_Bay_MRT_Station"
+        
+        Returns:
+            str: Full Fandom wiki URL
         """
-        # Use display_name if provided, otherwise extract from station_name
+        # Check if this is an interchange station (has both MRT and LRT codes)
+        if mrt_codes:
+            is_interchange = self._is_interchange_station(mrt_codes)
+            if is_interchange:
+                return self._build_interchange_url(station_name)
+        
+        # For non-interchange stations, use FandomScraper for URL resolution
+        # This handles casing variations like "Gardens By The Bay" -> "Gardens_by_the_Bay"
         name_for_resolution = display_name or station_name.replace(" MRT STATION", "").replace(" LRT STATION", "")
         
-        # Try to resolve URL using the scraper
+        # Try to resolve URL using the scraper (handles casing variations)
         resolved_url = self.fandom_scraper.resolve_fandom_url(name_for_resolution)
         
         if resolved_url:
@@ -290,23 +322,93 @@ class Stage1Ingestion(PipelineStage):
         
         return f"https://singapore-mrt-lines.fandom.com/wiki/{quote(url_name)}"
     
+    def _is_interchange_station(self, mrt_codes: List[str]) -> bool:
+        """
+        Check if station serves both MRT and LRT lines.
+        
+        Args:
+            mrt_codes: List of station codes
+            
+        Returns:
+            bool: True if station has both MRT and LRT codes
+        """
+        # MRT code prefixes
+        mrt_prefixes = ('NS', 'EW', 'NE', 'CC', 'DT', 'TE', 'CG', 'CR', 'CE')
+        # LRT code prefixes
+        lrt_prefixes = ('BP', 'SW', 'SE', 'PW', 'PE', 'STC', 'PTC')
+        
+        has_mrt = any(code.startswith(mrt_prefixes) for code in mrt_codes)
+        has_lrt = any(code.startswith(lrt_prefixes) for code in mrt_codes)
+        
+        return has_mrt and has_lrt
+    
+    def _build_interchange_url(self, station_name: str) -> str:
+        """
+        Generate Fandom URL for interchange stations (MRT + LRT).
+        
+        SPECIAL RULE: Interchange stations use "_MRT/LRT_Station" suffix in Fandom URL
+        to indicate they serve both MRT and LRT lines.
+        
+        Known interchange stations:
+        - Bukit Panjang (DT1 + BP1) → Bukit_Panjang_MRT/LRT_Station
+        - Sengkang (NE16 + STC) → Sengkang_MRT/LRT_Station  
+        - Punggol (NE17 + PTC) → Punggol_MRT/LRT_Station
+        - Choa Chu Kang (NS4 + BP1) → Choa_Chu_Kang_MRT/LRT_Station
+        
+        Args:
+            station_name: Official station name
+            
+        Returns:
+            str: Fandom URL with "_MRT/LRT_Station" suffix
+        """
+        # Map of interchange station display names to their Fandom URL names
+        INTERCHANGE_URL_NAMES = {
+            "BUKIT PANJANG": "Bukit_Panjang",
+            "SENGKANG": "Sengkang",
+            "PUNGGOL": "Punggol",
+            "CHOA CHU KANG": "Choa_Chu_Kang",
+        }
+        
+        # Extract base name (remove all station type suffixes)
+        # Handle "MRT/LRT STATION", "MRT STATION", "LRT STATION", "STATION" patterns
+        base_name = station_name.upper()
+        base_name = base_name.replace(' MRT/LRT STATION', '')
+        base_name = base_name.replace(' MRT STATION', '')
+        base_name = base_name.replace(' LRT STATION', '')
+        base_name = base_name.replace(' STATION', '')
+        base_name = base_name.strip()
+        
+        # Get URL-safe name
+        url_name = INTERCHANGE_URL_NAMES.get(base_name, base_name.title().replace(' ', '_'))
+        
+        # All interchange stations use "_MRT/LRT_Station" suffix on Fandom
+        return f"https://singapore-mrt-lines.fandom.com/wiki/{url_name}_MRT/LRT_Station"
+    
     def _detect_station_type(self, station_name: str, codes: List[str]) -> StationType:
         """
-        Detect if station is MRT or LRT based on name and codes.
+        Determine if station is MRT or LRT based on official name.
         
-        Rules:
-        - Contains "LRT" in name → LRT
-        - Codes start with BP, SW, SE, PW → LRT
-        - Otherwise → MRT
+        Rules (per BUGFIX-003 spec):
+        - Contains 'LRT STATION' -> StationType.LRT
+        - Contains 'MRT STATION' -> StationType.MRT
+        - Default to MRT if unclear (backward compatibility)
+        
+        Args:
+            station_name: Official station name (e.g., "BUKIT PANJANG LRT STATION")
+            codes: Station codes (for additional context)
+            
+        Returns:
+            StationType: Either MRT or LRT
         """
-        if "LRT" in station_name:
+        name_upper = station_name.upper()
+        if 'LRT STATION' in name_upper:
             return StationType.LRT
-        
-        lrt_prefixes = ("BP", "SW", "SE", "PW")
-        if any(code.startswith(lrt_prefixes) for code in codes):
-            return StationType.LRT
-        
-        return StationType.MRT
+        elif 'MRT STATION' in name_upper:
+            return StationType.MRT
+        else:
+            # Log warning and default to MRT for backward compatibility
+            logger.warning(f"Cannot determine station type for '{station_name}', defaulting to MRT")
+            return StationType.MRT
     
     def _detect_lines(self, codes: List[str]) -> List[str]:
         """
