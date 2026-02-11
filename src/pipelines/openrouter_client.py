@@ -11,6 +11,9 @@ import json
 import requests
 from typing import Optional, Dict, Any
 from ..utils.logger import logger
+from ..utils.content_quality import ContentQualityChecker
+from ..utils.extraction_metrics import ExtractionMetrics
+from .html_extractor import FandomContentExtractor
 
 
 class OpenRouterClient:
@@ -19,11 +22,14 @@ class OpenRouterClient:
     def __init__(self, config: dict):
         """Initialize OpenRouter client with configuration"""
         api_config = config.get('apis', {}).get('openrouter', {})
+        stage2_config = config.get('stages', {}).get('stage2_enrichment', {})
+        
         self.api_url = api_config.get('base_url', 'https://openrouter.ai/api/v1') + "/chat/completions"
         self.model = api_config.get('model', 'openai/gpt-oss-120b:free')
         self.timeout = api_config.get('timeout', 120)
         self.max_tokens = api_config.get('max_tokens', 4000)
         self.temperature = api_config.get('temperature', 0.1)
+        self.max_content_length = stage2_config.get('max_content_length', 10000)
         
         self.api_key = os.getenv('OPENROUTER_API_KEY')
         if not self.api_key:
@@ -35,18 +41,62 @@ class OpenRouterClient:
             "HTTP-Referer": "https://github.com/yourusername/mrt-data",
             "X-Title": "MRT Data Pipeline"
         }
+        
+        # Initialize content extraction components
+        self.content_extractor = FandomContentExtractor()
+        self.quality_checker = ContentQualityChecker()
+        self.metrics = ExtractionMetrics()
     
-    def extract_station_data(self, station_name: str, html_content: str) -> Optional[Dict]:
+    def extract_station_data(self, station_name: str, html_content: str, station_id: str = "") -> Optional[Dict]:
         """
         Send HTML to OpenRouter and extract structured station data.
         
+        Uses intelligent content extraction to remove noise before sending to LLM.
+        
+        Args:
+            station_name: Display name of the station
+            html_content: Raw HTML content from Fandom
+            station_id: Optional station ID for metrics tracking
+            
         Returns dict with:
         - confidence: "high", "medium", or "low"
         - exits: list of exit objects
         - accessibility_notes: list of strings
         """
+        # Step 1: Extract relevant content from HTML
+        clean_html = self.content_extractor.extract_relevant_content(
+            html_content, station_name
+        )
+        
+        # Log extraction stats
+        stats = self.content_extractor.get_extraction_stats(html_content, clean_html)
+        logger.info(f"Content extraction for {station_name}: {stats['original_size']} -> {stats['extracted_size']} chars ({stats['reduction_percentage']:.1f}% reduction)")
+        
+        # Step 2: Check content quality
+        quality_check = self.quality_checker.check_quality(clean_html, station_name)
+        if not quality_check["is_valid"]:
+            logger.warning(f"Content quality issues for {station_name}: {quality_check['issues']}")
+        
+        # Step 3: Handle empty extraction
+        if not clean_html:
+            logger.error(f"Could not extract relevant content for {station_name}")
+            result = {
+                "confidence": "low",
+                "exits": [],
+                "accessibility_notes": [
+                    "Could not extract relevant content from source HTML"
+                ]
+            }
+            self.metrics.record_extraction(station_name, station_id or station_name, len(html_content), 0, result)
+            return result
+        
+        # Step 4: Truncate if still too long
+        if len(clean_html) > self.max_content_length:
+            logger.info(f"Truncating content for {station_name} from {len(clean_html)} to {self.max_content_length} chars")
+            clean_html = clean_html[:self.max_content_length]
+        
         system_prompt = self._get_system_prompt()
-        user_prompt = self._get_user_prompt(station_name, html_content)
+        user_prompt = self._get_user_prompt(station_name, clean_html)
         
         payload = {
             "model": self.model,
@@ -80,13 +130,19 @@ class OpenRouterClient:
             # Validate LLM response structure before processing
             if not self._validate_llm_response(data):
                 logger.warning(f"Invalid LLM response structure for {station_name}")
+                self.metrics.record_extraction(station_name, station_id or station_name, len(html_content), len(clean_html), None)
                 return None
             
-            return {
+            result = {
                 "confidence": data.get("extraction_confidence", "medium"),
                 "exits": data.get("exits", []),
                 "accessibility_notes": data.get("accessibility_notes", [])
             }
+            
+            # Record successful extraction metrics
+            self.metrics.record_extraction(station_name, station_id or station_name, len(html_content), len(clean_html), result)
+            
+            return result
             
         except requests.exceptions.RequestException as e:
             # Log specific HTTP status codes for better debugging
@@ -102,12 +158,15 @@ class OpenRouterClient:
                     logger.error(f"API request failed ({status_code}): {e}")
             else:
                 logger.error(f"API request failed: {e}")
+            self.metrics.record_extraction(station_name, station_id or station_name, len(html_content), len(clean_html), None)
             return None
         except json.JSONDecodeError as e:
             logger.error(f"Failed to parse JSON response: {e}")
+            self.metrics.record_extraction(station_name, station_id or station_name, len(html_content), len(clean_html), None)
             return None
         except Exception as e:
             logger.error(f"Unexpected error in extraction: {e}")
+            self.metrics.record_extraction(station_name, station_id or station_name, len(html_content), len(clean_html), None)
             return None
     
     def _validate_llm_response(self, data: Dict) -> bool:
@@ -200,14 +259,11 @@ Expected format:
 }"""
     
     def _get_user_prompt(self, station_name: str, html_content: str) -> str:
-        """Get user prompt with HTML content"""
-        # Truncate HTML to avoid token limits
-        truncated_html = html_content[:15000]
-        
+        """Get user prompt with HTML content (already preprocessed)"""
         return f"""Extract data for: {station_name}
 
 HTML Content:
-{truncated_html}
+{html_content}
 
 Return only the JSON object."""
     

@@ -20,6 +20,7 @@ pipeline:
       retry_delay_seconds: 5
       daily_timeout_minutes: 45  # Stop after 45 minutes for free tier
       checkpoint_interval: 1     # Save after every N stations (1 = every station)
+      max_content_length: 10000  # Max chars to send to LLM after extraction
       sources:
         - fandom_wiki
         - openrouter_llm
