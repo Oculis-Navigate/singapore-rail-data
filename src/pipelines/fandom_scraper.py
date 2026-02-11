@@ -15,8 +15,13 @@ from ..utils.url_cache import URLResolutionCache
 class FandomScraper:
     """Scraper for Singapore MRT Fandom pages with URL resolution"""
     
-    def __init__(self, config: Optional[Dict[str, Any]] = None):
-        """Initialize Fandom scraper with configuration"""
+    def __init__(self, config: Optional[Dict[str, Any]] = None, cache_file: Optional[str] = None):
+        """Initialize Fandom scraper with configuration
+        
+        Args:
+            config: Configuration dictionary
+            cache_file: Optional path to cache file (uses default if not specified)
+        """
         if config:
             fandom_config = config.get('apis', {}).get('fandom', {})
             self.base_url = fandom_config.get('base_url', 'https://singapore-mrt-lines.fandom.com/wiki')
@@ -31,7 +36,7 @@ class FandomScraper:
         })
         
         # Initialize URL cache
-        self.url_cache = URLResolutionCache()
+        self.url_cache = URLResolutionCache(cache_file) if cache_file else URLResolutionCache()
         
         # Load manual URL mappings from config
         self.manual_mappings = self._load_manual_mappings(config)

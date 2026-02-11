@@ -89,7 +89,7 @@ class TestFandomScraperURLResolution:
     
     @pytest.fixture
     def scraper(self):
-        """Create a FandomScraper instance with test config"""
+        """Create a FandomScraper instance with test config and temporary cache"""
         config = {
             'pipeline': {
                 'url_mappings': {
@@ -97,7 +97,16 @@ class TestFandomScraperURLResolution:
                 }
             }
         }
-        return FandomScraper(config)
+        # Use a temporary cache file for test isolation
+        with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.json') as f:
+            cache_file = f.name
+        
+        try:
+            scraper = FandomScraper(config, cache_file=cache_file)
+            yield scraper
+        finally:
+            if os.path.exists(cache_file):
+                os.unlink(cache_file)
     
     def test_manual_mapping_priority(self, scraper):
         """Test that manual mappings take priority"""
