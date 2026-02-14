@@ -5,6 +5,7 @@ This stage handles merging deterministic data with enrichment data
 and performs final validation and quality checks.
 """
 
+import hashlib
 import json
 import os
 from typing import List, Dict, Any, Optional, Tuple
@@ -79,6 +80,9 @@ class Stage3Merger(PipelineStage):
             },
             stations=merged_stations
         )
+        
+        # Enhance metadata with version information
+        output = self._enhance_metadata(output)
         
         # Validation (if enabled in config)
         if self.validation_config.get('schema_check', True):
@@ -313,6 +317,56 @@ class Stage3Merger(PipelineStage):
         except Exception as e:
             logger.error(f"Output validation failed: {e}")
             return False
+    
+    def _enhance_metadata(self, merged_data: FinalOutput) -> FinalOutput:
+        """Add version metadata to output"""
+        logger.subsection("Enhancing Metadata with Version Information")
+        
+        # Generate date-based version first
+        today = datetime.utcnow()
+        date_version = today.strftime("%Y-%m-%d")  # "2024-02-14"
+        date_version_iso = today.strftime("%Y%m%d")  # "20240214"
+        
+        # Calculate checksum WITHOUT the new fields (for consistency with validation)
+        # We need to calculate what the JSON would look like with the new fields
+        # but without the checksum, then add the checksum
+        
+        # First, create the metadata dict with all fields except checksum
+        new_metadata = {
+            "data_version": date_version,
+            "data_version_iso": date_version_iso,
+            "file_size_bytes": 0,  # Placeholder - will be calculated
+            "station_count": len(merged_data.stations)
+        }
+        
+        # Get current data dict
+        data_dict = merged_data.model_dump(mode='json')
+        
+        # Create a preview of what the final metadata will look like (without checksum)
+        preview_metadata = {**data_dict['metadata'], **new_metadata}
+        preview_dict = {**data_dict, 'metadata': preview_metadata}
+        
+        # Calculate file size from this preview
+        json_str = json.dumps(preview_dict, separators=(',', ':'), sort_keys=True)
+        file_size = len(json_str.encode('utf-8'))
+        
+        # Update file_size_bytes in preview and recalculate checksum
+        preview_metadata['file_size_bytes'] = file_size
+        preview_dict = {**data_dict, 'metadata': preview_metadata}
+        json_str = json.dumps(preview_dict, separators=(',', ':'), sort_keys=True)
+        checksum = hashlib.sha256(json_str.encode('utf-8')).hexdigest()
+        
+        # Now update the actual metadata with all values including checksum
+        merged_data.metadata.update({
+            "data_version": date_version,
+            "data_version_iso": date_version_iso,
+            "file_size_bytes": file_size,
+            "checksum_sha256": checksum,
+            "station_count": len(merged_data.stations)
+        })
+        
+        logger.success(f"Metadata enhanced: version={date_version}, size={file_size} bytes")
+        return merged_data
     
     def _run_completeness_check(self, output: FinalOutput):
         """Check that all expected data is present"""

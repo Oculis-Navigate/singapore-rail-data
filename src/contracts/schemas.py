@@ -123,3 +123,20 @@ class FinalOutput(BaseModel):
     """Final output structure for the complete pipeline"""
     metadata: Dict[str, Any]
     stations: List[FinalStation]
+
+
+class FinalMetadata(BaseModel):
+    """Enhanced metadata with versioning for distribution"""
+    timestamp: datetime
+    source: str
+    version: str
+    total_stations: int
+    enriched_stations: int
+    skipped_stations: int
+    input_stations_stage1: int
+    input_stations_stage2: int
+    data_version: str = Field(..., pattern=r"^\d{4}-\d{2}-\d{2}$")
+    data_version_iso: str
+    file_size_bytes: int
+    checksum_sha256: str
+    station_count: int

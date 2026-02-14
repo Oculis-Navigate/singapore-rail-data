@@ -92,10 +92,18 @@ pipeline:
   # Output configuration
   output:
     versioning: true
+    create_github_release: true
+    github_repo: "YOUR_USER/mrt-data"  # Update this
     keep_last_n_versions: 10
     symlink_latest: true
     formats:
       - json
+    
+    # Metadata fields to include
+    metadata:
+      include_checksum: true
+      include_file_size: true
+      date_format: "%Y-%m-%d"  # "2024-02-14"
     
   # Logging
   logging:
