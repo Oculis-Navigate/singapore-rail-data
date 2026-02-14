@@ -61,6 +61,61 @@ def determine_station_type(station_name: str) -> StationType:
 - Station names from data.gov.sg follow pattern: "BUKIT PANJANG LRT STATION" or "YISHUN MRT STATION"
 - Update all places where station type is inferred
 - Ensure StationType enum is properly imported and used
+- The `_detect_lines()` method should read station code prefixes from the same config to ensure consistency
+
+### 1b. Fix Station Code Extraction (src/processors/matching_engine.py + config/pipeline.yaml)
+
+**Problem:** The current regex extracts single-letter codes like A1, A2 as station codes when they are actually exit codes from OneMap building names (e.g., "BUKIT PANJANG MRT STATION (A1)").
+
+**Solution:** Make the regex a configurable parameter so new station code prefixes can be added without code changes.
+
+**Config changes (config/pipeline.yaml):**
+```yaml
+station_code_prefixes:
+  # Operational MRT Lines
+  - NS  # North South Line
+  - EW  # East West Line
+  - NE  # North East Line
+  - CC  # Circle Line
+  - CE  # Circle Line Extension
+  - DT  # Downtown Line
+  - TE  # Thomson-East Coast Line
+  - CG  # Changi Airport Line
+  # Operational LRT Lines
+  - BP  # Bukit Panjang LRT
+  - SW  # Sengkang LRT West Loop
+  - SE  # Sengkang LRT East Loop
+  - PW  # Punggol LRT West Loop
+  - PE  # Punggol LRT East Loop
+  - STC # Sengkang Town Centre
+  - PTC # Punggol Town Centre
+  # Under Construction (Future Lines)
+  - CR  # Cross Island Line (opening 2030-2032)
+  - JS  # Jurong Region Line Central (opening 2027)
+  - JW  # Jurong Region Line West (opening 2027)
+  - JE  # Jurong Region Line East (opening 2028)
+```
+
+**Code changes (matching_engine.py):**
+```python
+# OLD (hardcoded regex, incorrectly matches A1, B2 as station codes)
+self.code_regex = r'([A-Z]{1,3}\d+|\b(?:NS|EW|NE|CC|DT|TE|BP|SW|SE|PW|STC|PTC)\b)'
+
+# NEW (read from config)
+import re
+prefixes = config.get('station_code_prefixes', [])
+if prefixes:
+    prefix_pattern = '|'.join(prefixes)
+    self.code_regex = rf'\b({prefix_pattern})\d*\b'
+else:
+    # Fallback to default if config not available
+    self.code_regex = r'\b(NS|EW|NE|CC|DT|TE|CG|CE|BP|SW|SE|PW|PE|STC|PTC)\d*\b'
+```
+
+**Key points:**
+- Single letters like A, B, C followed by numbers are EXIT codes, NOT station codes
+- Future lines (CR, JS, JW, JE) are included so the pipeline is ready when they open
+- Adding new prefixes only requires updating the config file, no code changes needed
 
 ### 2. Update Fandom URL Generation
 
@@ -74,8 +129,8 @@ def generate_fandom_url(station_name: str, station_type: StationType,
     
     Examples:
     - "Yishun MRT Station" -> "https://singapore-mrt-lines.fandom.com/wiki/Yishun_MRT_Station"
-    - "Bukit Panjang LRT Station" -> "https://singapore-mrt-lines.fandom.com/wiki/Bukit_Panjang_LRT_Station"
-    - "Bukit Panjang MRT/LRT Station" (interchange) -> "https://singapore-mrt-lines.fandom.com/wiki/Bukit_Panjang_LRT_Station"
+    - "Senja LRT Station" -> "https://singapore-mrt-lines.fandom.com/wiki/Senja_LRT_Station"
+    - "Bukit Panjang MRT/LRT Station" (interchange) -> "https://singapore-mrt-lines.fandom.com/wiki/Bukit_Panjang_MRT/LRT_Station"
     """
     # Check if this is an interchange station (has both MRT and LRT codes)
     has_mrt = any(code.startswith(('NS', 'EW', 'NE', 'CC', 'DT', 'TE')) for code in mrt_codes)
@@ -101,7 +156,7 @@ def generate_interchange_url(station_name: str, mrt_codes: List[str]) -> str:
     to indicate they serve both MRT and LRT lines.
     
     Known interchange stations:
-    - Bukit Panjang (DT1 + BP1) -> Bukit_Panjang_MRT/LRT_Station
+    - Bukit Panjang (DT1 + BP6) -> Bukit_Panjang_MRT/LRT_Station
     - Sengkang (NE16 + STC) -> Sengkang_MRT/LRT_Station  
     - Punggol (NE17 + PTC) -> Punggol_MRT/LRT_Station
     - Choa Chu Kang (NS4 + BP1) -> Choa_Chu_Kang_MRT/LRT_Station
@@ -180,25 +235,25 @@ def test_lrt_station_detection():
 def test_lrt_fandom_url_generation():
     """Test URL generation for LRT stations"""
     station = Stage1Station(
-        station_id="BP1",
-        official_name="BUKIT PANJANG LRT STATION",
-        display_name="Bukit Panjang",
-        mrt_codes=["BP1"],
+        station_id="BP2",
+        official_name="SOUTH VIEW LRT STATION",
+        display_name="South View",
+        mrt_codes=["BP2"],
         lines=["BPLRT"],
         station_type=StationType.LRT,
         # ... other fields
     )
-    assert "Bukit_Panjang_LRT_Station" in station.fandom_url
+    assert "South_View_LRT_Station" in station.fandom_url
 
 
 def test_interchange_station_url_generation():
     """Test URL generation for interchange stations (MRT + LRT)"""
-    # Bukit Panjang interchange: MRT (DT1) + LRT (BP1)
+    # Bukit Panjang interchange: MRT (DT1) + LRT (BP6)
     bukit_panjang = Stage1Station(
         station_id="DT1",
         official_name="BUKIT PANJANG MRT/LRT STATION",
         display_name="Bukit Panjang",
-        mrt_codes=["DT1", "BP1"],  # Both MRT and LRT codes
+        mrt_codes=["DT1", "BP6"],  # Both MRT and LRT codes
         lines=["DTL", "BPLRT"],
         station_type=StationType.MRT,  # Primary type
         # ... other fields
@@ -260,16 +315,16 @@ def test_interchange_station_url_generation():
 
 ### Data Quality Requirements
 - [ ] All Singapore LRT stations are present in final output:
-  - Bukit Panjang LRT (14 stations: BP1-BP14)
+  - Bukit Panjang LRT (13 stations: BP2-BP7, BP9-BP14 - BP1 and BP6 are interchange points)
   - Sengkang LRT (14 stations: SW1-SW8, SE1-SE6)
   - Punggol LRT (15 stations: PW1-PW7, PE1-PE8)
 - [ ] Station type field is populated for 100% of stations
 - [ ] LRT station codes follow expected patterns (BP, SW, SE, PW, PE prefixes)
 - [ ] Interchange stations have correct Fandom URLs with "_MRT/LRT_Station" suffix:
-  - Bukit Panjang → Bukit_Panjang_MRT/LRT_Station
-  - Sengkang → Sengkang_MRT/LRT_Station
-  - Punggol → Punggol_MRT/LRT_Station
-  - Choa Chu Kang → Choa_Chu_Kang_MRT/LRT_Station
+  - Bukit Panjang (DT1 + BP6) → Bukit_Panjang_MRT/LRT_Station
+  - Sengkang (NE16 + STC) → Sengkang_MRT/LRT_Station
+  - Punggol (NE17 + PTC) → Punggol_MRT/LRT_Station
+  - Choa Chu Kang (NS4 + BP1) → Choa_Chu_Kang_MRT/LRT_Station
 
 ### Backward Compatibility
 - [ ] Existing MRT-only pipelines continue to work
@@ -280,11 +335,12 @@ def test_interchange_station_url_generation():
 
 ## Files to Modify
 
-1. `src/pipelines/stage1_ingestion.py` - Add station type detection
-2. `src/contracts/schemas.py` - Ensure StationType is properly used
-3. `tests/test_stage1.py` - Add LRT test cases
-4. `config/pipeline.yaml` - Add optional station type filter
-5. `src/pipelines/fandom_scraper.py` - Verify LRT URL handling
+1. `src/pipelines/stage1_ingestion.py` - Add station type detection and interchange URL logic
+2. `src/processors/matching_engine.py` - Fix station code extraction regex to exclude exit codes (A1, B2, etc.), read from config
+3. `config/pipeline.yaml` - Add `station_code_prefixes` config parameter
+4. `src/contracts/schemas.py` - Ensure StationType is properly used
+5. `tests/test_stage1.py` - Add LRT test cases
+6. `src/pipelines/fandom_scraper.py` - Verify LRT URL handling
 
 ---
 
@@ -293,11 +349,14 @@ def test_interchange_station_url_generation():
 1. Some LRT stations may not have Fandom wiki pages (check coverage)
 2. LRT line codes (BPLRT, SKLRT, PGLRT) may need special handling
 3. **Interchange stations have special Fandom URLs**: Stations that serve both MRT and LRT lines use "_MRT/LRT_Station" suffix
-   - Bukit Panjang (DT1 + BP1) → Bukit_Panjang_MRT/LRT_Station
+   - Bukit Panjang (DT1 + BP6) → Bukit_Panjang_MRT/LRT_Station
    - Sengkang (NE16 + STC) → Sengkang_MRT/LRT_Station
    - Punggol (NE17 + PTC) → Punggol_MRT/LRT_Station
    - Choa Chu Kang (NS4 + BP1) → Choa_Chu_Kang_MRT/LRT_Station
-4. Station naming may vary between sources (e.g., "Bukit Panjang MRT/LRT Station" vs "Bukit Panjang LRT Station")
+4. **Bukit Panjang LRT Station page does NOT exist** - Bukit Panjang is an interchange station and only has the MRT/LRT combined page
+5. Station naming may vary between sources (e.g., "Bukit Panjang MRT/LRT Station" vs "Bukit Panjang LRT Station")
+6. **Single-letter codes (A1, A2, B1, etc.) are EXIT codes, not station codes** - These must be filtered out during code extraction using the configurable `station_code_prefixes` parameter
+7. **Future MRT lines are included in config** - CR, JS, JW, JE codes are already in the config for when those lines open (2030-2032)
 
 ---
 
@@ -311,8 +370,8 @@ cat outputs/latest/stage1_deterministic.json | jq '.stations[] | select(.station
 # Expected output should include: BP1, BP2, ..., SW1, SW2, ..., PE1, PE2, ...
 
 # Verify LRT station count
-# Bukit Panjang: 14 stations
-# Sengkang: 14 stations  
-# Punggol: 15 stations
-# Total: 43 LRT stations (plus any interchange stations counted once)
+# Bukit Panjang: 13 unique LRT stations (BP2-BP7, BP9-BP14; BP1/BP6 are interchange)
+# Sengkang: 14 stations (SW1-SW8, SE1-SE6)
+# Punggol: 15 stations (PW1-PW7, PE1-PE8)
+# Total: 42 LRT-only stations + 4 interchange stations
 ```

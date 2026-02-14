@@ -29,7 +29,7 @@ class OpenRouterClient:
         self.timeout = api_config.get('timeout', 120)
         self.max_tokens = api_config.get('max_tokens', 4000)
         self.temperature = api_config.get('temperature', 0.1)
-        self.max_content_length = stage2_config.get('max_content_length', 10000)
+        self.max_content_length = stage2_config.get('max_llm_content_chars', 150000)
         
         self.api_key = os.getenv('OPENROUTER_API_KEY')
         if not self.api_key:
