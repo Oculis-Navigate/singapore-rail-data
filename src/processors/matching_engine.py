@@ -3,11 +3,29 @@ from rapidfuzz import fuzz
 from .spatial_utils import calculate_centroid, haversine_distance
 
 class MatchingEngine:
-    def __init__(self, onemap_fetcher, threshold=70, epsilon_meters=800):
+    def __init__(self, onemap_fetcher, config=None, threshold=70, epsilon_meters=800):
         self.onemap = onemap_fetcher
         self.threshold = threshold
         self.epsilon = epsilon_meters
-        self.code_regex = r'([A-Z]{1,3}\d+|\b(?:NS|EW|NE|CC|DT|TE|BP|SW|SE|PW|STC|PTC)\b)'
+        self.config = config or {}
+        
+        # Build regex from configurable station_code_prefixes
+        # Single letters like A1, B2 are EXIT codes, NOT station codes
+        station_prefixes = self.config.get('station_code_prefixes', [])
+        if station_prefixes:
+            # Build pattern that only matches valid station code prefixes
+            prefix_pattern = '|'.join(station_prefixes)
+            # Use non-capturing group for alternation to capture full code
+            self.code_regex = rf'\b(?:{prefix_pattern})\d*\b'
+        else:
+            # Fallback to default prefixes if config not available
+            # Note: Single letter prefixes (A, B, C) are excluded as they are exit codes
+            default_prefixes = ['NS', 'EW', 'NE', 'CC', 'DT', 'TE', 'CG', 'CE', 
+                               'BP', 'SW', 'SE', 'PW', 'PE', 'STC', 'PTC',
+                               'CR', 'JS', 'JW', 'JE']  # Future lines
+            prefix_pattern = '|'.join(default_prefixes)
+            # Use non-capturing group for alternation to capture full code
+            self.code_regex = rf'\b(?:{prefix_pattern})\d*\b'
 
     def _extract_codes(self, text):
         return set(re.findall(self.code_regex, str(text).upper()))

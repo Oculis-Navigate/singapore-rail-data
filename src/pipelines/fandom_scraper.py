@@ -55,27 +55,35 @@ class FandomScraper:
     def resolve_fandom_url(self, station_name: str) -> Optional[str]:
         """
         Resolve Fandom URL for a station, handling casing variations.
-        
+
         Strategy:
-        1. Check manual mappings first
+        1. Check manual mappings first (case-insensitive lookup)
         2. Check cache
         3. Try exact match first
         4. Try lowercase articles/prepositions
         5. Try all lowercase
         6. Try Fandom API search
         7. Cache successful resolution
-        
+
         Args:
             station_name: Station display name (e.g., "Gardens By The Bay")
-            
+
         Returns:
             Resolved URL or None if not found
         """
-        # 1. Check manual mappings first (highest priority)
+        # 1. Check manual mappings first (case-insensitive lookup)
+        # Try exact match first, then case-insensitive match
         if station_name in self.manual_mappings:
             manual_url = self.manual_mappings[station_name]
             logger.info(f"Using manual URL mapping for {station_name}: {manual_url}")
             return manual_url
+
+        # Case-insensitive lookup
+        station_name_lower = station_name.lower()
+        for key, url in self.manual_mappings.items():
+            if key.lower() == station_name_lower:
+                logger.info(f"Using manual URL mapping (case-insensitive) for {station_name}: {url}")
+                return url
         
         # 2. Check cache
         cached_url = self.url_cache.get(station_name)
@@ -223,7 +231,7 @@ class FandomScraper:
         """
         return self._url_exists(url)
     
-    def fetch_page(self, url: str, station_name: str = "") -> Optional[str]:
+    def fetch_page(self, url: str, station_name: str = "") -> tuple[Optional[str], bool]:
         """
         Fetch HTML content from Fandom page with better error reporting.
         
@@ -232,13 +240,14 @@ class FandomScraper:
             station_name: Optional station name for better error messages
             
         Returns:
-            HTML content or None if failed
+            Tuple of (HTML content or None, station_not_found flag)
+            station_not_found is True if the page doesn't exist (404 after trying all variations)
         """
         try:
             logger.info(f"Fetching: {url}")
             response = self.session.get(url, timeout=self.timeout)
             response.raise_for_status()
-            return response.text
+            return response.text, False
         except requests.exceptions.HTTPError as e:
             if e.response.status_code == 404:
                 error_msg = (
@@ -248,15 +257,18 @@ class FandomScraper:
                     f"  Check the actual Fandom page and add a manual mapping to config."
                 )
                 logger.error(error_msg)
+                # 404 means the station page doesn't exist on Fandom
+                return None, True
             else:
                 logger.error(f"HTTP {e.response.status_code}{f' for {station_name}' if station_name else ''}: {url}")
-            return None
+                return None, False
         except requests.exceptions.RequestException as e:
             # Log specific HTTP status codes for better debugging
             if hasattr(e, 'response') and e.response is not None:
                 status_code = e.response.status_code
                 if status_code == 404:
                     logger.error(f"Page not found (404): {url}")
+                    return None, True
                 elif status_code == 500:
                     logger.error(f"Server error (500): {url}")
                 elif status_code == 429:
@@ -265,4 +277,4 @@ class FandomScraper:
                     logger.error(f"HTTP {status_code}: {url}")
             else:
                 logger.error(f"Failed to fetch {url}: {e}")
-            return None
+            return None, False

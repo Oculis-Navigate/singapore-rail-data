@@ -62,6 +62,9 @@ class Stage3Merger(PipelineStage):
         logger.subsection("Merging Station Data")
         merged_stations = self._merge_all_stations(stage1_output, stage2_output)
         
+        # Calculate skipped count
+        skipped_count = len(stage1_output.stations) - len(merged_stations)
+
         # Build output
         output = FinalOutput(
             metadata={
@@ -70,6 +73,7 @@ class Stage3Merger(PipelineStage):
                 "version": "2.0.0",
                 "total_stations": len(merged_stations),
                 "enriched_stations": sum(1 for s in merged_stations if s.enrichment_last_updated),
+                "skipped_stations": skipped_count,
                 "input_stations_stage1": len(stage1_output.stations),
                 "input_stations_stage2": len(stage2_output.stations)
             },
@@ -99,11 +103,26 @@ class Stage3Merger(PipelineStage):
     ) -> List[FinalStation]:
         """Merge all stations from Stage 1 and Stage 2"""
         merged = []
+        skipped_count = 0
+        
+        # Get list of skipped station IDs
+        skipped_ids = set()
+        if hasattr(stage2, 'skipped_stations') and stage2.skipped_stations:
+            skipped_ids = {s["station_id"] for s in stage2.skipped_stations}
         
         for station1 in stage1.stations:
+            # Skip stations that don't have Fandom pages (new/unconstructed)
+            if station1.station_id in skipped_ids:
+                logger.info(f"⏭️  Skipping {station1.official_name} in merger: No Fandom data (new station)")
+                skipped_count += 1
+                continue
+            
             station2 = stage2.stations.get(station1.station_id)
             merged_station = self._merge_single_station(station1, station2)
             merged.append(merged_station)
+        
+        if skipped_count > 0:
+            logger.info(f"📊 Summary: {skipped_count} stations skipped (no Fandom data - new/unconstructed stations)")
         
         return merged
     

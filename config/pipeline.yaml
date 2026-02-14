@@ -18,9 +18,9 @@ pipeline:
       delay_seconds: 2
       max_retries: 3
       retry_delay_seconds: 5
-      daily_timeout_minutes: 45  # Stop after 45 minutes for free tier
+      daily_timeout_minutes: 90  # Stop after 90 minutes for free tier
       checkpoint_interval: 1     # Save after every N stations (1 = every station)
-      max_content_length: 10000  # Max chars to send to LLM after extraction
+      max_llm_content_chars: 150000  # ~131K tokens context window for gpt-oss-120b
       sources:
         - fandom_wiki
         - openrouter_llm
@@ -55,7 +55,35 @@ pipeline:
     # Known casing variations
     "Gardens By The Bay": "https://singapore-mrt-lines.fandom.com/wiki/Gardens_by_the_Bay_MRT_Station"
     "One-North": "https://singapore-mrt-lines.fandom.com/wiki/One-north_MRT_Station"
-    "MacPherson": "https://singapore-mrt-lines.fandom.com/wiki/Macpherson_MRT_Station"
+    "MacPherson": "https://singapore-mrt-lines.fandom.com/wiki/MacPherson_MRT_Station"
+    "Harbourfront": "https://singapore-mrt-lines.fandom.com/wiki/HarbourFront_MRT_Station"
+    "Bayfront Exit": "https://singapore-mrt-lines.fandom.com/wiki/Bayfront_MRT_Station"
+  
+  # Station code prefixes for extraction
+  # Used to distinguish station codes from exit codes (A1, B2, etc.)
+  station_code_prefixes:
+    # Operational MRT Lines
+    - NS  # North South Line
+    - EW  # East West Line
+    - NE  # North East Line
+    - CC  # Circle Line
+    - CE  # Circle Line Extension
+    - DT  # Downtown Line
+    - TE  # Thomson-East Coast Line
+    - CG  # Changi Airport Line
+    # Operational LRT Lines
+    - BP  # Bukit Panjang LRT
+    - SW  # Sengkang LRT West Loop
+    - SE  # Sengkang LRT East Loop
+    - PW  # Punggol LRT West Loop
+    - PE  # Punggol LRT East Loop
+    - STC # Sengkang Town Centre
+    - PTC # Punggol Town Centre
+    # Under Construction (Future Lines)
+    - CR  # Cross Island Line (opening 2030-2032)
+    - JS  # Jurong Region Line Central (opening 2027)
+    - JW  # Jurong Region Line West (opening 2027)
+    - JE  # Jurong Region Line East (opening 2028)
   
   # Expected counts for validation
   expected_stations: 187

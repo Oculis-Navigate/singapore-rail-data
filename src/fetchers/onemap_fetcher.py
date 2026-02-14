@@ -4,12 +4,37 @@ from .base_fetcher import BaseFetcher
 from ..utils.logger import logger
 
 
+# Default station code prefixes (should match config/pipeline.yaml)
+DEFAULT_STATION_PREFIXES = [
+    'NS', 'EW', 'NE', 'CC', 'CE', 'DT', 'TE', 'CG',  # MRT
+    'BP', 'SW', 'SE', 'PW', 'PE', 'STC', 'PTC',      # LRT
+    'CR', 'JS', 'JW', 'JE'                            # Future
+]
+
+
+def build_station_code_regex(prefixes=None):
+    """Build regex pattern for extracting station codes from building names.
+    
+    Single letters like A1, B2 are EXIT codes, NOT station codes.
+    Only matches configured prefixes followed by digits.
+    """
+    prefixes = prefixes or DEFAULT_STATION_PREFIXES
+    prefix_pattern = '|'.join(prefixes)
+    # Use non-capturing group for alternation, capturing group for full match
+    return rf'\b(?:{prefix_pattern})\d+\b'
+
+
 class OneMapFetcher(BaseFetcher):
-    def __init__(self):
+    def __init__(self, config=None):
         super().__init__()
         self.search_url = "https://www.onemap.gov.sg/api/common/elastic/search"
         self.nearby_url = "https://www.onemap.gov.sg/api/public/nearbysvc/getNearestMrtStops"
         self.api_key = os.getenv("ONEMAP_API_KEY")
+        self.config = config or {}
+        
+        # Build code extraction regex from config or use defaults
+        station_prefixes = self.config.get('station_code_prefixes')
+        self.code_regex = build_station_code_regex(station_prefixes)
 
     def search_onemap(self, query):
         params = {"searchVal": query, "returnGeom": "Y", "getAddrDetails": "Y"}
@@ -38,7 +63,7 @@ class OneMapFetcher(BaseFetcher):
                 for result in results:
                     building = result.get("BUILDING", "").upper()
                     if "MRT STATION" in building and "EXIT" not in building:
-                        codes = set(re.findall(r"([A-Z]{1,3}\d+)", building))
+                        codes = set(re.findall(self.code_regex, building))
                         if codes:
                             name = re.sub(r"\(.*?\)", "", building).strip()
                             name = re.sub(r"\s+EXIT\s+[A-Z0-9]+", "", name).strip()
@@ -63,7 +88,7 @@ class OneMapFetcher(BaseFetcher):
                     for result in results:
                         building = result.get("BUILDING", "").upper()
                         if "MRT STATION" in building and "EXIT" not in building:
-                            codes = set(re.findall(r"([A-Z]{1,3}\d+)", building))
+                            codes = set(re.findall(self.code_regex, building))
                             if codes:
                                 name = re.sub(r"\(.*?\)", "", building).strip()
                                 name = re.sub(r"\s+EXIT\s+[A-Z0-9]+", "", name).strip()

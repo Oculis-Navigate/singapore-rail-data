@@ -7,6 +7,7 @@ Usage:
     python scripts/run_stage2.py --output-dir outputs/2026-02-07
     python scripts/run_stage2.py --stage1-output outputs/latest/stage1_deterministic.json --resume
     python scripts/run_stage2.py --stage1-output outputs/latest/stage1_deterministic.json --restart
+    python scripts/run_stage2.py --stage1-output outputs/latest/stage1_deterministic.json --resume --retry-failed
 """
 
 import os
@@ -49,6 +50,7 @@ def main():
     parser.add_argument('--config', default='config/pipeline.yaml', help='Config file path')
     parser.add_argument('--resume', action='store_true', help='Resume from existing checkpoint')
     parser.add_argument('--restart', action='store_true', help='Restart and ignore existing checkpoint')
+    parser.add_argument('--retry-failed', action='store_true', help='Retry permanently failed stations (useful after fixing validation issues)')
     args = parser.parse_args()
 
     # Load and validate configuration
@@ -74,11 +76,15 @@ def main():
     # Load environment variables
     load_dotenv()
 
-    # Check for existing checkpoint
+    # Check for existing checkpoint (main, backup, or enrichment)
     checkpoint_path = os.path.join(args.output_dir, "stage2_incremental.json")
+    backup_path = os.path.join(args.output_dir, "stage2_incremental.json.bak")
+    enrichment_path = os.path.join(args.output_dir, "stage2_enrichment.json")
     resume_mode = False
 
-    if os.path.exists(checkpoint_path) and not args.restart:
+    checkpoint_exists = os.path.exists(checkpoint_path) or os.path.exists(backup_path) or os.path.exists(enrichment_path)
+
+    if checkpoint_exists and not args.restart:
         if args.resume:
             resume_mode = True
             logger.info("Resuming from checkpoint (--resume flag provided)")
@@ -90,7 +96,7 @@ def main():
                 resume_mode = True
 
     # Initialize and run
-    stage = Stage2Enrichment(config, args.output_dir, resume_mode)
+    stage = Stage2Enrichment(config, args.output_dir, resume_mode, retry_failed=args.retry_failed)
     stage.stage1_output_path = args.stage1_output  # Store for resume message
     output = stage.execute(stage1_output)
 
@@ -101,7 +107,8 @@ def main():
         # Print summary
         logger.result("Stage 2 Complete")
         logger.stats("Successful", str(len(output.stations)))
-        logger.stats("Failed", str(len(output.failed_stations)))
+        logger.stats("Failed", str(len([f for f in output.failed_stations if f.get("permanent")])))
+        logger.stats("Skipped (not on Fandom)", str(len(output.skipped_stations)))
         logger.stats("Checkpoint", checkpoint_path)
     else:
         # Timed out - checkpoint already saved as incremental

@@ -33,13 +33,15 @@ class Stage1Ingestion(PipelineStage):
         self.run_id = str(uuid.uuid4())
         self.timestamp = datetime.utcnow()
         
-        # Initialize fetchers
+        # Initialize fetchers with config
         self.datagov_fetcher = DataGovFetcher()
-        self.onemap_fetcher = OneMapFetcher()
+        pipeline_config = config.get('pipeline', {}) if config else {}
+        self.onemap_fetcher = OneMapFetcher(config=pipeline_config)
         self.missing_fetcher = MissingStationFetcher(self.onemap_fetcher)
         
         # Initialize processors
-        self.matcher = MatchingEngine(self.onemap_fetcher)
+        pipeline_config = config.get('pipeline', {}) if config else {}
+        self.matcher = MatchingEngine(self.onemap_fetcher, config=pipeline_config)
         self.consolidator = Consolidator()
         
         # Initialize Fandom scraper for URL resolution
@@ -389,6 +391,7 @@ class Stage1Ingestion(PipelineStage):
         Determine if station is MRT or LRT based on official name.
         
         Rules (per BUGFIX-003 spec):
+        - Contains 'MRT/LRT STATION' -> StationType.MRT (interchange stations default to MRT)
         - Contains 'LRT STATION' -> StationType.LRT
         - Contains 'MRT STATION' -> StationType.MRT
         - Default to MRT if unclear (backward compatibility)
@@ -401,7 +404,10 @@ class Stage1Ingestion(PipelineStage):
             StationType: Either MRT or LRT
         """
         name_upper = station_name.upper()
-        if 'LRT STATION' in name_upper:
+        # Check for interchange stations first (MRT + LRT)
+        if 'MRT/LRT STATION' in name_upper:
+            return StationType.MRT
+        elif 'LRT STATION' in name_upper:
             return StationType.LRT
         elif 'MRT STATION' in name_upper:
             return StationType.MRT

@@ -5,12 +5,22 @@ class Consolidator:
     def __init__(self, spatial_threshold=800):
         self.spatial_threshold = spatial_threshold
 
+    def _get_base_name(self, official_name):
+        """Extract base station name without MRT/LRT suffix."""
+        base = official_name.upper()
+        base = base.replace(' MRT/LRT STATION', '')
+        base = base.replace(' MRT STATION', '')
+        base = base.replace(' LRT STATION', '')
+        base = base.replace(' STATION', '')
+        return base.strip()
+
     def consolidate(self, raw_matches):
         consolidated = []
 
         for match in raw_matches:
             found_existing = False
             match_centroid = calculate_centroid(match['exits'])
+            match_base_name = self._get_base_name(match['official_name'])
             
             for station in consolidated:
                 # Criterion A: Do they share at least one common MRT code?
@@ -20,8 +30,13 @@ class Consolidator:
                 existing_centroid = calculate_centroid(station['exits'])
                 dist = haversine_distance(match_centroid, existing_centroid)
 
+                # Criterion C: Same base name (for interchange stations like Bukit Panjang)
+                station_base_name = self._get_base_name(station['official_name'])
+                same_base_name = (match_base_name == station_base_name)
+
                 if (code_intersection and dist < self.spatial_threshold) or \
-                   (match['official_name'] == station['official_name'] and dist < 300):
+                   (match['official_name'] == station['official_name'] and dist < 300) or \
+                   (same_base_name and dist < self.spatial_threshold):
                     
                     # MERGE LOGIC
                     # 1. Update codes to the union of both

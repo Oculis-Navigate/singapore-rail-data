@@ -27,17 +27,18 @@ class Stage2Enrichment(PipelineStage):
     Output: Stage2Output (enrichment data for each station)
     """
     
-    def __init__(self, config: dict, output_dir: str = "outputs/latest", resume_mode: bool = False):
+    def __init__(self, config: dict, output_dir: str = "outputs/latest", resume_mode: bool = False, retry_failed: bool = False):
         self.config = config
         self.stage_config = config.get('stages', {}).get('stage2_enrichment', {})
         self.batch_size = self.stage_config.get('batch_size', 8)
         self.delay_seconds = self.stage_config.get('delay_seconds', 2)
         self.max_retries = self.stage_config.get('max_retries', 3)
         self.retry_delay = self.stage_config.get('retry_delay_seconds', 5)
-        self.daily_timeout_minutes = self.stage_config.get('daily_timeout_minutes', 45)
+        self.daily_timeout_minutes = self.stage_config.get('daily_timeout_minutes', 90)
         self.checkpoint_interval = self.stage_config.get('checkpoint_interval', 1)
         self.output_dir = output_dir
         self.resume_mode = resume_mode
+        self.retry_failed = retry_failed
         self.all_stations = []
         self.stage1_output_path = None
         
@@ -87,7 +88,7 @@ class Stage2Enrichment(PipelineStage):
         2. Check for existing checkpoint (resume mode)
         3. Process stations with progress bar
         4. Save incremental checkpoint after each station
-        5. Handle 45-minute timeout gracefully
+        5. Handle 90-minute timeout gracefully
         6. Retry failed stations with permanent failure tracking
         7. Compile results into Stage2Output
         """
@@ -104,29 +105,58 @@ class Stage2Enrichment(PipelineStage):
         checkpoint = self._load_incremental_checkpoint()
         if checkpoint and self.resume_mode:
             processed_ids = set(checkpoint.processed_station_ids)
-            # Filter out permanently failed stations
-            permanently_failed_ids = set(
-                f["station_id"] for f in checkpoint.failed_stations
-                if f.get("permanent", False)
-            )
+            # Filter out permanently failed stations (unless retry_failed is set)
+            if self.retry_failed:
+                # Reset permanent failures to allow retry
+                permanently_failed_ids = set()
+                failed_station_ids = {f["station_id"] for f in checkpoint.failed_stations}
+                for failure in checkpoint.failed_stations:
+                    if failure.get("permanent", False):
+                        failure["permanent"] = False
+                        failure["retry_attempted"] = True
+                # Remove failed stations from processed_ids so they get reprocessed
+                processed_ids = processed_ids - failed_station_ids
+                logger.info(f"🔄 Retry mode: {len(failed_station_ids)} previously failed stations will be retried")
+            else:
+                permanently_failed_ids = set(
+                    f["station_id"] for f in checkpoint.failed_stations
+                    if f.get("permanent", False)
+                )
             logger.info(f"Resuming from checkpoint: {len(processed_ids)}/{len(stations)} stations already processed")
-            logger.info(f"Skipping {len(permanently_failed_ids)} permanently failed stations")
+            if not self.retry_failed:
+                logger.info(f"Skipping {len(permanently_failed_ids)} permanently failed stations")
         else:
             processed_ids = set()
             permanently_failed_ids = set()
 
         # Initialize results (use checkpoint data if resuming)
         if checkpoint and self.resume_mode:
+            # Filter out failed stations from processed_station_ids if retrying
+            processed_station_ids = checkpoint.processed_station_ids.copy()
+            stations_dict = checkpoint.stations.copy()
+            failed_list = checkpoint.failed_stations.copy()
+            
+            if self.retry_failed:
+                failed_ids = {f["station_id"] for f in checkpoint.failed_stations}
+                processed_station_ids = [sid for sid in processed_station_ids if sid not in failed_ids]
+                # Remove failed stations from stations dict so they can be reprocessed
+                for station_id in failed_ids:
+                    stations_dict.pop(station_id, None)
+                # Clear failed list - they'll be re-added if they fail again
+                failed_list = []
+            
             results = {
-                "stations": checkpoint.stations.copy(),
-                "failed_stations": checkpoint.failed_stations.copy(),
-                "processed_station_ids": checkpoint.processed_station_ids.copy(),
+                "stations": stations_dict,
+                "failed_stations": failed_list,
+                "skipped_stations": list(getattr(checkpoint, 'skipped_stations', [])),
+                "processed_station_ids": processed_station_ids,
                 "retry_queue": []
             }
         else:
             results = {
                 "stations": {},
                 "failed_stations": [],
+                "skipped_stations": [],
                 "processed_station_ids": [],
                 "retry_queue": []
             }
@@ -168,26 +198,71 @@ class Stage2Enrichment(PipelineStage):
                             "total_stations": len(stations),
                             "successful": len(results["stations"]),
                             "failed": len(results["failed_stations"]),
+                            "skipped_no_fandom": len(results.get("skipped_stations", [])),
                             "timeout_reached": True
                         },
                         stations=results["stations"],
                         failed_stations=results["failed_stations"],
+                        skipped_stations=results.get("skipped_stations", []),
                         retry_queue=[]
                     )
 
                 try:
                     enriched = self._extract_station(station)
+                    
+                    if enriched is None:
+                        # Station not on Fandom - skip it
+                        # Check if already in skipped list to avoid duplicates
+                        already_skipped = any(
+                            s["station_id"] == station.station_id 
+                            for s in results["skipped_stations"]
+                        )
+                        if not already_skipped:
+                            results["skipped_stations"].append({
+                                "station_id": station.station_id,
+                                "official_name": station.official_name,
+                                "reason": "not_on_fandom",
+                                "timestamp": datetime.utcnow().isoformat()
+                            })
+                        
+                        # Remove from other lists if present
+                        results["stations"].pop(station.station_id, None)
+                        results["failed_stations"] = [
+                            f for f in results["failed_stations"]
+                            if f["station_id"] != station.station_id
+                        ]
+                        
+                        # Only add to processed if not already there
+                        if station.station_id not in results["processed_station_ids"]:
+                            results["processed_station_ids"].append(station.station_id)
+                        # Don't add to retry queue - skip permanently
+                        continue
+                    
                     results["stations"][station.station_id] = enriched
                     results["processed_station_ids"].append(station.station_id)
                     logger.item(f"✓ {station.official_name}")
                 except Exception as e:
                     logger.warning(f"✗ {station.official_name}: {e}")
-                    results["failed_stations"].append({
-                        "station_id": station.station_id,
-                        "error": str(e),
-                        "permanent": False,  # Will be marked True after retries fail
-                        "timestamp": datetime.utcnow().isoformat()
-                    })
+                    # Check if station already has a failure entry (e.g., from previous run)
+                    existing_failure = None
+                    for failure in results["failed_stations"]:
+                        if failure["station_id"] == station.station_id:
+                            existing_failure = failure
+                            break
+                    
+                    if existing_failure:
+                        # Update existing failure entry
+                        existing_failure["error"] = str(e)
+                        existing_failure["permanent"] = False
+                        existing_failure["timestamp"] = datetime.utcnow().isoformat()
+                    else:
+                        # Add new failure entry
+                        results["failed_stations"].append({
+                            "station_id": station.station_id,
+                            "error": str(e),
+                            "permanent": False,  # Will be marked True after retries fail
+                            "timestamp": datetime.utcnow().isoformat()
+                        })
                     results["retry_queue"].append(station.station_id)
                     results["processed_station_ids"].append(station.station_id)
 
@@ -222,17 +297,21 @@ class Stage2Enrichment(PipelineStage):
                 "source": "stage2_enrichment",
                 "total_stations": len(stations),
                 "successful": len(results["stations"]),
-                "failed": len([f for f in results["failed_stations"] if f.get("permanent")])
+                "failed": len([f for f in results["failed_stations"] if f.get("permanent")]),
+                "skipped_no_fandom": len(results.get("skipped_stations", []))
             },
             stations=results["stations"],
             failed_stations=results["failed_stations"],
+            skipped_stations=results.get("skipped_stations", []),
             retry_queue=[]
         )
 
         if not self.validate_output(output):
             raise ValueError("Stage 2 output validation failed")
 
-        logger.success(f"Stage 2 complete: {len(output.stations)} successful, {len(output.failed_stations)} failed")
+        failed_count = len([f for f in results["failed_stations"] if f.get("permanent")])
+        skipped_count = len(results.get("skipped_stations", []))
+        logger.success(f"Stage 2 complete: {len(output.stations)} successful, {failed_count} failed, {skipped_count} skipped")
         return output
     
     def _batch_stations(self, stations: List[Stage1Station]):
@@ -240,7 +319,7 @@ class Stage2Enrichment(PipelineStage):
         for i in range(0, len(stations), self.batch_size):
             yield stations[i:i + self.batch_size]
     
-    def _extract_station(self, station: Stage1Station) -> Stage2Station:
+    def _extract_station(self, station: Stage1Station) -> Optional[Stage2Station]:
         """
         Extract enrichment data for a single station.
         
@@ -249,9 +328,18 @@ class Stage2Enrichment(PipelineStage):
         2. Send to OpenRouter for extraction
         3. Parse response
         4. Return structured data
+        
+        Returns:
+            Stage2Station with enrichment data, or None if station not on Fandom
         """
         # Fetch HTML
-        html = self.scraper.fetch_page(station.fandom_url)
+        html, station_not_found = self.scraper.fetch_page(station.fandom_url, station.official_name)
+        
+        if station_not_found:
+            # Station doesn't exist on Fandom (likely new/unconstructed)
+            logger.info(f"⏭️  Skipping {station.official_name}: Not on Fandom (likely new station not yet constructed)")
+            return None
+        
         if not html:
             raise Exception(f"Failed to fetch Fandom page: {station.fandom_url}")
         
@@ -356,17 +444,117 @@ class Stage2Enrichment(PipelineStage):
     def _load_incremental_checkpoint(self) -> Optional[Stage2IncrementalOutput]:
         """Load incremental checkpoint if it exists"""
         checkpoint_path = os.path.join(self.output_dir, "stage2_incremental.json")
-
-        if not os.path.exists(checkpoint_path):
-            return None
-
-        try:
-            with open(checkpoint_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            return Stage2IncrementalOutput.model_validate(data)
-        except Exception as e:
-            logger.warning(f"Failed to load checkpoint: {e}. Starting fresh.")
-            return None
+        backup_path = os.path.join(self.output_dir, "stage2_incremental.json.bak")
+        enrichment_path = os.path.join(self.output_dir, "stage2_enrichment.json")
+        
+        def _convert_enrichment_to_incremental(data: dict, source: str) -> Stage2IncrementalOutput:
+            """Convert enrichment/checkpoint data to Stage2IncrementalOutput format"""
+            stations_dict = data.get("stations", {})
+            failed_list = data.get("failed_stations", [])
+            skipped_list = data.get("skipped_stations", [])
+            processed_ids = data.get("processed_station_ids", [])
+            
+            # Deduplicate skipped_list by station_id (handles corrupted checkpoints)
+            seen_skipped_ids = set()
+            unique_skipped = []
+            for s in skipped_list:
+                sid = s.get("station_id")
+                if sid and sid not in seen_skipped_ids:
+                    seen_skipped_ids.add(sid)
+                    unique_skipped.append(s)
+            skipped_list = unique_skipped
+            
+            # Remove any skipped stations that are also in successful stations
+            # (they should be reprocessed, not considered done)
+            skipped_ids_in_success = seen_skipped_ids & set(stations_dict.keys())
+            if skipped_ids_in_success:
+                logger.warning(f"Found {len(skipped_ids_in_success)} stations in both skipped and successful - will reprocess them")
+                for sid in skipped_ids_in_success:
+                    del stations_dict[sid]
+            
+            # Rebuild processed_station_ids if empty but stations exist
+            if not processed_ids:
+                processed_ids = list(stations_dict.keys())
+                processed_ids.extend([f["station_id"] for f in failed_list if isinstance(f, dict)])
+                processed_ids.extend([s["station_id"] for s in skipped_list if isinstance(s, dict)])
+                # Deduplicate processed_ids
+                processed_ids = list(dict.fromkeys(processed_ids))
+                if processed_ids:
+                    logger.info(f"Rebuilt processed_station_ids ({len(processed_ids)} stations) from {source}")
+            
+            return Stage2IncrementalOutput(
+                metadata=data.get("metadata", {}),
+                stations=stations_dict,
+                failed_stations=failed_list,
+                skipped_stations=skipped_list,
+                processed_station_ids=processed_ids
+            )
+        
+        def _load_checkpoint_file(path: str, source: str, allow_rebuild: bool = True) -> Optional[Stage2IncrementalOutput]:
+            """Load and validate a checkpoint file
+            
+            Args:
+                path: Path to checkpoint file
+                source: Description of source for logging
+                allow_rebuild: If True, rebuild processed IDs when corrupted. If False, return None for corrupted checkpoints.
+            """
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                checkpoint = Stage2IncrementalOutput.model_validate(data)
+                
+                # Check if checkpoint is corrupted (0 processed IDs but has stations)
+                if not checkpoint.processed_station_ids and checkpoint.stations:
+                    if not allow_rebuild:
+                        logger.debug(f"Checkpoint at {source} has stations but 0 processed IDs - treating as corrupted")
+                        return None
+                    logger.warning(f"Checkpoint has {len(checkpoint.stations)} stations but 0 processed IDs - rebuilding")
+                    return _convert_enrichment_to_incremental(data, source)
+                
+                return checkpoint
+            except Exception as e:
+                logger.debug(f"Failed to load {source}: {e}")
+                return None
+        
+        # Try main checkpoint first
+        if os.path.exists(checkpoint_path):
+            checkpoint = _load_checkpoint_file(checkpoint_path, "main checkpoint", allow_rebuild=False)
+            if checkpoint and checkpoint.processed_station_ids:
+                return checkpoint
+            # Main checkpoint is empty or corrupted, try backup (don't rebuild main yet, use backup instead)
+            if os.path.exists(backup_path):
+                backup_checkpoint = _load_checkpoint_file(backup_path, "backup checkpoint", allow_rebuild=True)
+                if backup_checkpoint and backup_checkpoint.processed_station_ids:
+                    logger.info(f"Loading checkpoint from backup: {backup_path}")
+                    return backup_checkpoint
+                # Backup is also corrupted, fall back to rebuilding from main
+                logger.warning("Backup checkpoint also corrupted, rebuilding from main checkpoint")
+            # No backup or backup also failed - rebuild from main checkpoint
+            checkpoint = _load_checkpoint_file(checkpoint_path, "main checkpoint", allow_rebuild=True)
+            if checkpoint and checkpoint.processed_station_ids:
+                return checkpoint
+        
+        # Try backup if main doesn't exist
+        elif os.path.exists(backup_path):
+            checkpoint = _load_checkpoint_file(backup_path, "backup checkpoint")
+            if checkpoint and checkpoint.processed_station_ids:
+                logger.info(f"Loading checkpoint from backup: {backup_path}")
+                return checkpoint
+        
+        # Try enrichment file as last resort
+        if os.path.exists(enrichment_path):
+            logger.info(f"Loading checkpoint from enrichment file: {enrichment_path}")
+            try:
+                with open(enrichment_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                checkpoint = _convert_enrichment_to_incremental(data, "enrichment file")
+                if checkpoint.processed_station_ids:
+                    return checkpoint
+                logger.warning("Enrichment file has no processed stations")
+            except Exception as e:
+                logger.warning(f"Failed to load enrichment checkpoint: {e}")
+        
+        return None
 
     def _save_incremental_checkpoint(self, results: dict, timeout_reached: bool = False):
         """Save incremental checkpoint after each station"""
@@ -377,10 +565,12 @@ class Stage2Enrichment(PipelineStage):
                 "total_stations": len(self.all_stations),
                 "completed_stations": len(results["stations"]),
                 "failed_stations": len(results["failed_stations"]),
+                "skipped_stations": len(results.get("skipped_stations", [])),
                 "timeout_reached": timeout_reached
             },
             stations=results["stations"],
             failed_stations=results["failed_stations"],
+            skipped_stations=results.get("skipped_stations", []),
             processed_station_ids=results["processed_station_ids"]
         )
 

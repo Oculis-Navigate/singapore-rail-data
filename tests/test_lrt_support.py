@@ -183,5 +183,218 @@ class TestStage1StationWithLRT:
         assert "BPL" in station.lines
 
 
+class TestApplyCorrections:
+    """Test _apply_corrections() method for interchange renaming"""
+    
+    def test_interchange_station_renaming(self):
+        """Test that interchange stations are renamed to 'MRT/LRT STATION' format"""
+        stage = Stage1Ingestion({})
+        
+        # Create test stations before corrections
+        stations = [
+            Stage1Station(
+                station_id="DT1",
+                official_name="BUKIT PANJANG MRT STATION",
+                display_name="Bukit Panjang",
+                mrt_codes=["DT1", "BP1"],
+                lines=["DTL", "BPL"],
+                station_type=StationType.MRT,
+                exits=[Exit(exit_code="A", lat=1.378, lng=103.762, source="datagov")],
+                fandom_url="https://example.com"
+            ),
+            Stage1Station(
+                station_id="NE16",
+                official_name="SENGKANG MRT STATION",
+                display_name="Sengkang",
+                mrt_codes=["NE16", "STC"],
+                lines=["NEL", "SKL"],
+                station_type=StationType.MRT,
+                exits=[Exit(exit_code="A", lat=1.392, lng=103.895, source="datagov")],
+                fandom_url="https://example.com"
+            ),
+            Stage1Station(
+                station_id="NE17",
+                official_name="PUNGGOL MRT STATION",
+                display_name="Punggol",
+                mrt_codes=["NE17", "PTC"],
+                lines=["NEL", "PGL"],
+                station_type=StationType.MRT,
+                exits=[Exit(exit_code="A", lat=1.405, lng=103.902, source="datagov")],
+                fandom_url="https://example.com"
+            ),
+            Stage1Station(
+                station_id="NS4",
+                official_name="CHOA CHU KANG MRT STATION",
+                display_name="Choa Chu Kang",
+                mrt_codes=["NS4", "BP1"],
+                lines=["NSL", "BPL"],
+                station_type=StationType.MRT,
+                exits=[Exit(exit_code="A", lat=1.385, lng=103.744, source="datagov")],
+                fandom_url="https://example.com"
+            ),
+        ]
+        
+        # Apply corrections
+        corrected = stage._apply_corrections(stations)
+        
+        # Verify all 4 interchange stations are renamed
+        bukit_panjang = next(s for s in corrected if s.display_name == "Bukit Panjang")
+        assert bukit_panjang.official_name == "BUKIT PANJANG MRT/LRT STATION"
+        assert bukit_panjang.station_type == StationType.MRT
+        assert "Bukit_Panjang_MRT/LRT_Station" in bukit_panjang.fandom_url
+        
+        sengkang = next(s for s in corrected if s.display_name == "Sengkang")
+        assert sengkang.official_name == "SENGKANG MRT/LRT STATION"
+        assert sengkang.station_type == StationType.MRT
+        assert "Sengkang_MRT/LRT_Station" in sengkang.fandom_url
+        
+        punggol = next(s for s in corrected if s.display_name == "Punggol")
+        assert punggol.official_name == "PUNGGOL MRT/LRT STATION"
+        assert punggol.station_type == StationType.MRT
+        assert "Punggol_MRT/LRT_Station" in punggol.fandom_url
+        
+        choa_chu_kang = next(s for s in corrected if s.display_name == "Choa Chu Kang")
+        assert choa_chu_kang.official_name == "CHOA CHU KANG MRT/LRT STATION"
+        assert choa_chu_kang.station_type == StationType.MRT
+        assert "Choa_Chu_Kang_MRT/LRT_Station" in choa_chu_kang.fandom_url
+    
+    def test_non_interchange_stations_unchanged(self):
+        """Test that non-interchange stations are not modified"""
+        stage = Stage1Ingestion({})
+        
+        # Create test stations
+        stations = [
+            Stage1Station(
+                station_id="NS13",
+                official_name="YISHUN MRT STATION",
+                display_name="Yishun",
+                mrt_codes=["NS13"],
+                lines=["NSL"],
+                station_type=StationType.MRT,
+                exits=[Exit(exit_code="A", lat=1.429, lng=103.835, source="datagov")],
+                fandom_url="https://example.com/yishun"
+            ),
+            Stage1Station(
+                station_id="BP2",
+                official_name="SOUTH VIEW LRT STATION",
+                display_name="South View",
+                mrt_codes=["BP2"],
+                lines=["BPL"],
+                station_type=StationType.LRT,
+                exits=[Exit(exit_code="1", lat=1.369, lng=103.745, source="datagov")],
+                fandom_url="https://example.com/south_view"
+            ),
+        ]
+        
+        # Apply corrections
+        corrected = stage._apply_corrections(stations)
+        
+        # Verify non-interchange stations are unchanged
+        yishun = next(s for s in corrected if s.station_id == "NS13")
+        assert yishun.official_name == "YISHUN MRT STATION"
+        assert yishun.station_type == StationType.MRT
+        
+        south_view = next(s for s in corrected if s.station_id == "BP2")
+        assert south_view.official_name == "SOUTH VIEW LRT STATION"
+        assert south_view.station_type == StationType.LRT
+    
+    def test_lrt_hub_codes_added(self):
+        """Test that LRT hub codes are added to interchange stations"""
+        stage = Stage1Ingestion({})
+        
+        # Create Sengkang station without STC code
+        stations = [
+            Stage1Station(
+                station_id="NE16",
+                official_name="SENGKANG MRT STATION",
+                display_name="Sengkang",
+                mrt_codes=["NE16"],  # Missing STC
+                lines=["NEL"],
+                station_type=StationType.MRT,
+                exits=[Exit(exit_code="A", lat=1.392, lng=103.895, source="datagov")],
+                fandom_url="https://example.com"
+            ),
+        ]
+        
+        # Apply corrections
+        corrected = stage._apply_corrections(stations)
+        
+        # Verify STC code is added
+        sengkang = corrected[0]
+        assert "STC" in sengkang.mrt_codes
+        assert "SKL" in sengkang.lines  # Lines should be updated
+
+
+class TestDataQualityIntegration:
+    """Integration tests for data quality verification"""
+    
+    def test_no_exit_codes_in_station_codes(self):
+        """Test that exit codes (A1, B2, etc.) are not present in station codes"""
+        import re
+        from src.processors.matching_engine import MatchingEngine
+        from src.fetchers.onemap_fetcher import OneMapFetcher
+        
+        # Create matcher with default config
+        onemap = OneMapFetcher()
+        matcher = MatchingEngine(onemap, config={})
+        
+        # Test building names that might contain exit codes
+        test_buildings = [
+            "BUKIT PANJANG MRT STATION (A1)",
+            "BUKIT PANJANG MRT STATION (A2)",
+            "CHOA CHU KANG MRT STATION (B1/B2)",
+            "YISHUN MRT STATION (A)",
+        ]
+        
+        exit_code_pattern = re.compile(r'\b[A-Z]\d+\b')
+        
+        for building in test_buildings:
+            codes = matcher._extract_codes(building)
+            # Check that no single-letter codes (like A1, B2) are extracted
+            for code in codes:
+                # Station codes should be at least 2 chars or start with valid prefixes
+                assert len(code) >= 2, f"Exit code '{code}' extracted from '{building}'"
+                # Should not match single letter + number pattern
+                assert not exit_code_pattern.fullmatch(code), f"Exit code '{code}' extracted from '{building}'"
+    
+    def test_interchange_stations_have_correct_type(self):
+        """Test that interchange stations have station_type=MRT"""
+        stage = Stage1Ingestion({})
+        
+        interchange_names = [
+            "BUKIT PANJANG MRT/LRT STATION",
+            "SENGKANG MRT/LRT STATION",
+            "PUNGGOL MRT/LRT STATION",
+            "CHOA CHU KANG MRT/LRT STATION",
+        ]
+        
+        for name in interchange_names:
+            station_type = stage._detect_station_type(name, [])
+            assert station_type == StationType.MRT, f"Interchange station '{name}' should have type MRT, got {station_type}"
+    
+    def test_station_code_extraction_with_config(self):
+        """Test that station code extraction respects configured prefixes"""
+        import yaml
+        from pathlib import Path
+        
+        # Load actual config
+        config_path = Path(__file__).parent.parent / "config" / "pipeline.yaml"
+        with open(config_path, 'r') as f:
+            config = yaml.safe_load(f)
+        
+        pipeline_config = config.get('pipeline', {})
+        prefixes = pipeline_config.get('station_code_prefixes', [])
+        
+        # Verify all expected prefixes are present
+        expected_prefixes = ['NS', 'EW', 'NE', 'CC', 'DT', 'TE', 'BP', 'STC', 'PTC']
+        for prefix in expected_prefixes:
+            assert prefix in prefixes, f"Expected prefix '{prefix}' not found in config"
+        
+        # Verify exit code prefixes are NOT in the list
+        exit_prefixes = ['A', 'B', 'C', 'D']
+        for prefix in exit_prefixes:
+            assert prefix not in prefixes, f"Exit prefix '{prefix}' should not be in station_code_prefixes"
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])

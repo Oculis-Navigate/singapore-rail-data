@@ -47,8 +47,8 @@ class Stage1Output(BaseModel):
 class Platform(BaseModel):
     """Platform information for enriched exits"""
     platform_code: str
-    towards_code: str = Field(..., pattern=r"^[A-Z]{1,3}\d+$")
-    line_code: str = Field(..., pattern=r"^[A-Z]{2,3}$")
+    towards_code: Optional[str] = Field(default=None, pattern=r"^[A-Z]{1,3}\d*$")
+    line_code: str = Field(..., pattern=r"^[A-Z]{2,5}$")
 
 
 class BusStop(BaseModel):
@@ -84,6 +84,7 @@ class Stage2Output(BaseModel):
     metadata: Dict[str, Any]
     stations: Dict[str, Stage2Station]  # Keyed by station_id
     failed_stations: List[Dict[str, Any]]
+    skipped_stations: List[Dict[str, Any]] = Field(default_factory=list, description="Stations skipped (not on Fandom)")
     retry_queue: List[str]
 
 
@@ -92,7 +93,8 @@ class Stage2IncrementalOutput(BaseModel):
     metadata: Dict[str, Any] = Field(..., description="Checkpoint metadata")
     stations: Dict[str, Stage2Station] = Field(default_factory=dict, description="Successfully processed stations")
     failed_stations: List[Dict[str, Any]] = Field(default_factory=list, description="Failed station records")
-    processed_station_ids: List[str] = Field(default_factory=list, description="All processed station IDs (success + failed)")
+    skipped_stations: List[Dict[str, Any]] = Field(default_factory=list, description="Skipped stations (not on Fandom)")
+    processed_station_ids: List[str] = Field(default_factory=list, description="All processed station IDs (success + failed + skipped)")
 
 
 class FinalExit(BaseModel):
