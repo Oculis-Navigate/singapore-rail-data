@@ -1,14 +1,160 @@
+# =============================================================================
+# MRT Data Pipeline - Git Ignore
+# =============================================================================
+
+# ------------------------------------------------------------------------------
 # Python-generated files
+# ------------------------------------------------------------------------------
 __pycache__/
-*.py[oc]
+*.py[cod]
+*$py.class
+*.so
+.Python
 build/
+develop-eggs/
 dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
 wheels/
-*.egg-info
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
 
+# ------------------------------------------------------------------------------
 # Virtual environments
-.venv
+# ------------------------------------------------------------------------------
 .env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.python-version
 
-# Runtime cache files
+# ------------------------------------------------------------------------------
+# IDEs and editors
+# ------------------------------------------------------------------------------
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+
+# ------------------------------------------------------------------------------
+# Testing
+# ------------------------------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+test-results/
+
+# ------------------------------------------------------------------------------
+# Runtime and cache files
+# ------------------------------------------------------------------------------
+*.log
+*.logs
+logs/
 .url_cache.json
+*.cache
+*.tmp
+*.bak
+*.orig
+*.save
+*~
+
+# ------------------------------------------------------------------------------
+# Pipeline-specific files
+# ------------------------------------------------------------------------------
+# Outputs directory - keep structure but ignore contents
+outputs/*
+!outputs/.gitkeep
+# Runtime checkpoints (ephemeral)
+outputs/*/checkpoint*.json
+outputs/checkpoints/
+# Symlinks (generated at runtime)
+outputs/latest
+# Large intermediate files
+*.html.cache
+
+# ------------------------------------------------------------------------------
+# OS generated files
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ------------------------------------------------------------------------------
+# Package manager
+# ------------------------------------------------------------------------------
+uv.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ------------------------------------------------------------------------------
+# Documentation build
+# ------------------------------------------------------------------------------
+docs/_build/
+docs/api/
+*.aux
+*.bbl
+*.blg
+*.idx
+*.ind
+*.lof
+*.lot
+*.out
+*.toc
+*.synctex.gz
+
+# ------------------------------------------------------------------------------
+# Secrets and sensitive data
+# ------------------------------------------------------------------------------
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+secrets.yaml
+secrets.yml
