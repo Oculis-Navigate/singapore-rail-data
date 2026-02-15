@@ -93,7 +93,7 @@ pipeline:
   output:
     versioning: true
     create_github_release: true
-    github_repo: "YOUR_USER/mrt-data"  # Update this
+    github_repo: "Oculis-Navigate/singapore-rail-data"
     keep_last_n_versions: 10
     symlink_latest: true
     formats:
